@@ -3,7 +3,7 @@ import './MobileNav.scss'
 
 const links = [
     { to: '/', label: 'Game' },
-    { to: '/adventures', label: 'Adventures' },
+    { to: '/adventure', label: 'Adventures' },
 ]
 
 const MobileNav = () => {
