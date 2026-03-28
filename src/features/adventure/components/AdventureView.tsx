@@ -10,16 +10,16 @@ type Props = {
 const AdventureView: React.FC<Props> = ({ adventure }) => {
     return (
         <>
-            <img
-                src={`/images/adventures/${adventure.tag}.jpg`}
-                alt={adventure.title}
-            />
-
             <p>
                 <Badge icon="🕒" text={String(adventure.year)} />
                 <Badge icon="🌀" text={`Tardis ${adventure.tardis}`} />
                 <Badge icon="🌍" text={adventure.era} />
             </p>
+
+            <img
+                src={`/images/adventures/${adventure.tag}.jpg`}
+                alt={adventure.title}
+            />
 
             {adventure.stats && (
                 <p>

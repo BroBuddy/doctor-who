@@ -14,7 +14,7 @@ const EnemyLairView: React.FC<Props> = ({ lair }) => {
     return (
         <>
             <p className="mb-2">
-                <strong>Lair: {lair.name}</strong>
+                <strong>{lair.name}</strong>
             </p>
 
             {lair.tags && (
