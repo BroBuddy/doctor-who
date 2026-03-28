@@ -1,5 +1,4 @@
 var e=[{tag:`T000`,title:`The TARDIS`,description:`
-            <img src="/images/tardis.jpg" />
             <p>
                 <em>
                     “What you are standing in, is a technological marvel. It is

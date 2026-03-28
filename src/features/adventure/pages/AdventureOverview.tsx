@@ -14,6 +14,12 @@ function AdventureOverview() {
         <div>
             <Headline>Adventure Booklet</Headline>
 
+            <img
+                src="/images/adventures.png"
+                alt="Adventures"
+                className="w-30 h-14"
+            />
+
             {adventures.map((adventure: Adventure, index: number) => (
                 <div key={index}>
                     <Link to={`/adventure/${adventure.tag}`}>

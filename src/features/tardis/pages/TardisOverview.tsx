@@ -14,7 +14,7 @@ function TardisOverview() {
         <>
             <Headline>TARDIS Manual</Headline>
 
-            <img src="/images/tardis.jpg" alt="Tardis" />
+            <img src="/images/tardis.png" alt="Tardis" className="w-30 h-14" />
 
             {tardis.map((item: Tardis) => (
                 <div key={item.tag}>

@@ -14,6 +14,12 @@ function EnemyOverview() {
         <div>
             <Headline>Enemy Booklet</Headline>
 
+            <img
+                src="/images/enemies.png"
+                alt="Enemies"
+                className="w-30 h-14"
+            />
+
             {enemies.map((item: Enemy) => (
                 <div key={item.tag}>
                     <Link to={`/enemy/${item.tag}`}>
