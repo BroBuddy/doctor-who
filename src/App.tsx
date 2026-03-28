@@ -1,6 +1,6 @@
 import { Outlet, useLocation } from 'react-router-dom'
 import { useLayoutEffect } from 'react'
-import MobileNav from './components/MobileNav'
+import MobileNav from './components/ui/MobileNav'
 import './App.scss'
 
 function App() {

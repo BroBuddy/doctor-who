@@ -1,0 +1,28 @@
+:root {
+    --black: #000;
+    --dark-grey: #444;
+    --grey: #888;
+    --light-grey: #bbb;
+    --white: #fff;
+    --light-blue: #ddedfa;
+    --purple: #231e3e;
+}
+
+$colors: (
+    'black': var(--black),
+    'dark-grey': var(--dark-grey),
+    'grey': var(--grey),
+    'light-grey': var(--light-grey),
+    'white': var(--white),
+    'light-blue': var(--light-blue),
+    'purple': var(--purple),
+);
+
+@each $name, $hex in $colors {
+    .text-#{$name} {
+        color: $hex;
+    }
+    .bg-#{$name} {
+        background-color: $hex;
+    }
+}
