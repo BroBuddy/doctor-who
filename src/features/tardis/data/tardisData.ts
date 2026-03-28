@@ -11,8 +11,7 @@ export const tardisData: Tardis[] = [
                     “What you are standing in, is a technological marvel. It is
                     science beyond magic. This is the gateway to everything that
                     ever was, or ever can be...”
-                </em>{' '}
-                - The 12th Doctor.
+                </em> - The 12th Doctor.
             </p>
             <p>
                 Long ago, the Doctor borrowed his incredible ship so that he
