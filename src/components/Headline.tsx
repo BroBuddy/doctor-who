@@ -3,5 +3,5 @@ interface HeadlineProps {
 }
 
 export function Headline({ children }: HeadlineProps) {
-    return <h2 className="text-purple">{children}</h2>
+    return <h3 className="text-purple">{children}</h3>
 }

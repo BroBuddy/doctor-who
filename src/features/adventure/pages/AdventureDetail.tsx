@@ -2,14 +2,13 @@ import { useMemo } from 'react'
 import { useParams } from 'react-router-dom'
 import { getAdventureByTag } from '../services/AdventureService'
 import { Headline } from '@/components/Headline'
-import type { SpecialCharacter } from '../types/Adventure'
 import type { TabItem } from '@/components/Tabs'
 import Tabs from '@/components/Tabs'
-import SpecialsView from '../components/SpecialsView'
 import AdventureView from '../components/AdventureView'
 import AdventureLocations from '../components/AdventureLocations'
 import AdventurePlots from '../components/AdventurePlots'
 import AdventureCharacters from '../components/AdventureCharacters'
+import AdventureSpecials from '../components/AdventureSpecials'
 
 function AdventureDetail() {
     const { tag } = useParams()
@@ -45,13 +44,9 @@ function AdventureDetail() {
         {
             label: 'Specials',
             content: adventure.specialCharacters && (
-                <>
-                    {adventure.specialCharacters.map(
-                        (item: SpecialCharacter) => (
-                            <SpecialsView key={item.tag} character={item} />
-                        )
-                    )}
-                </>
+                <AdventureSpecials
+                    specialCharacters={adventure.specialCharacters}
+                />
             ),
         },
     ]

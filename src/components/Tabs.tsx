@@ -1,4 +1,5 @@
 import { useState, type ReactNode } from 'react'
+import './Tabs.scss'
 
 export type TabItem = {
     label: string
@@ -14,19 +15,17 @@ const Tabs: React.FC<TabsProps> = ({ tabs }) => {
 
     return (
         <div>
-            <div className="flex">
+            <div className="tabs">
                 {tabs.map((tab, index) => (
-                    <button
+                    <span
                         key={tab.label}
                         className={`px-2 py-1 ${
-                            index === activeIndex
-                                ? 'bg-white text-bold'
-                                : 'bg-gray'
+                            index === activeIndex ? 'active' : ''
                         }`}
                         onClick={() => setActiveIndex(index)}
                     >
                         {tab.label}
-                    </button>
+                    </span>
                 ))}
             </div>
 
