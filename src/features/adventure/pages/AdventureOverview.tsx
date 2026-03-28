@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { getAdventureData } from '../services/AdventureService'
 import type { Adventure } from '../types/AdventureType'
-import { Headline } from '@/components/Headline'
 
 function AdventureOverview() {
     const adventures = getAdventureData() as Adventure[]
@@ -12,12 +11,10 @@ function AdventureOverview() {
 
     return (
         <div>
-            <Headline>Adventure Booklet</Headline>
-
             <img
                 src="/images/adventures.png"
                 alt="Adventures"
-                className="w-30 h-14"
+                className="mt-3 w-30 h-14"
             />
 
             {adventures.map((adventure: Adventure, index: number) => (

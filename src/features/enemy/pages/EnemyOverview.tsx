@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { Headline } from '@/components/Headline'
 import { getEnemyData } from '../services/EnemyService'
 import type { Enemy } from '../types/EnemyType'
 
@@ -12,12 +11,10 @@ function EnemyOverview() {
 
     return (
         <div>
-            <Headline>Enemy Booklet</Headline>
-
             <img
                 src="/images/enemies.png"
                 alt="Enemies"
-                className="w-30 h-14"
+                className="mt-3 w-30 h-14"
             />
 
             {enemies.map((item: Enemy) => (

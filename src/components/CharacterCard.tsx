@@ -19,7 +19,7 @@ const CharacterCard: React.FC<Props> = ({ character }) => {
             </div>
 
             {character.stats && (
-                <div className="flex bg-light-grey p-2 rounded justify-center my-2">
+                <div className="flex bg-white p-2 rounded justify-center my-2">
                     <div className="text-sm">
                         <strong>{character.stats.brains} Brains</strong>
                     </div>

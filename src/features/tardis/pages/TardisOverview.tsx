@@ -1,4 +1,3 @@
-import { Headline } from '@/components/Headline'
 import { getTardisData } from '../services/TardisService'
 import type { Tardis } from '../types/TardisType'
 import { Link } from 'react-router-dom'
@@ -12,9 +11,11 @@ function TardisOverview() {
 
     return (
         <>
-            <Headline>TARDIS Manual</Headline>
-
-            <img src="/images/tardis.png" alt="Tardis" className="w-30 h-14" />
+            <img
+                src="/images/tardis.png"
+                alt="Tardis"
+                className="mt-3 w-30 h-14"
+            />
 
             {tardis.map((item: Tardis) => (
                 <div key={item.tag}>

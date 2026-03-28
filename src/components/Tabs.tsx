@@ -16,10 +16,10 @@ const Tabs: React.FC<TabsProps> = ({ tabs }) => {
     return (
         <div>
             <div className="tabs">
-                {tabs.map((tab, index) => (
+                {tabs.map((tab: TabItem, index: number) => (
                     <span
                         key={tab.label}
-                        className={`px-2 py-1 ${
+                        className={`p-1 ${
                             index === activeIndex ? 'active' : ''
                         }`}
                         onClick={() => setActiveIndex(index)}
@@ -29,7 +29,7 @@ const Tabs: React.FC<TabsProps> = ({ tabs }) => {
                 ))}
             </div>
 
-            <div className="p-4">{tabs[activeIndex]?.content}</div>
+            <div className="py-2">{tabs[activeIndex]?.content}</div>
         </div>
     )
 }

@@ -1,10 +1,6 @@
-import { Headline } from '@/components/Headline'
-
 function Welcome() {
     return (
         <>
-            <Headline>Welcome</Headline>
-
             <p>
                 This is storytelling game for one player. You read various
                 numbered sections one at a time, but the sequence of sections is
@@ -14,10 +10,13 @@ function Welcome() {
                 a new, fresh experience.
             </p>
             <p>
-                DWSSG3e has four booklets –{' '}
-                <strong>Rules, TARDIS Manual, Adventures and Enemy</strong>. You
-                will also need two normal six-sided dice (D6) and tokens or
-                counters to help you keep score of current totals in Adventures.
+                DWSSG3e has four booklets –
+                <strong className="ml-1">
+                    Rules, TARDIS Manual, Adventures and Enemy
+                </strong>
+                . You will also need two normal six-sided dice (D6) and tokens
+                or counters to help you keep score of current totals in
+                Adventures.
             </p>
             <p>
                 The <strong>Adventures</strong> booklet details all the
@@ -27,9 +26,9 @@ function Welcome() {
                 various villains and aliens that oppose the Doctor (with
                 sections that begin with ‘E’). The{' '}
                 <strong>TARDIS Manual</strong> details how to fly the incredible
-                ship between Adventures (with sections that begin with ‘t’, ‘V’,
-                ‘Q’ and ‘T’). This <strong>Rules</strong> booklet (with sections
-                that begin with ‘r’) describes how to play the game and includes
+                ship between Adventures (with sections that begin with ‘V’, ‘Q’
+                and ‘T’). This <strong>Rules</strong> booklet (with sections
+                that begin with ‘R’) describes how to play the game and includes
                 all the reference tables.
             </p>
         </>
