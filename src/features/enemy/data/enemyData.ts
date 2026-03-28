@@ -1,4 +1,6 @@
-export const enemyData: any[] = [
+import type { Enemy } from '../types/EnemyType'
+
+export const enemyData: Enemy[] = [
     {
         id: 1,
         tag: 'E001',
