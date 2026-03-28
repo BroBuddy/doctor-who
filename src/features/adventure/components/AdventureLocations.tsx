@@ -19,7 +19,7 @@ const AdventureLocations: React.FC<Props> = ({ locations }) => {
             {locations.map((location: Location, index: number) => (
                 <>
                     <p key={location.tag} className="mb-2">
-                        <Badge text={`${index + 1}.`} />
+                        <Badge text={`🎲 ${index + 1}`} />
                         <Badge text={location.name} variant="light" />
                     </p>
                     <p>{location.description}</p>

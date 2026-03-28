@@ -1,6 +1,6 @@
 import React from 'react'
 import type { Specials } from '../types/AdventureType'
-import CharacterCard from '@/components/CharacterCard'
+import AllyCard from '@/components/AllyCard'
 
 type Props = {
     specialCharacters: Specials[]
@@ -14,15 +14,15 @@ const AdventureSpecials: React.FC<Props> = ({ specialCharacters }) => {
     return (
         <>
             {specialCharacters.map((character: Specials) => (
-                <React.Fragment key={character.tag}>
+                <React.Fragment key={character.id}>
                     <p className="mb-1">
-                        <strong>{character.name}:</strong>
+                        <strong>{character.ally.name}:</strong>
                     </p>
 
                     <p>{character.description}</p>
                     <p>{character.information}</p>
 
-                    <CharacterCard character={character} />
+                    <AllyCard ally={character.ally} />
                 </React.Fragment>
             ))}
         </>

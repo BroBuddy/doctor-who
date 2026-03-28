@@ -60,7 +60,7 @@ const AdventureView: React.FC<Props> = ({ adventure }) => {
                             <RollItem
                                 key={index}
                                 roll={item.roll}
-                                name={item.name}
+                                name={item.name!}
                             ></RollItem>
                         )
                     )}

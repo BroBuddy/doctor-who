@@ -15,17 +15,19 @@ export type Adventure = {
     era: Era
     type: Type
     description: string
-    stats: {
-        danger: number
-        knowledge: number
-        vp: number
-    }
+    stats: AdventureStats
     special?: string
     enemy?: Enemy
     locations: Location[]
     plots?: Plots
-    characters?: Characters
+    characters?: Characters[]
     specialCharacters?: Specials[]
+}
+
+export type AdventureStats = {
+    danger: number
+    knowledge: number
+    vp: number
 }
 
 export type Enemy = {
@@ -54,7 +56,7 @@ export type Encounter = {
 
 export type RollTable = {
     roll: string
-    name: string
+    name?: string
     description?: string
     type?: string[]
     stats?: Stats
@@ -67,29 +69,28 @@ export type Plots = {
 }
 
 export type Characters = {
-    dice: string
-    table: CharacterTable[]
-}
-
-export type CharacterTable = {
     roll: string
     name: string
     description: string
     charmRoll?: RollTable[]
-    type?: string[]
+    ally?: Ally
     stats?: Stats
     skills?: string[]
     infomation?: string
 }
 
 export type Specials = {
-    tag: string
-    name: string
+    id: number
     description: string
-    type: string[]
+    information: string
+    ally: Ally
+}
+
+export type Ally = {
+    image?: string
+    name: string
     stats: Stats
     skills?: string[]
-    information: string
 }
 
 export type Stats = {

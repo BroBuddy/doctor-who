@@ -216,246 +216,200 @@ export const adventureData: Adventure[] = [
                 },
             ],
         },
-        characters: {
-            dice: '2D6',
-            table: [
-                {
-                    roll: '2-4',
-                    name: 'Local Gentry',
-                    description: 'An eccentric English gent.',
-                    charmRoll: [
-                        {
-                            roll: '2-4',
-                            name: 'Insulted',
-                            description:
-                                'He is insulted – take a -1 penalty to Find Help and Seek Information Actions.',
-                        },
-                        {
-                            roll: '5-6',
-                            name: 'No Event',
-                            description: 'No event occurs.',
-                        },
-                        {
-                            roll: '7-8',
-                            name: 'Shares Gossip',
-                            description:
-                                'He shares local gossip – roll for Plot event.',
-                        },
-                        {
-                            roll: '9+',
-                            name: 'Ally',
-                            description:
-                                'He joins you as an Ally (Brains 1, Brawn 0, Bravery 1, Charm, Diplomacy, History) – roll for Plot event.',
-                        },
-                    ],
-                },
-                {
-                    roll: '5',
-                    name: 'Constable',
-                    description:
-                        'A local bobby takes an interest in you. Make a Charm roll (-1 per Stealth, +3 if Danger 10+).',
-                    charmRoll: [
-                        {
-                            roll: '2-5',
-                            name: 'Wanted',
-                            description:
-                                'You are wanted for questioning – make a Running 7 roll or Captured (6).',
-                        },
-                        {
-                            roll: '6-9',
-                            name: 'No Event',
-                            description: 'No further event.',
-                        },
-                        {
-                            roll: '10+',
-                            name: 'Ally',
-                            description:
-                                'He becomes an Ally (Brains 1, Brawn 2, Bravery 2, +1 to Investigate and Find Help Actions).',
-                        },
-                    ],
-                },
-                {
-                    roll: '6',
-                    name: 'Vicar',
-                    description:
-                        'The local clergy of the parish. Make a Charm roll (adding History).',
-                    charmRoll: [
-                        {
-                            roll: '2-3',
-                            name: 'Offended',
-                            description:
-                                'He is offended and calls a Constable.',
-                        },
-                        {
-                            roll: '4-7',
-                            name: 'Tips Hat',
-                            description: 'He tips his hat and leaves.',
-                        },
-                        {
-                            roll: '8-9',
-                            name: 'Shares News',
-                            description:
-                                'He shares news – roll for Plot event.',
-                        },
-                        {
-                            roll: '10+',
-                            name: 'Ally',
-                            description:
-                                'He joins you as an Ally (Brains 2, Brawn 0, Bravery 2, History, +1 to Find Help Actions) – roll for Plot event.',
-                        },
-                    ],
-                },
-                {
-                    roll: '7',
-                    name: 'Child',
-                    description:
-                        'A ten-year old who attends the local primary school.',
-                    charmRoll: [
-                        {
-                            roll: '2-4',
-                            name: 'Scared',
-                            description: 'Scared – lose 1 Luck.',
-                        },
-                        {
-                            roll: '5-6',
-                            name: 'No Event',
-                            description: 'No further event.',
-                        },
-                        {
-                            roll: '7-8',
-                            name: 'Share Secrets',
-                            description:
-                                'You share some secrets – gain 1 Knowledge or roll for a Plot event.',
-                        },
-                        {
-                            roll: '9+',
-                            name: 'Ally or Guide',
-                            description:
-                                'Either becomes your Ally (Brains 1, Brawn 0, Bravery 1, Stealth, roll for a Plot event) or takes you to meet Louisa James.',
-                        },
-                    ],
-                },
-                {
-                    roll: '8',
-                    name: 'Postmistress',
-                    description: 'Running the Post Office and a local gossip.',
-                    charmRoll: [
-                        {
-                            roll: '2-6',
-                            name: 'Gossip Spreads',
-                            description:
-                                'Everyone gets to know your business – add +2 to Enemy Action roll next Turn.',
-                        },
-                        {
-                            roll: '7-8',
-                            name: 'No Event',
-                            description: 'Her gossip is just that – no event.',
-                        },
-                        {
-                            roll: '9+',
-                            name: 'Shares Events',
-                            description:
-                                'Over a pot of tea she shares recent events – roll for 2 Plot events and choose one. Add +2 to next Seek Information Action.',
-                        },
-                    ],
-                },
-                {
-                    roll: '9',
-                    name: 'Farmer',
-                    description:
-                        'Lived local to Stourford all his life and knows the old ways.',
-                    charmRoll: [
-                        {
-                            roll: '2-4',
-                            name: 'Has a Secret',
-                            description: 'Has a secret – +1 Danger.',
-                        },
-                        {
-                            roll: '5-7',
-                            name: 'Suspicious',
-                            description:
-                                'Suspicious of strangers, he hurries off.',
-                        },
-                        {
-                            roll: '8-9',
-                            name: 'Gossip',
-                            description: 'Gossip – roll for Plot event.',
-                        },
-                        {
-                            roll: '10+',
-                            name: 'Ally or Guide',
-                            description:
-                                'Either becomes an Ally (+1 to Move Actions) or takes you to meet Madame Dumaris.',
-                            type: ['Ally'],
-                            stats: {
-                                brains: 0,
-                                brawn: 1,
-                                bravery: 1,
-                            },
-                            skills: ['Stealth'],
-                        },
-                    ],
-                },
-                {
-                    roll: '10',
-                    name: 'Reporter',
-                    description:
-                        'An intrepid journalist arriving at Stourford after the latest story. If you make a Charm 8 roll, the reporter becomes an Ally.',
-                    type: ['Ally'],
-                    stats: {
-                        brains: 2,
-                        brawn: 1,
-                        bravery: 1,
-                    },
-                    skills: ['Aware', 'Charm', 'Running'],
-                    infomation: 'Roll for a Plot event.',
-                },
-                {
-                    roll: '11-12',
-                    name: 'Archaeologist',
-                    description:
-                        'A scientist who is working on the local dig. If you make a Charm 9 roll (adding Science), the archaeologist becomes your Ally.',
-                    type: ['Ally'],
-                    stats: {
-                        brains: 2,
-                        brawn: 1,
-                        bravery: 1,
-                    },
-                    skills: ['History', 'Science'],
-                    infomation: 'See the Relic Plot event.',
-                },
-            ],
-        },
-        specialCharacters: [
+        characters: [
             {
-                tag: 'madame-dumaris',
-                name: 'Madame Dumaris',
-                description:
-                    'You have encountered Madame Dumaris, an old, rather eccentric and reclusive spiritualist who is very knowledgeable about the Occult and local legends of Stourford.',
-                type: ['Ally'],
-                stats: {
-                    brains: 4,
-                    brawn: 0,
-                    bravery: 3,
-                },
-                skills: ['Aware 2', 'Charm', 'History 2'],
-                information:
-                    'She gains +1 to Seek Information and any Research (History) Actions and clearly has some local knowledge - roll for a Plot event. If Madame Dumaris is killed, lose 1 Luck.',
+                roll: '2-4',
+                name: 'Local Gentry',
+                description: 'An eccentric English gent. Make a Charm roll:',
+                charmRoll: [
+                    {
+                        roll: '2-4',
+                        description:
+                            'He is insulted – take a -1 penalty to Find Help and Seek Information Actions.',
+                    },
+                    {
+                        roll: '5-6',
+                        description: 'No event.',
+                    },
+                    {
+                        roll: '7-8',
+                        description:
+                            'He shares local gossip – roll for Plot event.',
+                    },
+                    {
+                        roll: '9+',
+                        description:
+                            'He joins you as an Ally (Brains 1, Brawn 0, Bravery 1, Charm, Diplomacy, History) – roll for Plot event.',
+                    },
+                ],
             },
             {
-                tag: 'louisa-james',
-                name: 'Louisa James',
+                roll: '5',
+                name: 'Constable',
+                description:
+                    'A local bobby takes an interest in you. Make a Charm roll (-1 per Stealth, +3 if Danger 10+).',
+                charmRoll: [
+                    {
+                        roll: '2-5',
+                        description:
+                            'You are wanted for questioning – make a Running 7 roll or Captured (6).',
+                    },
+                    {
+                        roll: '6-9',
+                        description: 'No further event.',
+                    },
+                    {
+                        roll: '10+',
+                        description:
+                            'He becomes an Ally (Brains 1, Brawn 2, Bravery 2, +1 to Investigate and Find Help Actions).',
+                    },
+                ],
+            },
+            {
+                roll: '6',
+                name: 'Vicar',
+                description:
+                    'The local clergy of the parish. Make a Charm roll (adding History).',
+                charmRoll: [
+                    {
+                        roll: '2-3',
+                        description: 'He is offended and calls a Constable.',
+                    },
+                    {
+                        roll: '4-7',
+                        description: 'He tips his hat and leaves.',
+                    },
+                    {
+                        roll: '8-9',
+                        description: 'He shares news – roll for Plot event.',
+                    },
+                    {
+                        roll: '10+',
+                        description:
+                            'He joins you as an Ally (Brains 2, Brawn 0, Bravery 2, History, +1 to Find Help Actions) – roll for Plot event.',
+                    },
+                ],
+            },
+            {
+                roll: '7',
+                name: 'Child',
+                description:
+                    'A ten-year old who attends the local primary school. Make a Charm roll:',
+                charmRoll: [
+                    {
+                        roll: '2-4',
+                        description: 'Lose 1 Luck.',
+                    },
+                    {
+                        roll: '5-6',
+                        description: 'No further event.',
+                    },
+                    {
+                        roll: '7-8',
+                        description:
+                            'You share some secrets – gain 1 Knowledge or roll for a Plot event.',
+                    },
+                    {
+                        roll: '9+',
+                        description:
+                            'Either becomes your Ally (Brains 1, Brawn 0, Bravery 1, Stealth, roll for a Plot event) or takes you to meet Louisa James.',
+                    },
+                ],
+            },
+            {
+                roll: '8',
+                name: 'Postmistress',
+                description:
+                    'Running the Post Office and a local gossip. Make a Charm roll:',
+                charmRoll: [
+                    {
+                        roll: '2-6',
+                        description:
+                            'Everyone gets to know your business – add +2 to Enemy Action roll next Turn.',
+                    },
+                    {
+                        roll: '7-8',
+                        description: 'Her gossip is just that – no event.',
+                    },
+                    {
+                        roll: '9+',
+                        description:
+                            'Over a pot of tea she shares recent events – roll for 2 Plot events and choose one. Add +2 to next Seek Information Action.',
+                    },
+                ],
+            },
+            {
+                roll: '9',
+                name: 'Farmer',
+                description:
+                    'Lived local to Stourford all his life and knows the old ways. Make a Charm roll:',
+                charmRoll: [
+                    {
+                        roll: '2-4',
+                        description: 'Has a secret – +1 Danger.',
+                    },
+                    {
+                        roll: '5-7',
+                        description: 'Suspicious of strangers, he hurries off.',
+                    },
+                    {
+                        roll: '8-9',
+                        description: 'Gossip – roll for Plot event.',
+                    },
+                    {
+                        roll: '10+',
+                        description:
+                            'He either becomes an Ally (Brains 0, Brawn 1, Bravery 1, Stealth, +1 to Move Actions) or takes you to meet Madame Dumaris.',
+                    },
+                ],
+            },
+            {
+                roll: '10',
+                name: 'Reporter',
+                description:
+                    'An intrepid journalist arriving at Stourford after the latest story. If you make a Charm 8 roll, the reporter becomes an Ally (Brains 2, Brawn 1, Bravery 1, Aware, Charm, Running) – roll for a Plot event.',
+            },
+            {
+                roll: '11-12',
+                name: 'Archaeologist',
+                description:
+                    'A scientist who is working on the local dig. If you make a Charm 9 roll (adding Science), the archaeologist becomes your Ally (Brains 2, Brawn 1, Bravery 1, History, Science) – see the Relic Plot event.',
+            },
+        ],
+        specialCharacters: [
+            {
+                id: 1,
+                description:
+                    'You have encountered Madame Dumaris, an old, rather eccentric and reclusive spiritualist who is very knowledgeable about the Occult and local legends of Stourford.',
+                information:
+                    'She gains +1 to Seek Information and any Research (History) Actions and clearly has some local knowledge - roll for a Plot event. If Madame Dumaris is killed, lose 1 Luck.',
+                ally: {
+                    image: 'madame-dumaris',
+                    name: 'Madame Dumaris',
+                    stats: {
+                        brains: 4,
+                        brawn: 0,
+                        bravery: 3,
+                    },
+                    skills: ['Aware 2', 'Charm', 'History 2'],
+                },
+            },
+            {
+                id: 2,
                 description:
                     'You have met Louisa James, a young teacher from the local Stourford village primary school. Bright and brave, she is loved by her pupils and trusted by the local community.',
-                type: ['Ally', 'Companion'],
-                stats: {
-                    brains: 2,
-                    brawn: 1,
-                    bravery: 2,
-                },
-                skills: ['Charm', 'History', 'Running'],
                 information:
                     'You may also attempt to make a Charm (9) roll and if successful, Louisa joins you as a Companion – gain 1 Luck.',
+                ally: {
+                    image: 'louisa-james',
+                    name: 'Louisa James',
+                    stats: {
+                        brains: 2,
+                        brawn: 1,
+                        bravery: 2,
+                    },
+                    skills: ['Charm', 'History', 'Running'],
+                },
             },
         ],
     },

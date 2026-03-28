@@ -1,41 +1,45 @@
-import type { Specials } from '@/features/adventure/types/AdventureType'
+import type { Ally } from '@/features/adventure/types/AdventureType'
 import React from 'react'
 
 type Props = {
-    character: Specials
+    ally: Ally
 }
 
-const CharacterCard: React.FC<Props> = ({ character }) => {
+const AllyCard: React.FC<Props> = ({ ally }) => {
     return (
         <div className="text-center w-18 bg-purple p-2 rounded">
-            <img
-                src={`/images/characters/${character.tag}.jpg`}
-                alt={character.name}
-                className="rounded w-18"
-            />
+            {ally.image && (
+                <img
+                    src={`/images/characters/${ally.image}.jpg`}
+                    alt={ally.name}
+                    className="rounded w-18"
+                />
+            )}
 
-            <div className="text-center text-white text-bold">
-                {character.name}
-            </div>
+            {ally.name && (
+                <div className="text-center text-white text-bold">
+                    {ally.name}
+                </div>
+            )}
 
-            {character.stats && (
+            {ally.stats && (
                 <div className="flex bg-white p-2 rounded justify-center my-2">
                     <div className="text-sm">
-                        <strong>{character.stats.brains} Brains</strong>
+                        <strong>{ally.stats.brains} Brains</strong>
                     </div>
                     <div className="text-sm mx-2">
-                        <strong>{character.stats.brawn} Brawn</strong>
+                        <strong>{ally.stats.brawn} Brawn</strong>
                     </div>
                     <div className="text-sm">
-                        <strong>{character.stats.bravery} Bravery</strong>
+                        <strong>{ally.stats.bravery} Bravery</strong>
                     </div>
                 </div>
             )}
 
-            {character.skills && (
+            {ally.skills && (
                 <div className="flex bg-light-grey p-2 rounded justify-center">
                     <span className="text-sm">
-                        {character.skills.map((item: string, index: number) => {
+                        {ally.skills.map((item: string, index: number) => {
                             return (
                                 <React.Fragment key={item}>
                                     {index >= 1 ? ', ' : ''}
@@ -50,4 +54,4 @@ const CharacterCard: React.FC<Props> = ({ character }) => {
     )
 }
 
-export default CharacterCard
+export default AllyCard
