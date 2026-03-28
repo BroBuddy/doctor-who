@@ -1,0 +1,1 @@
+import{t as e}from"./index-DdKlP8jS.js";var t=e();function n(){return(0,t.jsx)(`div`,{children:`Adventures Page`})}export{n as default};
