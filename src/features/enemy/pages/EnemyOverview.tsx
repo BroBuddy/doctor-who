@@ -7,18 +7,18 @@ function EnemyOverview() {
     const enemies = getEnemyData() as Enemy[]
 
     if (!enemies || enemies.length === 0) {
-        return <p>No adventures data available.</p>
+        return <p>No enemies data available.</p>
     }
 
     return (
         <div>
-            <Headline>Enemies</Headline>
+            <Headline>Enemy Booklet</Headline>
 
-            {enemies.map((enemy: Enemy, index: number) => (
-                <div key={index}>
-                    <Link to={`/enemy/${enemy.tag}`}>
+            {enemies.map((item: Enemy) => (
+                <div key={item.tag}>
+                    <Link to={`/enemy/${item.tag}`}>
                         <p>
-                            {enemy.tag}. {enemy.title}
+                            {item.tag}. {item.title}
                         </p>
                     </Link>
                 </div>
