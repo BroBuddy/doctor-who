@@ -2,7 +2,7 @@ import React from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 import App from './App.tsx'
 
-const Game = React.lazy(() => import('./pages/Game.tsx'))
+const Game = React.lazy(() => import('./features/game/pages/Game.tsx'))
 const AdventureOverview = React.lazy(
     () => import('./features/adventure/pages/AdventureOverview.tsx')
 )
