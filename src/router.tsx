@@ -9,6 +9,12 @@ const AdventureOverview = React.lazy(
 const AdventureDetail = React.lazy(
     () => import('./features/adventure/pages/AdventureDetail.tsx')
 )
+const EnemyOverview = React.lazy(
+    () => import('./features/enemy/pages/EnemyOverview.tsx')
+)
+const EnemyDetail = React.lazy(
+    () => import('./features/enemy/pages/EnemyDetail.tsx')
+)
 
 export const router = createBrowserRouter([
     {
@@ -17,6 +23,8 @@ export const router = createBrowserRouter([
             { path: '/', element: <Game /> },
             { path: '/adventure', element: <AdventureOverview /> },
             { path: '/adventure/:tag', element: <AdventureDetail /> },
+            { path: '/enemy', element: <EnemyOverview /> },
+            { path: '/enemy/:tag', element: <EnemyDetail /> },
         ],
     },
 ])

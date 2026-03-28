@@ -21,10 +21,6 @@ function AdventureOverview() {
                             {adventure.tag}. {adventure.title} -{' '}
                             {adventure.year}
                         </p>
-                        <img
-                            src={`/images/adventures/${adventure.title}.jpg`}
-                            alt={adventure.title}
-                        />
                     </Link>
                 </div>
             ))}

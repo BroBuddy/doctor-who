@@ -1,9 +1,14 @@
 import { Link, useLocation } from 'react-router-dom'
 import './MobileNav.scss'
 
-const links = [
+type Links = {
+    to: string
+    label: string
+}
+const links: Links[] = [
     { to: '/', label: 'Game' },
     { to: '/adventure', label: 'Adventures' },
+    { to: '/enemy', label: 'Enemies' },
 ]
 
 const MobileNav = () => {

@@ -22,7 +22,7 @@ const AdventureLocations: React.FC<Props> = ({ locations }) => {
                         <Badge text={`${index + 1}.`} />
                         <Badge text={location.name} variant="light" />
                     </p>
-                    <span>{location.description}</span>
+                    <p>{location.description}</p>
                 </>
             ))}
         </>

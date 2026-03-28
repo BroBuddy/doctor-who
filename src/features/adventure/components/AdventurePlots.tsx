@@ -18,12 +18,9 @@ const AdventurePlots: React.FC<Props> = ({ plots }) => {
             </p>
             {plots.table.map((item: RollTable, index: number) => (
                 <div key={index} className="mb-2">
-                    <RollItem
-                        key={index}
-                        roll={item.roll}
-                        name={item.name}
-                        description={item.description}
-                    />
+                    <RollItem key={index} roll={item.roll} name={item.name}>
+                        <p>{item.description}</p>
+                    </RollItem>
                 </div>
             ))}
         </>

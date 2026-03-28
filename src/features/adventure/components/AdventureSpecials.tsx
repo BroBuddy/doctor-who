@@ -1,7 +1,6 @@
 import React from 'react'
 import type { Specials } from '../types/AdventureType'
-import Badge from '@/components/Badge'
-import CharacterAttributes from './CharacterStats'
+import CharacterCard from '@/components/CharacterCard'
 
 type Props = {
     specialCharacters: Specials[]
@@ -15,36 +14,16 @@ const AdventureSpecials: React.FC<Props> = ({ specialCharacters }) => {
     return (
         <>
             {specialCharacters.map((character: Specials) => (
-                <>
+                <React.Fragment key={character.tag}>
                     <p className="mb-1">
                         <strong>{character.name}:</strong>
                     </p>
 
-                    <img
-                        src={`/images/characters/${character.tag}.jpg`}
-                        alt={character.name}
-                    />
-
-                    {character.stats && (
-                        <CharacterAttributes stats={character.stats} />
-                    )}
-
-                    {character.skills && (
-                        <p>
-                            {character.skills.map((skill, index) => (
-                                <Badge
-                                    key={index}
-                                    text={skill}
-                                    variant="light"
-                                />
-                            ))}
-                        </p>
-                    )}
-
                     <p>{character.description}</p>
-
                     <p>{character.information}</p>
-                </>
+
+                    <CharacterCard character={character} />
+                </React.Fragment>
             ))}
         </>
     )

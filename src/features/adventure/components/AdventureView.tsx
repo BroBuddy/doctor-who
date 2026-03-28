@@ -11,7 +11,7 @@ const AdventureView: React.FC<Props> = ({ adventure }) => {
     return (
         <>
             <img
-                src={`/images/adventures/${adventure.title}.jpg`}
+                src={`/images/adventures/${adventure.tag}.jpg`}
                 alt={adventure.title}
             />
 
@@ -61,8 +61,7 @@ const AdventureView: React.FC<Props> = ({ adventure }) => {
                                 key={index}
                                 roll={item.roll}
                                 name={item.name}
-                                description={item.description}
-                            />
+                            ></RollItem>
                         )
                     )}
                 </>

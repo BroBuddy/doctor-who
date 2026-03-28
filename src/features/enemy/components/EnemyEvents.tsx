@@ -1,22 +1,22 @@
 import React from 'react'
-import type { Characters, RollTable } from '../types/AdventureType'
-import RollItem from './RollItem'
+import type { EnemyEvent } from '../types/EnemyType'
+import RollItem from '@/features/adventure/components/RollItem'
 
 type Props = {
-    characters: Characters
+    events: EnemyEvent[]
 }
 
-const AdventureCharacters: React.FC<Props> = ({ characters }) => {
-    if (!characters) {
+const EnemyEvents: React.FC<Props> = ({ events }) => {
+    if (!events) {
         return null
     }
 
     return (
         <>
             <p className="mb-2">
-                <strong>Characters</strong> (Roll {characters.dice}):
+                <strong>Events</strong> (Roll 1D6):
             </p>
-            {characters.table.map((item: RollTable, index: number) => (
+            {events.map((item: EnemyEvent, index: number) => (
                 <div key={index} className="mb-2">
                     <RollItem key={index} roll={item.roll} name={item.name}>
                         <p>{item.description}</p>
@@ -27,4 +27,4 @@ const AdventureCharacters: React.FC<Props> = ({ characters }) => {
     )
 }
 
-export default AdventureCharacters
+export default EnemyEvents
