@@ -22,7 +22,7 @@ function AdventureOverview() {
                             {adventure.year}
                         </p>
                         <img
-                            src={`/images/adventures/${adventure.title}.png`}
+                            src={`/images/adventures/${adventure.title}.jpg`}
                             alt={adventure.title}
                         />
                     </Link>

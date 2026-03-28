@@ -8,7 +8,7 @@
     font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     margin: 0 auto;
-    width: 380px;
+    width: 370px;
 }
 
 ul,
@@ -28,10 +28,14 @@ ol {
 body {
     margin: 0;
     display: flex;
-    min-width: 320px;
     min-height: 100vh;
     background-color: var(--light-blue);
     color: var(--dark-grey);
+    padding-bottom: 40px;
+}
+
+img {
+    border: 1px solid var(--black);
 }
 
 p,

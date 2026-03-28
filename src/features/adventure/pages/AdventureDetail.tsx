@@ -2,10 +2,12 @@ import { useMemo } from 'react'
 import { useParams } from 'react-router-dom'
 import { getAdventureByTag } from '../services/AdventureService'
 import { Headline } from '@/components/Headline'
-import type { Location, RollTable } from '../types/Adventure'
+import type { Location, RollTable, SpecialCharacter } from '../types/Adventure'
 import Badge from '@/components/Badge'
 import type { TabItem } from '@/components/Tabs'
 import Tabs from '@/components/Tabs'
+import RollItem from '@/features/adventure/components/RollItem'
+import SpecialsView from '../components/SpecialsView'
 
 function AdventureDetail() {
     const { tag } = useParams()
@@ -21,49 +23,60 @@ function AdventureDetail() {
             content: (
                 <>
                     <img
-                        src={`/images/adventures/${adventure.title}.png`}
+                        src={`/images/adventures/${adventure.title}.jpg`}
                         alt={adventure.title}
-                        className="mb-4"
                     />
                     <p className="mb-2">
-                        <Badge text={`Tardis ${adventure.tardis}`} />
-                        <Badge text={adventure.era} />
+                        <Badge icon="🌀" text={`Tardis ${adventure.tardis}`} />
+                        <Badge icon="🌍" text={adventure.era} />
                     </p>
-                    <p>{adventure.description}</p>
                     {adventure.stats && (
                         <p>
                             {' '}
                             <Badge
+                                icon="⚠️"
                                 text={`Danger ${adventure.stats.danger}`}
+                                variant="light"
                             />{' '}
                             <Badge
+                                icon="💡"
                                 text={`Knowledge ${adventure.stats.knowledge}`}
+                                variant="light"
                             />{' '}
-                            <Badge text={`VP ${adventure.stats.vp}`} />{' '}
+                            <Badge
+                                icon="⭐"
+                                text={`VP ${adventure.stats.vp}`}
+                                variant="light"
+                            />{' '}
                         </p>
                     )}
+                    <p>{adventure.description}</p>
                     <p>
                         <em>Special:</em> {adventure.special}
                     </p>
-                </>
-            ),
-        },
-        {
-            label: 'Enemy',
-            content: adventure.enemy && (
-                <>
-                    <p>
-                        <strong>Enemy</strong> (Roll {adventure.enemy.dice}):
-                    </p>
-                    <ul className="list-disc list-inside">
-                        {adventure.enemy.table.map(
-                            (item: RollTable, index: number) => (
-                                <li key={index}>
-                                    {item.roll}: {item.name}
-                                </li>
-                            )
-                        )}
-                    </ul>
+
+                    {adventure.enemy && (
+                        <>
+                            <p>
+                                <strong>Enemy</strong> (Roll{' '}
+                                {adventure.enemy.dice}):
+                            </p>
+                            <ul>
+                                {adventure.enemy.table.map(
+                                    (item: RollTable, index: number) => (
+                                        <li key={index}>
+                                            <RollItem
+                                                key={index}
+                                                roll={item.roll}
+                                                name={item.name}
+                                                description={item.description}
+                                            />
+                                        </li>
+                                    )
+                                )}
+                            </ul>
+                        </>
+                    )}
                 </>
             ),
         },
@@ -74,14 +87,14 @@ function AdventureDetail() {
                     <p>
                         <strong>Locations:</strong>
                     </p>
-                    <ol className="list-decimal list-inside">
+                    <ul className="list-decimal list-inside">
                         {adventure.locations.map((loc: Location) => (
                             <li key={loc.tag} className="mb-2">
                                 <strong className="mr-1">{loc.name}:</strong>
                                 <span>{loc.description}</span>
                             </li>
                         ))}
-                    </ol>
+                    </ul>
                 </>
             ),
         },
@@ -92,14 +105,16 @@ function AdventureDetail() {
                     <p>
                         <strong>Plots</strong> (Roll {adventure.plots.dice}):
                     </p>
-                    <ul className="list-disc list-inside">
+                    <ul>
                         {adventure.plots.table.map(
                             (item: RollTable, index: number) => (
-                                <li key={index}>
-                                    <strong className="mr-1">
-                                        {item.roll}: {item.name}:
-                                    </strong>
-                                    <span>{item.description}</span>
+                                <li key={index} className="mb-2">
+                                    <RollItem
+                                        key={index}
+                                        roll={item.roll}
+                                        name={item.name}
+                                        description={item.description}
+                                    />
                                 </li>
                             )
                         )}
@@ -116,18 +131,32 @@ function AdventureDetail() {
                         {adventure.characters.dice}
                         ):
                     </p>
-                    <ul className="list-disc list-inside">
+                    <ul>
                         {adventure.characters.table.map(
                             (item: RollTable, index: number) => (
-                                <li key={index}>
-                                    <strong className="mr-1">
-                                        {item.roll}: {item.name}:
-                                    </strong>
-                                    <span>{item.description}</span>
+                                <li key={index} className="mb-2">
+                                    <RollItem
+                                        key={index}
+                                        roll={item.roll}
+                                        name={item.name}
+                                        description={item.description}
+                                    />
                                 </li>
                             )
                         )}
                     </ul>
+                </>
+            ),
+        },
+        {
+            label: 'Specials',
+            content: adventure.specialCharacters && (
+                <>
+                    {adventure.specialCharacters.map(
+                        (item: SpecialCharacter) => (
+                            <SpecialsView key={item.tag} character={item} />
+                        )
+                    )}
                 </>
             ),
         },

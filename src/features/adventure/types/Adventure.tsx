@@ -58,6 +58,7 @@ export type RollTable = {
     description?: string
     type?: string[]
     stats?: CharacterStats
+    skills?: string[]
 }
 
 export type Plots = {
@@ -70,13 +71,6 @@ export type CharactersTable = {
     table: CharacterEntry[]
 }
 
-export type CharacterStats = {
-    brains: number
-    brawn: number
-    bravery: number
-    skills?: string[]
-}
-
 export type CharacterEntry = {
     roll: string
     name: string
@@ -84,13 +78,22 @@ export type CharacterEntry = {
     charmRoll?: RollTable[]
     type?: string[]
     stats?: CharacterStats
+    skills?: string[]
     infomation?: string
 }
 
 export type SpecialCharacter = {
+    tag: string
     name: string
     description: string
     type: string[]
     stats: CharacterStats
+    skills?: string[]
     information: string
+}
+
+export type CharacterStats = {
+    brains: number
+    brawn: number
+    bravery: number
 }

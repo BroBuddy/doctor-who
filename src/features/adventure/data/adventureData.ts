@@ -391,8 +391,8 @@ export const adventureData: Adventure[] = [
                                 brains: 0,
                                 brawn: 1,
                                 bravery: 1,
-                                skills: ['Stealth'],
                             },
+                            skills: ['Stealth'],
                         },
                     ],
                 },
@@ -406,8 +406,8 @@ export const adventureData: Adventure[] = [
                         brains: 2,
                         brawn: 1,
                         bravery: 1,
-                        skills: ['Aware', 'Charm', 'Running'],
                     },
+                    skills: ['Aware', 'Charm', 'Running'],
                     infomation: 'Roll for a Plot event.',
                 },
                 {
@@ -420,14 +420,15 @@ export const adventureData: Adventure[] = [
                         brains: 2,
                         brawn: 1,
                         bravery: 1,
-                        skills: ['History', 'Science'],
                     },
+                    skills: ['History', 'Science'],
                     infomation: 'See the Relic Plot event.',
                 },
             ],
         },
         specialCharacters: [
             {
+                tag: 'madame-dumaris',
                 name: 'Madame Dumaris',
                 description:
                     'You have encountered Madame Dumaris, an old, rather eccentric and reclusive spiritualist who is very knowledgeable about the Occult and local legends of Stourford.',
@@ -436,12 +437,13 @@ export const adventureData: Adventure[] = [
                     brains: 4,
                     brawn: 0,
                     bravery: 3,
-                    skills: ['Aware 2', 'Charm', 'History 2'],
                 },
+                skills: ['Aware 2', 'Charm', 'History 2'],
                 information:
                     'She gains +1 to Seek Information and any Research (History) Actions and clearly has some local knowledge - roll for a Plot event. If Madame Dumaris is killed, lose 1 Luck.',
             },
             {
+                tag: 'louisa-james',
                 name: 'Louisa James',
                 description:
                     'You have met Louisa James, a young teacher from the local Stourford village primary school. Bright and brave, she is loved by her pupils and trusted by the local community.',
@@ -450,8 +452,8 @@ export const adventureData: Adventure[] = [
                     brains: 2,
                     brawn: 1,
                     bravery: 2,
-                    skills: ['Charm', 'History', 'Running'],
                 },
+                skills: ['Charm', 'History', 'Running'],
                 information:
                     'You may also attempt to make a Charm (9) roll and if successful, Louisa joins you as a Companion – gain 1 Luck.',
             },
