@@ -1,7 +1,6 @@
 import React from 'react'
-import type { Enemy } from '../types/EnemyType'
+import type { EncounterTable, Enemy } from '../types/EnemyType'
 import Badge from '@/components/Badge'
-import type { RollTable } from '@/features/adventure/types/AdventureType'
 
 type Props = {
     enemy: Enemy
@@ -25,7 +24,7 @@ const EnemyView: React.FC<Props> = ({ enemy }) => {
 
             <ul>
                 {enemy.encounter?.table.map(
-                    (item: RollTable, index: number) => (
+                    (item: EncounterTable, index: number) => (
                         <li key={index}>
                             <strong className="mr-1">{item.name}:</strong>
                             <span>{item.description}</span>

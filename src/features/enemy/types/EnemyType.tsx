@@ -1,10 +1,8 @@
-import type { RollTable } from '@/features/adventure/types/AdventureType'
-
 export type Enemy = {
     id: number
     tag: string
     title: string
-    description: number
+    description: string
     stats: string[]
     encounter: Encounter
     goals: EnemyGoal[]
@@ -20,7 +18,12 @@ export type EnemyEvent = {
 
 export type Encounter = {
     description: string
-    table: RollTable[]
+    table: EncounterTable[]
+}
+
+export type EncounterTable = {
+    name: string
+    description: string
 }
 
 export type EnemyGoal = {
@@ -31,7 +34,6 @@ export type EnemyGoal = {
     description: string
     options?: GoalOption[]
 }
-
 export type GoalOption = {
     name: string
     description: string
