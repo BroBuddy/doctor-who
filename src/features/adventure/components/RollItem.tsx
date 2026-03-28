@@ -1,3 +1,4 @@
+import Badge from '@/components/Badge'
 import React from 'react'
 
 type RollItemProps = {
@@ -9,12 +10,12 @@ type RollItemProps = {
 const RollItem: React.FC<RollItemProps> = ({ roll, name, description }) => {
     return (
         <>
-            <strong>
-                {roll} | {name}
-            </strong>
+            <div className="mb-2">
+                <Badge text={`🎲 ${roll}`} />
+                <Badge text={name} variant="light" />
+            </div>
             {description && (
                 <>
-                    <strong className="mr-1">:</strong>
                     <span>{description}</span>
                 </>
             )}

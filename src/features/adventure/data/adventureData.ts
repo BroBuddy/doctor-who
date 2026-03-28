@@ -217,7 +217,7 @@ export const adventureData: Adventure[] = [
             ],
         },
         characters: {
-            dice: '2d6',
+            dice: '2D6',
             table: [
                 {
                     roll: '2-4',
