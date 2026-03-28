@@ -1,9 +1,9 @@
 import React from 'react'
-import type { CharactersTable, RollTable } from '../types/Adventure'
+import type { Characters, RollTable } from '../types/AdventureType'
 import RollItem from './RollItem'
 
 type Props = {
-    characters: CharactersTable
+    characters: Characters
 }
 
 const AdventureCharacters: React.FC<Props> = ({ characters }) => {

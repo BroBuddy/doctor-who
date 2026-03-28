@@ -1,5 +1,5 @@
 import React from 'react'
-import type { Location } from '../types/Adventure'
+import type { Location } from '../types/AdventureType'
 import Badge from '@/components/Badge'
 
 type Props = {

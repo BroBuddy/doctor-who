@@ -1,5 +1,5 @@
 import { adventureData } from '../data/adventureData'
-import type { Adventure } from '../types/Adventure'
+import type { Adventure } from '../types/AdventureType'
 
 const getAdventureData = (): Pick<
     Adventure,

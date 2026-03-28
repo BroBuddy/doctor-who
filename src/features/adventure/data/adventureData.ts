@@ -1,4 +1,4 @@
-import type { Adventure } from '../types/Adventure'
+import type { Adventure } from '../types/AdventureType'
 
 export const adventureData: Adventure[] = [
     {

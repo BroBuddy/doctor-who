@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { getAdventureData } from '../services/AdventureService'
-import type { Adventure } from '../types/Adventure'
+import type { Adventure } from '../types/AdventureType'
 import { Headline } from '@/components/Headline'
 
 function AdventureOverview() {

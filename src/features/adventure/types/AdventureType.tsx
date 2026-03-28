@@ -4,7 +4,7 @@ export type Era =
     | 'Medieval Era'
     | 'Victorian Era'
 
-export type AdventureType = 'Holiday' | 'Mission' | 'Investigation' | 'Combat'
+export type Type = 'Holiday' | 'Mission' | 'Investigation' | 'Combat'
 
 export type Adventure = {
     id: number
@@ -13,7 +13,7 @@ export type Adventure = {
     year: number
     tardis: number
     era: Era
-    type: AdventureType
+    type: Type
     description: string
     stats: {
         danger: number
@@ -21,14 +21,14 @@ export type Adventure = {
         vp: number
     }
     special?: string
-    enemy?: AdventureEnemy
+    enemy?: Enemy
     locations: Location[]
     plots?: Plots
-    characters?: CharactersTable
-    specialCharacters?: SpecialCharacter[]
+    characters?: Characters
+    specialCharacters?: Specials[]
 }
 
-export type AdventureEnemy = {
+export type Enemy = {
     dice: string
     table: RollTable[]
 }
@@ -57,7 +57,7 @@ export type RollTable = {
     name: string
     description?: string
     type?: string[]
-    stats?: CharacterStats
+    stats?: Stats
     skills?: string[]
 }
 
@@ -66,33 +66,33 @@ export type Plots = {
     table: RollTable[]
 }
 
-export type CharactersTable = {
+export type Characters = {
     dice: string
-    table: CharacterEntry[]
+    table: CharacterTable[]
 }
 
-export type CharacterEntry = {
+export type CharacterTable = {
     roll: string
     name: string
     description: string
     charmRoll?: RollTable[]
     type?: string[]
-    stats?: CharacterStats
+    stats?: Stats
     skills?: string[]
     infomation?: string
 }
 
-export type SpecialCharacter = {
+export type Specials = {
     tag: string
     name: string
     description: string
     type: string[]
-    stats: CharacterStats
+    stats: Stats
     skills?: string[]
     information: string
 }
 
-export type CharacterStats = {
+export type Stats = {
     brains: number
     brawn: number
     bravery: number

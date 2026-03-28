@@ -1,9 +1,9 @@
 import React from 'react'
-import type { CharacterStats } from '../types/Adventure'
+import type { Stats } from '../types/AdventureType'
 import Badge from '@/components/Badge'
 
 type Props = {
-    stats: CharacterStats
+    stats: Stats
 }
 
 const CharacterAttributes: React.FC<Props> = ({ stats }) => {

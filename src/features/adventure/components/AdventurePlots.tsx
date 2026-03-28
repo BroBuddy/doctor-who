@@ -1,5 +1,5 @@
 import React from 'react'
-import type { Plots, RollTable } from '../types/Adventure'
+import type { Plots, RollTable } from '../types/AdventureType'
 import RollItem from './RollItem'
 
 type Props = {

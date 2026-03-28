@@ -1,10 +1,10 @@
 import React from 'react'
-import type { SpecialCharacter } from '../types/Adventure'
+import type { Specials } from '../types/AdventureType'
 import Badge from '@/components/Badge'
 import CharacterAttributes from './CharacterStats'
 
 type Props = {
-    specialCharacters: SpecialCharacter[]
+    specialCharacters: Specials[]
 }
 
 const AdventureSpecials: React.FC<Props> = ({ specialCharacters }) => {
@@ -14,7 +14,7 @@ const AdventureSpecials: React.FC<Props> = ({ specialCharacters }) => {
 
     return (
         <>
-            {specialCharacters.map((character: SpecialCharacter) => (
+            {specialCharacters.map((character: Specials) => (
                 <>
                     <p className="mb-1">
                         <strong>{character.name}:</strong>

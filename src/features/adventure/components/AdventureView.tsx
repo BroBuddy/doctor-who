@@ -1,5 +1,5 @@
 import React from 'react'
-import type { Adventure, RollTable } from '../types/Adventure'
+import type { Adventure, RollTable } from '../types/AdventureType'
 import Badge from '@/components/Badge'
 import RollItem from './RollItem'
 
