@@ -81,7 +81,7 @@ export const tardisData: Tardis[] = [
     },
     {
         tag: 'T005',
-        title: ' Actions in the TARDIS',
+        title: 'Actions in the TARDIS',
         description: `
             <p>If the TARDIS has taken Damage, or had any Malfunction (V02) you may try to repair it - either between Adventures (if you do not have a Vortex Event) or during the <strong>Discover</strong> Phase of an Adventure. To repair TARDIS Damage and increase your <strong>Defence</strong> by +1, you must make an Engineer 9 roll. You may not repair the TARDIS to increase <strong>Defence</strong> if it has not taken any Damage however. To repair other malfunctions requires a different Engineer roll as given in the Vortex event.</p>
             <p>During an Adventure, the only other Actions that can take place in the TARDIS is Research (with +1 to the roll and no Era restrictions on Skills) or to use the TARDIS to make a Move Action by making a TARDIS 8 roll. If the roll is failed, roll for a random Location in the Adventure. If the roll was failed by 4 or more however, the TARDIS takes Damage.</p>
@@ -89,10 +89,48 @@ export const tardisData: Tardis[] = [
     },
     {
         tag: 'T006',
-        title: ' Actions in the TARDIS',
+        title: 'The TARDIS as an Adventure Location',
         description: `
             <p>The TARDIS counts as a separate Location in an Adventure. Characters inside the TARDIS cannot be affected by Incidents or Enemy events (although effects on the Adventure still occur) or have an Enemy encounter.</p>
             <p>In an Adventure, you may normally return to the TARDIS if you wish (and automatically return here when Adventure is over). To return to the TARDIS during an Adventure, the Doctor (or a Companion with a TARDIS Key Gadget) must simply return to the TARDIS current Location (usually the Landing Location).</p>
+        `,
+    },
+    {
+        tag: 'T007',
+        title: 'TARDIS Quest events',
+        description: `
+            <p>Each TARDIS Sheet also lists several events (each starting with ‘Q’) that refer to Quests that a player may undertake. TARDIS Quests are specific to each Doctor to give added theme and storytelling possibilities.</p>
+            <p>If you've already started a Quest, but Regenerate before completing it, the Quest remains active and must still be completed. You may not start the Quest associated with your new Regeneration until you complete your pending Quest. After you complete the Quest, you may start counting completed Adventures needed to start the Quest associated with your current Regeneration from your next completed Adventure.</p>
+        `,
+    },
+    {
+        tag: 'V01',
+        title: 'All of Time and Space',
+        description: `
+            <p>Your Companion (randomly chosen if more than one) has decided that they want you to take them somewhere. Roll 1D6 below for their chosen destination. If you do not reach the destination listed, lose 1 <strong>Luck</strong> and if you gain a Companion in your next Adventure take -1 to the Companion Leaving roll. If you have no Companion, ignore this event.</p>
+            <ol>
+                <li>Your Companion wants a relaxing Holiday Adventure.</li>
+                <li>Your Companion wants to return home (their native Adventure or Era).</li>
+                <li>Your Companion wants to visit the future (later than their native Era).</li>
+                <li>Your Companion wants to visit Earth’s Past (World War Era or earlier).</li>
+                <li>Your Companion wants to visit an exotic alien planet.</li>
+                <li>You argue with your Companion - when the TARDIS lands they immediately separate and Move to a random Location.</li>
+            </ol>
+        `,
+    },
+    {
+        tag: 'V02',
+        title: 'TARDIS Malfunction',
+        description: `
+            <p>There is a sudden flash from the TARDIS console followed by a whiff of burning circuitry. Roll 1D6:</p>
+            <ol>
+                <li>There is a huge flash as the power to the console overloads. Roll for a random destination to see where you land. The TARDIS takes Damage.</li>
+                <li>You have run out of a vital element that powers the TARDIS. Until replaced, you have a -2 penalty to TARDIS rolls. To replace the element, you must visit an Adventure in the Colonial era or later and spend 1 <strong>Luck</strong>.</li>
+                <li>A random TARDIS Gadget malfunctions and can no longer be used until repaired with an Engineer 10 roll. If you have no TARDIS Gadget lose either 1 <strong>Navigation</strong> or 1 <strong>Resources</strong> (if both 0, TARDIS takes Damage instead).</li>
+                <li>Power circuit malfunction. The TARDIS takes Damage.</li>
+                <li>A navigation circuit overloads on the console. Either lose 1 <strong>Navigation</strong> or take a -1 penalty to TARDIS rolls until it is repaired with an Engineer 9 roll.</li>
+                <li>The console gives a very strange bleep. It doesn’t appear to have affected anything…</li>
+            </ol>
         `,
     },
 ]
