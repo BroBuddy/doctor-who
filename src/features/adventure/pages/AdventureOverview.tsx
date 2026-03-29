@@ -17,16 +17,18 @@ function AdventureOverview() {
                 className="mt-3 w-30 h-14"
             />
 
-            {adventures.map((adventure: Adventure, index: number) => (
-                <div key={index}>
-                    <Link to={`/adventure/${adventure.tag}`}>
-                        <p>
-                            {adventure.tag}. {adventure.title} -{' '}
-                            {adventure.year}
-                        </p>
+            <div className="flex flex-wrap">
+                {adventures.map((item: Adventure) => (
+                    <Link
+                        key={item.tag}
+                        to={`/adventure/${item.tag}`}
+                        title={item.title}
+                        className="pl-1 pr-2 py-1 w-4"
+                    >
+                        <span className="text-md">{item.tag}</span>
                     </Link>
-                </div>
-            ))}
+                ))}
+            </div>
         </div>
     )
 }

@@ -26,6 +26,10 @@ $align-items-options: (
     display: flex;
 }
 
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
 @each $name, $value in $flex-directions {
     .flex-#{$name} {
         flex-direction: $value;

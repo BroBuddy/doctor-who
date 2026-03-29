@@ -17,15 +17,18 @@ function EnemyOverview() {
                 className="mt-3 w-30 h-14"
             />
 
-            {enemies.map((item: Enemy) => (
-                <div key={item.tag}>
-                    <Link to={`/enemy/${item.tag}`}>
-                        <p>
-                            {item.tag}. {item.title}
-                        </p>
+            <div className="flex flex-wrap">
+                {enemies.map((item: Enemy) => (
+                    <Link
+                        key={item.tag}
+                        to={`/enemy/${item.tag}`}
+                        title={item.title}
+                        className="pl-1 pr-2 py-1 w-4"
+                    >
+                        <span className="text-md">{item.tag}</span>
                     </Link>
-                </div>
-            ))}
+                ))}
+            </div>
         </div>
     )
 }

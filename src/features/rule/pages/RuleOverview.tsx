@@ -17,15 +17,18 @@ function RuleOverview() {
                 className="mt-3 w-30 h-14"
             />
 
-            {rules.map((item: Rule) => (
-                <div key={item.tag}>
-                    <Link to={`/rule/${item.tag}`}>
-                        <p>
-                            {item.tag}. {item.title}
-                        </p>
+            <div className="flex flex-wrap">
+                {rules.map((item: Rule) => (
+                    <Link
+                        key={item.tag}
+                        to={`/rule/${item.tag}`}
+                        title={item.title}
+                        className="pl-1 pr-2 py-1 w-4"
+                    >
+                        <span className="text-md">{item.tag}</span>
                     </Link>
-                </div>
-            ))}
+                ))}
+            </div>
         </>
     )
 }

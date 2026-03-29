@@ -17,15 +17,18 @@ function TardisOverview() {
                 className="mt-3 w-30 h-14"
             />
 
-            {tardis.map((item: Tardis) => (
-                <div key={item.tag}>
-                    <Link to={`/tardis/${item.tag}`}>
-                        <p>
-                            {item.tag}. {item.title}
-                        </p>
+            <div className="flex flex-wrap">
+                {tardis.map((item: Tardis) => (
+                    <Link
+                        key={item.tag}
+                        to={`/tardis/${item.tag}`}
+                        title={item.title}
+                        className="pl-1 pr-2 py-1 w-4"
+                    >
+                        <span className="text-md">{item.tag}</span>
                     </Link>
-                </div>
-            ))}
+                ))}
+            </div>
         </>
     )
 }
