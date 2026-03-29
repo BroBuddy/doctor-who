@@ -1,20 +1,6 @@
 import { Headline } from '@/components/Headline'
+import { getPrefixByTag } from '@/lib/helper'
 import { Link } from 'react-router-dom'
-
-const getPrefix = (tag: string) => {
-    const first = tag.charAt(0)
-
-    switch (first) {
-        case 'A':
-            return 'adventure'
-        case 'E':
-            return 'enemy'
-        case 'R':
-            return 'rule'
-        default:
-            return 'tardis'
-    }
-}
 
 function History() {
     const history = JSON.parse(localStorage.getItem('doctor-who-game') || '[]')
@@ -34,7 +20,7 @@ function History() {
                         ) => (
                             <li key={index}>
                                 <Link
-                                    to={`/${getPrefix(item.tag)}/${item.tag}`}
+                                    to={`/${getPrefixByTag(item.tag)}/${item.tag}`}
                                 >
                                     <strong className="mr-1">
                                         {item.tag}:

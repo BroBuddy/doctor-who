@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { Headline } from '@/components/Headline'
 import { getTardisByTag } from '../services/TardisService'
 import { useHistory } from '@/hooks/useHistory'
+import AddFavorite from '@/features/favorite/components/AddFavorite'
 
 function TardisDetail() {
     const { tag } = useParams()
@@ -20,6 +21,7 @@ function TardisDetail() {
     return (
         <>
             <Headline>
+                <AddFavorite tag={tardis.tag} title={tardis.title} />
                 {tardis.tag}. {tardis.title}
             </Headline>
 

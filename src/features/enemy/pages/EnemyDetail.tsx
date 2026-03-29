@@ -7,6 +7,7 @@ import { getEnemyByTag } from '../services/EnemyService'
 import EnemyView from '../components/EnemyView'
 import EnemyTables from '../components/EnemyTables'
 import { useHistory } from '@/hooks/useHistory'
+import AddFavorite from '@/features/favorite/components/AddFavorite'
 
 function EnemyDetail() {
     const { tag } = useParams()
@@ -35,6 +36,7 @@ function EnemyDetail() {
     return (
         <>
             <Headline>
+                <AddFavorite tag={enemy.tag} title={enemy.title} />
                 {enemy.tag}. {enemy.title}
             </Headline>
 

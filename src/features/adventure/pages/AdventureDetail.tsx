@@ -10,6 +10,7 @@ import AdventurePlots from '../components/AdventurePlots'
 import AdventureCharacters from '../components/AdventureCharacters'
 import AdventureSpecials from '../components/AdventureSpecials'
 import { useHistory } from '@/hooks/useHistory'
+import AddFavorite from '@/features/favorite/components/AddFavorite'
 
 function AdventureDetail() {
     const { tag } = useParams()
@@ -58,6 +59,7 @@ function AdventureDetail() {
     return (
         <>
             <Headline>
+                <AddFavorite tag={adventure.tag} title={adventure.title} />
                 {adventure.tag}. {adventure.title}
             </Headline>
 
