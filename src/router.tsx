@@ -6,6 +6,9 @@ const Game = React.lazy(() => import('./features/game/pages/Game.tsx'))
 const BookletOverview = React.lazy(
     () => import('./features/booklet/pages/BookletOverview.tsx')
 )
+const RuleDetail = React.lazy(
+    () => import('./features/rule/pages/RuleDetail.tsx')
+)
 const TardisDetail = React.lazy(
     () => import('./features/tardis/pages/TardisDetail.tsx')
 )
@@ -22,6 +25,7 @@ export const router = createBrowserRouter([
         children: [
             { path: '/', element: <Game /> },
             { path: '/booklet', element: <BookletOverview /> },
+            { path: '/rule/:tag', element: <RuleDetail /> },
             { path: '/tardis/:tag', element: <TardisDetail /> },
             { path: '/adventure/:tag', element: <AdventureDetail /> },
             { path: '/enemy/:tag', element: <EnemyDetail /> },

@@ -1,7 +1,6 @@
 import React from 'react'
 import type { Adventure, Rolls } from '../types/AdventureType'
 import Badge from '@/components/Badge'
-import RollItem from './RollItem'
 
 type Props = {
     adventure: Adventure

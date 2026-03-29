@@ -6,6 +6,7 @@ import Tabs from '@/components/Tabs'
 import TardisOverview from '@/features/tardis/pages/TardisOverview'
 import AdventureOverview from '@/features/adventure/pages/AdventureOverview'
 import EnemyOverview from '@/features/enemy/pages/EnemyOverview'
+import RuleOverview from '@/features/rule/pages/RuleOverview'
 
 function BookletOverview() {
     const booklet = getBookletData() as Booklet[]
@@ -15,6 +16,10 @@ function BookletOverview() {
     }
 
     const tabItems: TabItem[] = [
+        {
+            label: 'Rules',
+            content: <RuleOverview />,
+        },
         {
             label: 'TARDIS Manual',
             content: <TardisOverview />,
