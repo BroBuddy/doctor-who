@@ -1,6 +1,6 @@
 import React from 'react'
-import { createBrowserRouter } from 'react-router-dom'
-import App from './App.tsx'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import App from './App'
 
 const Game = React.lazy(() => import('./features/game/pages/Game.tsx'))
 const History = React.lazy(() => import('./pages/History.tsx'))
@@ -20,7 +20,7 @@ const EnemyDetail = React.lazy(
     () => import('./features/enemy/pages/EnemyDetail.tsx')
 )
 
-export const router = createBrowserRouter([
+const router = createBrowserRouter([
     {
         element: <App />,
         children: [
@@ -34,3 +34,7 @@ export const router = createBrowserRouter([
         ],
     },
 ])
+
+export default function AppRouter() {
+    return <RouterProvider router={router} />
+}

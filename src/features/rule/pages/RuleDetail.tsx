@@ -7,16 +7,15 @@ import { useHistory } from '@/hooks/useHistory'
 function RuleDetail() {
     const { tag } = useParams()
     const rule = useMemo(() => getRuleByTag(String(tag)), [tag])
-
-    if (!rule) {
-        return null
-    }
-
     const { addToHistory } = useHistory()
 
     useEffect(() => {
         addToHistory(rule.tag, rule.title)
-    }, [tag])
+    }, [addToHistory, rule])
+
+    if (!rule) {
+        return null
+    }
 
     return (
         <>

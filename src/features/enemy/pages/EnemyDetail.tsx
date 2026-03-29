@@ -11,16 +11,15 @@ import { useHistory } from '@/hooks/useHistory'
 function EnemyDetail() {
     const { tag } = useParams()
     const enemy = useMemo(() => getEnemyByTag(String(tag)), [tag])
-
-    if (!enemy) {
-        return null
-    }
-
     const { addToHistory } = useHistory()
 
     useEffect(() => {
         addToHistory(enemy.tag, enemy.title)
-    }, [tag])
+    }, [addToHistory, enemy])
+
+    if (!enemy) {
+        return null
+    }
 
     const tabItems: TabItem[] = [
         {

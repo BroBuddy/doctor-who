@@ -7,16 +7,15 @@ import { useHistory } from '@/hooks/useHistory'
 function TardisDetail() {
     const { tag } = useParams()
     const tardis = useMemo(() => getTardisByTag(String(tag)), [tag])
-
-    if (!tardis) {
-        return null
-    }
-
     const { addToHistory } = useHistory()
 
     useEffect(() => {
         addToHistory(tardis.tag, tardis.title)
-    }, [tag])
+    }, [addToHistory, tardis])
+
+    if (!tardis) {
+        return null
+    }
 
     return (
         <>

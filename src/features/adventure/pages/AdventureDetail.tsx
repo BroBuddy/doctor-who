@@ -14,16 +14,15 @@ import { useHistory } from '@/hooks/useHistory'
 function AdventureDetail() {
     const { tag } = useParams()
     const adventure = useMemo(() => getAdventureByTag(String(tag)), [tag])
-
-    if (!adventure) {
-        return null
-    }
-
     const { addToHistory } = useHistory()
 
     useEffect(() => {
         addToHistory(adventure.tag, adventure.title)
-    }, [tag])
+    }, [addToHistory, adventure])
+
+    if (!adventure) {
+        return null
+    }
 
     const tabItems: TabItem[] = [
         {
