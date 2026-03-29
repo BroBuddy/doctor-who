@@ -5,9 +5,7 @@ import type { TabItem } from '@/components/Tabs'
 import Tabs from '@/components/Tabs'
 import { getEnemyByTag } from '../services/EnemyService'
 import EnemyView from '../components/EnemyView'
-import EnemyGoals from '../components/EnemyGoals'
-import EnemyEvents from '../components/EnemyEvents'
-import EnemyLairView from '../components/EnemyLairView'
+import EnemyTables from '../components/EnemyTables'
 
 function EnemyDetail() {
     const { tag } = useParams()
@@ -23,16 +21,8 @@ function EnemyDetail() {
             content: <EnemyView enemy={enemy} />,
         },
         {
-            label: 'Goals',
-            content: <EnemyGoals goals={enemy.goals} />,
-        },
-        {
-            label: 'Events',
-            content: <EnemyEvents events={enemy.events} />,
-        },
-        {
-            label: 'Lair',
-            content: <EnemyLairView lair={enemy.lair} />,
+            label: 'Tables',
+            content: <EnemyTables enemy={enemy} />,
         },
     ]
 
