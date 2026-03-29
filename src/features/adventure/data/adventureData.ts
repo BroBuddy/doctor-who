@@ -223,9 +223,15 @@ export const adventureData: Adventure[] = [
                     {
                         roll: '9+',
                         description:
-                            'He joins you as an Ally (Brains 1, Brawn 0, Bravery 1, Charm, Diplomacy, History) – roll for Plot event.',
+                            'He joins you as an Ally – roll for Plot event.',
                     },
                 ],
+                stats: {
+                    brains: 1,
+                    brawn: 0,
+                    bravery: 1,
+                },
+                skills: ['Charm', 'Diplomacy', 'History'],
             },
             {
                 roll: '5',
@@ -245,9 +251,14 @@ export const adventureData: Adventure[] = [
                     {
                         roll: '10+',
                         description:
-                            'He becomes an Ally (Brains 1, Brawn 2, Bravery 2, +1 to Investigate and Find Help Actions).',
+                            'He becomes an Ally (+1 to Investigate and Find Help Actions).',
                     },
                 ],
+                stats: {
+                    brains: 1,
+                    brawn: 2,
+                    bravery: 2,
+                },
             },
             {
                 roll: '6',
@@ -270,9 +281,15 @@ export const adventureData: Adventure[] = [
                     {
                         roll: '10+',
                         description:
-                            'He joins you as an Ally (Brains 2, Brawn 0, Bravery 2, History, +1 to Find Help Actions) – roll for Plot event.',
+                            'He joins you as an Ally (+1 to Find Help Actions) – roll for Plot event.',
                     },
                 ],
+                stats: {
+                    brains: 2,
+                    brawn: 0,
+                    bravery: 2,
+                },
+                skills: ['History'],
             },
             {
                 roll: '7',
@@ -296,9 +313,15 @@ export const adventureData: Adventure[] = [
                     {
                         roll: '9+',
                         description:
-                            'Either becomes your Ally (Brains 1, Brawn 0, Bravery 1, Stealth, roll for a Plot event) or takes you to meet Louisa James.',
+                            'Either becomes your Ally (Roll for a Plot event) or takes you to meet Louisa James.',
                     },
                 ],
+                stats: {
+                    brains: 1,
+                    brawn: 0,
+                    bravery: 1,
+                },
+                skills: ['Stealth'],
             },
             {
                 roll: '8',
@@ -343,21 +366,39 @@ export const adventureData: Adventure[] = [
                     {
                         roll: '10+',
                         description:
-                            'He either becomes an Ally (Brains 0, Brawn 1, Bravery 1, Stealth, +1 to Move Actions) or takes you to meet Madame Dumaris.',
+                            'He either becomes an Ally (+1 to Move Actions) or takes you to meet Madame Dumaris.',
                     },
                 ],
+                stats: {
+                    brains: 0,
+                    brawn: 1,
+                    bravery: 1,
+                },
+                skills: ['Stealth'],
             },
             {
                 roll: '10',
                 name: 'Reporter',
                 description:
-                    'An intrepid journalist arriving at Stourford after the latest story. If you make a Charm 8 roll, the reporter becomes an Ally (Brains 2, Brawn 1, Bravery 1, Aware, Charm, Running) – roll for a Plot event.',
+                    'An intrepid journalist arriving at Stourford after the latest story. If you make a Charm 8 roll, the reporter becomes an Ally – roll for a Plot event.',
+                stats: {
+                    brains: 2,
+                    brawn: 1,
+                    bravery: 1,
+                },
+                skills: ['Aware', 'Charm', 'Running'],
             },
             {
                 roll: '11-12',
                 name: 'Archaeologist',
                 description:
-                    'A scientist who is working on the local dig. If you make a Charm 9 roll (adding Science), the archaeologist becomes your Ally (Brains 2, Brawn 1, Bravery 1, History, Science) – see the Relic Plot event.',
+                    'A scientist who is working on the local dig. If you make a Charm 9 roll (adding Science), the archaeologist becomes your Ally – see the Relic Plot event.',
+                stats: {
+                    brains: 2,
+                    brawn: 1,
+                    bravery: 1,
+                },
+                skills: ['History', 'Science'],
             },
         ],
         specials: [

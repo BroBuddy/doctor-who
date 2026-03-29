@@ -69,6 +69,7 @@ export type AdventureCharacter = {
     name: string
     description: string
     rolls?: Rolls[]
+    stats?: Stats
     skills?: string[]
     infomation?: string
 }
@@ -80,7 +81,7 @@ export type AdventureSpecial = {
     description: string
     information: string
     stats: Stats
-    skills?: string[]
+    skills: string[]
 }
 
 export type Stats = {
