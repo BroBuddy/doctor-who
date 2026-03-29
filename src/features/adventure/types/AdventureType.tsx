@@ -3,6 +3,7 @@ export type AdventureEra =
     | 'Future Era'
     | 'Medieval Era'
     | 'Victorian Era'
+    | 'Twilight Era'
 
 export type AdventureType = 'Holiday' | 'Mission' | 'Investigation' | 'Combat'
 

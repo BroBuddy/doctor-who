@@ -11,7 +11,7 @@ const AdventureSpecials: React.FC<Props> = ({ specials }) => {
     if (!specials) {
         return null
     }
-
+    console.log(specials)
     const items = specials.map((character: AdventureSpecial) => ({
         id: String(character.id),
         label: character.name,
@@ -21,7 +21,7 @@ const AdventureSpecials: React.FC<Props> = ({ specials }) => {
                 <p>{character.information}</p>
 
                 <img
-                    src={`/images/characters/${character.image}.jpg`}
+                    src={`/images/characters/${character.image}.png`}
                     alt={character.name}
                 />
 

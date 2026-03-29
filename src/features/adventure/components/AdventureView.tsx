@@ -10,7 +10,7 @@ const AdventureView: React.FC<Props> = ({ adventure }) => {
     return (
         <>
             <img
-                src={`/images/adventures/${adventure.tag}.jpg`}
+                src={`/images/adventures/${adventure.tag}.png`}
                 alt={adventure.title}
             />
 
