@@ -17,6 +17,9 @@ const AdventureSpecials: React.FC<Props> = ({ specials }) => {
         label: character.name,
         children: (
             <>
+                <p>{character.description}</p>
+                <p>{character.information}</p>
+
                 <img
                     src={`/images/characters/${character.image}.jpg`}
                     alt={character.name}
@@ -46,9 +49,6 @@ const AdventureSpecials: React.FC<Props> = ({ specials }) => {
                         ))}
                     </p>
                 )}
-
-                <p>{character.description}</p>
-                <p>{character.information}</p>
             </>
         ),
     }))
