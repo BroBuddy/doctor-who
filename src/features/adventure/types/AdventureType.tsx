@@ -69,22 +69,16 @@ export type AdventureCharacter = {
     name: string
     description: string
     rolls?: Rolls[]
-    ally?: Ally
-    stats?: Stats
     skills?: string[]
     infomation?: string
 }
 
 export type AdventureSpecial = {
     id: number
-    description: string
-    information: string
-    ally: Ally
-}
-
-export type Ally = {
     image?: string
     name: string
+    description: string
+    information: string
     stats: Stats
     skills?: string[]
 }

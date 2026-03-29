@@ -24,14 +24,16 @@ const AdventureLocations: React.FC<Props> = ({ locations }) => {
 
                 <p>{item.description}</p>
 
-                <p>Encounter ({item.encounter}):</p>
+                <p>
+                    <strong>Encounter ({item.encounter}):</strong>
+                </p>
 
                 {item.rolls && (
                     <ul className="mb-3">
-                        {item.rolls.map((roll: Rolls, i: number) => (
-                            <li key={i}>
-                                <strong className="mr-1">{roll.roll}:</strong>
-                                <span>{roll.description}</span>
+                        {item.rolls.map((item: Rolls) => (
+                            <li key={item.roll}>
+                                <strong className="mr-1">{item.roll}:</strong>
+                                <span>{item.description}</span>
                             </li>
                         ))}
                     </ul>

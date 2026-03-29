@@ -26,7 +26,7 @@ export function Accordion({ items }: AccordionProps) {
                     <div key={item.id} className={`${isOpen ? 'open' : ''}`}>
                         <div
                             className={`flex justify-between rounded pointer px-2 py-1 mb-1 ${
-                                isOpen ? 'bg-purple' : 'bg-light-grey'
+                                isOpen ? 'bg-purple' : 'bg-white'
                             }`}
                             onClick={() => toggle(item.id)}
                             aria-expanded={isOpen}
@@ -47,7 +47,7 @@ export function Accordion({ items }: AccordionProps) {
                             </span>
                         </div>
 
-                        {isOpen && <div>{item.children}</div>}
+                        {isOpen && <div className="px-2">{item.children}</div>}
                     </div>
                 )
             })}
