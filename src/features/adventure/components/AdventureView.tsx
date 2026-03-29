@@ -16,8 +16,8 @@ const AdventureView: React.FC<Props> = ({ adventure }) => {
 
             <p>
                 <Badge icon="🕒" text={String(adventure.year)} />
-                <Badge icon="🌀" text={`Tardis ${adventure.tardis}`} />
                 <Badge icon="🌍" text={adventure.era} />
+                <Badge icon="🌀" text={`Tardis ${adventure.tardis}`} />
             </p>
 
             {adventure.stats && (

@@ -4,8 +4,15 @@ export type AdventureEra =
     | 'Medieval Era'
     | 'Victorian Era'
     | 'Twilight Era'
+    | 'Renaissance Era'
+    | 'Colonial Era'
 
-export type AdventureType = 'Holiday' | 'Mission' | 'Investigation' | 'Combat'
+export type AdventureType =
+    | 'Holiday'
+    | 'Mission'
+    | 'Investigation'
+    | 'Combat'
+    | 'Wilderness'
 
 export type Adventure = {
     id: number
@@ -81,8 +88,8 @@ export type AdventureSpecial = {
     name: string
     description: string
     information: string
-    stats: Stats
-    skills: string[]
+    stats?: Stats
+    skills?: string[]
 }
 
 export type Stats = {

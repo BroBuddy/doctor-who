@@ -11,7 +11,7 @@ const AdventureSpecials: React.FC<Props> = ({ specials }) => {
     if (!specials) {
         return null
     }
-    console.log(specials)
+
     const items = specials.map((character: AdventureSpecial) => ({
         id: String(character.id),
         label: character.name,
@@ -20,10 +20,12 @@ const AdventureSpecials: React.FC<Props> = ({ specials }) => {
                 <p>{character.description}</p>
                 <p>{character.information}</p>
 
-                <img
-                    src={`/images/characters/${character.image}.png`}
-                    alt={character.name}
-                />
+                {character.image && (
+                    <img
+                        src={`/images/characters/${character.image}.png`}
+                        alt={character.name}
+                    />
+                )}
 
                 {character.stats && (
                     <p>
@@ -56,7 +58,7 @@ const AdventureSpecials: React.FC<Props> = ({ specials }) => {
     return (
         <>
             <p className="mb-2">
-                <strong>Specials</strong>
+                <strong>Specials:</strong>
             </p>
 
             <Accordion items={items} />
