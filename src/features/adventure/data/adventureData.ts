@@ -30,18 +30,16 @@ export const adventureData: Adventure[] = [
                 name: 'Archaeological Dig',
                 tags: ['Dark', 'Move 8'],
                 description:
-                    'A recently excavated site that tunnels into a hillside a mile outside Stourford and said to be the burial site of a Saxon warrior. The discovery was not popular with the villagers. Add +2 to Investigate Actions here. You may Study here. Take a -1 penalty to any Charm rolls with ‘local’ Characters after visiting here.',
-                encounter: {
-                    dice: 'D6, +1 to roll if Discover Phase',
-                    table: [
-                        { roll: '1', name: 'Enemy Lair' },
-                        { roll: '2', name: 'Enemy encounter' },
-                        { roll: '3', name: 'Incident' },
-                        { roll: '4-5', name: 'Archaeologist' },
-                        { roll: '6', name: 'Relic' },
-                        { roll: '7', name: 'None' },
-                    ],
-                },
+                    "A recently excavated site that tunnels into a hillside a mile outside Stourford and said to be the burial site of a Saxon warrior. The discovery was not popular with the villagers. Add +2 to Investigate Actions here. You may Study here. Take a -1 penalty to any Charm rolls with 'local' Characters after visiting here.",
+                encounter: 'D6, +1 to roll if Discover Phase',
+                rolls: [
+                    { roll: '1', description: 'Enemy Lair' },
+                    { roll: '2', description: 'Enemy encounter' },
+                    { roll: '3', description: 'Incident' },
+                    { roll: '4-5', description: 'Archaeologist' },
+                    { roll: '6', description: 'Relic' },
+                    { roll: '7', description: 'None' },
+                ],
             },
             {
                 roll: '2',
@@ -49,49 +47,42 @@ export const adventureData: Adventure[] = [
                 tags: ['Move 6'],
                 description:
                     'A lovely local inn where the sounds of talking and laughing are mixed with the clink of glasses and the inviting smells of hot food. Add +1 to (Charm) Seek Information Actions and +1 to Relax Actions but you may not Investigate here.',
-                encounter: {
-                    dice: 'D6',
-                    table: [
-                        { roll: '1', name: 'Incident' },
-                        {
-                            roll: '2+',
-                            name: 'Character Event / Special',
-                            description:
-                                'You can spend 1 Luck to have a Character event, spend 2 Luck to meet Louisa James or Madame Dumaris (Special Characters), or attempt a Charm 8 roll to have a Plot event (each once only).',
-                        },
-                    ],
-                },
+                encounter: 'D6',
+                rolls: [
+                    { roll: '1', description: 'Incident' },
+                    {
+                        roll: '2+',
+                        description:
+                            'You can spend 1 Luck to have a Character event, spend 2 Luck to meet Louisa James or Madame Dumaris (Special Characters), or attempt a Charm 8 roll to have a Plot event (each once only).',
+                    },
+                ],
             },
             {
                 roll: '3',
                 name: 'Farm',
                 tags: ['Move 7'],
                 description:
-                    'A rustic old farmhouse surrounded by stables and sheds with a battered tractor sitting close to the gate. The bark of a dog can be heard from a barn. Add +1 to Investigate Actions here. If you make a Charm 7 roll, you are invited inside by the farmer’s wife – make an immediate Relax Action (Discover Phase) or Seek Information Action (Dilemma Phase).',
-                encounter: {
-                    dice: 'D6',
-                    table: [
-                        { roll: '1-2', name: 'Incident' },
-                        { roll: '3-4', name: 'None' },
-                        { roll: '5-6', name: 'Farmer' },
-                    ],
-                },
+                    "A rustic old farmhouse surrounded by stables and sheds with a battered tractor sitting close to the gate. The bark of a dog can be heard from a barn. Add +1 to Investigate Actions here. If you make a Charm 7 roll, you are invited inside by the farmer's wife – make an immediate Relax Action (Discover Phase) or Seek Information Action (Dilemma Phase).",
+                encounter: 'D6',
+                rolls: [
+                    { roll: '1-2', description: 'Incident' },
+                    { roll: '3-4', description: 'None' },
+                    { roll: '5-6', description: 'Farmer' },
+                ],
             },
             {
                 roll: '4',
                 name: 'Post Office',
                 tags: ['Move 6'],
                 description:
-                    'This quaint little shop in the centre of Stourford is run by a very friendly and efficient postmistress who makes everyone’s business her business. Add +2 to Seek Information Actions and +1 to Enemy Action rolls here. You may not Explore here. You may spend 2 Luck to meet Louisa James or Madame Dumaris (Special Characters) or have a Plot event.',
-                encounter: {
-                    dice: 'D6',
-                    table: [
-                        { roll: '1-2', name: 'None' },
-                        { roll: '3', name: 'Incident' },
-                        { roll: '4-5', name: 'Postmistress' },
-                        { roll: '6', name: 'Character' },
-                    ],
-                },
+                    "This quaint little shop in the centre of Stourford is run by a very friendly and efficient postmistress who makes everyone's business her business. Add +2 to Seek Information Actions and +1 to Enemy Action rolls here. You may not Explore here. You may spend 2 Luck to meet Louisa James or Madame Dumaris (Special Characters) or have a Plot event.",
+                encounter: 'D6',
+                rolls: [
+                    { roll: '1-2', description: 'None' },
+                    { roll: '3', description: 'Incident' },
+                    { roll: '4-5', description: 'Postmistress' },
+                    { roll: '6', description: 'Character' },
+                ],
             },
             {
                 roll: '5',
@@ -99,26 +90,26 @@ export const adventureData: Adventure[] = [
                 tags: ['Move 7'],
                 description:
                     'A magnificent old house and residence of the local gentry that is set in some lovely tended grounds with a vintage car sat on the drive. Add +1 to Investigate and Plan Actions here.',
-                encounter: {
-                    dice: 'D6, add Diplomacy',
-                    table: [
-                        {
-                            roll: '1-2',
-                            name: 'Butler calls a Constable',
-                            description: '-2 to Charm roll',
-                        },
-                        { roll: '3', name: 'Nobody at home – no event' },
-                        {
-                            roll: '4',
-                            name: 'Tea with the gentry – roll for a Plot event',
-                        },
-                        { roll: '5', name: 'Local Gentry' },
-                        {
-                            roll: '6+',
-                            name: 'Discover locked attic (+2 Knowledge) OR secret cellar (Enemy Lair – Dilemma or Defeat Phase only)',
-                        },
-                    ],
-                },
+                encounter: 'D6, add Diplomacy',
+                rolls: [
+                    {
+                        roll: '1-2',
+                        description:
+                            'Butler calls a Constable (-2 to Charm roll)',
+                    },
+                    { roll: '3', description: 'Nobody at home – no event' },
+                    {
+                        roll: '4',
+                        description:
+                            'Tea with the gentry – roll for a Plot event',
+                    },
+                    { roll: '5', description: 'Local Gentry' },
+                    {
+                        roll: '6+',
+                        description:
+                            'Discover locked attic (+2 Knowledge) OR secret cellar (Enemy Lair – Dilemma or Defeat Phase only)',
+                    },
+                ],
             },
             {
                 roll: '6',
@@ -126,22 +117,22 @@ export const adventureData: Adventure[] = [
                 tags: ['Move 6'],
                 description:
                     'A lovely country stone church with beautiful stained glass windows that is surrounded by a well-kept graveyard. But does it contain hidden secrets? Add +1 to Research (History) Actions here.',
-                encounter: {
-                    dice: 'D6, +1 if Discover Phase',
-                    table: [
-                        { roll: '1', name: 'Enemy encounter' },
-                        {
-                            roll: '2',
-                            name: 'Secret Passage - you may automatically Move to a random Location if you wish without using an Action',
-                        },
-                        { roll: '3-4', name: 'None' },
-                        {
-                            roll: '5',
-                            name: 'Dusty records – make a History 8 roll to gain +1 Knowledge',
-                        },
-                        { roll: '6+', name: 'Vicar' },
-                    ],
-                },
+                encounter: 'D6, +1 if Discover Phase',
+                rolls: [
+                    { roll: '1', description: 'Enemy encounter' },
+                    {
+                        roll: '2',
+                        description:
+                            'Secret Passage - you may automatically Move to a random Location if you wish without using an Action',
+                    },
+                    { roll: '3-4', description: 'None' },
+                    {
+                        roll: '5',
+                        description:
+                            'Dusty records – make a History 8 roll to gain +1 Knowledge',
+                    },
+                    { roll: '6+', description: 'Vicar' },
+                ],
             },
             {
                 roll: '7',
@@ -149,16 +140,14 @@ export const adventureData: Adventure[] = [
                 tags: ['Exterior', 'Move 2'],
                 description:
                     'You stroll along the beautiful country paths, through the russet leaves strewn on the ground from almost bare trees. A fresh, cool wind gently plays through your clothes. Add +1 to Explore Actions, +2 to Move Actions from here but you may not Investigate, Find Help or Research here.',
-                encounter: {
-                    dice: 'D6, -1 to roll if Night',
-                    table: [
-                        { roll: '0', name: 'Enemy encounter' },
-                        { roll: '1', name: 'Enemy event' },
-                        { roll: '2', name: 'Incident' },
-                        { roll: '3-4', name: 'None' },
-                        { roll: '5-6', name: 'Character event' },
-                    ],
-                },
+                encounter: 'D6, -1 to roll if Night',
+                rolls: [
+                    { roll: '0', description: 'Enemy encounter' },
+                    { roll: '1', description: 'Enemy event' },
+                    { roll: '2', description: 'Incident' },
+                    { roll: '3-4', description: 'None' },
+                    { roll: '5-6', description: 'Character event' },
+                ],
             },
         ],
         plots: [

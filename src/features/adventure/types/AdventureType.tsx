@@ -40,17 +40,13 @@ export type AdventureLocation = {
     name: string
     tags?: string[]
     description: string
-    encounter: Encounter
+    encounter: string
+    rolls: Rolls[]
 }
 
 export type Movement = {
     type: string
     value: number
-}
-
-export type Encounter = {
-    dice: string
-    table: Rolls[]
 }
 
 export type Rolls = {
