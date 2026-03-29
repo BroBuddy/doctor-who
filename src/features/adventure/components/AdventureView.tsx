@@ -55,13 +55,14 @@ const AdventureView: React.FC<Props> = ({ adventure }) => {
                         <strong>Enemy</strong> (Roll {adventure.enemy.dice}):
                     </p>
 
-                    {adventure.enemy.table.map((item: Rolls, index: number) => (
-                        <RollItem
-                            key={index}
-                            roll={item.roll}
-                            name={item.name!}
-                        ></RollItem>
-                    ))}
+                    <ul>
+                        {adventure.enemy.table.map((item: Rolls) => (
+                            <li key={item.roll}>
+                                <strong className="mr-1">{item.roll}:</strong>
+                                <span>{item.name}</span>
+                            </li>
+                        ))}
+                    </ul>
                 </>
             )}
         </>
