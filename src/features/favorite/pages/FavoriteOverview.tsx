@@ -15,7 +15,7 @@ function FavoriteOverview() {
                 <div>
                     <Headline>Your Favorites</Headline>
 
-                    <ul className="space-y-1">
+                    <ul>
                         {userFavorites.map((item: Favorite) => (
                             <li
                                 key={item.tag}
@@ -36,7 +36,7 @@ function FavoriteOverview() {
             )}
 
             <div>
-                <Headline>Helper</Headline>
+                <Headline>Frequently Used</Headline>
 
                 <ul>
                     {lockedFavorites.map((item: Favorite) => (

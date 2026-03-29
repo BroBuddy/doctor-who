@@ -6,35 +6,43 @@ function History() {
     const history = JSON.parse(localStorage.getItem('doctor-who-game') || '[]')
 
     return (
-        <>
+        <div>
             <Headline>History</Headline>
 
-            <>
-                {history.length === 0 && <p>No history yet.</p>}
-
+            {history && (
                 <ul>
                     {history.map(
                         (
                             item: { tag: string; title: string },
                             index: number
                         ) => (
-                            <li key={index}>
+                            <li
+                                key={index}
+                                className="flex justify-between p-1 items-center"
+                            >
                                 <Link
                                     to={`/${getPrefixByTag(item.tag)}/${item.tag}`}
+                                    className="w-5 text-md"
                                 >
-                                    <strong className="mr-1">
-                                        {item.tag}:
-                                    </strong>
-                                    <span className="text-dark-grey">
-                                        {item.title}
-                                    </span>
+                                    {item.tag}
                                 </Link>
+
+                                <span className="text-dark-grey flex-1 px-2">
+                                    {item.title}
+                                </span>
+
+                                <span
+                                    className="bg-dark-grey rounded p-1 mr-1"
+                                    title="History"
+                                >
+                                    ⏳
+                                </span>
                             </li>
                         )
                     )}
                 </ul>
-            </>
-        </>
+            )}
+        </div>
     )
 }
 
