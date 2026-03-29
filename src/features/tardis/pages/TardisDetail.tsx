@@ -1,7 +1,8 @@
-import { useMemo } from 'react'
+import { useEffect, useMemo } from 'react'
 import { useParams } from 'react-router-dom'
 import { Headline } from '@/components/Headline'
 import { getTardisByTag } from '../services/TardisService'
+import { useHistory } from '@/hooks/useHistory'
 
 function TardisDetail() {
     const { tag } = useParams()
@@ -10,6 +11,12 @@ function TardisDetail() {
     if (!tardis) {
         return null
     }
+
+    const { addToHistory } = useHistory()
+
+    useEffect(() => {
+        addToHistory(tardis.tag, tardis.title)
+    }, [tag])
 
     return (
         <>

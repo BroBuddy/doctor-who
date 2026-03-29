@@ -9,6 +9,7 @@ type Links = {
 const links: Links[] = [
     { to: '/', label: 'Game' },
     { to: '/booklet', label: 'Booklets' },
+    { to: '/history', label: 'History' },
 ]
 
 const MobileNav = () => {

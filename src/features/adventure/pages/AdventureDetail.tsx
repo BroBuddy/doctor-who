@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useEffect, useMemo } from 'react'
 import { useParams } from 'react-router-dom'
 import { getAdventureByTag } from '../services/AdventureService'
 import { Headline } from '@/components/Headline'
@@ -9,6 +9,7 @@ import AdventureLocations from '../components/AdventureLocations'
 import AdventurePlots from '../components/AdventurePlots'
 import AdventureCharacters from '../components/AdventureCharacters'
 import AdventureSpecials from '../components/AdventureSpecials'
+import { useHistory } from '@/hooks/useHistory'
 
 function AdventureDetail() {
     const { tag } = useParams()
@@ -17,6 +18,12 @@ function AdventureDetail() {
     if (!adventure) {
         return null
     }
+
+    const { addToHistory } = useHistory()
+
+    useEffect(() => {
+        addToHistory(adventure.tag, adventure.title)
+    }, [tag])
 
     const tabItems: TabItem[] = [
         {
