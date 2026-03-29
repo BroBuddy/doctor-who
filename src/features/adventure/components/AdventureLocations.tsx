@@ -1,9 +1,10 @@
 import React from 'react'
-import type { Location } from '../types/AdventureType'
+import type { AdventureLocation } from '../types/AdventureType'
+import { Accordion } from '@/components/Accordion'
 import Badge from '@/components/Badge'
 
 type Props = {
-    locations: Location[]
+    locations: AdventureLocation[]
 }
 
 const AdventureLocations: React.FC<Props> = ({ locations }) => {
@@ -11,20 +12,27 @@ const AdventureLocations: React.FC<Props> = ({ locations }) => {
         return null
     }
 
+    const items = locations.map((item: AdventureLocation, index: number) => ({
+        id: String(index),
+        label: `${item.roll} – ${item.name}`,
+        children: (
+            <>
+                {item.tags &&
+                    item.tags.map((item: string, index: number) => (
+                        <Badge key={index} text={item} variant="light" />
+                    ))}
+                <p>{item.description}</p>
+            </>
+        ),
+    }))
+
     return (
         <>
             <p className="mb-2">
                 <strong>Locations</strong>:
             </p>
-            {locations.map((location: Location, index: number) => (
-                <>
-                    <p key={location.tag} className="mb-2">
-                        <Badge text={`🎲 ${index + 1}`} />
-                        <Badge text={location.name} variant="light" />
-                    </p>
-                    <p>{location.description}</p>
-                </>
-            ))}
+
+            <Accordion items={items} />
         </>
     )
 }

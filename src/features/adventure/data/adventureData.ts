@@ -26,10 +26,9 @@ export const adventureData: Adventure[] = [
         },
         locations: [
             {
-                tag: 'archaeological-dig',
+                roll: '1',
                 name: 'Archaeological Dig',
-                tags: ['Dark'],
-                movement: { type: 'Move', value: 8 },
+                tags: ['Dark', 'Move 8'],
                 description:
                     'A recently excavated site that tunnels into a hillside a mile outside Stourford and said to be the burial site of a Saxon warrior. The discovery was not popular with the villagers. Add +2 to Investigate Actions here. You may Study here. Take a -1 penalty to any Charm rolls with ‘local’ Characters after visiting here.',
                 encounter: {
@@ -45,9 +44,9 @@ export const adventureData: Adventure[] = [
                 },
             },
             {
-                tag: 'village-inn',
+                roll: '2',
                 name: 'Village Inn',
-                movement: { type: 'Move', value: 6 },
+                tags: ['Move 6'],
                 description:
                     'A lovely local inn where the sounds of talking and laughing are mixed with the clink of glasses and the inviting smells of hot food. Add +1 to (Charm) Seek Information Actions and +1 to Relax Actions but you may not Investigate here.',
                 encounter: {
@@ -64,9 +63,9 @@ export const adventureData: Adventure[] = [
                 },
             },
             {
-                tag: 'farm',
+                roll: '3',
                 name: 'Farm',
-                movement: { type: 'Move', value: 7 },
+                tags: ['Move 7'],
                 description:
                     'A rustic old farmhouse surrounded by stables and sheds with a battered tractor sitting close to the gate. The bark of a dog can be heard from a barn. Add +1 to Investigate Actions here. If you make a Charm 7 roll, you are invited inside by the farmer’s wife – make an immediate Relax Action (Discover Phase) or Seek Information Action (Dilemma Phase).',
                 encounter: {
@@ -79,9 +78,9 @@ export const adventureData: Adventure[] = [
                 },
             },
             {
-                tag: 'post-office',
+                roll: '4',
                 name: 'Post Office',
-                movement: { type: 'Move', value: 6 },
+                tags: ['Move 6'],
                 description:
                     'This quaint little shop in the centre of Stourford is run by a very friendly and efficient postmistress who makes everyone’s business her business. Add +2 to Seek Information Actions and +1 to Enemy Action rolls here. You may not Explore here. You may spend 2 Luck to meet Louisa James or Madame Dumaris (Special Characters) or have a Plot event.',
                 encounter: {
@@ -95,9 +94,9 @@ export const adventureData: Adventure[] = [
                 },
             },
             {
-                tag: 'manor-house',
+                roll: '5',
                 name: 'Manor House',
-                movement: { type: 'Move', value: 7 },
+                tags: ['Move 7'],
                 description:
                     'A magnificent old house and residence of the local gentry that is set in some lovely tended grounds with a vintage car sat on the drive. Add +1 to Investigate and Plan Actions here.',
                 encounter: {
@@ -122,9 +121,9 @@ export const adventureData: Adventure[] = [
                 },
             },
             {
-                tag: 'old-church',
+                roll: '6',
                 name: 'Old Church',
-                movement: { type: 'Move', value: 6 },
+                tags: ['Move 6'],
                 description:
                     'A lovely country stone church with beautiful stained glass windows that is surrounded by a well-kept graveyard. But does it contain hidden secrets? Add +1 to Research (History) Actions here.',
                 encounter: {
@@ -145,10 +144,9 @@ export const adventureData: Adventure[] = [
                 },
             },
             {
-                tag: 'country-lanes',
+                roll: '7',
                 name: 'Country Lanes',
-                tags: ['Exterior'],
-                movement: { type: 'Move', value: 2 },
+                tags: ['Exterior', 'Move 2'],
                 description:
                     'You stroll along the beautiful country paths, through the russet leaves strewn on the ground from almost bare trees. A fresh, cool wind gently plays through your clothes. Add +1 to Explore Actions, +2 to Move Actions from here but you may not Investigate, Find Help or Research here.',
                 encounter: {
@@ -163,65 +161,62 @@ export const adventureData: Adventure[] = [
                 },
             },
         ],
-        plots: {
-            dice: '2D6',
-            table: [
-                {
-                    roll: '2-4',
-                    name: 'Relic',
-                    description:
-                        'A mysterious artefact has been discovered – could it be important to the plans of the Enemy? Make a Science 7 roll and a History 7 roll, gaining +1 Knowledge per success. Add +1 Danger.',
-                },
-                {
-                    roll: '5',
-                    name: 'Body in the Library',
-                    description:
-                        'Someone has been found murdered nearby and a corpse discovered. Roll 1D6 and if result is a 1, discard random Ally. Gain +1 Knowledge (or +2 Knowledge with a successful Medicine 7 roll).',
-                },
-                {
-                    roll: '6',
-                    name: 'Missing Villagers',
-                    description:
-                        'Some people have been recently vanishing from the village in mysterious circumstances. Gain +1 Knowledge. Also gain 1 Luck if you have a native Character with you.',
-                },
-                {
-                    roll: '7',
-                    name: 'Local Legend',
-                    description:
-                        'You learn about a strange, mysterious legend of the village – the Stourford Wraith. Is it just superstition or might it have a connection to recent events? Gain +1 Knowledge (or +2 Knowledge with a successful History 8 roll).',
-                },
-                {
-                    roll: '8',
-                    name: 'Halloween',
-                    description:
-                        'Tonight marks the occult festival - could it be linked to the Enemy plans? Gain +1 Knowledge (or +2 Knowledge if with a native Character). At the start of the Defeat Phase, add +1 Danger.',
-                },
-                {
-                    roll: '9',
-                    name: 'Lights in the Sky',
-                    description:
-                        'Strange lights have been seen by locals in the night sky recently. Could it relate to something sinister? Make a successful Brains 10 roll to reveal the Enemy, or gain +1 Knowledge if you fail.',
-                },
-                {
-                    roll: '10',
-                    name: 'Time Fissure',
-                    description:
-                        'You learn that the village lies across a crack in Time. Add +1 Danger if a Temporal Enemy is revealed. Make a successful Brains 12 roll to gain +1 Knowledge (+2 Knowledge if Brains 15 roll).',
-                },
-                {
-                    roll: '11-12',
-                    name: 'Unusual Activity',
-                    description:
-                        'You hear about strange events happening nearby. Roll 1D6: 1-4: Roll for random Location - gain +1 Knowledge if you go there, then roll 1D6 and if 1-2 see Enemy Lair (roll Enemy if Discover Phase); 5-6: Ruins (Move 8) a mile outside the village, remains of an old castle destroyed centuries ago. Add +1 to Investigate Actions here but any Ally with Bravery 1 or less will not enter if Night.',
-                },
-            ],
-        },
+        plots: [
+            {
+                roll: '2-4',
+                name: 'Relic',
+                description:
+                    'A mysterious artefact has been discovered – could it be important to the plans of the Enemy? Make a Science 7 roll and a History 7 roll, gaining +1 Knowledge per success. Add +1 Danger.',
+            },
+            {
+                roll: '5',
+                name: 'Body in the Library',
+                description:
+                    'Someone has been found murdered nearby and a corpse discovered. Roll 1D6 and if result is a 1, discard random Ally. Gain +1 Knowledge (or +2 Knowledge with a successful Medicine 7 roll).',
+            },
+            {
+                roll: '6',
+                name: 'Missing Villagers',
+                description:
+                    'Some people have been recently vanishing from the village in mysterious circumstances. Gain +1 Knowledge. Also gain 1 Luck if you have a native Character with you.',
+            },
+            {
+                roll: '7',
+                name: 'Local Legend',
+                description:
+                    'You learn about a strange, mysterious legend of the village – the Stourford Wraith. Is it just superstition or might it have a connection to recent events? Gain +1 Knowledge (or +2 Knowledge with a successful History 8 roll).',
+            },
+            {
+                roll: '8',
+                name: 'Halloween',
+                description:
+                    'Tonight marks the occult festival - could it be linked to the Enemy plans? Gain +1 Knowledge (or +2 Knowledge if with a native Character). At the start of the Defeat Phase, add +1 Danger.',
+            },
+            {
+                roll: '9',
+                name: 'Lights in the Sky',
+                description:
+                    'Strange lights have been seen by locals in the night sky recently. Could it relate to something sinister? Make a successful Brains 10 roll to reveal the Enemy, or gain +1 Knowledge if you fail.',
+            },
+            {
+                roll: '10',
+                name: 'Time Fissure',
+                description:
+                    'You learn that the village lies across a crack in Time. Add +1 Danger if a Temporal Enemy is revealed. Make a successful Brains 12 roll to gain +1 Knowledge (+2 Knowledge if Brains 15 roll).',
+            },
+            {
+                roll: '11-12',
+                name: 'Unusual Activity',
+                description:
+                    'You hear about strange events happening nearby. Roll 1D6: 1-4: Roll for random Location - gain +1 Knowledge if you go there, then roll 1D6 and if 1-2 see Enemy Lair (roll Enemy if Discover Phase); 5-6: Ruins (Move 8) a mile outside the village, remains of an old castle destroyed centuries ago. Add +1 to Investigate Actions here but any Ally with Bravery 1 or less will not enter if Night.',
+            },
+        ],
         characters: [
             {
                 roll: '2-4',
                 name: 'Local Gentry',
                 description: 'An eccentric English gent. Make a Charm roll:',
-                charmRoll: [
+                rolls: [
                     {
                         roll: '2-4',
                         description:
@@ -248,7 +243,7 @@ export const adventureData: Adventure[] = [
                 name: 'Constable',
                 description:
                     'A local bobby takes an interest in you. Make a Charm roll (-1 per Stealth, +3 if Danger 10+).',
-                charmRoll: [
+                rolls: [
                     {
                         roll: '2-5',
                         description:
@@ -270,7 +265,7 @@ export const adventureData: Adventure[] = [
                 name: 'Vicar',
                 description:
                     'The local clergy of the parish. Make a Charm roll (adding History).',
-                charmRoll: [
+                rolls: [
                     {
                         roll: '2-3',
                         description: 'He is offended and calls a Constable.',
@@ -295,7 +290,7 @@ export const adventureData: Adventure[] = [
                 name: 'Child',
                 description:
                     'A ten-year old who attends the local primary school. Make a Charm roll:',
-                charmRoll: [
+                rolls: [
                     {
                         roll: '2-4',
                         description: 'Lose 1 Luck.',
@@ -321,7 +316,7 @@ export const adventureData: Adventure[] = [
                 name: 'Postmistress',
                 description:
                     'Running the Post Office and a local gossip. Make a Charm roll:',
-                charmRoll: [
+                rolls: [
                     {
                         roll: '2-6',
                         description:
@@ -343,7 +338,7 @@ export const adventureData: Adventure[] = [
                 name: 'Farmer',
                 description:
                     'Lived local to Stourford all his life and knows the old ways. Make a Charm roll:',
-                charmRoll: [
+                rolls: [
                     {
                         roll: '2-4',
                         description: 'Has a secret – +1 Danger.',
@@ -376,7 +371,7 @@ export const adventureData: Adventure[] = [
                     'A scientist who is working on the local dig. If you make a Charm 9 roll (adding Science), the archaeologist becomes your Ally (Brains 2, Brawn 1, Bravery 1, History, Science) – see the Relic Plot event.',
             },
         ],
-        specialCharacters: [
+        specials: [
             {
                 id: 1,
                 description:

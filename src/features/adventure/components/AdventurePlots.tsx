@@ -1,9 +1,9 @@
 import React from 'react'
-import type { Plots, RollTable } from '../types/AdventureType'
-import RollItem from './RollItem'
+import type { AdventurePlot } from '../types/AdventureType'
+import { Accordion } from '@/components/Accordion'
 
 type Props = {
-    plots: Plots
+    plots: AdventurePlot[]
 }
 
 const AdventurePlots: React.FC<Props> = ({ plots }) => {
@@ -11,18 +11,19 @@ const AdventurePlots: React.FC<Props> = ({ plots }) => {
         return null
     }
 
+    const items = plots.map((item: AdventurePlot, index: number) => ({
+        id: String(index),
+        label: `${item.roll} – ${item.name}`,
+        children: <p>{item.description}</p>,
+    }))
+
     return (
         <>
             <p className="mb-2">
-                <strong>Plots</strong> (Roll {plots.dice}):
+                <strong>Plots</strong> (Roll 2D6):
             </p>
-            {plots.table.map((item: RollTable, index: number) => (
-                <div key={index} className="mb-2">
-                    <RollItem key={index} roll={item.roll} name={item.name!}>
-                        <p>{item.description}</p>
-                    </RollItem>
-                </div>
-            ))}
+
+            <Accordion items={items} />
         </>
     )
 }

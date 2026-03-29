@@ -1,10 +1,10 @@
-export type Era =
+export type AdventureEra =
     | 'World War Era'
     | 'Future Era'
     | 'Medieval Era'
     | 'Victorian Era'
 
-export type Type = 'Holiday' | 'Mission' | 'Investigation' | 'Combat'
+export type AdventureType = 'Holiday' | 'Mission' | 'Investigation' | 'Combat'
 
 export type Adventure = {
     id: number
@@ -12,16 +12,16 @@ export type Adventure = {
     title: string
     year: number
     tardis: number
-    era: Era
-    type: Type
+    era: AdventureEra
+    type: AdventureType
     description: string
     stats: AdventureStats
     special?: string
-    enemy?: Enemy
-    locations: Location[]
-    plots?: Plots
-    characters?: Characters[]
-    specialCharacters?: Specials[]
+    enemy?: AdventureEnemy
+    locations: AdventureLocation[]
+    plots?: AdventurePlot[]
+    characters?: AdventureCharacter[]
+    specials?: AdventureSpecial[]
 }
 
 export type AdventureStats = {
@@ -30,16 +30,15 @@ export type AdventureStats = {
     vp: number
 }
 
-export type Enemy = {
+export type AdventureEnemy = {
     dice: string
-    table: RollTable[]
+    table: Rolls[]
 }
 
-export type Location = {
-    tag: string
+export type AdventureLocation = {
+    roll: string
     name: string
     tags?: string[]
-    movement: Movement
     description: string
     encounter: Encounter
 }
@@ -51,10 +50,10 @@ export type Movement = {
 
 export type Encounter = {
     dice: string
-    table: RollTable[]
+    table: Rolls[]
 }
 
-export type RollTable = {
+export type Rolls = {
     roll: string
     name?: string
     description?: string
@@ -63,23 +62,24 @@ export type RollTable = {
     skills?: string[]
 }
 
-export type Plots = {
-    dice: string
-    table: RollTable[]
-}
-
-export type Characters = {
+export type AdventurePlot = {
     roll: string
     name: string
     description: string
-    charmRoll?: RollTable[]
+}
+
+export type AdventureCharacter = {
+    roll: string
+    name: string
+    description: string
+    rolls?: Rolls[]
     ally?: Ally
     stats?: Stats
     skills?: string[]
     infomation?: string
 }
 
-export type Specials = {
+export type AdventureSpecial = {
     id: number
     description: string
     information: string

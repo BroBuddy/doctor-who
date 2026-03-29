@@ -1,5 +1,5 @@
 import React from 'react'
-import type { Adventure, RollTable } from '../types/AdventureType'
+import type { Adventure, Rolls } from '../types/AdventureType'
 import Badge from '@/components/Badge'
 import RollItem from './RollItem'
 
@@ -55,15 +55,13 @@ const AdventureView: React.FC<Props> = ({ adventure }) => {
                         <strong>Enemy</strong> (Roll {adventure.enemy.dice}):
                     </p>
 
-                    {adventure.enemy.table.map(
-                        (item: RollTable, index: number) => (
-                            <RollItem
-                                key={index}
-                                roll={item.roll}
-                                name={item.name!}
-                            ></RollItem>
-                        )
-                    )}
+                    {adventure.enemy.table.map((item: Rolls, index: number) => (
+                        <RollItem
+                            key={index}
+                            roll={item.roll}
+                            name={item.name!}
+                        ></RollItem>
+                    ))}
                 </>
             )}
         </>

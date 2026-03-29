@@ -43,10 +43,8 @@ function AdventureDetail() {
         },
         {
             label: 'Specials',
-            content: adventure.specialCharacters && (
-                <AdventureSpecials
-                    specialCharacters={adventure.specialCharacters}
-                />
+            content: adventure.specials && (
+                <AdventureSpecials specials={adventure.specials} />
             ),
         },
     ]

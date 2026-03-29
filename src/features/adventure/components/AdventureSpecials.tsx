@@ -1,19 +1,19 @@
 import React from 'react'
-import type { Specials } from '../types/AdventureType'
+import type { AdventureSpecial } from '../types/AdventureType'
 import AllyCard from '@/components/AllyCard'
 
 type Props = {
-    specialCharacters: Specials[]
+    specials: AdventureSpecial[]
 }
 
-const AdventureSpecials: React.FC<Props> = ({ specialCharacters }) => {
-    if (!specialCharacters) {
+const AdventureSpecials: React.FC<Props> = ({ specials }) => {
+    if (!specials) {
         return null
     }
 
     return (
         <>
-            {specialCharacters.map((character: Specials) => (
+            {specials.map((character: AdventureSpecial) => (
                 <React.Fragment key={character.id}>
                     <p className="mb-1">
                         <strong>{character.ally.name}:</strong>
