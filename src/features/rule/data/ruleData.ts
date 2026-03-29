@@ -485,6 +485,11 @@ export const ruleData: Rule[] = [
         `,
     },
     {
+        tag: 'R014',
+        title: 'Action Tables',
+        description: '',
+    },
+    {
         tag: 'R015',
         title: 'Setback Table',
         description: `

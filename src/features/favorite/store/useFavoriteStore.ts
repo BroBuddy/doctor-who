@@ -7,8 +7,7 @@ const initFavorites: Favorite[] = [
     { tag: 'R008', title: 'Actions in Adventures' },
     { tag: 'R009', title: 'Enemy Action Rolls' },
     { tag: 'R011', title: 'Incidents' },
-    { tag: 'R013', title: 'Skill and Keyword Descriptions' },
-    { tag: 'R017', title: 'Doctor Abilities' },
+    { tag: 'R014', title: 'Action Tables' },
     { tag: 'R018', title: 'Enemy Tables' },
 ]
 

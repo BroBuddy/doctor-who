@@ -10,6 +10,7 @@ const FavoriteOverview = React.lazy(
     () => import('./features/favorite/pages/FavoriteOverview.tsx')
 )
 const History = React.lazy(() => import('./pages/History.tsx'))
+const ActionTables = React.lazy(() => import('./pages/ActionTables.tsx'))
 const RuleDetail = React.lazy(
     () => import('./features/rule/pages/RuleDetail.tsx')
 )
@@ -31,6 +32,7 @@ const router = createBrowserRouter([
             { path: '/booklet', element: <BookletOverview /> },
             { path: '/history', element: <History /> },
             { path: '/favorite', element: <FavoriteOverview /> },
+            { path: '/rule/R014', element: <ActionTables /> },
             { path: '/rule/:tag', element: <RuleDetail /> },
             { path: '/tardis/:tag', element: <TardisDetail /> },
             { path: '/adventure/:tag', element: <AdventureDetail /> },
