@@ -9,8 +9,8 @@ import AdventureLocations from '../components/AdventureLocations'
 import AdventurePlots from '../components/AdventurePlots'
 import AdventureCharacters from '../components/AdventureCharacters'
 import AdventureSpecials from '../components/AdventureSpecials'
-import { useHistory } from '@/hooks/useHistory'
-import AddFavorite from '@/features/favorite/components/AddFavorite'
+import { useHistory } from '@/features/helper/hooks/useHistory'
+import AddFavorite from '@/features/helper/components/AddFavorite'
 
 function AdventureDetail() {
     const { tag } = useParams()

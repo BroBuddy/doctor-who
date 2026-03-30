@@ -6,10 +6,9 @@ const Game = React.lazy(() => import('./features/game/pages/Game.tsx'))
 const BookletOverview = React.lazy(
     () => import('./features/booklet/pages/BookletOverview.tsx')
 )
-const FavoriteOverview = React.lazy(
-    () => import('./features/favorite/pages/FavoriteOverview.tsx')
+const HelperOverview = React.lazy(
+    () => import('./features/helper/pages/HelperOverview.tsx')
 )
-const History = React.lazy(() => import('./pages/History.tsx'))
 const ActionTables = React.lazy(
     () => import('./features/tables/pages/ActionTables.tsx')
 )
@@ -32,8 +31,7 @@ const router = createBrowserRouter([
         children: [
             { path: '/', element: <Game /> },
             { path: '/booklet', element: <BookletOverview /> },
-            { path: '/history', element: <History /> },
-            { path: '/favorite', element: <FavoriteOverview /> },
+            { path: '/helper', element: <HelperOverview /> },
             { path: '/rule/R014', element: <ActionTables /> },
             { path: '/rule/:tag', element: <RuleDetail /> },
             { path: '/tardis/:tag', element: <TardisDetail /> },

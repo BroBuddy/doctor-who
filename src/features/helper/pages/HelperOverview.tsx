@@ -4,6 +4,7 @@ import type { Favorite } from '../types/FavoriteType'
 import { Link } from 'react-router-dom'
 import { getPrefixByTag } from '@/lib/helper'
 import RemoveFavorite from '../components/RemoveFavorite'
+import HelperHistory from '@/features/helper/components/HelperHistory'
 
 function FavoriteOverview() {
     const lockedFavorites = useFavoriteStore((state) => state.lockedFavorites)
@@ -47,7 +48,7 @@ function FavoriteOverview() {
                             >
                                 {item.tag}
                             </Link>
-                            <span className="text-sm">{item.title}</span>
+                            <span className="text-md">{item.title}</span>
                             <span
                                 className="bg-dark-grey rounded p-1 mr-1"
                                 title="Locked Favorite"
@@ -58,6 +59,8 @@ function FavoriteOverview() {
                     ))}
                 </ul>
             </div>
+
+            <HelperHistory />
         </>
     )
 }

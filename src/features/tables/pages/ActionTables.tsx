@@ -1,6 +1,6 @@
 import { Accordion } from '@/components/Accordion'
 import { Headline } from '@/components/Headline'
-import AddFavorite from '@/features/favorite/components/AddFavorite'
+import AddFavorite from '@/features/helper/components/AddFavorite'
 import ChallengeTable from '@/features/tables/components/ChallengeTable'
 import ExploreTable from '@/features/tables/components/ExploreTable'
 import FindHelpTable from '@/features/tables/components/FindHelpTable'

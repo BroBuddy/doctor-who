@@ -2,7 +2,7 @@ import { Headline } from '@/components/Headline'
 import { getPrefixByTag } from '@/lib/helper'
 import { Link } from 'react-router-dom'
 
-function History() {
+function HelperHistory() {
     const history = JSON.parse(localStorage.getItem('doctor-who-game') || '[]')
 
     return (
@@ -46,4 +46,4 @@ function History() {
     )
 }
 
-export default History
+export default HelperHistory
