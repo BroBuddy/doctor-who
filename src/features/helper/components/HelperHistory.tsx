@@ -23,11 +23,11 @@ function HelperHistory() {
                         ) => (
                             <li
                                 key={index}
-                                className="flex justify-between p-1 items-center"
+                                className="flex justify-between items-center"
                             >
                                 <Link
                                     to={`/${getPrefixByTag(item.tag)}/${item.tag}`}
-                                    className="w-5 text-md"
+                                    className="px-2 pr-3 pt-2 pb-2 w-3 bg-light-blue rounded mr-1 mb-1 text-center"
                                 >
                                     {item.tag}
                                 </Link>

@@ -26,9 +26,9 @@ const BookletDetail = ({ type, getData, className }: BookletDetailProps) => {
                         key={item.tag}
                         to={`/${type}/${item.tag}`}
                         title={item.title}
-                        className="pl-1 pr-1 py-1 w-4"
+                        className="px-2 pt-1 pb-2 w-3 bg-light-blue rounded mr-1 mb-1 text-center"
                     >
-                        <span className="text-md">{item.tag}</span>
+                        <span className="text-sm">{item.tag}</span>
                     </Link>
                 ))}
             </div>
