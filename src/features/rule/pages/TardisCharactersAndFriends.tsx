@@ -1,6 +1,4 @@
-import { Accordion } from '@/components/Accordion'
-import Card from '@/components/Card'
-import { Headline } from '@/components/Headline'
+import RulePage from '../components/RulePage'
 
 const sections = [
     {
@@ -139,16 +137,13 @@ const sections = [
 ]
 
 function TardisCharactersAndFriends() {
-    const items = sections.map((section, index) => ({
-        id: String(index),
-        label: section.label,
-        children: section.content,
-    }))
-
     return (
         <>
-            <Headline>R002. TARDIS Characters and Friends</Headline>
-            <Card>
+            <RulePage
+                tag="R002"
+                title="TARDIS Characters and Friends"
+                sections={sections}
+            >
                 <p>
                     A TARDIS Character is either the Doctor or any brave
                     Companion who travels through Time and Space in the TARDIS.
@@ -156,9 +151,7 @@ function TardisCharactersAndFriends() {
                     encounters but who are not quite Companions, such as River
                     Song.
                 </p>
-
-                <Accordion items={items} />
-            </Card>
+            </RulePage>
         </>
     )
 }

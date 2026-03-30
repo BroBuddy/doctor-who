@@ -1,6 +1,4 @@
-import { Accordion } from '@/components/Accordion'
-import Card from '@/components/Card'
-import { Headline } from '@/components/Headline'
+import RulePage from '../components/RulePage'
 
 const sections = [
     {
@@ -192,17 +190,13 @@ const sections = [
 ]
 
 function ActionsInAdventures() {
-    const items = sections.map((section, index) => ({
-        id: String(index),
-        label: section.label,
-        children: section.content,
-    }))
-
     return (
         <>
-            <Headline>R008. Actions in Adventures</Headline>
-
-            <Card>
+            <RulePage
+                tag="R008"
+                title="Actions in Adventures"
+                sections={sections}
+            >
                 <p>
                     Actions are the heart of DWSSG3e. Through Actions you
                     Explore the environment, Investigate the Enemy's plans, Find
@@ -219,9 +213,7 @@ function ActionsInAdventures() {
                     require a 2D6 roll. All Actions must be chosen before any
                     are resolved.
                 </p>
-
-                <Accordion items={items} />
-            </Card>
+            </RulePage>
         </>
     )
 }

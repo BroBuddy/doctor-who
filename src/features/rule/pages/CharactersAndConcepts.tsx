@@ -1,6 +1,4 @@
-import { Accordion } from '@/components/Accordion'
-import Card from '@/components/Card'
-import { Headline } from '@/components/Headline'
+import RulePage from '../components/RulePage'
 
 const sections = [
     {
@@ -175,17 +173,13 @@ const sections = [
 ]
 
 function CharactersAndConcepts() {
-    const items = sections.map((section, index) => ({
-        id: String(index),
-        label: section.label,
-        children: section.content,
-    }))
-
     return (
         <>
-            <Headline>R001. Characters and Concepts</Headline>
-
-            <Card>
+            <RulePage
+                tag="R001"
+                title="Characters and Concepts"
+                sections={sections}
+            >
                 <p>
                     All Characters in DWSSG3e including the Doctor, Companions,
                     Allies and Enemies are described using 3 Qualities and up to
@@ -194,9 +188,7 @@ function CharactersAndConcepts() {
                     his Companions) also have various Abilities that can help
                     you succeed in Adventures.
                 </p>
-
-                <Accordion items={items} />
-            </Card>
+            </RulePage>
         </>
     )
 }

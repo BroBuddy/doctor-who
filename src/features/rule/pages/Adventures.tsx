@@ -1,6 +1,4 @@
-import { Accordion } from '@/components/Accordion'
-import Card from '@/components/Card'
-import { Headline } from '@/components/Headline'
+import RulePage from '../components/RulePage'
 
 const sections = [
     {
@@ -213,17 +211,9 @@ const sections = [
 ]
 
 function Adventures() {
-    const items = sections.map((section, index) => ({
-        id: String(index),
-        label: section.label,
-        children: section.content,
-    }))
-
     return (
         <>
-            <Headline>R006. Adventures</Headline>
-
-            <Card>
+            <RulePage tag="R006" title="Adventures" sections={sections}>
                 <p>
                     Adventures in the Adventure Booklet tell you where the
                     TARDIS has landed — Earth, a massive spaceship, a
@@ -242,9 +232,7 @@ function Adventures() {
                     meet, Plots you discover and some special events, rules or
                     Characters.
                 </p>
-
-                <Accordion items={items} />
-            </Card>
+            </RulePage>
         </>
     )
 }

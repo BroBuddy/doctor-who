@@ -1,6 +1,4 @@
-import { Accordion } from '@/components/Accordion'
-import Card from '@/components/Card'
-import { Headline } from '@/components/Headline'
+import RulePage from '../components/RulePage'
 
 const sections = [
     {
@@ -180,17 +178,9 @@ const sections = [
 ]
 
 function Incidents() {
-    const items = sections.map((section, index) => ({
-        id: String(index),
-        label: section.label,
-        children: section.content,
-    }))
-
     return (
         <>
-            <Headline>R011. Incidents</Headline>
-
-            <Card>
+            <RulePage tag="R011" title="Incidents" sections={sections}>
                 <p>
                     Random Incidents can affect the course of your Adventures —
                     the Doctor and Companions being separated or captured, the
@@ -279,9 +269,7 @@ function Incidents() {
                         Turn.
                     </em>
                 </p>
-
-                <Accordion items={items} />
-            </Card>
+            </RulePage>
         </>
     )
 }
