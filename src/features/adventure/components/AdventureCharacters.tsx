@@ -1,13 +1,14 @@
-import React from 'react'
 import type { AdventureCharacter, Rolls } from '../types/AdventureType'
 import { Accordion } from '@/components/Accordion'
 import Badge from '@/components/Badge'
+import { getAdventureCharactersByTag } from '../services/AdventureService'
+import { useParams } from 'react-router-dom'
+import Card from '@/components/Card'
 
-type Props = {
-    characters: AdventureCharacter[]
-}
+function AdventureCharacters() {
+    const { tag } = useParams()
+    const characters = getAdventureCharactersByTag(String(tag))
 
-const AdventureCharacters: React.FC<Props> = ({ characters }) => {
     if (!characters) {
         return null
     }
@@ -62,13 +63,9 @@ const AdventureCharacters: React.FC<Props> = ({ characters }) => {
     )
 
     return (
-        <>
-            <p className="mb-2">
-                <strong>Characters</strong> (Roll 2D6):
-            </p>
-
+        <Card headline="Characters">
             <Accordion items={items} />
-        </>
+        </Card>
     )
 }
 

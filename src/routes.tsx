@@ -1,6 +1,11 @@
 import React from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import App from './App'
+import AdventureLocations from './features/adventure/components/AdventureLocations.tsx'
+import AdventurePlots from './features/adventure/components/AdventurePlots.tsx'
+import AdventureCharacters from './features/adventure/components/AdventureCharacters.tsx'
+import AdventureSpecials from './features/adventure/components/AdventureSpecials.tsx'
+import AdventureView from './features/adventure/components/AdventureView.tsx'
 
 const Game = React.lazy(() => import('./features/game/pages/Game.tsx'))
 const BookletOverview = React.lazy(
@@ -35,7 +40,17 @@ const router = createBrowserRouter([
             { path: '/rule/R014', element: <ActionTables /> },
             { path: '/rule/:tag', element: <RuleDetail /> },
             { path: '/tardis/:tag', element: <TardisDetail /> },
-            { path: '/adventure/:tag', element: <AdventureDetail /> },
+            {
+                path: '/adventure/:tag',
+                element: <AdventureDetail />,
+                children: [
+                    { index: true, element: <AdventureView /> },
+                    { path: 'locations', element: <AdventureLocations /> },
+                    { path: 'plots', element: <AdventurePlots /> },
+                    { path: 'characters', element: <AdventureCharacters /> },
+                    { path: 'specials', element: <AdventureSpecials /> },
+                ],
+            },
             { path: '/enemy/:tag', element: <EnemyDetail /> },
         ],
     },

@@ -1,13 +1,14 @@
-import React from 'react'
 import type { AdventureLocation, Rolls } from '../types/AdventureType'
 import { Accordion } from '@/components/Accordion'
 import Badge from '@/components/Badge'
+import { getAdventureLocationsByTag } from '../services/AdventureService'
+import { useParams } from 'react-router-dom'
+import Card from '@/components/Card'
 
-type Props = {
-    locations: AdventureLocation[]
-}
+function AdventureLocations() {
+    const { tag } = useParams()
+    const locations = getAdventureLocationsByTag(String(tag))
 
-const AdventureLocations: React.FC<Props> = ({ locations }) => {
     if (!locations || locations.length === 0) {
         return null
     }
@@ -43,13 +44,9 @@ const AdventureLocations: React.FC<Props> = ({ locations }) => {
     }))
 
     return (
-        <>
-            <p className="mb-2">
-                <strong>Locations</strong>:
-            </p>
-
+        <Card headline="Locations">
             <Accordion items={items} />
-        </>
+        </Card>
     )
 }
 

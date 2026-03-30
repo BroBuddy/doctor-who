@@ -1,17 +1,19 @@
-import React from 'react'
-import type { Adventure, Rolls } from '../types/AdventureType'
+import type { Rolls } from '../types/AdventureType'
 import Badge from '@/components/Badge'
+import { getAdventureByTag } from '../services/AdventureService'
+import { useParams } from 'react-router-dom'
+import Card from '@/components/Card'
 
-type Props = {
-    adventure: Adventure
-}
+function AdventureView() {
+    const { tag } = useParams()
+    const adventure = getAdventureByTag(String(tag))
 
-const AdventureView: React.FC<Props> = ({ adventure }) => {
     return (
-        <>
+        <Card>
             <img
                 src={`/images/adventures/${adventure.tag}.png`}
                 alt={adventure.title}
+                className="mt-4"
             />
 
             <p>
@@ -64,7 +66,7 @@ const AdventureView: React.FC<Props> = ({ adventure }) => {
                     </ul>
                 </>
             )}
-        </>
+        </Card>
     )
 }
 

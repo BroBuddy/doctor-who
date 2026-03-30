@@ -1,13 +1,14 @@
-import React from 'react'
+import { useParams } from 'react-router-dom'
+import { getAdventureSpecialsByTag } from '../services/AdventureService'
 import type { AdventureSpecial } from '../types/AdventureType'
 import Badge from '@/components/Badge'
 import { Accordion } from '@/components/Accordion'
+import Card from '@/components/Card'
 
-type Props = {
-    specials: AdventureSpecial[]
-}
+function AdventureSpecials() {
+    const { tag } = useParams()
+    const specials = getAdventureSpecialsByTag(String(tag))
 
-const AdventureSpecials: React.FC<Props> = ({ specials }) => {
     if (!specials) {
         return null
     }
@@ -56,13 +57,9 @@ const AdventureSpecials: React.FC<Props> = ({ specials }) => {
     }))
 
     return (
-        <>
-            <p className="mb-2">
-                <strong>Specials:</strong>
-            </p>
-
+        <Card headline="Specials">
             <Accordion items={items} />
-        </>
+        </Card>
     )
 }
 

@@ -1,12 +1,13 @@
-import React from 'react'
 import type { AdventurePlot } from '../types/AdventureType'
 import { Accordion } from '@/components/Accordion'
+import { getAdventurePlotsByTag } from '../services/AdventureService'
+import { useParams } from 'react-router-dom'
+import Card from '@/components/Card'
 
-type Props = {
-    plots: AdventurePlot[]
-}
+function AdventurePlots() {
+    const { tag } = useParams()
+    const plots = getAdventurePlotsByTag(String(tag))
 
-const AdventurePlots: React.FC<Props> = ({ plots }) => {
     if (!plots) {
         return null
     }
@@ -18,13 +19,9 @@ const AdventurePlots: React.FC<Props> = ({ plots }) => {
     }))
 
     return (
-        <>
-            <p className="mb-2">
-                <strong>Plots</strong> (Roll 2D6):
-            </p>
-
+        <Card headline="Plots">
             <Accordion items={items} />
-        </>
+        </Card>
     )
 }
 
