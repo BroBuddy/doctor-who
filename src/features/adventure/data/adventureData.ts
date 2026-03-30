@@ -438,7 +438,6 @@ const A002: Adventure = {
     year: 3920,
     tardis: 9,
     era: 'Twilight Era',
-    type: 'Investigation',
     description:
         "You have landed on Peladon, one of your favourite planets. It has been over thirty years since your first visit to this medieval planet of superstition and barbarism, and under the wise rule of its' King it has now joined the Galactic Federation. The familiar electric storms rage on the mountainside around the massive stone Citadel of Peladon. Is all well here? Or is your return in time to avert disaster once more?",
     stats: { danger: 1, knowledge: 6, vp: 1 },
@@ -1525,7 +1524,6 @@ const A005: Adventure = {
     year: 2221,
     tardis: 8,
     era: 'Colonial Era',
-    type: 'Investigation',
     description:
         "The TARDIS has landed in the corridors of a remote mining station on Ganymede, the largest moon of Jupiter, as the human race expands further into the solar system. Conditions are harsh; the surface of the moon unstable, and the ore processing both difficult and dangerous, yet mankind's indomitable spirit still prevails – especially when the mineral deposits are so valuable to the companies that finance it...",
     stats: { danger: 1, knowledge: 5, vp: 0 },
@@ -2107,4 +2105,1356 @@ const A006: Adventure = {
     ],
 }
 
-export const adventureData: Adventure[] = [A001, A002, A003, A004, A005, A006]
+const A007: Adventure = {
+    id: 7,
+    tag: 'A007',
+    title: 'London',
+    year: 2022,
+    tardis: 6,
+    era: 'Post-Modern Era',
+    description:
+        'The TARDIS has landed in the streets of modern London which is bustling with a myriad of tourists and shoppers from across the globe. Red London buses and black taxi cabs drive along the packed roads passing familiar iconic landmarks such as Big Ben and the London Eye. It looks so usual and ordinary, but not everything is as it seems and for someone, normal life might soon be changed forever...',
+    stats: {
+        danger: 0,
+        knowledge: 6,
+        vp: 1,
+    },
+    special:
+        'You may Tour London as an Action (Special Events). If you have no Companion, you may spend 1 Luck on the first Character event to instead encounter any Companion from this Era. London Streets: (Exterior, Move 2) You stroll along the packed streets of the capital city, avoiding the heavy traffic whilst enjoying the iconic surroundings. The familiar and reassuring chimes of Big Ben fill the air. Add +1 to Explore Actions but you may not Research here. You may spend 1 Luck to jump on a bus and gain +2 to a Move Action from here. Encounter (D6): 1-2: Incident; 3-4: No further event; 5-6: Character event.',
+    enemy: [
+        { roll: '1-2', name: 'Military' },
+        { roll: '3-4', name: 'Chameleon' },
+        { roll: '5', name: 'Criminal' },
+        { roll: '6', name: 'Time Lord' },
+    ],
+    locations: [
+        {
+            roll: '1',
+            name: 'Tower of London',
+            move: 8,
+            terrain: 'Exterior, Monument',
+            description:
+                'The amazing castle that stands in the centre of the city and which also contains the secret base of UNIT. Add +2 to Plan Actions here. If you have a unique UNIT Character, you may see Calling UNIT (Special Events).',
+            encounter: 'D6',
+            rolls: [
+                { roll: '1', description: 'Character event' },
+                { roll: '2-3', description: 'None' },
+                {
+                    roll: '4-5',
+                    description: 'Gain +1 Knowledge or roll for Plot event',
+                },
+                {
+                    roll: '6',
+                    description:
+                        'UNIT - If you have a Character with UNIT, see Special Events. If not, make Diplomacy 8 roll to see Special Events or be Captured (8).',
+                },
+            ],
+        },
+        {
+            roll: '2',
+            name: 'Covent Garden Underground',
+            move: 7,
+            terrain: 'Underground',
+            description:
+                'A typical station that is part of the extensive Underground rail network beneath London. This Location is Dark unless you spend 1 Luck. If Danger less than 10, you may spend 1 Luck to Move from here to any Location as an Action. If the Enemy is The Great Intelligence, add +1 Danger and to number of Yeti encountered.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                { roll: '2-3', description: 'None' },
+                { roll: '4', description: 'Plot event' },
+                { roll: '5+', description: 'Character event' },
+            ],
+        },
+        {
+            roll: '3',
+            name: 'Westminster',
+            move: 7,
+            terrain: 'Exterior, Monument',
+            description:
+                'One of the most recognisable areas in the city, from Big Ben to the iconic bridge spanning the River Thames. Add +1 to Investigate Actions here. You may spend 1 Luck to either have a Character event or add +2 to a Move Action next turn. If the Enemy are Daleks, add +1 Danger and +1 to number of Daleks encountered.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                { roll: '2', description: 'Incident' },
+                { roll: '3', description: 'None' },
+                { roll: '4', description: 'Plot event' },
+                { roll: '5', description: 'Character event' },
+                { roll: '6+', description: 'Gain 1 Luck' },
+            ],
+        },
+        {
+            roll: '4',
+            name: "St. Paul's Cathedral",
+            move: 7,
+            terrain: 'Exterior, Monument',
+            description:
+                'An iconic feature of the London skyline with the incredible dome and beautiful architecture. Add +1 to Investigate Actions here. You may spend 1 Luck to gain 1 VP (once only). If the Enemy are Cybermen, add +1 Danger and +1 to number of Cybermen encountered.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                { roll: '2', description: 'Enemy event' },
+                { roll: '3', description: 'Incident' },
+                { roll: '4', description: 'None' },
+                { roll: '5', description: 'Plot event' },
+                { roll: '6+', description: 'Character event' },
+            ],
+        },
+        {
+            roll: '5',
+            name: 'Oxford Street & London Eye',
+            move: 6,
+            terrain: 'Exterior, Monument',
+            description:
+                'The best shopping in the city and the massive observation wheel is a popular tourist attraction offering the best view of London. Add +1 to Prevent Actions here. If the Enemy are Autons, add +1 Danger.',
+            encounter: '2D6 (+2 to roll if Discover Phase)',
+            rolls: [
+                { roll: '2-3', description: 'Enemy Lair' },
+                { roll: '4', description: 'Enemy encounter' },
+                { roll: '5', description: 'Enemy event' },
+                { roll: '6-7', description: 'None' },
+                {
+                    roll: '8-9',
+                    description:
+                        'Add +1 to Move Actions next Turn or +1 Knowledge',
+                },
+                { roll: '10+', description: 'Character event' },
+            ],
+        },
+        {
+            roll: '6',
+            name: 'National Museum',
+            move: 7,
+            terrain: 'Museum',
+            description:
+                'This houses many rare, precious artefacts and artworks in display cases and galleries. A Character with History is +1 Brains here and may Study with +1 to roll. Add +1 VP if Profit Goal. You may Seek Information here using History.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy Lair' },
+                { roll: '2', description: 'Plot event' },
+                { roll: '3', description: 'None' },
+                { roll: '4', description: 'Character event' },
+                {
+                    roll: '5-6',
+                    description:
+                        'Find ancient relic - make a Science 7 roll and a History 7 roll, gaining +1 Knowledge per success',
+                },
+                { roll: '7', description: 'Gain +1 Knowledge' },
+            ],
+        },
+    ],
+    plots: [
+        {
+            roll: '2-4',
+            name: 'Captive',
+            description:
+                'Someone or something important has been captured. If you Move to a random Location then do a Rescue (8+) Action, roll 1D6: 1-2: Gain +1 Knowledge; 3-4: Character event; 5-6: Enemy encounter.',
+        },
+        {
+            roll: '5',
+            name: 'Brutal Death',
+            description:
+                'Someone has been found murdered nearby and a corpse discovered. Roll 1D6 and if result is a 1, discard random Ally. Gain +1 Knowledge (or +2 Knowledge with a successful Medicine 7 roll).',
+        },
+        {
+            roll: '6',
+            name: 'Alien Hoax',
+            description:
+                'You discover a newspaper is reporting that alien ships have been seen in the sky but dismissing it as a hoax... If you have 10 Brains then reveal the Enemy.',
+        },
+        {
+            roll: '7',
+            name: 'News Report',
+            description:
+                'You catch the latest report from Trinity Wells on television – either all your TARDIS Characters gain Aware until the end of the Adventure OR gain +1 Knowledge.',
+        },
+        {
+            roll: '8',
+            name: 'Front',
+            description:
+                "You discover that a large and reputable organisation is really a front for the Enemy's secret plans. You may reveal the Enemy or gain +1 Knowledge. Add +1 to Seek Information Actions using Charm or Stealth.",
+        },
+        {
+            roll: '9',
+            name: 'Missing Persons',
+            description:
+                'Some people have been recently vanishing from the streets of London in mysterious circumstances. Gain +1 Knowledge. Also gain 1 Luck if you have a native Character with you.',
+        },
+        {
+            roll: '10',
+            name: 'Red Alert',
+            description:
+                'The city is on maximum alert for some reason. Everyone is suspicious and nervous. Add +1 to Investigate Actions. Add +1 to the number of Police/UNIT Troops encountered with -1 to Charm rolls.',
+        },
+        {
+            roll: '11-12',
+            name: 'Unusual Activity',
+            description:
+                'You hear about strange events happening nearby. Roll 1D6: 1-4: Roll for a random Location and gain +1 Knowledge if you go there, then roll 1D6 and if 1-2 see Enemy Lair (rolling for Enemy first); 5-6: The Shard (Exterior, Move 7) The tallest London skyscraper that promises an incredible experience in events, bars and restaurants. Add +2 to Investigate Actions here. Add +1 to Enemy Action rolls here. Encounter (2D6): 2-4: Enemy encounter (Lair); 5: Enemy event; 6: No event; 8-9: Gain 1 Luck or spend 1 Luck for +2 Knowledge; 10-12: Character event.',
+        },
+    ],
+    characters: [
+        {
+            roll: '2-3',
+            name: 'Criminal',
+            description: 'A shady-looking individual. Make a Stealth roll:',
+            stats: { brains: 1, brawn: 2, bravery: 1 },
+            skills: ['Stealth'],
+            rolls: [
+                {
+                    roll: '2-4',
+                    description: 'Attacked (Brawn 3)',
+                },
+                {
+                    roll: '5-6',
+                    description: 'Lose 2 Luck or 1 Gadget',
+                },
+                {
+                    roll: '7',
+                    description: 'Add +1 Danger',
+                },
+                {
+                    roll: '8',
+                    description: 'No event.',
+                },
+                {
+                    roll: '9-10',
+                    description:
+                        'Word on the street - pay 1 Luck for a Plot event; 11+: He becomes your Ally - roll for a Plot event. The criminal will leave if you encounter Police or UNIT.',
+                },
+                {
+                    roll: '11+',
+                    description:
+                        'He becomes your Ally - roll for a Plot event. The criminal will leave if you encounter Police or UNIT.',
+                },
+            ],
+        },
+        {
+            roll: '4',
+            name: 'Technician',
+            description:
+                'A talented computer analyst. If you make a Charm 9 roll (adding current Danger), the analyst becomes your Ally – roll for a Plot event. Add +1 to Research (Computers) Actions.',
+            stats: { brains: 2, brawn: 1, bravery: 1 },
+            skills: ['Computers'],
+        },
+        {
+            roll: '5',
+            name: 'Police',
+            description:
+                'A pair of local policemen takes an interest. Make a Charm roll (-1 per Stealth, +3 if Danger 12+):',
+            stats: { brains: 1, brawn: 2, bravery: 2 },
+            skills: ['Running'],
+            infomation:
+                'Each Police Ally: +1 to Investigate, Move and Find Help Actions.',
+            rolls: [
+                {
+                    roll: '2-5',
+                    description:
+                        'Wanted for questioning – make Running 7 roll or Captured (6) or Attacked (Brawn 5).',
+                },
+                {
+                    roll: '6-9',
+                    description: 'No further event.',
+                },
+                {
+                    roll: '10+',
+                    description: 'The Police become your Allies.',
+                },
+            ],
+        },
+        {
+            roll: '6',
+            name: 'Businessman',
+            description:
+                'A shrewd banker that works in the London financial sector. Pay 1 Luck or make a Charm 10 roll for the businessman to join you as an Ally - roll for a Plot event. He is automatically selected in a Traitor Incident.',
+            stats: { brains: 2, brawn: 1, bravery: 1 },
+            skills: ['Aware', 'Diplomacy'],
+            infomation: '+1 to Seek Information Actions.',
+        },
+        {
+            roll: '7',
+            name: 'Tourist',
+            description:
+                'A young foreign student on their first visit to London. Pay 1 Luck to gain a Plot event. If you make a Charm 8 roll the tourist becomes an Ally but does not count as a native Character.',
+            stats: { brains: 1, brawn: 1, bravery: 1 },
+            skills: ['Charm', 'Running'],
+        },
+        {
+            roll: '8',
+            name: 'Tour Guide',
+            description:
+                'A professional guide who shows tourists around London. If you make a Charm 10 roll (adding current Danger), the guide becomes an Ally. Add +1 to Move Actions.',
+            stats: { brains: 1, brawn: 1, bravery: 1 },
+            skills: ['Aware', 'Charm', 'History'],
+        },
+        {
+            roll: '9',
+            name: 'Reporter',
+            description:
+                'An intrepid journalist after a story. If you make Charm 8 roll, she becomes an Ally - roll for Plot event.',
+            stats: { brains: 2, brawn: 1, bravery: 1 },
+            skills: ['Aware', 'Charm', 'Running'],
+        },
+        {
+            roll: '10',
+            name: 'Professional',
+            description:
+                'A young but eager professional on a break from work. If you make a Charm 9 roll (+2 if Enemy revealed), the professional becomes an Ally.',
+            stats: { brains: 2, brawn: 1, bravery: 1 },
+            skills: ['Engineer or Medicine or Science'],
+        },
+        {
+            roll: '11-12',
+            name: 'Old Friend',
+            description:
+                'You meet a former Companion native to this Era. Gain +2 Luck and put the Companion card into play.',
+        },
+    ],
+    specials: [
+        {
+            id: 1,
+            image: 'touring-london',
+            name: 'Touring London',
+            description:
+                'You decide to hop on a red bus, hire a black cab, use the London Underground or simply walk the streets to tour the city and visit some famous sites.',
+            information:
+                'You may choose to Relax at any Monument Location. In addition to any Relax Action results, if you spend a complete Turn at a Monument, you may either gain 1 VP or 1 Luck. If you visit at least 3 Monuments, also gain 1 Idea card and an additional 1 VP.',
+        },
+        {
+            id: 2,
+            image: 'calling-unit',
+            name: 'Calling UNIT',
+            description:
+                'If you have a Character with UNIT you may automatically Move to Tower of London Location.',
+            information:
+                'Add +1 to Research Actions there. You may spend 2 Luck (each) to encounter Kate Stewart and Osgood. You may add Diplomacy to a Find Help Action there (with +1 if Dilemma Phase or +2 if Defeat Phase - max +4). If the result of the Find Help Action is 12+, you may instead recruit a UNIT Squad and allocate the Squad to a Location of your choice. If you then have an Enemy encounter at that Location, you may discard the entire Squad and cancel the Enemy encounter.',
+            stats: { brains: 0, brawn: 3, bravery: 3 },
+            skills: ['Running', 'UNIT'],
+        },
+    ],
+}
+
+const A008: Adventure = {
+    id: 8,
+    tag: 'A008',
+    title: 'Eden',
+    year: 2122,
+    tardis: 10,
+    era: 'Near Future Era',
+    type: 'Wilderness',
+    description:
+        'The TARDIS has landed on Eden, a lush jungle planet of green light and orange sunsets. You are surrounded by dense trees wound by thick creepers and vines, and huge plants with garish red stalks and leaves. The air is still and humid, alive with buzzing of insects as the roar of alien creatures echo from the darkness. But Eden holds an even deadlier secret...',
+    stats: {
+        danger: 1,
+        knowledge: 5,
+        vp: 2,
+    },
+    special:
+        'The Move values shown on Locations indicate the number needed to leave that Location. Roll for a random Location when you do. Night will fall at the start of Turn 1D3+3 and last 4 full Turns. Lush Jungle: (Exterior, Move 7) You push your way through a tropical jungle of twisted trees, slithering creepers and huge vines. The dense foliage competes for space and almost completely blocks the light, leaving only a dim twilight of orange. You may not Investigate here. Encounter (D6, -1 to roll if Night): 0-1: Mandrels (see Special Events); 2: Enemy encounter (Mandrels if Discover Phase); 3: Incident; 4-5: None; 6: Character event.',
+    enemy: [
+        { roll: '1-2', name: 'Criminal' },
+        { roll: '3', name: 'Villain' },
+        { roll: '4-5', name: 'Military' },
+        { roll: '6', name: 'Chameleon' },
+    ],
+    locations: [
+        {
+            roll: '1',
+            name: 'Dense Jungle',
+            move: 9,
+            terrain: 'Exterior',
+            description:
+                'This part of the jungle is even more oppressive with thick, alien vegetation pressing in at you from all sides and the ground covered in moss and garish fronds. You must spend 1 Luck point or this Location becomes Dark.',
+            encounter: 'D6 (-1 to roll if Night)',
+            rolls: [
+                { roll: '0-1', description: 'Mandrels (see Special Events)' },
+                {
+                    roll: '2',
+                    description: 'Enemy encounter (Mandrels if Discover Phase)',
+                },
+                { roll: '3', description: 'Lost (Incident)' },
+                { roll: '4', description: 'Hostile Vegetation' },
+                { roll: '5', description: 'None' },
+                { roll: '6', description: 'Character event' },
+            ],
+        },
+        {
+            roll: '2',
+            name: 'Jungle River',
+            move: 8,
+            terrain: 'Water, Exterior',
+            description:
+                'You have found a wide and fast-flowing river that cuts through the jungle. Getting across might prove difficult. Take a -1 penalty to Move Actions from here unless you spend 1 Luck per Character in group or can make an Aware 9 roll. You may not Investigate here.',
+            encounter: 'D6 (-1 to roll if Night)',
+            rolls: [
+                { roll: '0-1', description: 'Mandrels (see Special Events)' },
+                {
+                    roll: '2',
+                    description: 'Enemy encounter (Mandrels if Discover Phase)',
+                },
+                { roll: '3', description: 'Enemy Event' },
+                { roll: '4', description: 'None' },
+                { roll: '5', description: 'Character event' },
+                { roll: '6', description: 'Incident' },
+            ],
+        },
+        {
+            roll: '3',
+            name: 'Jungle Caves',
+            move: 9,
+            terrain: 'Dark',
+            description:
+                'You discover the entrance to a small cave where you hear dripping water within. Add +2 to Investigate Actions and Enemy Action rolls here. All Evade options gain +1 to the roll.',
+            encounter: 'Aware roll',
+            rolls: [
+                { roll: '2-4', description: 'Enemy encounter' },
+                { roll: '5', description: 'Insect' },
+                { roll: '6', description: 'Enemy event' },
+                { roll: '7', description: 'Brutal Death' },
+                { roll: '8', description: 'None' },
+                { roll: '9', description: 'Character event' },
+                {
+                    roll: '10-11',
+                    description:
+                        'A fall of rocks kills a Character of your choice unless you pay 2 Luck',
+                },
+                {
+                    roll: '12+',
+                    description: 'Tunnel – move to random Location',
+                },
+            ],
+        },
+        {
+            roll: '4',
+            name: 'Jungle Ravine',
+            move: 8,
+            terrain: 'Exterior',
+            description:
+                'You have stumbled across a deep ravine, but a huge fallen tree has collapsed, forming an unstable bridge to the other side. If you cross, each Character must make a Running 6 roll (adding Brawn) or fall into the ravine and be killed. If you do not cross, Move Actions have a -2 penalty here. Evade options have -2 penalty unless you try to cross ravine.',
+            encounter: 'D6',
+            rolls: [
+                { roll: '1', description: 'Mandrels (see Special Events)' },
+                { roll: '2', description: 'Enemy encounter' },
+                { roll: '3', description: 'Enemy event' },
+                { roll: '4', description: 'Plot event' },
+                { roll: '5-6', description: 'None' },
+            ],
+        },
+        {
+            roll: '5',
+            name: 'Temple Ruins',
+            move: 8,
+            terrain: 'Dark',
+            description:
+                'A partly collapsed, ancient stone temple buried in the jungle with crumbling passages that twist downwards into the darkness. Add +1 to Investigate Actions here.',
+            encounter: 'D6 adding Aware',
+            rolls: [
+                { roll: '1-2', description: 'Lost (Incident)' },
+                { roll: '3', description: 'Abandoned – no event' },
+                { roll: '4', description: 'Enemy Lair' },
+                { roll: '5', description: 'Enemy encounter' },
+                {
+                    roll: '6',
+                    description: 'Gain +1 Knowledge or roll for Plot event',
+                },
+                {
+                    roll: '7+',
+                    description:
+                        'Gain +2 Knowledge but +1 Danger and +1 Enemy Action rolls whilst here',
+                },
+            ],
+        },
+        {
+            roll: '6',
+            name: 'Jungle Swamp',
+            move: 10,
+            terrain: 'Water, Exterior',
+            description:
+                'Any firm ground soon gives way to marsh and pools of fetid, stagnant water get larger to eventually form an endless swamp.',
+            encounter: 'D6 (-1 to roll if Night)',
+            rolls: [
+                { roll: '0-1', description: 'Mandrel (Special Event)' },
+                { roll: '2', description: 'Lost (Incident)' },
+                { roll: '3', description: 'Insect' },
+                { roll: '4', description: 'Enemy encounter' },
+                {
+                    roll: '5',
+                    description:
+                        'Marsh – Roll 1D6 for each Character, on a result of 1 the Character is trapped. Other Characters must make a Brawn 8 roll to rescue them or they are pulled under and are killed',
+                },
+                { roll: '6', description: 'No event' },
+            ],
+        },
+    ],
+    plots: [
+        {
+            roll: '2-4',
+            name: 'Decomposing Creature',
+            description:
+                'You discover the powdery corpse of an alien creature that almost decomposes in front of your eyes. Make a Science 8 roll and a Medicine 8 roll, gaining +1 Knowledge per success. Add +1 Danger.',
+        },
+        {
+            roll: '5',
+            name: 'Brutal Death',
+            description:
+                'You find the mangled corpse of a man in an environment suit, gouged by huge claw marks. Gain +1 Knowledge (or +2 Knowledge with a successful Medicine 7 roll).',
+        },
+        {
+            roll: '6',
+            name: 'Dropped Data-pad',
+            description:
+                'You discover a damaged data-pad lying on the ground. If you make a Computers 6 roll gain +1 Knowledge. If you make a Computers 9 roll, instead reveal the Enemy.',
+        },
+        {
+            roll: '7',
+            name: 'Alien Transmitter',
+            description:
+                'You discover an automatic beacon sending out what appears to be a homing signal. If you can make an Engineer 7 roll, choose to gain +1 Knowledge or reduce Danger by -2.',
+        },
+        {
+            roll: '8',
+            name: 'Secret Forces',
+            description:
+                'You discover clues that might possibly reveal the Enemy, but also that the Enemy is hiding on the planet. Make a successful Brains 10 roll to reveal the Enemy. If Enemy is Military, add +1 Danger and +1 number encountered.',
+        },
+        {
+            roll: '9',
+            name: 'Relic',
+            description:
+                'You discover a mysterious artefact buried in the mud – could it be important to the plans of the Enemy? Make a Science 7 roll and a History 7 roll, gaining +1 Knowledge per success. Add +1 Danger.',
+        },
+        {
+            roll: '10',
+            name: 'Sterile Area',
+            description:
+                'You discover a strange area in the jungle that looks bare and completely razed. Make a successful Brains 12 roll (adding Science) to gain +1 Knowledge (+2 Knowledge if Brains 15 roll).',
+        },
+        {
+            roll: '11-12',
+            name: 'Abandoned Pod',
+            description:
+                'You discover the remains of a small pre-fabricated survival pod that a planetary expedition might have used, but it seems long-since abandoned. Add +2 to Investigate Actions here. Roll 1D6 to see what you find (once only): 1: Enemy encounter; 2: It is empty; 3: Survivor; 4: Dropped Data-pad; 5: Find some clues – gain +1 Knowledge; 6: A number of bodies, all bearing terrible wounds from huge claws. Add +1 Danger. If you make a Medicine 8 roll, gain +1 Knowledge. Also roll 1D6 and on a 1-2, meet Survey Team but with -2 to Charm roll.',
+        },
+    ],
+    characters: [
+        {
+            roll: '2-4',
+            name: 'Hostile Vegetation',
+            description:
+                'You are attacked by a plant creature (Brawn 1D3+1) that is determined to have one of your Characters (randomly selected) for dinner. If you have other Characters with a total Brawn of at least twice that of the plant creature, the victim can be pulled free, otherwise start an (Attack) Conflict.',
+        },
+        {
+            roll: '5',
+            name: 'Mercenaries',
+            description:
+                'A tough group of soldiers. Make a Charm roll (+1 if Enemy revealed, +1 if Danger 15+):',
+            stats: { brains: 0, brawn: 3, bravery: 2 },
+            rolls: [
+                {
+                    roll: '2-8',
+                    description:
+                        'ostile – make a Running 8 roll or become Captured (8) or Attacked (Brawn 10)',
+                },
+                {
+                    roll: '9-10',
+                    description:
+                        'hey question you with suspicion but let you go – you may pay 1 Luck to gain +1 Knowledge',
+                },
+                {
+                    roll: '11+',
+                    description:
+                        'They become uneasy Allies (1D3+1 in number; leader is Brains 1, Brawn 3, Bravery 3)',
+                },
+            ],
+        },
+        {
+            roll: '6',
+            name: 'Fugitive',
+            description:
+                'Someone that is avoiding interplanetary justice for unknown reasons. Ignore if with any Ally, otherwise make a Charm roll (-2 if Profit Goal):',
+            stats: { brains: 1, brawn: 1, bravery: 2 },
+            skills: ['Running', 'Stealth'],
+            rolls: [
+                {
+                    roll: '2-3',
+                    description:
+                        'Attacked (Brawn 2); 4-5: Betrayed – Captured (6)',
+                },
+                {
+                    roll: '6-9',
+                    description:
+                        'The fugitive runs into the jungle no further event',
+                },
+                {
+                    roll: '10+',
+                    description:
+                        'The fugitive becomes your Ally – roll for Plot event.',
+                },
+            ],
+        },
+        {
+            roll: '7',
+            name: 'Survivor',
+            description:
+                'A badly wounded survivor of an expedition. Unless you make a Medicine 7 roll however, the survivor dies – lose 1 Luck (or 2 Luck but roll for a Plot event). If treated, the survivor joins you as an Ally – roll for a Plot event.',
+            stats: { brains: 2, brawn: 1, bravery: 2 },
+            skills: ['Engineer or Pilot or Science'],
+        },
+        {
+            roll: '8',
+            name: 'Explorer',
+            description:
+                'A brave pilot that has crashed here and who is very glad to see you. She becomes your Ally. She adds +1 to Move Actions at Exterior Locations. Roll for a Plot event.',
+            stats: { brains: 2, brawn: 2, bravery: 3 },
+            skills: ['Charm', 'Engineer', 'Pilot'],
+        },
+        {
+            roll: '9-10',
+            name: 'Survey Team',
+            description:
+                'A small scientific expedition. Make a Charm roll (+2 if the Enemy is revealed):',
+            stats: { brains: 2, brawn: 2, bravery: 2 },
+            skills: ['Engineer / History / Science'],
+            rolls: [
+                {
+                    roll: '2-5',
+                    description: 'Captured (7)',
+                },
+                {
+                    roll: '6-9',
+                    description:
+                        'They are not convinced by you and leave - event ends but you may pay 1 Luck to roll for a Plot event.',
+                },
+                {
+                    roll: '10+',
+                    description:
+                        'They join you as Allies (roll 1D3+1 for number). Add +1 to Move Actions due to their geo-locaters. Roll for a Plot event or gain +1 Knowledge.',
+                },
+            ],
+        },
+        {
+            roll: '11-12',
+            name: 'Insect',
+            description:
+                'A large glowing insect flies from the gloom and attaches itself to the neck of a randomly selected Character. Unless the Character makes Brawn 10 roll (add Bravery), the Character collapses for a full Turn and can take no Action.',
+        },
+    ],
+    specials: [
+        {
+            id: 1,
+            image: 'mandrels',
+            name: 'Mandrels',
+            description:
+                'You have encountered 1D3 Mandrels that advance towards you out of the gloom with a terrifying roar. Mandrels have large eyes that glow green and long, powerful arms that end in huge, sharp claws. They are however, susceptible to ultrasonic frequencies which have been known to calm them.',
+            information:
+                'If you have a sonic screwdriver and spend 1 Luck per Mandrel, you can pacify the creatures and escape. If not, you must make a Running 8 roll or start (Attack) Conflict. If you win the Conflict you discover the terrible secret of the Mandrels as the when the body of the creatures decompose, they create raw Vraxoin – a powerful and hugely addictive drug. If a Profit Goal is revealed, add +1 Danger and +1 to Enemy Action rolls. If you can make a Medicine 9 roll (adding Science), gain +2 Knowledge. Any Fugitive Ally becomes a Traitor (see event).',
+            stats: { brains: 0, brawn: 4, bravery: 4 },
+            skills: ['Creature'],
+        },
+    ],
+}
+
+const A009: Adventure = {
+    id: 9,
+    tag: 'A009',
+    title: 'London',
+    year: 1892,
+    tardis: 8,
+    era: 'Victorian Era',
+    description:
+        "You have landed in Victorian London. It is a dark, cold evening and thick fog covers the cobbled streets which are lit by the soft but eerie glow of gas lamps. A hansom cab rattles past you as your breath curls in the chilly air. In the distance you can hear the unmistakeable sound of a ship's foghorn – you must be close to the docks. Time to experience living history...",
+    stats: {
+        danger: 1,
+        knowledge: 5,
+        vp: 1,
+    },
+    special:
+        'See Special Events below for more details on Move Actions. Night has fallen immediately and will last 4 Turns. London Streets: (Exterior, Move 3) You walk through the dark and foggy Victorian streets, your footsteps echoing on the cobbles. Add +1 to Explore Actions. You may not Research here. Encounter (D6, -1 to roll if Night and +2 if Discover Phase): 0-1: Enemy encounter; 2: Ruffians (Make a Running 7 roll to escape or be Attacked - Brawn 5); 3: Incident; 4-5: None; 6+: Character event.',
+    enemy: [
+        { roll: '1-2', name: 'Gothic' },
+        { roll: '3', name: 'Earth' },
+        { roll: '4', name: 'Entity' },
+        { roll: '5', name: 'Temporal' },
+        { roll: '6', name: 'Chameleon' },
+    ],
+    locations: [
+        {
+            roll: '1',
+            name: 'Tavern',
+            move: 7,
+            terrain: 'Interior',
+            description:
+                'You have found a local inn where the sounds of talking and laughing are mixed with the clink of glasses and the inviting smells of hot food. Add +1 to (Charm) Seek Information Actions but you may not Investigate here.',
+            encounter: 'D6',
+            rolls: [
+                {
+                    roll: '1',
+                    description:
+                        'You get mixed up in a tavern brawl and are Attacked (Brawn 3)',
+                },
+                { roll: '2', description: 'Incident' },
+                {
+                    roll: '3+',
+                    description:
+                        'You can spend 1 Luck point to meet a Wench or a random Character, or make a Charm 8 roll to have a Plot event (each once only)',
+                },
+            ],
+        },
+        {
+            roll: '2',
+            name: 'Music Hall Theatre',
+            move: 9,
+            terrain: 'Interior',
+            description:
+                'A grand music hall that welcomes impressive acts and memorable characters, both on and off the stage. Add +1 to Investigate and Seek Information Actions here. If it is Night you may remain here for a full turn choosing no Action, you enjoy a performance at the Hall and gain 1 Luck point per TARDIS Character.',
+            encounter: 'D6',
+            rolls: [
+                { roll: '1', description: 'Incident' },
+                {
+                    roll: '2+',
+                    description:
+                        'You may spend 1 Luck point to have a Character event or 2 Luck to meet Caroline Fairfax (Special Characters)',
+                },
+            ],
+        },
+        {
+            roll: '3',
+            name: 'Manor House',
+            move: 11,
+            terrain: 'Interior',
+            description:
+                'A magnificent residence on the outskirts of London owned by a rich gentleman. Add +1 to Investigate and Plan Actions here.',
+            encounter: 'D6 adding Diplomacy or Stealth',
+            rolls: [
+                {
+                    roll: '1',
+                    description: 'Butler calls Constables (-2 to Charm roll)',
+                },
+                { roll: '2', description: 'Maid' },
+                { roll: '3', description: 'Nobody at home – no event' },
+                {
+                    roll: '4',
+                    description: 'Tea with the gentry – roll for a Plot event',
+                },
+                { roll: '5', description: 'Gentleman' },
+                {
+                    roll: '6',
+                    description: 'Caroline Fairfax (Special Character)',
+                },
+                {
+                    roll: '7+',
+                    description:
+                        'Discover locked attic (gain +2 Knowledge) or secret cellar (Enemy Lair - Dilemma or Defeat Phase only)',
+                },
+            ],
+        },
+        {
+            roll: '4',
+            name: "Gentleman's Club",
+            move: 10,
+            terrain: 'Interior',
+            description:
+                'An exclusive club in the West End of London for the explorers, scientists, politicians and industrialists of the Victorian age. You must make a Diplomacy 9 roll (adding Charm) to enter, but no female Characters are allowed (or may add Skills to entry roll). Add +1 to Find Help or Plan Actions here.',
+            encounter: 'D6',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                { roll: '2', description: 'Incident' },
+                { roll: '3', description: 'None' },
+                {
+                    roll: '4',
+                    description: 'Roll for a Plot event or gain +1 Knowledge',
+                },
+                { roll: '5', description: 'Gentleman' },
+                { roll: '6', description: 'Businessman' },
+            ],
+        },
+        {
+            roll: '5',
+            name: 'London Docks',
+            move: 8,
+            terrain: 'Water, Exterior',
+            description:
+                'The London docks were amongst the most important across the globe at the time and were always a hive of activity whatever time of day or night. But the melting pot of cultures and characters could also be unsavoury... Add +1 to Investigate Actions here.',
+            encounter: 'D6 (-1 to roll if Night)',
+            rolls: [
+                {
+                    roll: '0-1',
+                    description:
+                        'Ruffians (Make a Running 7 roll to escape or Attacked - Brawn 6)',
+                },
+                { roll: '2', description: 'Enemy encounter' },
+                { roll: '3', description: 'Enemy event' },
+                { roll: '4', description: 'Fugitive' },
+                { roll: '5', description: 'Dockworker' },
+                { roll: '6', description: 'Incident' },
+            ],
+        },
+        {
+            roll: '6',
+            name: 'Factory',
+            move: 9,
+            terrain: 'Interior',
+            description:
+                'A huge smoke-belching factory behind securely locked gates. You must make a Charm 8 or Stealth 8 roll to enter (Stealth only if Night). Add +1 to Investigate or Research (Engineer) Actions here.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                {
+                    roll: '1',
+                    description: 'Enemy encounter (Lair if Danger 12+)',
+                },
+                { roll: '2', description: 'Enemy event' },
+                {
+                    roll: '3',
+                    description: 'Constables (-2 to Charm roll, -3 if Night)',
+                },
+                { roll: '4', description: 'Businessman' },
+                { roll: '5', description: 'None' },
+                {
+                    roll: '6',
+                    description:
+                        'Gain +2 Knowledge or +2 to any Research (Engineer) Action here',
+                },
+                { roll: '7', description: 'Plot event or gain +1 Knowledge' },
+            ],
+        },
+    ],
+    plots: [
+        {
+            roll: '2-4',
+            name: 'Ancient Relic',
+            description:
+                'A mysterious artefact has been discovered – could it be important to the plans of the Enemy? Make a Science 7 roll and a History 7 roll, gaining +1 Knowledge per success. Add +1 Danger.',
+        },
+        {
+            roll: '5',
+            name: 'Body in the Thames',
+            description:
+                'Someone has been found murdered and dragged from the river. Roll 1D6 and if result is a 1, discard a random Ally. Gain +1 Knowledge (or +2 Knowledge with a successful Medicine 7 roll).',
+        },
+        {
+            roll: '6',
+            name: 'Missing Persons',
+            description:
+                'Some people have been recently vanishing from the streets of London in mysterious circumstances. Gain +1 Knowledge. Also gain 1 Luck if you have a native Character with you.',
+        },
+        {
+            roll: '7',
+            name: 'Mysterious Strangers',
+            description:
+                'There have been reports of a pair of strangers in the local area. If you make an Aware 9 roll, reveal Enemy or gain +1 Knowledge. If you have an Ally, roll 1D6 and on a 1, discard Ally and have an Enemy encounter.',
+        },
+        {
+            roll: '8',
+            name: 'Important Package',
+            description:
+                'You discover that the Enemy is searching for an important document. Roll 1D6 for each Ally, on a result of 6, they have it – gain +2 Knowledge. If not, roll for a random Location and if Move there, gain +1 Knowledge.',
+        },
+        {
+            roll: '9',
+            name: 'Strange Theft',
+            description:
+                "You discover that something has been stolen from a nearby Location. Roll 1D6: 1-2: Manor House; 3-4: Factory; 5-6: Gentleman's Club. If you Move there and make an Aware 8 or Charm 8 roll, gain +1 Knowledge.",
+        },
+        {
+            roll: '10',
+            name: 'Clever Alias',
+            description:
+                'You learn that someone in this part of London is not entirely as they seem. If you can make an Aware 9 roll, reveal the Enemy. If the Enemy is either a Chameleon or The Master, add +1 Danger and have a Traitor Incident.',
+        },
+        {
+            roll: '11-12',
+            name: 'Unusual Activity',
+            description:
+                'You hear about strange events happening nearby. Roll 1D6: 1-3: Sewers (Dark, Water, Move 8) Miles of dank sewers run beneath London that could contain any number of hidden secrets. Add +2 to Explore or Investigate Actions here. Encounter (D6): 1-2: Enemy Lair; 3: Enemy encounter; 4: Lost (Incident); 5: Gain +1 Knowledge; 6: Gain +2 Knowledge but add +1 Danger. 4-6: Abandoned House (Dark, Move 9). You find a dark townhouse with a forbidding air. Is it empty? Allies with Bravery 1 will not enter. Add +1 to Investigate Actions here. Encounter (D6): 1: Enemy Lair; 2-3: Enemy encounter; 4: None; 5: Gain +1 Knowledge; 6: Gain +2 Knowledge but +1 Danger and +1 Enemy Action rolls here.',
+        },
+    ],
+    characters: [
+        {
+            roll: '2-4',
+            name: 'Businessman',
+            description:
+                'A wealthy factory owner. Make a Charm roll (-1 per Stealth).',
+            rolls: [
+                {
+                    roll: '2-4',
+                    description:
+                        'He accuses you of thievery and calls Constables (with -1 to Charm roll)',
+                },
+                { roll: '5-7', description: 'No event' },
+                {
+                    roll: '8-9',
+                    description:
+                        'Knows some local gossip – roll for a Plot event',
+                },
+                {
+                    roll: '10+',
+                    description:
+                        'Joins you as an Ally - roll for Plot event and he will pay once for a Hansom',
+                },
+            ],
+            stats: { brains: 2, brawn: 1, bravery: 1 },
+        },
+        {
+            roll: '5',
+            name: 'Wench',
+            description:
+                'A shrewd and feisty local girl who always knows some gossip. Make a Charm roll (-1 if in a Tavern).',
+            rolls: [
+                { roll: '2-4', description: 'No event' },
+                { roll: '5-8', description: 'Gossip – roll for Plot event' },
+                {
+                    roll: '9+',
+                    description: 'Joins you as an Ally – roll for Plot event',
+                },
+            ],
+            stats: { brains: 1, brawn: 0, bravery: 1 },
+            skills: ['Aware', 'Charm', 'Stealth'],
+        },
+        {
+            roll: '6',
+            name: 'Gentleman',
+            description: 'Finely dressed and cultured. Make a Diplomacy roll.',
+            rolls: [
+                {
+                    roll: '2-4',
+                    description:
+                        'Local police are called – see Constables (-2 to Charm roll)',
+                },
+                { roll: '5-6', description: 'No event' },
+                { roll: '7-8', description: 'Roll for Plot event' },
+                { roll: '9+', description: 'Becomes your Ally' },
+            ],
+            stats: { brains: 1, brawn: 1, bravery: 1 },
+            skills: ['Charm', 'Diplomacy', 'History'],
+        },
+        {
+            roll: '7',
+            name: 'Constables',
+            description:
+                'A pair of local bobbies take an interest in you. Make a Charm roll (-1 per Stealth, +3 if Danger 10+).',
+            rolls: [
+                {
+                    roll: '2-5',
+                    description:
+                        'Wanted for questioning – make Running 7 roll or Captured (6)',
+                },
+                { roll: '6-9', description: 'No further event' },
+                {
+                    roll: '10+',
+                    description:
+                        'They join you as Allies (+1 to Investigate and Find Help Actions)',
+                },
+            ],
+            stats: { brains: 1, brawn: 2, bravery: 2 },
+            skills: ['Running'],
+        },
+        {
+            roll: '8',
+            name: 'Dockworker',
+            description: 'Tough and world weary. Make a Charm roll.',
+            rolls: [
+                {
+                    roll: '2-4',
+                    description:
+                        'Starts brawl (Attacked (Brawn 3) or Evade with Running 7)',
+                },
+                { roll: '5-6', description: 'No event' },
+                { roll: '7-8', description: 'Gossip - roll for Plot event' },
+                {
+                    roll: '9+',
+                    description: 'Becomes your Ally – roll Plot event',
+                },
+            ],
+            stats: { brains: 0, brawn: 3, bravery: 2 },
+        },
+        {
+            roll: '9',
+            name: 'Fugitive',
+            description:
+                'Someone that is trying to avoid local authorities for unknown reasons. Ignore if with Constables, otherwise make a Stealth roll.',
+            rolls: [
+                {
+                    roll: '2',
+                    description: 'Pickpocket - lose a Gadget or 2 Luck',
+                },
+                { roll: '3-7', description: 'No further event' },
+                { roll: '8-9', description: 'Roll for Plot event' },
+                {
+                    roll: '10+',
+                    description:
+                        'The fugitive becomes your Ally – roll for a Plot event',
+                },
+            ],
+            stats: { brains: 1, brawn: 1, bravery: 1 },
+            skills: ['Stealth'],
+        },
+        {
+            roll: '10',
+            name: 'Maid',
+            description:
+                'The loyal and perceptive maid who works for a rich family. She joins you as an Ally and adds +1 to Investigate Actions at a Manor House Location. Roll for a Plot event.',
+            stats: { brains: 1, brawn: 0, bravery: 2 },
+            skills: ['Aware', 'Charm', 'Running'],
+        },
+        {
+            roll: '11-12',
+            name: 'Old or New Friends',
+            description:
+                'You may pay 2 Luck to meet Caroline Fairfax or any Friend that is native to the Victorian Era.',
+        },
+    ],
+    specials: [
+        {
+            id: 1,
+            image: 'travelling-around-victorian-london',
+            name: 'Travelling Around Victorian London',
+            description:
+                'Due to the heavy fog that stifles London during the Victorian Era, the Move numbers for this Adventure are high and have an additional -1 penalty if it is Night.',
+            information:
+                'You may pay 1 Luck to automatically succeed at a Move Action to any Location for up to 4 Characters. Each time you use a Hansom cab, roll 1D6 and on a 6, roll for a Plot event for any gossip from the driver.',
+        },
+        {
+            id: 2,
+            image: 'caroline-fairfax',
+            name: 'Caroline Fairfax',
+            description:
+                'You have met Caroline Fairfax, the loyal, but independent daughter of a Victorian politician. Caroline will join you as an Ally and is knowledgeable about what has been happening in this part of London recently, so roll for a Plot event.',
+            information:
+                'You may also attempt to make a Charm (9) roll and if successful, Caroline joins you as a Companion – gain 1 Luck.',
+            stats: { brains: 2, brawn: 1, bravery: 2 },
+            skills: ['Aware', 'Charm', 'History', 'Running'],
+        },
+    ],
+}
+
+const A010: Adventure = {
+    id: 10,
+    tag: 'A010',
+    title: 'The Hades Expanse',
+    year: 5220,
+    tardis: 11,
+    era: 'Twilight Era',
+    type: 'Space',
+    description:
+        'The TARDIS has entered the legendary region of space where all spacecraft mysteriously lose power and become trapped for eternity. A myriad fleet of various ships float about you, some ancient and badly scarred whilst others are newer with almost no visible damage. What mysterious force could be keeping the ships here? And how do you restore power to your TARDIS...?',
+    stats: {
+        danger: 2,
+        knowledge: 6,
+        vp: 2,
+    },
+    special:
+        'You may not Find Help in this Adventure. When Enemy Goal revealed, see instead Escape the Expanse (Special Events). You may continue to have Plot events throughout Adventure and must track Knowledge in the Defeat Phase. Roll 1D3 for your Landing Location. Travel the Expanse: Do not make Move Actions to switch Locations. Instead make an Engineer roll as an Action to get a ship operational. If successful, continue by making a Pilot roll to reach new Location. If you fail Pilot roll, add +1 Danger.',
+    enemy: [
+        { roll: '1-3', name: 'Military' },
+        { roll: '4', name: 'Villain' },
+        { roll: '5', name: 'Criminal' },
+        { roll: '6', name: 'Chameleon' },
+    ],
+    locations: [
+        {
+            roll: '1',
+            name: 'Pleasure Yacht',
+            terrain: 'Engineer 7, Pilot 8',
+            description:
+                'A small but elegant ship with beautiful design and opulent, luxurious interiors. Why is the ship completely deserted? Add +1 to Investigate Actions here. You may spend 1 Luck to find a pouch of gems. If you give them to a Character, they automatically join you as an Ally (if possible).',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                { roll: '2', description: 'Deadly Virus' },
+                { roll: '3', description: 'Incident' },
+                { roll: '4', description: 'No event' },
+                { roll: '5', description: 'Plot event' },
+                { roll: '6+', description: 'Character event' },
+            ],
+        },
+        {
+            roll: '2',
+            name: 'Cargo Cruiser',
+            terrain: 'Engineer 8, Pilot 7',
+            description:
+                'A large bulk ship that is an old, twisted wreck and that creaks alarmingly as you explore. Pilot rolls made with this ship have a -1 penalty and roll 1D6 each time - on a result of 1 see Hull Breach.',
+            encounter: 'D6',
+            rolls: [
+                {
+                    roll: '1',
+                    description:
+                        'Rogue Cyberman – Attacked (Brawn 6) unless you make a Running 7 roll to escape',
+                },
+                { roll: '2', description: 'Hull Breach' },
+                { roll: '3', description: 'Incident' },
+                { roll: '4', description: 'No event' },
+                { roll: '5', description: 'Strange Cargo (Plot event)' },
+                { roll: '6', description: 'Character event' },
+            ],
+        },
+        {
+            roll: '3',
+            name: 'Military Fighter',
+            terrain: 'Engineer 9, Pilot 8',
+            description:
+                'A sleek, black ship of advanced design with powerful weapons and engines. Add +1 to Pilot rolls in the Expanse with this ship. Add +1 to Investigate Actions here.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                {
+                    roll: '2',
+                    description:
+                        'Security Systems – make a Brains 10 roll (adding Stealth), if you fail, select one Character to be killed',
+                },
+                { roll: '3', description: 'Incident' },
+                { roll: '4', description: 'No event' },
+                { roll: '5', description: 'Plot event' },
+                { roll: '6+', description: 'Character event' },
+            ],
+        },
+        {
+            roll: '4',
+            name: 'Escape Pod',
+            terrain: 'Engineer 5, Pilot 10',
+            description:
+                'A small pod from one of the other ships in the Expanse that might have already been destroyed by the forces here. You may not complete any Actions here that require an Action table. If you make a Computers 8 roll, gain 1 Knowledge (once only). You may spend 1 Luck to have a Character event or 2 Luck to choose a Character event.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy event' },
+                { roll: '2-3', description: 'Incident' },
+                { roll: '4+', description: 'None' },
+            ],
+        },
+        {
+            roll: '5',
+            name: 'Alien Ship',
+            terrain: 'Science 10, Pilot 9',
+            description:
+                'An incredible ship of totally organic design and warm, vivid colours that gently pulsate as you explore it. Strange, but pleasant fluting music is mixed with an urgent throb that signifies the ship has been damaged. You may Study here as an Action using Science. Add +1 to Investigate and Research (Science) Actions here.',
+            encounter: 'D6',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                { roll: '2', description: 'Enemy Event' },
+                { roll: '3', description: 'Incident' },
+                { roll: '4', description: 'No event' },
+                { roll: '5', description: 'Plot event' },
+                { roll: '6', description: 'Alien Survivor' },
+            ],
+        },
+        {
+            roll: '6',
+            name: 'Abandoned TARDIS',
+            terrain: 'TARDIS 10, Pilot 11',
+            description:
+                'You have found an old TARDIS, now just a cold, empty husk with a silent, dead console. With a sudden, sinking feeling, you realize that this TARDIS is the cause of the power drain that has been trapping ships in the Expanse. Add +2 to TARDIS rolls and Prevent Actions in the Defeat Phase.',
+            encounter: 'D6',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                { roll: '2', description: 'Time Lord Survivor' },
+                { roll: '3', description: 'Draw random Gadget card' },
+                { roll: '4', description: 'Gain +2 Knowledge' },
+                { roll: '5-6', description: 'No event' },
+            ],
+        },
+    ],
+    plots: [
+        {
+            roll: '1',
+            name: 'Deadly Virus',
+            description:
+                'You discover a deadly virus killed the crew aboard this ship. Unless you have 2 Medicine or can make a Medicine 10 roll, each Human Character with less than 4 total Brawn and Bravery are killed.',
+        },
+        {
+            roll: '2',
+            name: 'Homing Beacon',
+            description:
+                'You discover an automatic beacon sending out what appears to be a homing signal. If you can make an Engineer 7 roll, choose to gain +1 Knowledge or reduce Danger by -2.',
+        },
+        {
+            roll: '3',
+            name: 'Hull Breach',
+            description:
+                'The area of the ship starts to break apart and you could be sucked out into space! Each Character must make a Brawn 6 roll (adding Running) to hold onto a bulkhead or be killed.',
+        },
+        {
+            roll: '4',
+            name: 'Distress Call',
+            description:
+                'You have picked up a distress call from one of the other ships in the Expanse. Roll 1D6 for a random Location and if you go there gain +2 Knowledge.',
+        },
+        {
+            roll: '5',
+            name: 'Prison Cell',
+            description:
+                'You discover that someone or something important has been captured. If you make a Rescue (8) Action, roll 1D6: 1-2: Gain +1 Knowledge; 3-4: Character event; 5-6: Enemy encounter.',
+        },
+        {
+            roll: '6',
+            name: 'Collision',
+            description:
+                'You see another wrecked ship heading directly towards you! You must make an Engineer roll to coax the engines of your ship back into life and then a Pilot 9 roll to evade the other ship. If you fail, add +3 Danger.',
+        },
+        {
+            roll: '7',
+            name: 'Missing Escape Pod',
+            description:
+                'You discover that the ship is missing an escape pod – is somebody still alive? Gain +1 Knowledge and add +2 to Pilot rolls reaching the Escape Pod Location.',
+        },
+        {
+            roll: '8',
+            name: 'Computer Log',
+            description:
+                'You discover a damaged databank that you might get working. If you can make a Computers 8 roll, gain +1 Knowledge.',
+        },
+        {
+            roll: '9',
+            name: 'Strange Cargo',
+            description:
+                'There have been strange readings from the Cargo Hold. If you go there, you enter a Dark, shadowy bay that is filled with large containers. Add +1 to Investigate Actions here. Encounter (Aware roll): 2-5: Enemy encounter; 6: Enemy event; 7: Plot event; 8: None; 9: Character event; 10-11: Gain +1 Knowledge; 12+: Gain +2 Knowledge but add +1 Danger.',
+        },
+    ],
+    characters: [
+        {
+            roll: '2',
+            name: 'Plague Victims',
+            description:
+                'Victims of a terrible and disfiguring wasting disease who shuffle towards you. You may Evade (Running 7) or are Attacked (Brawn 4). After the Conflict you must make a Medicine 9 roll or kill 1D3 Human Characters.',
+        },
+        {
+            roll: '3',
+            name: 'Servo-Robot',
+            description: 'Basic robot used for maintenance. Roll 1D6.',
+            rolls: [
+                {
+                    roll: '1-2',
+                    description:
+                        'It attacks (Brawn 3), but you may Evade with a Running 6 roll',
+                },
+                { roll: '3-4', description: 'It ignores you – event ends' },
+                { roll: '5-6', description: 'The robot joins you as an Ally' },
+            ],
+            stats: { brains: 1, brawn: 2, bravery: 0 },
+            skills: ['Engineer', 'Machine'],
+        },
+        {
+            roll: '4',
+            name: 'Old or New Friends',
+            description:
+                'You may pay 1 Luck to meet a Friend native to this Era or Major Tom Draper (below).',
+        },
+        {
+            roll: '5',
+            name: 'Soldiers',
+            description:
+                'A military team. Make a Charm roll (+1 if Enemy revealed, +1 if Danger 10+).',
+            rolls: [
+                {
+                    roll: '2-6',
+                    description:
+                        'Hostile – make a Running 7 roll or become Captured (7) or Attacked (Brawn 10)',
+                },
+                {
+                    roll: '7-9',
+                    description:
+                        'They question you suspiciously but let you go',
+                },
+                {
+                    roll: '10+',
+                    description:
+                        'They become Allies (1D3+1 in number; captain is Brains 1, Brawn 3, Bravery 3, Running; others are Brains 0, Brawn 3, Bravery 2)',
+                },
+            ],
+        },
+        {
+            roll: '6',
+            name: 'Mercenaries',
+            description:
+                'A tough group of soldiers. Make a Charm roll (+1 if Enemy revealed, +1 if Danger 15+).',
+            rolls: [
+                {
+                    roll: '2-8',
+                    description:
+                        'Hostile – make a Running 8 roll or become Captured (8) or Attacked (Brawn 10)',
+                },
+                {
+                    roll: '9-10',
+                    description: 'They question you but let you go',
+                },
+                {
+                    roll: '11+',
+                    description:
+                        'They become uneasy Allies (1D3+1 in number; leader is Brains 1, Brawn 3, Bravery 3; others are Brains 0, Brawn 3, Bravery 2)',
+                },
+            ],
+        },
+        {
+            roll: '7',
+            name: 'Engineer',
+            description:
+                'A talented technician aboard the ship. If you make a Charm 9 roll (adding +2 if Danger 8+), the Engineer becomes an Ally – gain +1 Knowledge. You also automatically Ally any Servo-Robots you encounter.',
+            stats: { brains: 2, brawn: 1, bravery: 2 },
+            skills: ['Engineer'],
+        },
+        {
+            roll: '8',
+            name: 'Alien Survivor',
+            description:
+                'A gaseous alien being that glows with an inner light. Make a Charm roll (adding Aware).',
+            rolls: [
+                {
+                    roll: '2-6',
+                    description:
+                        'You fail to make contact and the alien vanishes',
+                },
+                {
+                    roll: '7-9',
+                    description:
+                        'The alien communicates with you – gain +1 Knowledge, it then vanishes',
+                },
+                {
+                    roll: '10+',
+                    description:
+                        'The alien joins you as an Ally – gain +1 Knowledge',
+                },
+            ],
+            stats: { brains: 3, brawn: 0, bravery: 1 },
+            skills: ['Aware', 'History', 'Pilot'],
+        },
+        {
+            roll: '9',
+            name: 'Time Lord Survivor',
+            description:
+                'Badly wounded, the Time Lord will die unless you make a Medicine 7 roll. If treated, the Time Lord joins you as an Ally – gain +1 Knowledge.',
+            stats: { brains: 4, brawn: 1, bravery: 2 },
+            skills: ['Engineer', 'Science', 'TARDIS'],
+        },
+    ],
+    specials: [
+        {
+            id: 1,
+            image: 'major-tom-draper',
+            name: 'Major Tom Draper',
+            description:
+                'You have encountered Major Tom Draper, a soldier and pilot serving in Space Corps but who has been stranded alone in the Expanse. Draper will join you as an Ally and knows something about what is happening here so gain +1 Knowledge.',
+            information:
+                'You may also attempt to make a Charm (9) roll and if successful Major Draper joins you as a Companion – gain 1 Luck.',
+            stats: { brains: 2, brawn: 3, bravery: 3 },
+            skills: ['Computers', 'Pilot', 'Running'],
+        },
+        {
+            id: 2,
+            name: 'Escape the Expanse (Goal)',
+            description:
+                '(7VP, Quest) You discover that the Enemy wishes to locate the source of the power drain holding their ship so that they can escape the Hades Expanse. If the Doctor is captured by the Enemy, add +1 Danger. In the Defeat Phase you may lose 1 Knowledge to add +1 to Pilot or TARDIS rolls (max 3 per Turn).',
+            information:
+                'Trap Enemy Inside the Expanse: Make a Computers 11 roll to activate ship security systems. Then take a Prevent Action (adding Running but minus the Danger of Enemy). If fail, have an Enemy encounter and add +1 Danger. Boost your TARDIS and Escape: You must return to the TARDIS and make a TARDIS 10 roll. If you fail, the TARDIS is Damaged and add +1 Danger. If your total is 12+, you also free the Ships from the Expanse and gain 3 Luck.',
+        },
+    ],
+}
+
+export const adventureData: Adventure[] = [
+    A001,
+    A002,
+    A003,
+    A004,
+    A005,
+    A006,
+    A007,
+    A008,
+    A009,
+    A010,
+]

@@ -14,7 +14,7 @@ function AdventureLocations() {
 
     const items = locations.map((item: AdventureLocation, index: number) => ({
         id: String(index),
-        label: `${item.roll}: (M${item.move}) ${item.name}`,
+        label: `${item.roll}: ${item.move ? `(M${item.move}) ` : ''}${item.name}`,
         children: (
             <>
                 <p>

@@ -42,7 +42,10 @@ function AdventureView() {
                 </p>
             )}
 
-            <p>{adventure.description}</p>
+            <p>
+                {adventure.type && <em className="mr-1">({adventure.type})</em>}
+                {adventure.description}
+            </p>
 
             {adventure.special && (
                 <p>

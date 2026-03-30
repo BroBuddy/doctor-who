@@ -23,7 +23,7 @@ function AdventureSpecials() {
 
                 {character.image && (
                     <img
-                        src={`/images/characters/${character.image}.png`}
+                        src={`/images/specials/${character.image}.png`}
                         alt={character.name}
                     />
                 )}

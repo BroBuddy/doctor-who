@@ -1,11 +1,13 @@
 export type AdventureEra =
     | 'World War Era'
     | 'Future Era'
+    | 'Near Future Era'
     | 'Medieval Era'
     | 'Victorian Era'
     | 'Twilight Era'
     | 'Renaissance Era'
     | 'Colonial Era'
+    | 'Post-Modern Era'
 
 export type AdventureType =
     | 'Holiday'
@@ -13,6 +15,7 @@ export type AdventureType =
     | 'Investigation'
     | 'Combat'
     | 'Wilderness'
+    | 'Space'
 
 export type Adventure = {
     id: number
@@ -21,7 +24,7 @@ export type Adventure = {
     year: number
     tardis: number
     era: AdventureEra
-    type: AdventureType
+    type?: AdventureType
     description: string
     stats: AdventureStats
     special?: string
@@ -43,7 +46,7 @@ export type AdventureEnmy = Rolls[]
 export type AdventureLocation = {
     roll: string
     name: string
-    move: number | string
+    move?: number | string
     terrain?: string
     description: string
     encounter: string
