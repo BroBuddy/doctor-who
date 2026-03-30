@@ -12,3 +12,7 @@ export const getPrefixByTag = (tag: string) => {
             return 'tardis'
     }
 }
+
+export const formatYear = (year: number) => {
+    return year < 0 ? `${Math.abs(year)} BCE` : `${year} CE`
+}

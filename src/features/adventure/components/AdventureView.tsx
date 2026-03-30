@@ -3,6 +3,7 @@ import Badge from '@/components/Badge'
 import { getAdventureByTag } from '../services/AdventureService'
 import { useParams } from 'react-router-dom'
 import Card from '@/components/Card'
+import { formatYear } from '@/lib/helper'
 
 function AdventureView() {
     const { tag } = useParams()
@@ -17,7 +18,7 @@ function AdventureView() {
             />
 
             <p>
-                <Badge icon="🕒" text={String(adventure.year)} />
+                <Badge icon="🕒" text={formatYear(adventure.year)} />
                 <Badge icon="🌍" text={adventure.era} />
                 <Badge icon="🌀" text={`Tardis ${adventure.tardis}`} />
             </p>

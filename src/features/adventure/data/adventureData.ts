@@ -3433,7 +3433,7 @@ const A010: Adventure = {
             information:
                 'You may also attempt to make a Charm (9) roll and if successful Major Draper joins you as a Companion – gain 1 Luck.',
             stats: { brains: 2, brawn: 3, bravery: 3 },
-            skills: ['Computers', 'Pilot', 'Running'],
+            skills: ['Computers', 'Pilot 2', 'Running'],
         },
         {
             id: 2,
@@ -3442,6 +3442,375 @@ const A010: Adventure = {
                 '(7VP, Quest) You discover that the Enemy wishes to locate the source of the power drain holding their ship so that they can escape the Hades Expanse. If the Doctor is captured by the Enemy, add +1 Danger. In the Defeat Phase you may lose 1 Knowledge to add +1 to Pilot or TARDIS rolls (max 3 per Turn).',
             information:
                 'Trap Enemy Inside the Expanse: Make a Computers 11 roll to activate ship security systems. Then take a Prevent Action (adding Running but minus the Danger of Enemy). If fail, have an Enemy encounter and add +1 Danger. Boost your TARDIS and Escape: You must return to the TARDIS and make a TARDIS 10 roll. If you fail, the TARDIS is Damaged and add +1 Danger. If your total is 12+, you also free the Ships from the Expanse and gain 3 Luck.',
+        },
+    ],
+}
+
+const A011: Adventure = {
+    id: 11,
+    tag: 'A011',
+    title: 'Egypt',
+    year: -46,
+    tardis: 9,
+    era: 'Antiquity Era',
+    type: 'Investigation',
+    description:
+        'You have landed in Ancient Egypt and the time of the Pharaohs. The sand of the desert stretches for miles in all directions and the dusty heat of the Sun is almost unbearable. But perhaps you can find shelter and water at an oasis, or locate and explore an Egyptian city? Or perhaps you can discover and investigate the mysteries of the incredible Pyramids?',
+    stats: {
+        danger: 1,
+        knowledge: 5,
+        vp: 1,
+    },
+    special:
+        'Gain 1 Luck at start of Adventure if you or a Companion has History (2 Luck if a Character has History and Science). Desert Sands: (Wilderness, Exterior, Move 4) You walk across the stiflingly hot desert, your feet sinking into the soft sand. You may not take Investigate or Research Actions here. At the end of a Turn here, each Character must make a Bravery 7 roll or take a -1 penalty to Skill and Quality rolls on the next turn due to heatstroke. Encounter (D6, +1 to roll if Discover Phase): 1: Enemy encounter; 2: Enemy event; 3: Incident; 4: None; 5: Character event; 6+: Lost (Incident).',
+    enemy: [
+        { roll: '1', name: 'Military' },
+        { roll: '2-3', name: 'Entity' },
+        { roll: '4', name: 'Chameleon' },
+        { roll: '5', name: 'Temporal' },
+        { roll: '6', name: 'Villain' },
+    ],
+    locations: [
+        {
+            roll: '1',
+            name: 'Ancient Pyramids',
+            move: 8,
+            terrain: 'Exterior',
+            description:
+                'The incredible structures that rise from the desert contain the tombs of long-dead rulers of ancient Egypt and any that disturb them are said to be cursed. You may Study here. Add +2 to Investigate Actions but any Charm or Diplomacy rolls made here have a -3 penalty.',
+            encounter: 'D6 adding History',
+            rolls: [
+                { roll: '1-2', description: 'Enemy encounter' },
+                { roll: '3', description: 'Enemy Lair' },
+                { roll: '4', description: 'Curse' },
+                { roll: '5', description: 'Character event' },
+                { roll: '6', description: 'Plot event or +1 Knowledge' },
+                {
+                    roll: '7+',
+                    description: 'Gain +2 Knowledge and add +1 Danger',
+                },
+            ],
+        },
+        {
+            roll: '2',
+            name: 'Temple of Osiris',
+            move: 8,
+            terrain: 'Exterior',
+            description:
+                'Massive stone statues of the Egyptian Gods dominate the large, smoky temple that has a large altar in its centre. If you have an Incident here whilst captured, it is automatically a Capture Incident. Add +1 to Investigate Actions here. Charm, Diplomacy and Escape rolls have a -1 penalty. Add +1 Danger if Entity Enemy. You may spend 1 Luck to meet High Priest.',
+            encounter: 'D6',
+            rolls: [
+                { roll: '1', description: 'Incident' },
+                { roll: '2', description: 'None' },
+                { roll: '3', description: 'Royal Guards' },
+                { roll: '4', description: 'Plot' },
+                { roll: '5', description: 'High Priest' },
+                { roll: '6', description: 'Enemy encounter' },
+            ],
+        },
+        {
+            roll: '3',
+            name: 'Oasis',
+            move: 9,
+            terrain: 'Wilderness, Exterior',
+            description:
+                'An area of fertility within the stifling heat of the desert, the oasis offers shade and water for the weary traveller. Add +1 to Explore and Find Help Actions here. You may spend 1 Luck so a Character does not have a penalty on rolls due to heatstroke this Turn.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy event' },
+                {
+                    roll: '2',
+                    description:
+                        'Sandstorm – You may not Move from here next turn',
+                },
+                { roll: '3', description: 'None' },
+                { roll: '4', description: 'Incident' },
+                { roll: '5+', description: 'Character event' },
+            ],
+        },
+        {
+            roll: '4',
+            name: 'City of Thebes',
+            move: 8,
+            terrain: 'Exterior',
+            description:
+                'The city bustles with life at all levels – from the slaves, the artisans, to the nobles and warriors of Egypt. Add +1 to Seek Information and Find Help Actions here. You can spend 1 Luck to have a Character event, spend 3 Luck to meet a Character of your choice (including Queen Cleopatra) or spend 1 Luck to roll for a Plot event.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                { roll: '2-3', description: 'None' },
+                { roll: '4', description: 'Incident' },
+                { roll: '5+', description: 'Character event' },
+            ],
+        },
+        {
+            roll: '5',
+            name: 'Banks of the Nile',
+            move: 7,
+            terrain: 'Water, Exterior',
+            description:
+                'The most majestic and sacred river winds its way through Egypt, giving life to the land. Boats drift along the river and many are drawn to the banks for water, although they can be easy prey for the vicious crocodiles. Add +2 to Move Actions from here.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                {
+                    roll: '2-3',
+                    description:
+                        'Nile Crocodiles – Attacked (Brawn 6, Creature) unless Evade with Running 6',
+                },
+                { roll: '4-5', description: 'None' },
+                { roll: '6', description: 'Incident' },
+                { roll: '7', description: 'Character event' },
+            ],
+        },
+        {
+            roll: '6',
+            name: "Cleopatra's Palace",
+            move: 9,
+            terrain: 'Exterior',
+            description:
+                'The magnificent residence of Queen Cleopatra that is filled with her slaves, courtiers and protected by her loyal guards. Add +1 to Find Help, Seek Information and Plan Actions here.',
+            encounter: 'Diplomacy roll',
+            rolls: [
+                { roll: '2-4', description: 'Captured (8)' },
+                { roll: '5-6', description: 'Royal Guards (with Brawn 10)' },
+                { roll: '7-8', description: 'None' },
+                { roll: '9', description: 'Noble' },
+                { roll: '10', description: 'High Priest' },
+                {
+                    roll: '11+',
+                    description:
+                        'Gain 2 Knowledge or spend 1 Luck point to meet Queen Cleopatra of the Nile (Special Character) as an Action',
+                },
+            ],
+        },
+    ],
+    plots: [
+        {
+            roll: '2-4',
+            name: 'Curse',
+            description:
+                'You learn about a strange Egyptian legend. Is it just superstition or might it have a connection to recent events? Gain +1 Knowledge (or +2 Knowledge with a successful History 8 roll).',
+        },
+        {
+            roll: '5',
+            name: 'Murder',
+            description:
+                'Someone has been found murdered nearby and a corpse discovered. Roll 1D6 and if result is a 1, discard a random Ally. Gain +1 Knowledge (or +2 Knowledge with a successful Medicine 7 roll).',
+        },
+        {
+            roll: '6',
+            name: 'Ancient Relic',
+            description:
+                'A mysterious artefact has been discovered – could it be important to the plans of the Enemy? Make a Science 7 roll and a History 7 roll, gaining +1 Knowledge per success. Add +1 Danger.',
+        },
+        {
+            roll: '7',
+            name: 'Political Intrigue',
+            description:
+                'You learn about the current difficult and potentially dangerous political climate in Egypt. Gain +1 Knowledge (or +2 Knowledge with a successful History 9 or Diplomacy 8 roll) but add +1 Danger.',
+        },
+        {
+            roll: '8',
+            name: 'Prophecy',
+            description:
+                'You learn that a strange prophecy has been made by the temple priests. Gain +1 Knowledge if you make a Brains 12 roll (add Aware and History).',
+        },
+        {
+            roll: '9',
+            name: 'Under Suspicion',
+            description:
+                'Recent events place you under suspicion of nefarious activities or crimes. If you make either a Charm 10 roll or Diplomacy 9 roll, gain +1 Knowledge. If you fail you are Captured (8).',
+        },
+        {
+            roll: '10',
+            name: 'Mistaken Identity',
+            description:
+                'You discover that one of your Companions has been mistaken for someone of importance. Gain +2 to all Charm and Diplomacy rolls in this Adventure where Companion is present.',
+        },
+        {
+            roll: '11-12',
+            name: 'Disturbed Tomb',
+            description:
+                'Strange activity surrounding the tomb of a long-dead Egyptian noble. If you go there (Dark, Move 9) then you find an ornately decorated stone chamber deep beneath the catacombs of the citadel. Add +1 Danger. Add +2 to Investigate Actions here. -1 to Charm/Diplomacy rolls here. Encounter (Aware roll): 2-5: Enemy encounter; 6: Enemy event; 7: Curse; 8: None; 9: Under Suspicion; 10-11: Gain +1 Knowledge; 12+: Gain +2 Knowledge but add +1 Danger.',
+        },
+    ],
+    characters: [
+        {
+            roll: '2-4',
+            name: 'Military General',
+            description:
+                'A brutal and scheming commander and his warriors. Make a Diplomacy roll (+1 if Enemy revealed).',
+            rolls: [
+                {
+                    roll: '2-6',
+                    description:
+                        'Attacked (Brawn 7) unless you Surrender (Capture 8) or Evade (Running 8)',
+                },
+                { roll: '7-8', description: 'No event' },
+                {
+                    roll: '9-10',
+                    description: 'Knows of local events – roll for Plot event',
+                },
+                {
+                    roll: '11+',
+                    description:
+                        'Becomes Ally (Brains 2, Brawn 4, Bravery 4, Diplomacy) plus 1D6 Guards (each Brains 0, Brawn 3, Bravery 2) - roll for a Plot event',
+                },
+            ],
+        },
+        {
+            roll: '5',
+            name: 'Noble',
+            description: 'Finely dressed and cultured. Make a Diplomacy roll.',
+            rolls: [
+                {
+                    roll: '2-3',
+                    description:
+                        'Guards called – see Royal Guard (-2 to Charm roll)',
+                },
+                { roll: '4-6', description: 'No event' },
+                { roll: '7-8', description: 'Plot event' },
+                {
+                    roll: '9+',
+                    description: 'Becomes your Ally – roll for Plot event',
+                },
+            ],
+            stats: { brains: 1, brawn: 2, bravery: 1 },
+            skills: ['Charm', 'Diplomacy', 'History'],
+        },
+        {
+            roll: '6',
+            name: 'High Priest',
+            description:
+                'Devout to his Queen and the Gods, but also a suspicious zealot. Make a Diplomacy roll (-3 if in a Temple, +3 if Enemy revealed).',
+            rolls: [
+                { roll: '2-7', description: 'You are Captured (8)' },
+                { roll: '8-9', description: 'No further event' },
+                {
+                    roll: '10',
+                    description: 'Informed of news - roll for a Plot event',
+                },
+                {
+                    roll: '11+',
+                    description: 'He becomes your Ally – roll for Plot event',
+                },
+            ],
+            stats: { brains: 2, brawn: 1, bravery: 3 },
+            skills: ['Diplomacy', 'History'],
+        },
+        {
+            roll: '7',
+            name: 'Royal Guards',
+            description:
+                'A patrol of guards block your path. Make a Diplomacy roll (with -1 per Stealth, +2 if Enemy revealed).',
+            rolls: [
+                {
+                    roll: '2-6',
+                    description:
+                        'Hostile – either Evade (Running 7 roll) or become Captured (7) or Attacked (Brawn 5)',
+                },
+                { roll: '7-9', description: 'No further event' },
+                {
+                    roll: '10+',
+                    description:
+                        'They become Allies (1D3+1 in number, each Brains 0, Brawn 2, Bravery 2)',
+                },
+            ],
+        },
+        {
+            roll: '8',
+            name: 'Scholar',
+            description:
+                'A learned man of herbs and potions. Make a Science roll.',
+            rolls: [
+                { roll: '2-7', description: 'No further event' },
+                { roll: '8-9', description: 'Roll for a Plot event' },
+                {
+                    roll: '10+',
+                    description:
+                        'The scholar becomes your Ally – roll for a Plot event',
+                },
+            ],
+            stats: { brains: 2, brawn: 0, bravery: 1 },
+            skills: ['Medicine', 'Science'],
+        },
+        {
+            roll: '9',
+            name: 'Merchant',
+            description:
+                'A well-dressed trader. Make a Charm roll (-1 per Stealth).',
+            rolls: [
+                {
+                    roll: '2-4',
+                    description:
+                        'He accuses you of thievery and calls guards – see Royal Guards with -1 to roll',
+                },
+                { roll: '5-6', description: 'No event' },
+                {
+                    roll: '7-8',
+                    description:
+                        'He knows some local gossip – roll for a Plot event',
+                },
+                {
+                    roll: '9+',
+                    description: 'He becomes an Ally - roll for a Plot event',
+                },
+            ],
+            stats: { brains: 2, brawn: 1, bravery: 1 },
+            skills: ['Diplomacy'],
+        },
+        {
+            roll: '10',
+            name: 'Fugitive',
+            description:
+                'Someone that is avoiding the guards for unknown reasons. Ignore if with Royal Guards or Cleopatra, otherwise make a Charm roll.',
+            rolls: [
+                {
+                    roll: '2',
+                    description: 'Pickpocket - lose a Gadget or 2 Luck',
+                },
+                { roll: '3-7', description: 'No further event' },
+                { roll: '8-9', description: 'Roll for Plot event' },
+                {
+                    roll: '10+',
+                    description:
+                        'The fugitive becomes your Ally – roll for a Plot event',
+                },
+            ],
+            stats: { brains: 1, brawn: 1, bravery: 1 },
+            skills: ['Stealth'],
+        },
+        {
+            roll: '11-12',
+            name: 'Handmaiden',
+            description: 'A demure and beautiful servant. Make a Charm roll.',
+            rolls: [
+                { roll: '2-4', description: 'Bows and continues her duties' },
+                {
+                    roll: '5-8',
+                    description: 'Shares local news – roll for Plot event',
+                },
+                {
+                    roll: '9+',
+                    description: 'Becomes Ally – roll for Plot event',
+                },
+            ],
+            stats: { brains: 1, brawn: 0, bravery: 1 },
+            skills: ['Charm', 'History'],
+        },
+    ],
+    specials: [
+        {
+            id: 1,
+            image: 'queen-cleopatra-of-the-nile',
+            name: 'Queen Cleopatra of the Nile',
+            description:
+                'You have met the beautiful and cunning Cleopatra, Queen of Egypt and the Nile. Gain 1 VP. She is with a retinue of servants and soldiers.',
+            information:
+                'Evade: Roll 1D6: 1-5: The retinue passes by and event ends; 6: The soldiers attack (Brawn 7) unless you Surrender (Captured 9), or try to Evade using a Running 8 roll. Talk: You attempt to gain an audience with Cleopatra. Make a Diplomacy roll (add Charm of any one male Character): 2-4: You unwittingly give insult and are Captured (8). 5-7: Cleopatra has nothing useful to tell you and brushes you off. 8-9: You have an interesting conversation with Cleopatra – roll for a Plot event. She then graciously departs. You may spend 1 Luck to meet her Handmaiden. 10+: The Queen declares that you have a common cause and joins you as an Ally along with her loyal bodyguard (Brains 0, Brawn 4, Bravery 4). You may also roll for a Plot event.',
+            stats: { brains: 3, brawn: 1, bravery: 4 },
+            skills: ['Aware', 'Charm 2', 'Diplomacy 2', 'History', 'Stealth'],
         },
     ],
 }
@@ -3457,4 +3826,5 @@ export const adventureData: Adventure[] = [
     A008,
     A009,
     A010,
+    A011,
 ]
