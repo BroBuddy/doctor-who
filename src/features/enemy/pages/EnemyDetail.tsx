@@ -10,6 +10,7 @@ import AddFavorite from '@/features/helper/components/AddFavorite'
 import EnemyLairView from '../components/EnemyLairView'
 import EnemyGoals from '../components/EnemyGoals'
 import EnemyEvents from '../components/EnemyEvents'
+import Card from '@/components/Card'
 
 function EnemyDetail() {
     const { tag } = useParams()
@@ -50,7 +51,9 @@ function EnemyDetail() {
                 {enemy.tag}. {enemy.title}
             </Headline>
 
-            <Tabs tabs={tabItems} />
+            <Card>
+                <Tabs tabs={tabItems} />
+            </Card>
         </>
     )
 }

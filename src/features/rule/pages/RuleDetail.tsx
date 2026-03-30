@@ -4,6 +4,7 @@ import { Headline } from '@/components/Headline'
 import { getRuleByTag } from '../services/RuleService'
 import { useHistory } from '@/features/helper/hooks/useHistory'
 import AddFavorite from '@/features/helper/components/AddFavorite'
+import Card from '@/components/Card'
 
 function RuleDetail() {
     const { tag } = useParams()
@@ -25,7 +26,9 @@ function RuleDetail() {
                 {rule.tag}. {rule.title}
             </Headline>
 
-            <div dangerouslySetInnerHTML={{ __html: rule.description }} />
+            <Card>
+                <div dangerouslySetInnerHTML={{ __html: rule.description }} />
+            </Card>
         </>
     )
 }

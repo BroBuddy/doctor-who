@@ -11,6 +11,7 @@ import AdventureCharacters from '../components/AdventureCharacters'
 import AdventureSpecials from '../components/AdventureSpecials'
 import { useHistory } from '@/features/helper/hooks/useHistory'
 import AddFavorite from '@/features/helper/components/AddFavorite'
+import Card from '@/components/Card'
 
 function AdventureDetail() {
     const { tag } = useParams()
@@ -63,7 +64,9 @@ function AdventureDetail() {
                 {adventure.tag}. {adventure.title}
             </Headline>
 
-            <Tabs tabs={tabItems} />
+            <Card>
+                <Tabs tabs={tabItems} />
+            </Card>
         </>
     )
 }
