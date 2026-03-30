@@ -1,7 +1,6 @@
 import { Accordion } from '@/components/Accordion'
 import Card from '@/components/Card'
 import { Headline } from '@/components/Headline'
-import AddFavorite from '@/features/helper/components/AddFavorite'
 import ChallengeTable from '@/features/tables/components/ChallengeTable'
 import ExploreTable from '@/features/tables/components/ExploreTable'
 import FindHelpTable from '@/features/tables/components/FindHelpTable'
@@ -75,7 +74,6 @@ function ActionTables() {
     return (
         <>
             <Headline>
-                <AddFavorite tag={rule.tag} title={rule.title} />
                 {rule.tag}. {rule.title}
             </Headline>
 
