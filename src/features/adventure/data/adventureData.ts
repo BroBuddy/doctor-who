@@ -13,21 +13,19 @@ const A001: Adventure = {
     stats: { danger: 0, knowledge: 5, vp: 0 },
     special:
         'Roll 1D6+1 for Landing Location. Night falls at start of Turn 1D3+2 and lasts 6 Turns (Human Allies are -1 Bravery at Night).',
-    enemy: {
-        dice: '1D6',
-        table: [
-            { roll: '1-2', name: 'Gothic' },
-            { roll: '3', name: 'Earth' },
-            { roll: '4', name: 'Entity' },
-            { roll: '5', name: 'Temporal' },
-            { roll: '6', name: 'Chameleon' },
-        ],
-    },
+    enemy: [
+        { roll: '1-2', name: 'Gothic' },
+        { roll: '3', name: 'Earth' },
+        { roll: '4', name: 'Entity' },
+        { roll: '5', name: 'Temporal' },
+        { roll: '6', name: 'Chameleon' },
+    ],
     locations: [
         {
             roll: '1',
             name: 'Archaeological Dig',
-            tags: ['Dark', 'Move 8'],
+            move: 8,
+            terrain: 'Dark',
             description:
                 "A recently excavated site that tunnels into a hillside a mile outside Stourford and said to be the burial site of a Saxon warrior. The discovery was not popular with the villagers. Add +2 to Investigate Actions here. You may Study here. Take a -1 penalty to any Charm rolls with 'local' Characters after visiting here.",
             encounter: 'D6, +1 to roll if Discover Phase',
@@ -43,7 +41,7 @@ const A001: Adventure = {
         {
             roll: '2',
             name: 'Village Inn',
-            tags: ['Move 6'],
+            move: 6,
             description:
                 'A lovely local inn where the sounds of talking and laughing are mixed with the clink of glasses and the inviting smells of hot food. Add +1 to (Charm) Seek Information Actions and +1 to Relax Actions but you may not Investigate here.',
             encounter: 'D6',
@@ -59,7 +57,7 @@ const A001: Adventure = {
         {
             roll: '3',
             name: 'Farm',
-            tags: ['Move 7'],
+            move: 7,
             description:
                 "A rustic old farmhouse surrounded by stables and sheds with a battered tractor sitting close to the gate. The bark of a dog can be heard from a barn. Add +1 to Investigate Actions here. If you make a Charm 7 roll, you are invited inside by the farmer's wife – make an immediate Relax Action (Discover Phase) or Seek Information Action (Dilemma Phase).",
             encounter: 'D6',
@@ -72,7 +70,7 @@ const A001: Adventure = {
         {
             roll: '4',
             name: 'Post Office',
-            tags: ['Move 6'],
+            move: 6,
             description:
                 "This quaint little shop in the centre of Stourford is run by a very friendly and efficient postmistress who makes everyone's business her business. Add +2 to Seek Information Actions and +1 to Enemy Action rolls here. You may not Explore here. You may spend 2 Luck to meet Louisa James or Madame Dumaris (Special Characters) or have a Plot event.",
             encounter: 'D6',
@@ -86,7 +84,7 @@ const A001: Adventure = {
         {
             roll: '5',
             name: 'Manor House',
-            tags: ['Move 7'],
+            move: 7,
             description:
                 'A magnificent old house and residence of the local gentry that is set in some lovely tended grounds with a vintage car sat on the drive. Add +1 to Investigate and Plan Actions here.',
             encounter: 'D6, add Diplomacy',
@@ -111,7 +109,7 @@ const A001: Adventure = {
         {
             roll: '6',
             name: 'Old Church',
-            tags: ['Move 6'],
+            move: 6,
             description:
                 'A lovely country stone church with beautiful stained glass windows that is surrounded by a well-kept graveyard. But does it contain hidden secrets? Add +1 to Research (History) Actions here.',
             encounter: 'D6, +1 if Discover Phase',
@@ -134,7 +132,8 @@ const A001: Adventure = {
         {
             roll: '7',
             name: 'Country Lanes',
-            tags: ['Exterior', 'Move 2'],
+            move: 2,
+            terrain: 'Exterior',
             description:
                 'You stroll along the beautiful country paths, through the russet leaves strewn on the ground from almost bare trees. A fresh, cool wind gently plays through your clothes. Add +1 to Explore Actions, +2 to Move Actions from here but you may not Investigate, Find Help or Research here.',
             encounter: 'D6, -1 to roll if Night',
@@ -445,22 +444,19 @@ const A002: Adventure = {
     stats: { danger: 1, knowledge: 6, vp: 1 },
     special:
         'Gain 1 Luck point when starting Adventure. Peladon counts as Medieval Era for Actions. Roll 1D6+1 for Landing Location.',
-    enemy: {
-        dice: '1D6',
-        table: [
-            { roll: '1', name: 'Military' },
-            { roll: '2', name: 'Gothic' },
-            { roll: '3', name: 'Entity' },
-            { roll: '4', name: 'Chameleon' },
-            { roll: '5', name: 'Criminal' },
-            { roll: '6', name: 'Time Lord' },
-        ],
-    },
+    enemy: [
+        { roll: '1', name: 'Military' },
+        { roll: '2', name: 'Gothic' },
+        { roll: '3', name: 'Entity' },
+        { roll: '4', name: 'Chameleon' },
+        { roll: '5', name: 'Criminal' },
+        { roll: '6', name: 'Time Lord' },
+    ],
     locations: [
         {
             roll: '1',
             name: 'Throne Room',
-            tags: ['Move 7'],
+            move: 7,
             description:
                 'The large chamber where the King meets with his trusted advisors or receives Federation guests. The emblem of Aggedor adorns the walls and loyal guards flank the entrance. Add +1 to Seek Information and Find Help Actions but you may not Investigate here.',
             encounter: 'D6',
@@ -476,7 +472,7 @@ const A002: Adventure = {
         {
             roll: '2',
             name: 'Temple of Aggedor',
-            tags: ['Move 7'],
+            move: 7,
             description:
                 'A massive stone statue of the Royal Beast dominates the small, smoky temple that has a small altar in its centre. If you have an Incident here whilst captured, it is automatically a Capture Incident. Add +1 to Investigate Actions here. Charm, Diplomacy and Escape rolls have -1 penalty. You may pay 1 Luck point to meet Aggedor (Special Characters).',
             encounter: 'D6',
@@ -491,7 +487,8 @@ const A002: Adventure = {
         {
             roll: '3',
             name: 'Slopes of Mount Megeshra',
-            tags: ['Wilderness', 'Cold', 'Exterior', 'Move 8'],
+            move: 8,
+            terrain: 'Wilderness, Cold, Exterior',
             description:
                 'The ferocious wind howls in your ears as you climb across the narrow, rocky ledges. Add +2 to Explore Actions here but if you roll doubles, you slip on the ledge – roll 1D6 for each Character and on a result of 1 they are killed.',
             encounter: 'D6, +1 to roll if Discover Phase',
@@ -510,7 +507,8 @@ const A002: Adventure = {
         {
             roll: '4',
             name: 'Mines',
-            tags: ['Dark', 'Move 8'],
+            move: 8,
+            terrain: 'Dark',
             description:
                 'The mines of Peladon run deep into the mountain and are incredibly rich in many ores such as trisillicate. Add +1 to Investigate Actions here. Move rolls from here have a -1 penalty. At the end of each Turn here, roll 1D6: on a 1 there is a rock-fall and Characters here must make a Brawn (10) roll to Move from this Location.',
             encounter: 'D6, +1 to roll if Discover Phase',
@@ -526,7 +524,7 @@ const A002: Adventure = {
         {
             roll: '5',
             name: 'Refinery',
-            tags: ['Move 7'],
+            move: 7,
             description:
                 'Control centre where raw material from the mines is separated and refined. To enter requires an Engineer 8 roll to deactivate the security system — if failed, Characters here are stunned and may take no Action next Turn. You may spend 1 Luck (once only) to see Mineral Wealth (Plot). Add +1 to Investigate and Research (Science) Actions here.',
             encounter: 'D6, +1 if Discover Phase',
@@ -542,7 +540,7 @@ const A002: Adventure = {
         {
             roll: '6',
             name: 'Ambassadors Quarters',
-            tags: ['Move 7'],
+            move: 7,
             description:
                 'A small set of rooms and chambers assigned to the various Federation Ambassadors attached to Peladon. Add Diplomacy to Investigate and Planning Actions here.',
             encounter: 'D6',
@@ -558,7 +556,7 @@ const A002: Adventure = {
         {
             roll: '7',
             name: 'Citadel Corridors',
-            tags: ['Move 2'],
+            move: 2,
             description:
                 'The narrow passages are lit by smoky, flickering torches held in iron sconces. Walls are adorned with large tapestries bearing the symbol of Aggedor. You may not Investigate, Seek Information or Research here. Add +2 to any Move Actions from here.',
             encounter: 'D6, +1 if Discover Phase',
@@ -806,22 +804,19 @@ const A003: Adventure = {
     stats: { danger: 0, knowledge: 5, vp: 0 },
     special:
         'Gain +1 Luck if you bring a Companion with History and Charm to Adventure. Night will fall at the start of Turn 2 and lasts for Adventure. Move Actions are automatic and you may choose another Action for Turn.',
-    enemy: {
-        dice: '1D6',
-        table: [
-            { roll: '1', name: 'Entity' },
-            { roll: '2', name: 'Gothic' },
-            { roll: '3', name: 'Temporal' },
-            { roll: '4', name: 'Criminal' },
-            { roll: '5', name: 'Time Lord' },
-            { roll: '6', name: 'Chameleon' },
-        ],
-    },
+    enemy: [
+        { roll: '1', name: 'Entity' },
+        { roll: '2', name: 'Gothic' },
+        { roll: '3', name: 'Temporal' },
+        { roll: '4', name: 'Criminal' },
+        { roll: '5', name: 'Time Lord' },
+        { roll: '6', name: 'Chameleon' },
+    ],
     locations: [
         {
             roll: '1',
             name: 'Lounge Bar',
-            tags: ['Move 6'],
+            move: 6,
             description:
                 'The sounds of talking, dancing and laughing are mixed with the clink of glasses and the tempo beat of the jazz band in the corner. Add +1 to (Charm) Seek Information Actions and +1 to Relax Actions but you may not Investigate here.',
             encounter: 'D6',
@@ -837,7 +832,7 @@ const A003: Adventure = {
         {
             roll: '2',
             name: 'Casino',
-            tags: ['Move 6'],
+            move: 6,
             description:
                 'The room is filled with passengers, all attempting to win their fortune in games of chance – either at the poker table or the roulette wheel. You may spend 1 Luck to Gamble as an Action, winning 3 Luck if you roll 7, 11 or doubles with 2D6. If you roll a 2, add +1 Danger.',
             encounter: 'D6',
@@ -853,7 +848,7 @@ const A003: Adventure = {
         {
             roll: '3',
             name: 'Wheelhouse',
-            tags: ['Move 7'],
+            move: 7,
             description:
                 "The control cabin of the steamer where the Captain of 'The River Queen' and his crew efficiently steer the majestic ship along the famous river. If you do not have any native Pilot Allies, you must make a Charm 8 roll or be Captured (7). Add +1 to Prevent and Plan Actions here. If you make a Pilot 8 roll as an Action here, reduce Danger by 1.",
             encounter: 'D6',
@@ -866,7 +861,7 @@ const A003: Adventure = {
         {
             roll: '4',
             name: 'Cabins',
-            tags: ['Move 6'],
+            move: 6,
             description:
                 'A smaller, but still very pleasant cabin, where the passengers aboard the steamer can sleep and relax. Add +1 to Seek Information and Investigate Actions here. You can spend 1 Luck to meet a random Character, spend 3 Luck to meet a Character of your choice (including Mark Twain or Gabrielle Blanchett) or spend 1 Luck to roll for a Plot event.',
             encounter: 'D6, +1 to roll if Discover Phase',
@@ -880,7 +875,7 @@ const A003: Adventure = {
         {
             roll: '5',
             name: 'Private Stateroom',
-            tags: ['Move 7'],
+            move: 7,
             description:
                 'Larger and more luxurious quarters for richer and more important passengers. But could those passengers be all what they seem? Add +1 to Seek Information and Investigate Actions here. You can spend 1 Luck to meet a Banker, Gambler, random Character or roll for a Plot event.',
             encounter: 'D6, +1 to roll if Discover Phase',
@@ -899,7 +894,7 @@ const A003: Adventure = {
         {
             roll: '6',
             name: 'Boiler Room',
-            tags: ['Move 7'],
+            move: 7,
             description:
                 'The heart of the steamer, all oil, smoke and pistons as the magnificent machinery pumps and turns, pushing the boat effortlessly through the water. If the Doctor is here and has Engineer, gain 1 VP (once only in Adventure). Add +1 to Investigate and Research (Engineer) Actions here.',
             encounter: 'D6, +1 to roll if Discover Phase',
@@ -1150,21 +1145,18 @@ const A004: Adventure = {
     stats: { danger: 0, knowledge: 5, vp: 0 },
     special:
         'Gain 1 Luck if you bring a Companion with Aware and Charm to Adventure. Night will fall at start of Turn 1D3+2 and last 4 Turns.',
-    enemy: {
-        dice: '1D6',
-        table: [
-            { roll: '1-2', name: 'Gothic' },
-            { roll: '3', name: 'Earth' },
-            { roll: '4', name: 'Entity' },
-            { roll: '5', name: 'Temporal' },
-            { roll: '6', name: 'Chameleon' },
-        ],
-    },
+    enemy: [
+        { roll: '1-2', name: 'Gothic' },
+        { roll: '3', name: 'Earth' },
+        { roll: '4', name: 'Entity' },
+        { roll: '5', name: 'Temporal' },
+        { roll: '6', name: 'Chameleon' },
+    ],
     locations: [
         {
             roll: '1',
             name: 'Tavern',
-            tags: ['Move 6'],
+            move: 6,
             description:
                 'You have found a local inn where the sounds of talking and laughing are mixed with the clink of glasses and the inviting smells of hot food. Add +1 to (Charm) Seek Information Actions and +1 to Relax Actions. You may not Investigate here.',
             encounter: 'D6',
@@ -1184,7 +1176,7 @@ const A004: Adventure = {
         {
             roll: '2',
             name: 'Globe Theatre',
-            tags: ['Move 8'],
+            move: 8,
             description:
                 'This incredible theatre has only just opened but is the talk of London. Gain 1 VP for each TARDIS Character with History here (once only). If you remain here for a full Turn with no other Action, you get to see a Shakespeare play performed and gain 1 Luck point per TARDIS Character. If the Enemy are Carrionites, add +1 Danger.',
             encounter: 'D6',
@@ -1200,7 +1192,7 @@ const A004: Adventure = {
         {
             roll: '3',
             name: 'Tower of London',
-            tags: ['Move 8'],
+            move: 8,
             description:
                 'The incredible castle in the centre of London and a grim reminder to any traitors to the Crown. Gain 1 VP if you spend a full Turn here (once only). Add +2 to Plan Actions here.',
             encounter: 'Diplomacy roll, -1 per Stealth',
@@ -1222,7 +1214,7 @@ const A004: Adventure = {
         {
             roll: '4',
             name: 'Insane Asylum',
-            tags: ['Move 9'],
+            move: 9,
             description:
                 'You have found a terrifying madhouse where screaming patients are kept in terrible conditions. Add +1 to Investigate or Seek Information Actions here, -1 to Escape Actions.',
             encounter: 'D6, +1 to roll if Discover Phase',
@@ -1245,7 +1237,7 @@ const A004: Adventure = {
         {
             roll: '5',
             name: 'Greenwich Palace',
-            tags: ['Move 9'],
+            move: 9,
             description:
                 'The magnificent residence of Queen Elizabeth I that is filled with courtiers and protected by her loyal soldiers. Add +1 to Find Help Actions here.',
             encounter: 'Diplomacy roll',
@@ -1264,7 +1256,7 @@ const A004: Adventure = {
         {
             roll: '6',
             name: 'Church',
-            tags: ['Move 7'],
+            move: 7,
             description:
                 'An old stone church that looks unused and ill-kept, but you might find something useful inside it or perhaps in the old graveyard. Add +1 to Research (History) Actions here.',
             encounter: 'D6',
@@ -1539,20 +1531,17 @@ const A005: Adventure = {
     stats: { danger: 1, knowledge: 5, vp: 0 },
     special:
         'When rolling for an Incident, if the 2D6 roll is less than Turn number, instead see the Tremors (Special Event).',
-    enemy: {
-        dice: '1D6',
-        table: [
-            { roll: '1-2', name: 'Gothic' },
-            { roll: '3-4', name: 'Entity' },
-            { roll: '5', name: 'Military' },
-            { roll: '6', name: 'Criminal' },
-        ],
-    },
+    enemy: [
+        { roll: '1-2', name: 'Gothic' },
+        { roll: '3-4', name: 'Entity' },
+        { roll: '5', name: 'Military' },
+        { roll: '6', name: 'Criminal' },
+    ],
     locations: [
         {
             roll: '1',
             name: 'Ore Processing Plant',
-            tags: ['Move 8'],
+            move: 8,
             description:
                 'A huge hangar where raw materials from the surface are separated, graded and refined. Add +1 to Investigate Actions here. You may spend 3 Luck (reduced by 1 for each Science here, min 1) to find Vintarric Crystals (Special Events).',
             encounter: 'D6, +1 to roll if Discover Phase',
@@ -1572,7 +1561,7 @@ const A005: Adventure = {
         {
             roll: '2',
             name: 'Science Laboratory',
-            tags: ['Move 7'],
+            move: 7,
             description:
                 'A small but well-equipped laboratory filled with specialised analysis apparatus for testing biological and mineral samples. If any TARDIS Character with Science remains here for 1 Turn, they gain +1 Brains until end of the Adventure. Add +1 to Research (Medicine or Science) and Plan (Medicine or Science) Actions here.',
             encounter: 'D6',
@@ -1588,7 +1577,7 @@ const A005: Adventure = {
         {
             roll: '3',
             name: 'Maintenance Area',
-            tags: ['Move 7'],
+            move: 7,
             description:
                 'An area full of partly-constructed or repaired equipment. If a TARDIS Character with Engineer remains here for 1 Turn, they gain +1 Brains until end of the Adventure or they draw a random Gadget card and play for 1 less Luck cost. Add +1 to Research (Engineer) and Plan (Engineer) Actions here.',
             encounter: 'D6',
@@ -1605,7 +1594,7 @@ const A005: Adventure = {
         {
             roll: '4',
             name: 'Crew Quarters',
-            tags: ['Move 7'],
+            move: 7,
             description:
                 'The cramped and basic quarters where the personnel aboard the station try to relax. Add +1 to Seek Information Actions here. You can either spend 1 Luck to meet a random Character, spend 3 Luck to meet a Character of your choice (except Ood or Servo-robot) or spend 2 Luck to roll for a Plot event.',
             encounter: 'D6, +1 to roll if Discover Phase',
@@ -1618,7 +1607,7 @@ const A005: Adventure = {
         {
             roll: '5',
             name: 'Control Deck',
-            tags: ['Move 7'],
+            move: 7,
             description:
                 'The heart of the station where operations are co-ordinated so that the extracted minerals reach Earth as efficiently as possible. Add +1 to Prevent and Plan Actions here. If you make a Computers 8 roll, gain +1 Knowledge and cancel Dark at all Locations. If current Danger is 16+ you may spend 2 Luck to reduce Danger by 1.',
             encounter: 'D6, +1 to roll if Discover Phase',
@@ -1632,7 +1621,7 @@ const A005: Adventure = {
         {
             roll: '6',
             name: 'Drilling Rig',
-            tags: ['Move 8'],
+            move: 8,
             description:
                 'This is where massive drilling machinery smashes into the surface of the moon to extract the raw ore and minerals. A Character with Engineer is +2 Brawn here.',
             encounter: 'Engineer roll, +1 to roll if Discover Phase',
@@ -1844,19 +1833,17 @@ const A006: Adventure = {
     stats: { danger: 0, knowledge: 6, vp: 0 },
     special:
         'When Enemy Goal revealed, see instead Obtain Advanced Weaponry (Special Events). Night will fall at the start of Turn 1D6+2 and last 3 Turns. If at Cold Location at the start of a Turn, kill a Human Character with Brawn 1 unless you lose 1 Luck (2 Luck if Night).',
-    enemy: {
-        dice: '1D6',
-        table: [
-            { roll: '1-3', name: 'Military' },
-            { roll: '4-5', name: 'Criminal' },
-            { roll: '6', name: 'Time Lord' },
-        ],
-    },
+    enemy: [
+        { roll: '1-3', name: 'Military' },
+        { roll: '4-5', name: 'Criminal' },
+        { roll: '6', name: 'Time Lord' },
+    ],
     locations: [
         {
             roll: '1',
             name: 'Destroyed Camp',
-            tags: ['Exterior', 'Move 9'],
+            move: 9,
+            terrain: 'Exterior',
             description:
                 'You find the remains of a camp, now blackened and burnt. Add +1 Danger (once only). Add +1 to Investigate Actions here. You may attempt an Aware 7 roll to gain 1 Clue (once only) to finding the Lost Valley Location.',
             encounter: 'D6, +1 to roll if Discover Phase',
@@ -1877,7 +1864,8 @@ const A006: Adventure = {
         {
             roll: '2',
             name: 'Thick Woods',
-            tags: ['Exterior', 'Move 7'],
+            move: 9,
+            terrain: 'Exterior',
             description:
                 'You have entered a patch of densely packed trees that block much of the sunlight. You must pay 1 Luck or the Location becomes Dark. You may attempt an Aware 9 roll to gain 1 Clue (once only) to finding the Lost Valley Location.',
             encounter: 'D6, +1 to roll if Discover Phase',
@@ -1895,7 +1883,8 @@ const A006: Adventure = {
         {
             roll: '3',
             name: 'Grassy Plains',
-            tags: ['Exterior', 'Move 6'],
+            move: 6,
+            terrain: 'Exterior',
             description:
                 'You have entered a region of flat grassland where the sun is warmer. Add +1 to Explore and Move Actions, but cannot Investigate here. You may attempt an Aware 10 roll to gain 1 Clue (once only) to finding the Lost Valley Location.',
             encounter: 'D6, +1 to roll if Discover Phase',
@@ -1914,7 +1903,8 @@ const A006: Adventure = {
         {
             roll: '4',
             name: 'Craggy Mountains',
-            tags: ['Cold', 'Exterior', 'Move 7'],
+            move: 7,
+            terrain: 'Cold, Exterior',
             description:
                 'You have reached the imposing mountain range you saw earlier from afar and the keen wind grows ever bitter. Add +1 Danger if Night. Add +2 to Explore and Move Actions, but cannot Investigate here. You may attempt an Aware 7 roll to gain 1 Clue (once only) to finding the Lost Valley Location.',
             encounter: 'D6, +1 to roll if Discover Phase',
@@ -1929,7 +1919,8 @@ const A006: Adventure = {
         {
             roll: '5',
             name: 'Winding River',
-            tags: ['Water', 'Exterior', 'Move 7'],
+            move: 7,
+            terrain: 'Water, Exterior',
             description:
                 "A fast-flowing wide river cuts across the landscape and you'll need to find somewhere to cross. Add +1 to Explore Actions but -1 to Move Actions. You may not Investigate here. You may attempt an Aware 9 roll to gain 1 Clue (once only) to finding the Lost Valley Location.",
             encounter: 'D6, +1 to roll if Discover Phase',
@@ -1943,7 +1934,8 @@ const A006: Adventure = {
         {
             roll: '6',
             name: 'Lost Valley',
-            tags: ['Exterior', 'Move: Must have 4 Clues'],
+            move: 'Must have 4 Clues',
+            terrain: 'Exterior',
             description:
                 'You have discovered a deep, hidden valley that twists down into the landscape, an eerie mist crawling through it. Add +1 Danger. Reveal the Enemy and Goal.',
             encounter: 'Aware roll',

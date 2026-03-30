@@ -25,7 +25,7 @@ export type Adventure = {
     description: string
     stats: AdventureStats
     special?: string
-    enemy?: AdventureEnemy
+    enemy?: Rolls[]
     locations: AdventureLocation[]
     plots?: AdventurePlot[]
     characters?: AdventureCharacter[]
@@ -38,15 +38,13 @@ export type AdventureStats = {
     vp: number
 }
 
-export type AdventureEnemy = {
-    dice: string
-    table: Rolls[]
-}
+export type AdventureEnmy = Rolls[]
 
 export type AdventureLocation = {
     roll: string
     name: string
-    tags?: string[]
+    move: number | string
+    terrain?: string
     description: string
     encounter: string
     rolls: Rolls[]
