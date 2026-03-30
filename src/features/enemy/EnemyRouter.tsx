@@ -1,13 +1,13 @@
 import { lazy } from 'react'
 import type { RouteObject } from 'react-router-dom'
 
-export const EnemyDetail = lazy(() => import('./pages/EnemyDetail'))
-export const EnemyView = lazy(() => import('./components/EnemyView'))
-export const EnemyGoals = lazy(() => import('./components/EnemyGoals'))
-export const EnemyEvents = lazy(() => import('./components/EnemyEvents'))
-export const EnemyLairView = lazy(() => import('./components/EnemyLairView'))
+const EnemyDetail = lazy(() => import('./pages/EnemyDetail'))
+const EnemyView = lazy(() => import('./components/EnemyView'))
+const EnemyGoals = lazy(() => import('./components/EnemyGoals'))
+const EnemyEvents = lazy(() => import('./components/EnemyEvents'))
+const EnemyLairView = lazy(() => import('./components/EnemyLairView'))
 
-export const enemyRoutes: RouteObject[] = [
+const EnemyRouter: RouteObject[] = [
     {
         path: '/enemy/:tag',
         element: <EnemyDetail />,
@@ -19,3 +19,5 @@ export const enemyRoutes: RouteObject[] = [
         ],
     },
 ]
+
+export default EnemyRouter

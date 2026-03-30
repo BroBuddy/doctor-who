@@ -1,0 +1,1 @@
+import"./rolldown-runtime-Dw2cE7zH.js";import{u as e,y as t}from"./adventure-pages-Da65qfQF.js";t();var n=e(),r=({text:e,icon:t,variant:r=`default`})=>(0,n.jsxs)(`span`,{className:`rounded text-sm text-bold text-white py-1 px-2 mr-1 ${r===`default`?`bg-purple`:`bg-grey`}`,children:[t&&(0,n.jsx)(`span`,{className:`mr-1`,children:t}),e]});export{r as t};
