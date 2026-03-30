@@ -3,6 +3,7 @@ export type Enemy = {
     tag: string
     title: string
     description: string
+    special: string | null
     stats: string[]
     encounter: Encounter
     goals: EnemyGoal[]

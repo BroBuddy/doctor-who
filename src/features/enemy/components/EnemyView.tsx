@@ -14,7 +14,7 @@ function EnemyView() {
             <img
                 src={`/images/enemies/${enemy.tag}.png`}
                 alt={enemy.title}
-                className="mt-4"
+                className="mt-4 w-20"
             />
 
             {enemy.stats && (
@@ -26,7 +26,18 @@ function EnemyView() {
             )}
 
             <p>{enemy.description}</p>
-            <p>{enemy.encounter?.description}</p>
+
+            {enemy.special && (
+                <p>
+                    <em>Special:</em> {enemy.special}
+                </p>
+            )}
+
+            <p>
+                <strong>Encounter:</strong>
+                <br />
+                {enemy.encounter?.description}
+            </p>
 
             <Accordion
                 items={

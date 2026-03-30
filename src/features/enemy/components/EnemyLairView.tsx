@@ -13,7 +13,11 @@ function EnemyLairView() {
 
     return (
         <Card headline={lair.name}>
-            <img src={`/images/lairs/${tag}.png`} alt={lair.name} />
+            <img
+                src={`/images/lairs/${tag}.png`}
+                alt={lair.name}
+                className="w-20"
+            />
 
             {lair.tags && (
                 <div className="mt-2">
