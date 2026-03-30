@@ -1,10 +1,10 @@
-import { Headline } from '@/components/Headline'
 import type { Booklet } from '../types/BookletType'
 import { getBookletData } from '../services/BookletService'
 import TardisOverview from '@/features/tardis/pages/TardisOverview'
 import AdventureOverview from '@/features/adventure/pages/AdventureOverview'
 import EnemyOverview from '@/features/enemy/pages/EnemyOverview'
 import RuleOverview from '@/features/rule/pages/RuleOverview'
+import Card from '@/components/Card'
 
 function BookletOverview() {
     const booklet = getBookletData() as Booklet[]
@@ -14,19 +14,23 @@ function BookletOverview() {
     }
 
     return (
-        <div>
-            <Headline>📜 Rule Booklet</Headline>
-            <RuleOverview />
+        <>
+            <Card icon="📜" headline="Rule Booklet">
+                <RuleOverview />
+            </Card>
 
-            <Headline>🚀 Adventure Booklet</Headline>
-            <AdventureOverview />
+            <Card icon="🚀" headline="Adventure Booklet">
+                <AdventureOverview />
+            </Card>
 
-            <Headline>⚔️ Enemy Booklet</Headline>
-            <EnemyOverview />
+            <Card icon="⚔️" headline="Enemy Booklet">
+                <EnemyOverview />
+            </Card>
 
-            <Headline>🌀 TARDIS Manual</Headline>
-            <TardisOverview />
-        </div>
+            <Card icon="🌀" headline="TARDIS Manual">
+                <TardisOverview />
+            </Card>
+        </>
     )
 }
 

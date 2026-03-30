@@ -1,4 +1,4 @@
-import { Headline } from '@/components/Headline'
+import Card from '@/components/Card'
 import { getPrefixByTag } from '@/lib/helper'
 import { Link } from 'react-router-dom'
 
@@ -6,9 +6,7 @@ function HelperHistory() {
     const history = JSON.parse(localStorage.getItem('doctor-who-game') || '[]')
 
     return (
-        <div>
-            <Headline>⏳ History</Headline>
-
+        <Card icon="⏳" headline="History">
             <p>
                 <em>
                     "The TARDIS can remember your last 15 destinations, ready to
@@ -34,7 +32,7 @@ function HelperHistory() {
                                     {item.tag}
                                 </Link>
 
-                                <span className="text-dark-grey text-md flex-1 px-2">
+                                <span className="text-dark-grey text-sm flex-1 px-2">
                                     {item.title}
                                 </span>
                             </li>
@@ -42,7 +40,7 @@ function HelperHistory() {
                     )}
                 </ul>
             )}
-        </div>
+        </Card>
     )
 }
 

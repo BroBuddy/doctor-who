@@ -1,10 +1,10 @@
-import { Headline } from '@/components/Headline'
 import useFavoriteStore from '../store/useFavoriteStore'
 import type { Favorite } from '../types/FavoriteType'
 import { Link } from 'react-router-dom'
 import { getPrefixByTag } from '@/lib/helper'
 import RemoveFavorite from '../components/RemoveFavorite'
 import HelperHistory from '@/features/helper/components/HelperHistory'
+import Card from '@/components/Card'
 
 function HelperOverview() {
     const lockedFavorites = useFavoriteStore((state) => state.lockedFavorites)
@@ -12,10 +12,8 @@ function HelperOverview() {
 
     return (
         <>
-            {userFavorites.length >= 1 && (
-                <div>
-                    <Headline>⭐ Your Favorites</Headline>
-
+            <Card icon="⭐" headline="Your Favorites">
+                {userFavorites && (
                     <ul>
                         {userFavorites.map((item: Favorite) => (
                             <li
@@ -28,19 +26,17 @@ function HelperOverview() {
                                 >
                                     {item.tag}
                                 </Link>
-                                <span className="text-md">
+                                <span className="text-sm">
                                     {item.title}{' '}
                                     <RemoveFavorite tag={item.tag} />
                                 </span>
                             </li>
                         ))}
                     </ul>
-                </div>
-            )}
+                )}
+            </Card>
 
-            <div>
-                <Headline>🔒 Frequently Used</Headline>
-
+            <Card icon="🔒" headline="Frequently Used">
                 <ul>
                     {lockedFavorites.map((item: Favorite) => (
                         <li key={item.tag} className="flex justify-between p-1">
@@ -50,11 +46,11 @@ function HelperOverview() {
                             >
                                 {item.tag}
                             </Link>
-                            <span className="text-md">{item.title}</span>
+                            <span className="text-sm">{item.title}</span>
                         </li>
                     ))}
                 </ul>
-            </div>
+            </Card>
 
             <HelperHistory />
         </>
