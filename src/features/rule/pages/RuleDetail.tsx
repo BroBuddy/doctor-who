@@ -25,7 +25,11 @@ function RuleDetail() {
             </Headline>
 
             <Card>
-                <div dangerouslySetInnerHTML={{ __html: rule.description }} />
+                <div
+                    dangerouslySetInnerHTML={{
+                        __html: String(rule.description),
+                    }}
+                />
             </Card>
         </>
     )

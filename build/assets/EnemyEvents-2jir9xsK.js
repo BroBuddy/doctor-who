@@ -1,0 +1,1 @@
+import{c as e,t}from"./jsx-runtime-CTycOhE6.js";import{f as n,i as r,p as i}from"./index-CQfcb2Pt.js";var a=t();function o(){let{tag:t}=e(),o=r(String(t));return o?(0,a.jsx)(n,{headline:`Events`,children:(0,a.jsx)(i,{items:o.map((e,t)=>({id:String(t),label:`${e.roll} – ${e.name}`,children:(0,a.jsx)(`p`,{children:e.description})}))})}):null}export{o as default};
