@@ -10,7 +10,9 @@ const FavoriteOverview = React.lazy(
     () => import('./features/favorite/pages/FavoriteOverview.tsx')
 )
 const History = React.lazy(() => import('./pages/History.tsx'))
-const ActionTables = React.lazy(() => import('./pages/ActionTables.tsx'))
+const ActionTables = React.lazy(
+    () => import('./features/tables/pages/ActionTables.tsx')
+)
 const RuleDetail = React.lazy(
     () => import('./features/rule/pages/RuleDetail.tsx')
 )

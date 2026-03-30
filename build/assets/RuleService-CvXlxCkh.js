@@ -416,7 +416,7 @@ var e=[{tag:`R001`,title:`Characters and Concepts`,description:`
                 <li><strong>Time Lord:</strong> A rogue from Gallifrey such as the Master or the Rani. A Time Lord Enemy can be very dangerous with the most difficult Goals to overcome.</li>
                 <li><strong>Villain:</strong> A singular Enemy such as Sharaz Jek, Cassandra or the Graske, as opposed to a specific race. Villains often gain aid from Minions.</li>
             </ul>
-        `},{tag:`R015`,title:`Setback Table`,description:`
+        `},{tag:`R014`,title:`Action Tables`,description:``},{tag:`R015`,title:`Setback Table`,description:`
             <p>Even the Doctor cannot always win and must suffer some consequence — minor or devastating. If you lose an Adventure, roll 2D6 on the table below before checking if a Companion Leaves (R002). You may NOT use Luck to re-roll on the Setback Table.</p>
             <p><strong>Modifiers:</strong> -1 if the Enemy had +1 Danger, -2 if +2 Danger or greater. -1 if the Goal had 6 VP, -2 if 7 VP or greater. If you cannot lose enough Luck, lose VP instead. If you cannot lose VP, you must regenerate (see below).</p>
             <table class="text-sm">
