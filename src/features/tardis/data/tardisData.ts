@@ -339,4 +339,377 @@ export const tardisData: Tardis[] = [
             </ul>
         `,
     },
+    {
+        tag: 'TM01',
+        title: 'Temporal Destination Matrix',
+        description: `
+            <table class="text-sm">
+                <thead>
+                    <tr>
+                        <td class="w-12"><strong>Era Destination</strong></td>
+                        <td><strong>Code 1</strong></td>
+                        <td><strong>Code 2</strong></td>
+                        <td><strong>Code 3</strong></td>
+                        <td><strong>Code 4</strong></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>Antiquity (up to 475 AD)</td>
+                    <td>A011</td><td>A011</td><td>A011</td><td>A011</td>
+                    </tr>
+                    <tr>
+                    <td>Medieval (476–1300)</td>
+                    <td>A019</td><td>A019</td><td>A019</td><td>A019</td>
+                    </tr>
+                    <tr>
+                    <td>Renaissance (1301–1600)</td>
+                    <td>A004</td><td>A004</td><td>A004</td><td>A004</td>
+                    </tr>
+                    <tr>
+                    <td>Regency (1601–1836)</td>
+                    <td>A013</td><td>A013</td><td>A013</td><td>A013</td>
+                    </tr>
+                    <tr>
+                    <td>Victorian (1837–1913)</td>
+                    <td>A003</td><td>A009</td><td>A021</td><td>A021</td>
+                    </tr>
+                    <tr>
+                    <td>World War (1914–1959)</td>
+                    <td>A001</td><td>A023</td><td>A001</td><td>A023</td>
+                    </tr>
+                    <tr>
+                    <td>Modern (1960–1999)</td>
+                    <td>A017</td><td>A017</td><td>A017</td><td>A017</td>
+                    </tr>
+                    <tr>
+                    <td>Post Modern (2000–2039)</td>
+                    <td>A007</td><td>A015</td><td>A007</td><td>A015</td>
+                    </tr>
+                    <tr>
+                    <td>Near Future (2040–2200)</td>
+                    <td>A008</td><td>A008</td><td>A008</td><td>A008</td>
+                    </tr>
+                    <tr>
+                    <td>Colonial (2201–3000)</td>
+                    <td>A005</td><td>A006</td><td>A012</td><td>A012</td>
+                    </tr>
+                    <tr>
+                    <td>Twilight (3001–6000)</td>
+                    <td>A002</td><td>A010</td><td>A014</td><td>A020</td>
+                    </tr>
+                    <tr>
+                    <td>Far Future (6000+)</td>
+                    <td>A016</td><td>A016</td><td>A016</td><td>A016</td>
+                    </tr>
+                    <tr>
+                    <td>Dimensional</td>
+                    <td>A018</td><td>A022</td><td>A018</td><td>A022</td>
+                    </tr>
+                    <tr>
+                    <td>Holiday</td>
+                    <td>A001</td><td>A003</td><td>A016</td><td>A024</td>
+                    </tr>
+                    <tr>
+                    <td>Space</td>
+                    <td>A014</td><td>A024</td><td>A010</td><td>A010</td>
+                    </tr>
+                </tbody>
+            </table>
+        `,
+    },
+    {
+        tag: 'TM02',
+        title: 'Random Vortex Destination Matrix',
+        description: `
+            <table class="text-md">
+                <thead>
+                    <tr>
+                        <td class="w-4"><strong>D6</strong></td>
+                        <td><strong>1</strong></td>
+                        <td><strong>2</strong></td>
+                        <td><strong>3</strong></td>
+                        <td><strong>4</strong></td>
+                        <td><strong>5</strong></td>
+                        <td><strong>6</strong></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1</strong></td>
+                        <td>A001</td><td>A002</td><td>A003</td><td>A004</td><td>A005</td><td>A006</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2</strong></td>
+                        <td>A007</td><td>A008</td><td>A009</td><td>A010</td><td>A011</td><td>A012</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3</strong></td>
+                        <td>A013</td><td>A014</td><td>A015</td><td>A016</td><td>A017</td><td>A019</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4</strong></td>
+                        <td>A020</td><td>A021</td><td>A023</td><td>A024</td><td>A020</td><td>A021</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5</strong></td>
+                        <td>A001</td><td>A002</td><td>A003</td><td>A004</td><td>A005</td><td>A013</td>
+                    </tr>
+                    <tr>
+                        <td><strong>6</strong></td>
+                        <td>A007</td><td>A014</td><td>A009</td><td>A015</td><td>A011</td><td>A017</td>
+                    </tr>
+                </tbody>
+            </table>
+        `,
+    },
+    {
+        tag: 'T00',
+        title: 'The TARDIS',
+        description: `
+            <p>You stand at the console of the TARDIS, your trusty Time and Space machine, as it flies through the twisting miasma of the Time Vortex. A gentle hum fills the air as the glass pillar of lights and instruments rises and falls in front of you.</p>
+            <p>You may try to set the controls for a particular destination or just let the TARDIS materialise wherever she wants (t002). Before you get to any destination however, roll 2D6. If the result is 10+, then you have an event in the Vortex (see below). If you have no event, you may try to repair the TARDIS if it has taken Damage (see t005).</p>
+            <p>In an Adventure you can return to the TARDIS at any time (t006). At the end of an Adventure, automatically return to this section. After you have completed 3 Adventures, see Q00 below.</p>
+            <p><strong>Defences:</strong> X &nbsp;&nbsp; <strong>Navigation:</strong> X &nbsp;&nbsp; <strong>Resources:</strong> X</p>
+            <p><strong>Special Rules for a Created Doctor’s TARDIS:</strong><br />
+            You must decide on starting values for your TARDIS Qualities. Each Quality starts at 1 and you have another 4 points to distribute as you wish, although you cannot add more than 3 to any single Quality.</p>
+            <p>You begin the game by choosing a starting Companion — Caroline Fairfax, Jane Danning or Talia McDowell. Each has their own TARDIS Character card. You start the game with 5 Luck, 3 Idea cards and can choose Gadgets up to 3 Cost.</p>
+            <p>Gain +1 to your TARDIS roll when you Set the Controls (t002) for the Renaissance Era (TM01).</p>
+            <p><strong>Vortex Events:</strong><br />
+            Something has interrupted your flight through the Vortex. Roll 2D6:</p>
+            <ul>
+                <li><strong>2:</strong> V18</li>
+                <li><strong>3:</strong> V07</li>
+                <li><strong>4:</strong> V10</li>
+                <li><strong>5:</strong> V05</li>
+                <li><strong>6:</strong> V03</li>
+                <li><strong>7:</strong> V01</li>
+                <li><strong>8:</strong> V02</li>
+                <li><strong>9:</strong> V04</li>
+                <li><strong>10:</strong> V06</li>
+                <li><strong>11:</strong> V15</li>
+                <li><strong>12:</strong> V11</li>
+            </ul>
+        `,
+    },
+    {
+        tag: 'Q00',
+        title: 'Lost Memory',
+        description: `
+            <p>As the TARDIS leaves its most recent destination, and you watch the glass rotor rise and fall, you begin to have a nagging feeling that you have forgotten something important. You can’t seem to remember what happened to you a while ago, with only fleeting images of bubbling chemicals contained in old flasks and glassware on shelves and tables of a dark, primitive laboratory. Why does a Renaissance city seem so familiar?</p>
+            <p>Make a Brains 15 roll (add Aware from yourself and no other Character) and if successful, gain +1 VP and see <strong>Q00a</strong>. If you fail, make the roll again at the end of each Adventure (adding +1 per previous attempt) until you succeed.</p>
+            <p><strong>Q00a. The Apothecary</strong><br />
+            You suddenly realise that you spent some time on Earth during the Renaissance Era, posing as a harmless, if slightly eccentric, apothecary. But you have no idea why this happened or what you were doing there...? Perhaps you should return to see if any clues jog your memory?</p>
+            <p>During the Discover Phase of your next Renaissance Era Adventure, you may attempt a Move 9 Action (add Aware) to find ‘your’ old shop. Once there, you may then search the shop by making an Aware 9 roll — gain +2 VP and see <strong>Q00b</strong> if successful. Use the Encounter line of the Location with lowest Move number whilst at the shop.</p>
+            <p><strong>Q00b. The Fob-Watch</strong><br />
+            (Gadget) You find an old watch covered in Gallifreyan symbols — what secrets does it hold? Start a (Mind Control) Conflict with the watch (Brains 4). If successful, gain 1 Luck point, but roll again at the end of each Adventure. If you fail, you succumb to its influence and the voices and memories come flooding back.</p>
+            <p>You must create a new regeneration (r002) of your Doctor, but add 5 points for Qualities and choose 10 skills. You retain current Luck but gain +3 VP and see <strong>Q00c</strong>.</p>
+            <p><strong>Q00c. The Enemy</strong><br />
+            You now remember your true self but not how you originally lost your memories. You may install the watch into the TARDIS console and determine a Random Destination (TM02). When the Enemy is revealed, add an additional +2 to the D6 roll on r018.</p>
+            <p>If you Defeat this Enemy then you have won the game. If you fail, lose 2 VP and have a -2 modifier on the Setback table (r015). Any further Adventure where you encounter an Enemy with this keyword will be against this specific Enemy with the same reward and penalties.</p>
+        `,
+    },
+    {
+        tag: 'T09',
+        title: 'The TARDIS (Ninth Doctor)',
+        description: `
+            <p>You stand at the console of the TARDIS, your trusty Time and Space machine, as it flies through the twisting miasma of the Time Vortex. A gentle hum fills the air as the glass pillar of lights and instruments rises and falls in front of you.</p>
+            <p>You may try to set the controls for a particular destination or just let the TARDIS materialise wherever she wants (t002). Before you get to any destination however, roll 2D6. If the result is 10+, then you have an event in the Vortex (see below). If you have no event, you may try to repair the TARDIS if it has taken Damage (see t005).</p>
+            <p>In an Adventure you can return to the TARDIS at any time (t006). At the end of an Adventure, automatically return to this section. After you have completed 3 Adventures, see <strong>Q09</strong> below.</p>
+            <p><strong>Defences:</strong> 4 &nbsp;&nbsp; <strong>Navigation:</strong> 2 &nbsp;&nbsp; <strong>Resources:</strong> 1</p>
+            <p><strong>Special Rules for the Ninth Doctor’s TARDIS:</strong><br />
+            You begin the game with Rose Tyler as a Companion. You may also choose to spend 3 Luck and have Jack Harkness as a Companion. Each has their own TARDIS Character card. If you do not start with Jack Harkness as a Companion, you may encounter him instead of a Character event in a World War Era or Twilight Era Adventure by spending 2 Luck (once only).</p>
+            <p>You start the game with 5 Luck, 3 Idea cards and can choose Gadgets up to 3 Cost.</p>
+            <p>Gain +1 to your TARDIS roll when you Set the Controls (t002) for a Space Destination (TM01).</p>
+            <p><strong>Vortex Events:</strong><br />
+            Something has interrupted your flight through the Vortex. Roll 2D6:</p>
+            <ul>
+                <li><strong>2:</strong> V18</li>
+                <li><strong>3:</strong> V17</li>
+                <li><strong>4:</strong> V10</li>
+                <li><strong>5:</strong> V05</li>
+                <li><strong>6:</strong> V03</li>
+                <li><strong>7:</strong> V01</li>
+                <li><strong>8:</strong> V02</li>
+                <li><strong>9:</strong> V04</li>
+                <li><strong>10:</strong> V06</li>
+                <li><strong>11:</strong> V09</li>
+                <li><strong>12:</strong> V11</li>
+            </ul>
+        `,
+    },
+    {
+        tag: 'Q09',
+        title: 'Bad Wolf',
+        description: `
+            <p>You suddenly realise that in your most recent adventures you have always heard two words – ‘bad wolf’. The phrase seems to be following you about. In further Adventures, any Plot event roll of 7, in addition to the stated effect in the Adventure, also has some connection to ‘bad wolf’...</p>
+            <p>If you make an Aware 9 roll, gain +1 VP and see <strong>Q09a</strong> at the end of the Adventure. If you fail, make the roll again at the end of each Adventure (adding +1 per previous attempt) until you succeed.</p>
+            <p><strong>Q09a. Messages from Other Times</strong><br />
+            The occurrences of ‘Bad Wolf’ are now plainly obvious to you. There must be some connection, but what? In further Adventures, any Plot event roll of 11–12, in addition to stated effect in Adventure, also has some connection.</p>
+            <p>If you visit this Location in Adventure, make a Brains 12 roll (add +1 for each previous attempt) to gain +1 VP and see <strong>Q09b</strong> at the end of the Adventure.</p>
+            <p><strong>Q09b. Heart of the TARDIS</strong><br />
+            As you travel through the Time Vortex, you reflect on ‘Bad Wolf’, and what it could mean, but suddenly notice that the TARDIS familiar hum is not quite right. What could be affecting her?</p>
+            <p>Vortex events (t003) in the TARDIS now occur on a roll of 9+. However, instead of then rolling 2D6 for the Vortex event, automatically see V09, adding +2 to the roll. If you then roll 7+, lose 1 Luck point and see <strong>Q09c</strong> immediately.</p>
+            <p><strong>Q09c. Transformation</strong><br />
+            A panel on the TARDIS console suddenly shatters and an incandescent beam of Vortex energy leaps from it and into the body of your Companion (randomly selected, but if you have no Companion, roll again on V09) who is now shrouded in an unearthly glow.</p>
+            <p>Slowly the glow fades except the eyes... Your Companion has now been transformed into the ‘Bad Wolf’. You know that a body cannot possibly contain so much energy but before you can do anything further, the TARDIS suddenly materialises and the doors open (see TM02 for Destination).</p>
+            <p>Add +5 to all the Companion’s Qualities (+10 if Danger 10+). Each time they use their Qualities in a roll however, they must rest for a full Turn (2 Turns if Danger 10+) and can take no Action. At the end of the Adventure however, your Companion’s body fails and they are killed (lose 5 VP). You may prevent this by taking the Vortex Energy into yourself, but you must then regenerate (see r015 but gain 3 Luck for your sacrifice), whilst your Companion returns to normal.</p>
+        `,
+    },
+    {
+        tag: 'T10',
+        title: 'The TARDIS (Tenth Doctor)',
+        description: `
+            <p>You stand at the console of the TARDIS, your trusty Time and Space machine, as it flies through the twisting miasma of the Time Vortex. A gentle hum fills the air as the glass pillar of lights and instruments rises and falls in front of you.</p>
+            <p>You may try to set the controls for a particular destination or just let the TARDIS materialise wherever she wants (t002). Before you get to any destination however, roll 2D6. If the result is 10+, then you have an event in the Vortex (see below). If you have no event, you may try to repair the TARDIS if it has taken Damage (see t005).</p>
+            <p>In an Adventure you can return to the TARDIS at any time (t006). At the end of an Adventure, automatically return to this section. After you have completed 4 Adventures, see <strong>Q10</strong> below.</p>
+            <p><strong>Defences:</strong> 3 &nbsp;&nbsp; <strong>Navigation:</strong> 3 &nbsp;&nbsp; <strong>Resources:</strong> 1</p>
+            <p><strong>Special Rules for the Tenth Doctor’s TARDIS:</strong><br />
+            You begin the game with either Martha Jones or Donna Noble as a Companion. Each has a TARDIS Character card. If not a starting Companion, you may encounter Martha Jones or Donna Noble instead of a Character event in a Post Modern Era Adventure by spending 2 Luck (once only).</p>
+            <p>You start the game with 5 Luck, 3 Idea cards and Gadgets up to 3 Cost.</p>
+            <p>Gain +1 to your TARDIS roll when you Set the Controls (t002) for a Holiday Destination (TM01).</p>
+            <p><strong>Vortex Events:</strong><br />
+            Something has interrupted your flight through the Vortex. Roll 2D6:</p>
+            <ul>
+                <li><strong>2:</strong> V18</li>
+                <li><strong>3:</strong> V17</li>
+                <li><strong>4:</strong> V10</li>
+                <li><strong>5:</strong> V05</li>
+                <li><strong>6:</strong> V03</li>
+                <li><strong>7:</strong> V01</li>
+                <li><strong>8:</strong> V02</li>
+                <li><strong>9:</strong> V04</li>
+                <li><strong>10:</strong> V06</li>
+                <li><strong>11:</strong> V14</li>
+                <li><strong>12:</strong> V11</li>
+            </ul>
+        `,
+    },
+    {
+        tag: 'Q10',
+        title: 'Cryptic Prophecy',
+        description: `
+            <p>As you were about to leave in the TARDIS from your last Adventure, one of your Allies looks at you strangely and tells you that ‘he will knock four times...’ What could this possibly mean?</p>
+            <p>Lose 1 Luck point. If you ever meet a Character with Aware 2, lose 1 Luck point as the prophecy is repeated. Vortex events (t003) now occur on a roll of 9+. However, instead of rolling 2D6 for the Vortex event, automatically see <strong>Q10a</strong>.</p>
+            <p><strong>Q10a. Mysterious Summons</strong><br />
+            Your mind is touched by the Ood, reaching out across time as they are troubled by bad dreams. Something is returning from the darkness...</p>
+            <p>You must visit the Ood Sphere (A020) and reach the Ood City Location where you must gain an Audience with Ood Elders (Special Event) and achieve a result of 7+. If you visit any other Adventure before going to the Ood Sphere, you must lose 1 Luck point each time. If you gain a 7+ with your Audience, gain 1 VP and see <strong>Q10b</strong> instead of rolling on the table there.</p>
+            <p><strong>Q10b. The End of Time</strong><br />
+            Something vast is stirring in the dark. The Ood have gained the power to see through time as time is bleeding. Shapes of things once lost are moving through the veil, and events threaten to destroy the future, the present, and the past.</p>
+            <p>Randomly select a Dalek or Time Lord Enemy with Danger 3 that you previously Defeated (if none, use E002). Roll for a Random Destination (TM02) where Enemy can be encountered. When you go there, add +3 Danger but start Adventure in Dilemma Phase. When the Goal is revealed, see below instead. If you do not Defeat the Enemy, the game is over.</p>
+            <p><strong>Gallifrey Rises (Time Lord Enemy) (9VP; Apocalypse):</strong> The Time Lord is attempting to resurrect Gallifrey from the ashes of the Time War. The Time Lord and any Minions are +1 to all Qualities. You may either:
+                <ul>
+                    <li>Persuade Time Lord: Win a (Brainwash) Conflict against the Time Lord (counting only Brains from the Doctor).</li>
+                    <li>Prevent Materialisation: Move to TARDIS and make a Prevent Action (add TARDIS). Add +1 Danger and lose 1 from TARDIS Defence if you fail.</li>
+                </ul>
+            </p>
+            <p><strong>Gallifrey Falls (Dalek Enemy) (9VP; Apocalypse):</strong> The Daleks are attempting to revisit the Time War and eradicate Gallifrey from all planes of existence – this time the Daleks will be victorious! Daleks are +1 to all Qualities. You may either:
+                <ul>
+                    <li>Hide Gallifrey in Time Pocket: Make a Brains 15 roll (only Time Lords can add to total). Then Move to TARDIS and make a Prevent Action (add TARDIS). Add +1 Danger and lose 1 from TARDIS Defence if you fail.</li>
+                    <li>Destroy Dalek Command: Make a Prevent Action (add Engineer) at the Dalek Lair. If you succeed, any Character without Running is killed. If you fail, add +1 Danger and have an Enemy encounter.</li>
+                </ul>
+            </p>
+        `,
+    },
+    {
+        tag: 'T11',
+        title: 'The TARDIS (Eleventh Doctor)',
+        description: `
+            <p>You stand at the console of the TARDIS, your trusty Time and Space machine, as it flies through the twisting miasma of the Time Vortex. A gentle hum fills the air as the glass pillar of lights and instruments rises and falls in front of you.</p>
+            <p>You may try to set the controls for a particular destination or just let the TARDIS materialise wherever she wants (t002). Before you get to any destination however, roll 2D6. If the result is 10+, then you have an event in the Vortex (see below). If you have no event, you may try to repair the TARDIS if it has taken Damage (see t005).</p>
+            <p>In an Adventure you can return to the TARDIS at any time (t006). At the end of an Adventure, automatically return to this section. After you have completed 2 Adventures, see <strong>Q11</strong> below.</p>
+            <p><strong>Defences:</strong> 2 &nbsp;&nbsp; <strong>Navigation:</strong> 4 &nbsp;&nbsp; <strong>Resources:</strong> 1</p>
+            <p><strong>Special Rules for the Eleventh Doctor’s TARDIS:</strong><br />
+            You begin the game with Amy Pond as a Companion. You may also spend 2 Luck to have Rory Williams as a Companion. If you do not start with Rory Williams as a Companion, you may encounter him instead of a Character event in a Post Modern Era Adventure by spending 2 Luck.</p>
+            <p>You start the game with 5 Luck, 3 Idea cards and Gadgets up to 3 Cost.</p>
+            <p>Gain +1 to your TARDIS roll when you Set the Controls (t002) for a non-Earth Destination (TM01).</p>
+            <p><strong>Vortex Events:</strong><br />
+            Something has interrupted your flight through the Vortex. Roll 2D6:</p>
+            <ul>
+                <li><strong>2:</strong> V16</li>
+                <li><strong>3:</strong> V07</li>
+                <li><strong>4:</strong> V10</li>
+                <li><strong>5:</strong> V05</li>
+                <li><strong>6:</strong> V03</li>
+                <li><strong>7:</strong> V01</li>
+                <li><strong>8:</strong> V02</li>
+                <li><strong>9:</strong> V04</li>
+                <li><strong>10:</strong> V06</li>
+                <li><strong>11:</strong> V12</li>
+                <li><strong>12:</strong> V11</li>
+            </ul>
+        `,
+    },
+    {
+        tag: 'Q11',
+        title: 'Cracks in Time',
+        description: `
+            <p>As the TARDIS leaves its most recent destination, you look up at the scanner and see a jagged crack imposed upon the screen. The glass isn’t broken, so what could it mean?</p>
+            <p>On subsequent Adventures, the first time you roll for an Incident, you instead witness a ‘crack in time’ at a Location. Add +1 Danger (+2 Danger if a Temporal Enemy has been revealed). You must make a Brains 15 roll (add Aware, but only the Doctor can contribute, +1 per previous Adventure where you discovered a crack) and if successful, gain +1 VP and see <strong>Q11a</strong>. If you fail, repeat the process in the next Adventure.</p>
+            <p><strong>Q11a. The Cracks Widen</strong><br />
+            By now, you have realised that something very powerful has caused the skin of the universe to split. This could mean the destruction of all reality! You have to find the cause before it’s too late...</p>
+            <p>Continue to roll for Cracks as in Q11 but now choose to add +2 Danger (+3 if a Temporal Enemy) or kill 1 Character present. Make a Brains 20 roll (same conditions as Q11) and if successful you discover a jagged piece of the TARDIS door sign within a Crack. You realise that the destruction of the TARDIS is causing the Cracks – gain +1 VP and see <strong>Q11b</strong>.</p>
+            <p><strong>Q11b. The Painting</strong><br />
+            After returning to the TARDIS, you receive a distress call – see V12. When you meet the sender of the message, you are given a painting by your old friend Vincent van Gogh, called ‘The Pandorica Opens’ that shows the TARDIS being destroyed. Looking closer at the painting, you discover space-time co-ordinates.</p>
+            <p>Immediately lose 1D3 Luck. After completing the current Adventure (continuing Q11a Crack roll), roll for Random Destination (TM02 but Adventure must have a Temporal enemy on the Enemy line – roll again if none). If the painting was given to you by a Friend, they will go with you. When you reach destination, gain +2 VP and see <strong>Q11c</strong>.</p>
+            <p><strong>Q11c. The Pandorica is Destroyed</strong><br />
+            Begin Adventure normally but add +3 Danger and roll one last time on Q11a. When rolling for an Enemy, roll on the Temporal Enemy line (r018) and when the Goal is revealed, use the Goal here:</p>
+            <ul>
+                <li><strong>Destroy TARDIS (8VP; Apocalypse):</strong> The Enemy, having named the TARDIS ‘the Pandorica’ after an ancient legend, is attempting to destroy it! If you lose the Adventure then you lose the game. You must return to the TARDIS and then:</li>
+                <ul>
+                    <li>Lure Enemy into Time Loop: Add +2 Danger. Make a TARDIS 9 roll to prepare the ship. Lose 1 Defence if you fail. Then win an (Outwit) Conflict against the Enemy. Kill a Character if you fail.</li>
+                </ul>
+            </ul>
+        `,
+    },
+    {
+        tag: 'T12',
+        title: 'The TARDIS (Twelfth Doctor)',
+        description: `
+            <p>You stand at the console of the TARDIS, your trusty Time and Space machine, as it flies through the twisting miasma of the Time Vortex. A gentle hum fills the air as the glass pillar of lights and instruments rises and falls in front of you.</p>
+            <p>You may try to set the controls for a particular destination or just let the TARDIS materialise wherever she wants (t002). Before you get to any destination however, roll 2D6. If the result is 10+, then you have an event in the Vortex (see below). If you have no event, you may try to repair the TARDIS if it has taken Damage (see t005).</p>
+            <p>In an Adventure you can return to the TARDIS at any time (t006). At the end of an Adventure, automatically return to this section. After you have completed 4 Adventures, see <strong>Q12</strong> below.</p>
+            <p><strong>Defences:</strong> 2 &nbsp;&nbsp; <strong>Navigation:</strong> 3 &nbsp;&nbsp; <strong>Resources:</strong> 2</p>
+            <p><strong>Special Rules for the Twelfth Doctor’s TARDIS:</strong><br />
+            You begin the game with either Clara Oswald or Bill Potts as a Companion. Each has a TARDIS Character card. If not a starting Companion, you may encounter Clara Oswald or Bill Potts instead of a Character event in a Post Modern Era Adventure by spending 2 Luck (once only).</p>
+            <p>You start the game with 5 Luck, 3 Idea cards and can choose Gadgets up to 3 Cost.</p>
+            <p>Gain +1 to your TARDIS roll when you Set the Controls (t002) for the Post Modern Era (TM01).</p>
+            <p><strong>Vortex Events:</strong><br />
+            Something has interrupted your flight through the Vortex. Roll 2D6:</p>
+            <ul>
+                <li><strong>2:</strong> V19</li>
+                <li><strong>3:</strong> V12</li>
+                <li><strong>4:</strong> V10</li>
+                <li><strong>5:</strong> V05</li>
+                <li><strong>6:</strong> V03</li>
+                <li><strong>7:</strong> V01</li>
+                <li><strong>8:</strong> V02</li>
+                <li><strong>9:</strong> V04</li>
+                <li><strong>10:</strong> V06</li>
+                <li><strong>11:</strong> V14</li>
+                <li><strong>12:</strong> V11</li>
+            </ul>
+        `,
+    },
+    {
+        tag: 'Q12',
+        title: 'A Call for Aid',
+        description: `
+            <p>As the TARDIS leaves its most recent destination, you are surprised to see the scanner spring to life and the face of one of your most dangerous foes revealed – Missy. Even more surprising is that she is asking for your help! Her latest desperate scheme has backfired and she is being held captive.</p>
+            <p>You must roll for a random destination (TM02) and when you arrive there perform a successful Rescue Action at the Location with the highest Move number. Then gain 1 VP and see <strong>Q12a</strong>.</p>
+            <p><strong>Q12a. Time Vault</strong><br />
+            Having rescued Missy (see E032 for Qualities and Skills), she joins as an Ally (but counts as a TARDIS Character) for the rest of the Adventure, helping you to Defeat the Enemy here. At the end of the Adventure, Missy pledges to change her ways and stop her evil plans. Not quite trusting her goodwill yet, you decide to build a Time Vault, an ancient Gallifreyan prison. This costs 3 Resources of your TARDIS (you must try to pay cost by using Luck if not enough Resources). After building the Vault, gain 2 VP and see <strong>Q12b</strong>.</p>
+            <p><strong>Q12b. On Guard</strong><br />
+            You must now guard the Vault between your Adventures and build a rapport with Missy as she atones for her past crimes and you ensure her pledges are genuine. However it is unwise to keep the Time Vault within your TARDIS, due to possible interstitial anomalies, so you must choose a suitable planet (with 0 Danger) where the vault can be left.</p>
+            <p>When you have done this and left the Vault there, you may return to the vault after each Adventure (add +1 to TARDIS roll to get there). Roll 1D6: On a result of 2+ you need not have an Adventure where the Vault is located (unless you wish to). If you don’t have an Adventure (or before it starts if you do), you may spend 1 Luck to visit Missy in the Vault and make a Charm roll (using Charm from only the Doctor and adding +1 per previous visit):</p>
+            <ul>
+                <li>2-7: Missy is still in contemplation – no further result</li>
+                <li>8-11: Missy offers help and advice – add +2 to one Brains or Skill (using a Skill which Miss has – see E032) roll in your next Adventure</li>
+                <li>12+: Missy is redeemed – gain +3 VP and see <strong>Q12c</strong></li>
+            </ul>
+            <p>Note that if you roll E032 as an Enemy in any Adventure, Missy has escaped from the Time Vault, all her empty promises forgotten. Lose 3 VP and you cannot progress further in Q12. Take a -1 penalty in any Encounter option rolls with Missy.</p>
+            <p><strong>Q12c. Redemption</strong><br />
+            Missy has apparently turned aside from her old ways and wants to stand with you as old friends once more - she joins you as a Companion. Gain 1 Luck point but take a -1 penalty for her and other Companions on Companion Leaving rolls whilst she is with you. If she stays as your Companion for 3 further Adventures, gain +3 VP.</p>
+        `,
+    },
 ]
