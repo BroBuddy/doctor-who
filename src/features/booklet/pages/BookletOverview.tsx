@@ -20,16 +20,16 @@ function BookletOverview() {
                 <BookletDetail type="rule" getData={getRuleData} />
             </Card>
 
+            <Card icon="🌀" headline="TARDIS Manual">
+                <BookletDetail type="tardis" getData={getTardisData} />
+            </Card>
+
             <Card icon="🚀" headline="Adventure Booklet">
                 <BookletDetail type="adventure" getData={getAdventureData} />
             </Card>
 
             <Card icon="⚔️" headline="Enemy Booklet">
                 <BookletDetail type="enemy" getData={getEnemyData} />
-            </Card>
-
-            <Card icon="🌀" headline="TARDIS Manual">
-                <BookletDetail type="tardis" getData={getTardisData} />
             </Card>
         </>
     )
