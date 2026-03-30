@@ -1,6 +1,5 @@
-import React from 'react'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import App from './App'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import AdventureLocations from './features/adventure/components/AdventureLocations.tsx'
 import AdventurePlots from './features/adventure/components/AdventurePlots.tsx'
 import AdventureCharacters from './features/adventure/components/AdventureCharacters.tsx'
@@ -10,29 +9,17 @@ import EnemyView from './features/enemy/components/EnemyView.tsx'
 import EnemyLairView from './features/enemy/components/EnemyLairView.tsx'
 import EnemyGoals from './features/enemy/components/EnemyGoals.tsx'
 import EnemyEvents from './features/enemy/components/EnemyEvents.tsx'
-
-const Game = React.lazy(() => import('./features/game/pages/Game.tsx'))
-const BookletOverview = React.lazy(
-    () => import('./features/booklet/pages/BookletOverview.tsx')
-)
-const HelperOverview = React.lazy(
-    () => import('./features/helper/pages/HelperOverview.tsx')
-)
-const ActionTables = React.lazy(
-    () => import('./features/tables/pages/ActionTables.tsx')
-)
-const RuleDetail = React.lazy(
-    () => import('./features/rule/pages/RuleDetail.tsx')
-)
-const TardisDetail = React.lazy(
-    () => import('./features/tardis/pages/TardisDetail.tsx')
-)
-const AdventureDetail = React.lazy(
-    () => import('./features/adventure/pages/AdventureDetail.tsx')
-)
-const EnemyDetail = React.lazy(
-    () => import('./features/enemy/pages/EnemyDetail.tsx')
-)
+import CharactersAndConcepts from './pages/CharactersAndConcepts.tsx'
+import AdventureDetail from './features/adventure/pages/AdventureDetail.tsx'
+import BookletOverview from './features/booklet/pages/BookletOverview.tsx'
+import EnemyDetail from './features/enemy/pages/EnemyDetail.tsx'
+import Game from './features/game/pages/Game.tsx'
+import HelperOverview from './features/helper/pages/HelperOverview.tsx'
+import RuleDetail from './features/rule/pages/RuleDetail.tsx'
+import ActionTables from './features/tables/pages/ActionTables.tsx'
+import TardisDetail from './features/tardis/pages/TardisDetail.tsx'
+import TardisCharactersAndFriends from './pages/TardisCharactersAndFriends.tsx'
+import Adventures from './pages/Adventures.tsx'
 
 const router = createBrowserRouter([
     {
@@ -41,6 +28,9 @@ const router = createBrowserRouter([
             { path: '/', element: <Game /> },
             { path: '/booklet', element: <BookletOverview /> },
             { path: '/helper', element: <HelperOverview /> },
+            { path: '/rule/R001', element: <CharactersAndConcepts /> },
+            { path: '/rule/R002', element: <TardisCharactersAndFriends /> },
+            { path: '/rule/R006', element: <Adventures /> },
             { path: '/rule/R014', element: <ActionTables /> },
             { path: '/rule/:tag', element: <RuleDetail /> },
             { path: '/tardis/:tag', element: <TardisDetail /> },

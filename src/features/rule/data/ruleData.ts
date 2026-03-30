@@ -4,37 +4,10 @@ export const ruleData: Rule[] = [
     {
         tag: 'R001',
         title: 'Characters and Concepts',
-        description: `
-            <p>All Characters in DWSSG3e including the Doctor, Companions, Allies and Enemies are described using 3 Qualities and up to 12 different Skills. Special Keywords are used for some Characters or Enemies, and TARDIS Characters (the Doctor and his Companions) also have various Abilities that can help you succeed in Adventures.</p>
-            <p><strong>Qualities:</strong> Each Character has a Brains, Brawn and Bravery value. These are rated numerically, with higher numbers being better and a human average of 1. A Quality of 2 is above average and 3 is gifted. The Doctor typically has Brains 5. The dreaded Daleks might have a Brawn of 8.</p>
-            <p><strong>Skills:</strong> Characters also have Skills which are useful throughout the game. Characters may have 2 or 3 (max) in a Skill, such as Diplomacy 2 or Charm 3. There are 12 different Skills: Aware, Charm, Computers, Diplomacy, Engineer, History, Medicine, Pilot, Running, Science, Stealth, TARDIS.</p>
-            <p><strong>Quality and Skill Rolls:</strong> Any Quality or Skill roll uses 2D6 to equal or exceed a target number for a success, such as History 9 or Brains 12. Roll 2D6 and either count all matching Skills your group has, or total the Quality of the Characters involved. If the total equals or exceeds the target number, you have succeeded. Sometimes an event will only allow you to add your personal Skills or Qualities as the Doctor.</p>
-            <p><em>Example: The Eleventh Doctor and Amy Pond are trying to Evade the Weeping Angels. The target number is Running 10. Both have Running as a Skill, so they add +2 to the 2D6 roll, needing an 8 to succeed.</em></p>
-            <p><strong>Keywords:</strong> Some Characters have keywords such as Leader or UNIT, referenced by Adventures, Enemies or on cards.</p>
-            <p><strong>Abilities:</strong> Some Characters, especially TARDIS Characters or Allies, have abilities that help in Adventures, such as adding +1 to certain Actions. Using the Ability of a TARDIS Character often requires spending Luck points.</p>
-            <p><strong>Allies:</strong> If a Character joins you as an Ally, note their Qualities, Skills and Keywords. Other Characters may simply go on their way unless they join you. All Characters are Human unless otherwise noted. If gender is unclear, roll 1D6: 1-3 Male, 4-6 Female.</p>
-            <p><strong>Luck:</strong> You start with 5 Luck points, used to re-roll dice after a failed Quality or Skill roll or an Action result. Lose 1 Luck point and roll again — you may not spend another if you still dislike the result. Luck points are gained through events, gaining Companions and Defeating Enemies.</p>
-            <p><strong>Victory Points:</strong> You gain VP for successfully Defeating Enemies in Adventures. Each Enemy Goal has VP shown next to it. Bonus VP can be gained in other ways, such as meeting Historical Icons. Gaining VP makes Adventures more difficult. If you gain 30 VP, you have won the game.</p>
-            <p><strong>Tokens:</strong> Luck and VP need tokens to track current totals on your TARDIS Mat. Other tokens track TARDIS Qualities, Turns, Danger and Knowledge totals during Adventures.</p>
-            <p><strong>Cards:</strong> The Doctor, Companions and Friends all have Character cards showing their Qualities, Skills and Abilities. Each Gadget also has a card, as does the deck of Idea cards.</p>
-            <p><strong>Dice:</strong> Rolling dice is abbreviated to 'roll 1D6' or 'roll 2D6'. 1D3 is simply a 1D6 roll halved (round up).</p>
-        `,
     },
     {
         tag: 'R002',
         title: 'TARDIS Characters and Friends',
-        description: `
-            <p>A TARDIS Character is either the Doctor or any brave Companion who travels through Time and Space in the TARDIS. Friends are semi-regular Characters that the Doctor encounters but who are not quite Companions, such as River Song.</p>
-            <p><strong>The Doctor:</strong> You play DWSSG3e as the Doctor, a Time Lord of Gallifrey. The Core Set features the 9th–12th Doctors as Character cards, with other Doctors in future expansions. Each card details Qualities, Skills and Abilities along with a famous quote. It is recommended that new players start with one of these Doctors.</p>
-            <p><em>Example: The 12th Doctor may spend 2 Luck points to add +2 to any Quality when involved in a Conflict.</em></p>
-            <p><strong>Creating the Doctor:</strong> If you prefer not to play as an existing Doctor, you may create your own incarnation. You have base Brains 4, Brawn 1 and Bravery 3, plus 4 extra points to distribute — no more than 2 to any one Quality. Then choose any 8 Skills (particularly useful: Aware, Charm, Running and Stealth). You may choose one Skill twice. Then choose one Ability (see R017).</p>
-            <p><em>Example: Add 2 to Brains, 1 to Brawn and 1 to Bravery for Brains 6, Brawn 2 and Bravery 4. Choose Aware, Engineer 2, History, Running, Science, Stealth and TARDIS.</em></p>
-            <p><strong>Companions:</strong> These are the special people who join you in your Adventures aboard the TARDIS, such as Clara Oswald, Donna Noble or Bill Potts. The Core Set provides two Companions for each of the 9th–12th Doctors. Each Companion card details Qualities, Skills, Abilities and their native Era where they can be encountered (see R004). If you created your own Doctor, 3 new Companions are provided to start with.</p>
-            <p>You may encounter Companions in Adventures. Sometimes they join you willingly, but often the Doctor must make a Charm roll to convince them — other Characters cannot add their Charm to this roll. Gaining Companions normally gains Luck points.</p>
-            <p>Companions do not stay permanently. After each Adventure, roll 1D6. If you roll less than the number of Companions with you, one leaves randomly. If this happens, roll another 1D6 — if the result is greater than the number of Companions still with you, gain 1D3 Luck points for a tearful farewell. You may also voluntarily let Companions leave.</p>
-            <p><strong>Friends:</strong> Friends are identified by a Friend Icon and have the same information as Companions — Qualities, Skills and Abilities. They are only encountered in certain Adventures (no spoilers…). Place Friend cards into play when instructed and remove them when the Adventure ends. Some Friends can only enter play if you have a certain Companion or other Friend already in play — for example, Wilf Mott requires Donna Noble.</p>
-            <p><strong>Cheat Death:</strong> TARDIS Characters are harder to kill than normal Allies. Whenever a Companion would be killed, you may have a random Ally be killed instead. Whenever the Doctor would be killed, you may have a random Companion or Ally be killed instead (lose 3 VP if a Companion is killed). You may also spend 3 Luck points to prevent any TARDIS Character from being killed.</p>
-        `,
     },
     {
         tag: 'R003',
@@ -68,39 +41,6 @@ export const ruleData: Rule[] = [
     {
         tag: 'R006',
         title: 'Adventures',
-        description: `
-            <p>Adventures in the Adventure Booklet tell you where the TARDIS has landed — Earth, a massive spaceship, a far-distant planet, the Dalek home-planet of Skaro or other amazing destinations throughout Time and Space. Each Adventure has a TARDIS number, a date, an Era, optional keywords such as Holiday or Wilderness, a Danger modifier (normally 0–2), a Knowledge total (normally about 5) and a Victory Point bonus for successful completion.</p>
-            <p>Each Adventure is represented by 2 sheets listing all Locations you can visit, possible Enemies, Characters you meet, Plots you discover and some special events, rules or Characters.</p>
-            <p><strong>Eras:</strong> DWSSG3e uses 12 different Eras to define a rough chronology. The Actions available change with the Era — you can't Research with a computer in the Regency Era, for example. The default Era of present-day Earth is the Post Modern Era (2000–2030). The Modern Era spans 1960–1999, with several Eras both before and after, from Antiquity up to the Far Future. Some Adventures have no defined Era, such as Dimensional Adventures or those set on Gallifrey — these specify what Actions and rules apply.</p>
-            <p><strong>Danger and Knowledge:</strong> Both are tracked on your TARDIS Mat throughout an Adventure.</p>
-            <ul>
-                <li><strong>Danger</strong> represents how threatening the situation is. It increases via events and conditions and automatically by 1 at the end of each Turn. If Danger ever reaches 20, the Enemy has completed their Goal — you lose the Adventure and take a Setback (see R015).</li>
-                <li><strong>Knowledge</strong> starts at 0 and is gained from Plot events, Characters and other sources. Gaining Knowledge first reveals the Enemy, then their Goal.</li>
-            </ul>
-            <p><strong>Enemy:</strong> Each Adventure has an Enemy line used when the Enemy is revealed. You use the keyword to roll on the Enemy tables (R018) to determine the exact Enemy.</p>
-            <p><strong>Locations:</strong> Each Adventure contains Locations you can visit, such as a castle, a spaceship bridge or a London landmark. Locations may have keywords like Exterior or Dark, a Move number as the target for a Move Action, modifiers to Actions and often an Encounter roll resolved after your Actions (R008). The usual Landing Location is the first one listed. Some Adventures require a 1D6 roll for a random Landing Location.</p>
-            <p><strong>Groups of Characters:</strong> Characters may separate into two or more groups. When 2 groups are at the same Location they may regroup. You may only choose to separate when you have at least 1 TARDIS Character in each group. If forced to separate randomly, some groups may have no TARDIS Characters.</p>
-            <p><strong>Adventure Phases:</strong> An Adventure is split into 3 distinct Phases.</p>
-            <ul>
-                <li><strong>Discover Phase:</strong> Discover the identity of the Enemy by having an Enemy encounter, a 'reveal Enemy' result, or gaining enough Knowledge. When revealed, roll 1D6 on the Enemy line to determine the exact Enemy, add any Danger noted on the Enemy sheet and reduce Knowledge to 0.</li>
-                <li><strong>Dilemma Phase:</strong> Discover the Enemy plan by gaining Knowledge equal to the Scheme value on the Enemy sheet, or via a 'reveal Goal' result. When revealed, roll 1D6 for the specific Goal and reduce Knowledge to 0. Plot Events in this Phase grant +1 Knowledge instead.</li>
-                <li><strong>Defeat Phase:</strong> Stop the Enemy reaching their Goal. Each Goal details two possible ways to stop the Enemy. Plot Events in this Phase grant +1 Knowledge, which may help complete a Goal or discover an Enemy Lair (see R007).</li>
-            </ul>
-            <p>If you complete the Goal requirements before Danger reaches 20, you Defeat the Enemy and win the Adventure. If not, you have been Defeated — see Winning and Losing below.</p>
-            <p><strong>Turn Sequence:</strong> When the TARDIS lands, set the initial Danger value, Knowledge to 0 and the Turn counter to 1. Place a marker on the Discover Phase box. Each Turn:</p>
-            <ul>
-                <li>Choose and resolve Player Action(s) for your TARDIS Crew.</li>
-                <li>Roll and resolve any Encounters at Locations.</li>
-                <li>Roll for Enemy Action.</li>
-                <li>Add +1 to current Danger.</li>
-            </ul>
-            <p><strong>Night in Adventures:</strong> Some Adventures feature Night rules that alter Exterior Location encounters, modify rolls or change rules. At Night, Exterior Locations become Dark (+1 to Stealth rolls). All Human Characters must spend 1 Turn resting and take no Action or be -1 to all Qualities until the end of the Adventure. When Night falls and how long it lasts is detailed on the Adventure sheet.</p>
-            <p><strong>Winning and Losing Adventures:</strong></p>
-            <ul>
-                <li><strong>If you win:</strong> Gain Victory Points given by the Goal — Apocalypse Goals gain more VP than Capture Goals. Some Adventures also have bonus VP. See Ending Adventures (R012).</li>
-                <li><strong>If you lose:</strong> Roll 2D6 on the Setback table (R015), with modifiers based on the Goal type and the Danger bonus of the Enemy.</li>
-            </ul>
-        `,
     },
     {
         tag: 'R007',

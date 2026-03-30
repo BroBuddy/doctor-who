@@ -1,0 +1,166 @@
+import { Accordion } from '@/components/Accordion'
+import Card from '@/components/Card'
+import { Headline } from '@/components/Headline'
+
+const sections = [
+    {
+        label: 'The Doctor',
+        content: (
+            <>
+                <p>
+                    You play DWSSG as the Doctor, a Time Lord of Gallifrey. For
+                    DWSSG3e, we have provided existing Doctors with Character
+                    cards with the 9 – 12 Doctors being featured in this Core
+                    Set, and other Doctors to feature in future expansions. Each
+                    card details Qualities, Skills and Abilities for that
+                    Doctor, along with a famous quote. It is recommended that
+                    new players start with one of these Doctors.
+                </p>
+                <p>
+                    <em>
+                        Example: The 12 Doctor, being dangerous and
+                        unpredictable at times, may spend 2 Luck points to add
+                        +2 to any Quality when involved in a Conflict.
+                    </em>
+                </p>
+            </>
+        ),
+    },
+    {
+        label: 'Creating the Doctor',
+        content: (
+            <>
+                <p>
+                    If you don’t wish to play as one of the existing
+                    incarnations of the Doctor that is provided as a card, you
+                    may create your own incarnation. You have starting (base)
+                    Brains 4, Brawn 1 and Bravery 3. You may also add 4 extra
+                    points to these Qualities, but no more than 2 to any one
+                    Quality.
+                </p>
+                <p>
+                    <em>
+                        Example: You could add 2 to Brains, 1 to Brawn and 1 to
+                        Bravery to have Brains 6, Brawn 2 and Bravery 4.
+                    </em>
+                </p>
+                <p>
+                    Then choose any 8 Skills for your Doctor. Particularly
+                    useful Skills are Aware, Charm, Running and Stealth. You may
+                    choose one Skill (only) twice if you wish (see r013 for
+                    Skill information). You then choose one Ability (see r017).
+                </p>
+                <p>
+                    <em>
+                        Example: You could choose Aware, Engineer 2, History,
+                        Running, Science, Stealth and TARDIS for your Doctor.
+                    </em>
+                </p>
+            </>
+        ),
+    },
+    {
+        label: 'Companions',
+        content: (
+            <>
+                <p>
+                    These are those special people who join you in your
+                    Adventures aboard the TARDIS, such as Clara Oswald, Donna
+                    Noble or Bill Potts. We have provided two Companions for
+                    each of the 9 -12 Doctors and recommend that new players
+                    start with a matching Companion, shown by a Doctor Icon on
+                    the Companion card. Like the Doctor cards, each Companion
+                    card details Qualities, Skills and Abilities along with
+                    their ‘native’ Era which is the Era where they can be
+                    encountered (see r004).
+                </p>
+                <p>
+                    If you created your own Doctor, we have provided 3 new
+                    Companions who may share your Adventures at the start of the
+                    game. Each has their own Character card.
+                </p>
+                <p>
+                    You may encounter Companions in Adventures. Sometimes they
+                    jump at the chance to join you, but often the Doctor will
+                    have to make a Charm roll to convince them. Other Characters
+                    cannot make this roll or add their Charm to it (but Gadgets
+                    such as a TARDIS Key might help). Gaining Companions
+                    normally gains Luck points.
+                </p>
+                <p>
+                    Sadly, Companions do not stay with you permanently. You must
+                    roll 1D6 after each Adventure. If you roll less than the
+                    number of Companions with you, then one (determined
+                    randomly) decides to leave. If this happens roll another 1D6
+                    and if the result is greater than the number of Companions
+                    still with you, gain 1D3 Luck points for a tearful farewell.
+                    You may also voluntarily let Companions leave too.
+                </p>
+            </>
+        ),
+    },
+    {
+        label: 'Friends',
+        content: (
+            <>
+                <p>
+                    These Characters are identified by a Friend Icon (Sarah Jane
+                    & K9) and have the same information as Companions with
+                    Qualities, Skills and Abilities. Friends count as Companions
+                    if they Cheat Death (below). Friends are only encountered in
+                    certain Adventures (as detailed in the Adventure booklet, so
+                    no spoilers...). Put the Friend cards into play when
+                    instructed and then place out of play when the Adventure is
+                    over.
+                </p>
+                <p>
+                    Some Friend cards can only enter play if you have a certain
+                    Companion or other Friend in play, such as Wilf Mott
+                    requires you to have Donna Noble. The required Companion or
+                    Friend link is given on the Friend card.
+                </p>
+            </>
+        ),
+    },
+    {
+        label: 'Cheat Death',
+        content: (
+            <p>
+                Fortunately, a TARDIS Character is usually more difficult to
+                kill in events or in conflicts than a normal Ally. Whenever a
+                Companion would be killed, you may choose to have a random Ally
+                be killed instead. Whenever the Doctor would be killed, you may
+                choose to have a random Companion or a random Ally be killed
+                instead (lose 3 VP if a Companion is killed). You may also spend
+                3 Luck points to prevent a TARDIS Character from being killed.
+            </p>
+        ),
+    },
+]
+
+function TardisCharactersAndFriends() {
+    const items = sections.map((section, index) => ({
+        id: String(index),
+        label: section.label,
+        children: section.content,
+    }))
+
+    return (
+        <>
+            <Headline>R002. TARDIS Characters and Friends</Headline>
+            <Card>
+                <p>
+                    A TARDIS Character is either the Doctor or any brave
+                    Companion who travels through Time and Space in the TARDIS.
+                    Friends are semi-regular Characters that the Doctor
+                    encounters but who are not quite Companions, such as River
+                    Song.
+                </p>
+
+                <Accordion items={items} />
+            </Card>
+        </>
+    )
+}
+
+export default TardisCharactersAndFriends
