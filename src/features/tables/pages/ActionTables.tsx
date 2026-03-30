@@ -1,4 +1,5 @@
 import { Accordion } from '@/components/Accordion'
+import Card from '@/components/Card'
 import { Headline } from '@/components/Headline'
 import AddFavorite from '@/features/helper/components/AddFavorite'
 import ChallengeTable from '@/features/tables/components/ChallengeTable'
@@ -78,7 +79,11 @@ function ActionTables() {
                 {rule.tag}. {rule.title}
             </Headline>
 
-            <Accordion items={items} />
+            <Card>
+                <div className="mt-4">
+                    <Accordion items={items} />
+                </div>
+            </Card>
         </>
     )
 }

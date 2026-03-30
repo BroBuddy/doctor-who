@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-DAs1UGHr.js";import{t}from"./useFavoriteStore-BLBANBaJ.js";var n=e();function r({tag:e,title:r}){let i=t(e=>e.addFavorite);return(0,n.jsx)(`span`,{className:`pointer bg-purple rounded p-1 mr-1`,title:`Add to Favorites`,onClick:()=>{i(e,r)},children:`⭐`})}export{r as t};

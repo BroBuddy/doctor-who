@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-DAs1UGHr.js";import{t}from"./Headline-uVvDrS8j.js";var n=e(),r=({icon:e,headline:r,children:i})=>(0,n.jsxs)(`div`,{className:`flex flex-col bg-white rounded px-4 pb-4 my-4`,children:[r&&(0,n.jsxs)(t,{children:[e&&(0,n.jsx)(`span`,{className:`mr-1`,children:e}),r]}),i]});export{r as t};
