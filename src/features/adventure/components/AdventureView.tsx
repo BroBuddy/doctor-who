@@ -53,11 +53,11 @@ function AdventureView() {
             {adventure.enemy && (
                 <>
                     <p className="mb-2">
-                        <strong>Enemy</strong> (Roll {adventure.enemy.dice}):
+                        <strong>Enemy</strong> (Roll 1D6):
                     </p>
 
                     <ul>
-                        {adventure.enemy.table.map((item: Rolls) => (
+                        {adventure.enemy.map((item: Rolls) => (
                             <li key={item.roll}>
                                 <strong className="mr-1">{item.roll}:</strong>
                                 <span>{item.name}</span>
