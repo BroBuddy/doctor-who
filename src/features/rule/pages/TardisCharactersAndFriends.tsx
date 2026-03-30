@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import RulePage from '../components/RulePage'
 
 const sections = [
@@ -45,8 +46,10 @@ const sections = [
                 <p>
                     Then choose any 8 Skills for your Doctor. Particularly
                     useful Skills are Aware, Charm, Running and Stealth. You may
-                    choose one Skill (only) twice if you wish (see r013 for
-                    Skill information). You then choose one Ability (see r017).
+                    choose one Skill (only) twice if you wish (see{' '}
+                    <Link to="/rule/R013">R013</Link> for Skill information).
+                    You then choose one Ability (see{' '}
+                    <Link to="/rule/R017">R017</Link>).
                 </p>
                 <p>
                     <em>
@@ -70,7 +73,7 @@ const sections = [
                     the Companion card. Like the Doctor cards, each Companion
                     card details Qualities, Skills and Abilities along with
                     their ‘native’ Era which is the Era where they can be
-                    encountered (see r004).
+                    encountered (see <Link to="/rule/R004">R004</Link>).
                 </p>
                 <p>
                     If you created your own Doctor, we have provided 3 new

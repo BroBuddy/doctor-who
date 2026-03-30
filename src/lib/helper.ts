@@ -16,3 +16,15 @@ export const getPrefixByTag = (tag: string) => {
 export const formatYear = (year: number) => {
     return year < 0 ? `${Math.abs(year)} BCE` : `${year} CE`
 }
+
+export const makeUrlsClickable = (content: any) => {
+    if (!content) return
+
+    const rulesRegex = /[R]\d{3}[A-Z]?/g
+    const transformedText = content.replace(rulesRegex, (match: string) => {
+        const ruleId = match.replace(/\s+/g, '-')
+        return `<a href="/rule/${ruleId}" class="font-mono">${ruleId}</a>`
+    })
+
+    return transformedText
+}

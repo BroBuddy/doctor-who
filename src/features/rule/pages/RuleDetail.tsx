@@ -4,10 +4,12 @@ import { Headline } from '@/components/Headline'
 import { getRuleByTag } from '../services/RuleService'
 import { useHistory } from '@/features/helper/hooks/useHistory'
 import Card from '@/components/Card'
+import { makeUrlsClickable } from '@/lib/helper'
 
 function RuleDetail() {
     const { tag } = useParams()
     const rule = useMemo(() => getRuleByTag(String(tag)), [tag])
+    const transformedContent = makeUrlsClickable(rule.description)
     const { addToHistory } = useHistory()
 
     useEffect(() => {
@@ -27,7 +29,7 @@ function RuleDetail() {
             <Card>
                 <div
                     dangerouslySetInnerHTML={{
-                        __html: String(rule.description),
+                        __html: String(transformedContent),
                     }}
                 />
             </Card>

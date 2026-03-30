@@ -1,4 +1,4 @@
-import{_ as e,h as t,m as n,v as r}from"./adventure-BDY5kYoO.js";var i=[{tag:`R001`,title:`Characters and Concepts`,description:`
+import{_ as e,h as t,m as n,v as r}from"./adventure-DABEB3Ip.js";var i=[{tag:`R001`,title:`Characters and Concepts`,description:`
             <p>All Characters in DWSSG3e including the Doctor, Companions, Allies and Enemies are described using 3 Qualities and up to 12 different Skills. Special Keywords are used for some Characters or Enemies, and TARDIS Characters (the Doctor and his Companions) also have various Abilities that can help you succeed in Adventures.</p>
             <p><strong>Qualities:</strong> Each Character in the game has a Brains, Brawn and Bravery value. These are rated numerically, with higher numbers being better and a (human) average of 1, a Quality of 2 is above average and Quality of 3 is gifted. The Doctor (of course) typically has Brains 5. The dreaded Daleks might have a Brawn of 8.</p>
             <p><strong>Skills:</strong> Characters also have Skills (in italics) which are useful throughout the game. If Characters are especially skilled in areas, they may have 2 or 3 (max allowed) in a Skill, such as Diplomacy 2 or Charm 3. There are 12 different Skills: Aware; Charm; Computers; Diplomacy; Engineer; History; Medicine; Pilot; Running; Science; Stealth; TARDIS.</p>
@@ -192,98 +192,7 @@ import{_ as e,h as t,m as n,v as r}from"./adventure-BDY5kYoO.js";var i=[{tag:`R0
             <p>A <strong>frozen</strong> Character cannot take Actions, adds no Qualities or Skills to rolls and takes no further part in the Adventure. If the Enemy is Defeated, the frozen Character returns to normal. If the Enemy is not Defeated in the Adventure, the frozen Character is killed.</p>
             <p><strong>Example 1:</strong> The Ninth Doctor (Brawn 2) and Rose Tyler (Brawn 1) encounter a Dalek (Brawn 8) — an Attack Conflict. Their combined Brawn of 3 vs the Dalek's 8 gives a modifier of -5, meaning only a natural 12 wins. With 2 Daleks (Brawn 16), the modifier becomes -13 and since it exceeds 10, both Characters would be killed.</p>
             <p><strong>Example 2:</strong> Amy Pond and 2 soldiers (total Bravery 6) face 2 Weeping Angels (total Bravery 6) — a Terrify Conflict. With equal Bravery the modifier is 0, so 7+ succeeds. At a Dark Location each Angel's Bravery becomes 4 (total 8), giving a -2 penalty and requiring 9+ to succeed.</p>
-        `},{tag:`R011`,title:`Incidents`,description:`
-            <p>Random Incidents can affect the course of your Adventures — the Doctor and Companions being separated or captured, the actions of Allies, or pure chance. An Incident may be triggered by a Location Encounter, an Action table or an Enemy Action roll. When this happens, roll 2D6 on the table below for the current Phase and apply the result.</p>
-            <table class="text-sm">
-                <thead>
-                    <tr>
-                        <td class="w-4"><strong>2D6</strong></td>
-                        <td><strong>Discover</strong></td>
-                        <td><strong>Dilemma</strong></td>
-                        <td><strong>Defeat</strong></td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>2–3</td>
-                        <td>Companion Trapped*</td>
-                        <td>Traitor</td>
-                        <td>Complications</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>What Have You Done?</td>
-                        <td>Lost</td>
-                        <td>Traitor</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Complications</td>
-                        <td>Companion Captured*</td>
-                        <td>Companion Captured*</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>Lost</td>
-                        <td>Complications</td>
-                        <td>Separated</td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>Rumours</td>
-                        <td>Separated</td>
-                        <td>Capture Incident</td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>Separated</td>
-                        <td>Companion Investigates*</td>
-                        <td>Enemy Encounter</td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td>Companion Investigates*</td>
-                        <td>Capture Incident</td>
-                        <td>Enemy Event</td>
-                    </tr>
-                    <tr>
-                        <td>10</td>
-                        <td>Someone In Danger</td>
-                        <td>Enemy Plan Disrupted</td>
-                        <td>Unexpected Help</td>
-                    </tr>
-                    <tr>
-                        <td>11–12</td>
-                        <td>TARDIS Blocked</td>
-                        <td>Unexpected Help</td>
-                        <td>Enemy Plan Disrupted</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p><em>* If you have no Companion, there is no Incident this Turn.</em></p>
-            <p><strong>Capture Incident:</strong> If no Characters are captured there is no Incident. Otherwise roll 1D6:</p>
-            <ol>
-                <li><strong>Guarded:</strong> Add +1 to the Capture number of any Captured Characters.</li>
-                <li><strong>Interrogation:</strong> Add +X Danger where X = 3 minus the captured Character's Bravery (random if more than one captive, minimum 0).</li>
-                <li><strong>Fellow Prisoner:</strong> Roll for a Character event who becomes an Ally if possible. Add +1 to Escape Actions due to their help.</li>
-                <li><strong>Enslaved:</strong> At the start of each Turn whilst captured, roll 2D6 adding the number of captured Characters. On 10+, add +1 Danger.</li>
-                <li><strong>Marked for Execution:</strong> At the start of each Turn whilst Captured, roll 1D6 for each captured Character. On a 1, that Character is killed.</li>
-                <li><strong>Lair:</strong> If captured by an Enemy, the Character is moved to the Enemy Lair if possible.</li>
-            </ol>
-            <p><strong>Companion Captured:</strong> A random Companion is captured. Roll 1D6: 1–3 captured at Enemy Lair, 4–6 captured at a random Location. If no Capture number is given, use Captured (8) or (9) at a Lair.</p>
-            <p><strong>Companion Investigates:</strong> Place a random Companion alone at a random new Location and gain +1 Knowledge. Apply any Enemy Action result this Turn to that Companion.</p>
-            <p><strong>Companion Trapped:</strong> A random Companion is trapped and can take no Action (and has no Encounters) until other Characters at the same Location make a Brawn 9 roll as an Action.</p>
-            <p><strong>Complications:</strong> In the Discover or Dilemma Phase, you need +2 Knowledge to reveal the Enemy or Goal. In the Defeat Phase, all Prevent Action rolls have a -1 penalty.</p>
-            <p><strong>Enemy Plans Disrupted:</strong> The Enemy's plans have gone awry — reduce Danger by 2.</p>
-            <p><strong>Lost:</strong> A random group at an Exterior, Cave or Corridor Location with no native Character becomes Lost and cannot complete Actions until making a Brains (add Aware) 10 roll as an Action (+1 per subsequent roll) or other Characters regroup with them.</p>
-            <p><strong>Rumours:</strong> You have heard vague clues about something strange. You may Investigate as an Action next Turn. If you could already Investigate, roll for a Plot event instead.</p>
-            <p><strong>Separated:</strong> Select a group with 2 or more TARDIS Characters and split them (and any Allies) into two random groups. Place one group at a new Location. If none qualify, no further event.</p>
-            <p><strong>Someone In Danger:</strong> Roll for a Character event (but do not resolve), then reveal the Enemy and have an Encounter. At the end of the encounter, the Character joins you as an Ally if possible.</p>
-            <p><strong>TARDIS Blocked:</strong> Something has blocked the TARDIS doors — you cannot enter unless you make a Brawn 10 roll as an Action at the TARDIS Location.</p>
-            <p><strong>Traitor:</strong> A random Ally is revealed to be working against you and joins the Enemy as a Minion. Discard the Ally and choose: Group becomes Captured (8) OR lose 3 Luck OR add +2 Danger.</p>
-            <p><strong>Unexpected Help:</strong> Spend 1 Luck for a random Character event, 3 Luck to choose a Character event, or 2 Luck to encounter a Friend native to this Adventure at the Doctor's Location.</p>
-            <p><strong>What Have You Done?</strong> Sometimes allies do stupid things — add +2 Danger if you have a Companion or Ally with Brains 1 or less.</p>
-        `},{tag:`R012`,title:`Ending Adventures`,description:`
+        `},{tag:`R011`,title:`Incidents`},{tag:`R012`,title:`Ending Adventures`,description:`
             <p>An Adventure finishes by either successfully Defeating the Enemy and winning, or losing by Danger reaching 20 and the Enemy completing their plan. You also lose the game if you are killed.</p>
             <p><strong>Winning an Adventure:</strong> Gain Victory Points as shown on the Enemy Goal, plus any Adventure bonus VP. If you now have 30 VP you have won the game! Otherwise return to the TARDIS and journey onwards (see TARDIS Manual). Any separated or captured Companions are returned to you. Check for a Companion Leaving roll (R002), draw an Idea card if you have fewer than 3 (R003), then spend VP and Luck as shown below.</p>
             <p><strong>Losing an Adventure:</strong> Roll 2D6 on the Setback table (R015). If this does not end the game, return to the TARDIS and journey onwards. Any separated or captured Companions are returned to you. Check for a Companion Leaving roll (R002), then spend any existing VP and Luck as shown below.</p>

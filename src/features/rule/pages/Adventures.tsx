@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import RulePage from '../components/RulePage'
 
 const sections = [
@@ -9,13 +10,14 @@ const sections = [
                     The whole of Time and Space is big, so DWSSG3e uses 12
                     different Eras to define a rough chronology to Adventures.
                     As technology changes through time, the different Actions
-                    you can perform (see r008) changes with the Era in which
-                    your Adventure takes place – you can’t do any Research with
-                    a computer in the Regency Era for example. Similarly, being
-                    captured on Earth in the Medieval Era might be a lot rougher
-                    than on Earth in the Post Modern Era. A complete list of the
-                    different Eras and their dates is given in the TARDIS Manual
-                    (TM01).
+                    you can perform (see <Link to="/rule/R008">R008</Link>)
+                    changes with the Era in which your Adventure takes place –
+                    you can’t do any Research with a computer in the Regency Era
+                    for example. Similarly, being captured on Earth in the
+                    Medieval Era might be a lot rougher than on Earth in the
+                    Post Modern Era. A complete list of the different Eras and
+                    their dates is given in the TARDIS Manual (
+                    <Link to="/tardis/TM01">TM01</Link>).
                 </p>
             </>
         ),
@@ -33,7 +35,8 @@ const sections = [
                         situation is. It increases via events and conditions and
                         automatically by 1 at the end of each Turn. If Danger
                         ever reaches 20, the Enemy has completed their Goal —
-                        you lose the Adventure and take a Setback (see R015).
+                        you lose the Adventure and take a Setback (see{' '}
+                        <Link to="/rule/R015">R015</Link>).
                     </li>
                     <li>
                         <strong>Knowledge</strong> starts at 0 and is gained
@@ -50,8 +53,9 @@ const sections = [
             <>
                 <p>
                     Each Adventure has an Enemy line used when the Enemy is
-                    revealed. You use the keyword to roll on the Enemy tables
-                    (R018) to determine the exact Enemy.
+                    revealed. You use the keyword to roll on the Enemy tables (
+                    <Link to="/rule/R018">R018</Link>) to determine the exact
+                    Enemy.
                 </p>
             </>
         ),
@@ -65,7 +69,8 @@ const sections = [
                     castle, a spaceship bridge or a London landmark. Locations
                     may have keywords like Exterior or Dark, a Move number as
                     the target for a Move Action, modifiers to Actions and often
-                    an Encounter roll resolved after your Actions (R008).
+                    an Encounter roll resolved after your Actions (
+                    <Link to="/rule/R008">R008</Link>).
                 </p>
                 <p>
                     The usual Landing Location is the first one listed. Some
@@ -113,7 +118,7 @@ const sections = [
                         their Goal. Each Goal details two possible ways to stop
                         the Enemy. Plot Events in this Phase grant +1 Knowledge,
                         which may help complete a Goal or discover an Enemy Lair
-                        (see R007).
+                        (see <Link to="/rule/R007">R007</Link>).
                     </li>
                 </ul>
                 <p>
@@ -138,17 +143,18 @@ const sections = [
                     random Landing Location as instructed on the Adventure.
                 </p>
                 <p>
-                    Each Turn you must choose an Action (r008) for your
-                    Characters, such as Explore, Investigate or Challenge. If
-                    your Characters are separated into different groups, each
-                    group can choose the same or different Actions. Roll and
-                    resolve each Action. Then roll for an Encounter at each
-                    Location where you have Characters. After you have resolved
-                    all of your Actions/Encounters, roll 2D6 on the Enemy Action
-                    Table (r009) and apply result (if you have more than one
-                    group of Characters, apply to a random group not including
-                    groups Captured or in the TARDIS). Finally, add +1 to the
-                    Danger total.
+                    Each Turn you must choose an Action (
+                    <Link to="/rule/R008">R008</Link>) for your Characters, such
+                    as Explore, Investigate or Challenge. If your Characters are
+                    separated into different groups, each group can choose the
+                    same or different Actions. Roll and resolve each Action.
+                    Then roll for an Encounter at each Location where you have
+                    Characters. After you have resolved all of your
+                    Actions/Encounters, roll 2D6 on the Enemy Action Table (
+                    <Link to="/rule/R009">R009</Link>) and apply result (if you
+                    have more than one group of Characters, apply to a random
+                    group not including groups Captured or in the TARDIS).
+                    Finally, add +1 to the Danger total.
                 </p>
                 <p>Standard Turn Sequence Summary:</p>
                 <ul className="mb-3">
@@ -197,13 +203,13 @@ const sections = [
                 <li>
                     <strong>If you win:</strong> Gain Victory Points given by
                     the Goal — Apocalypse Goals gain more VP than Capture Goals.
-                    Some Adventures also have bonus VP. See Ending Adventures
-                    (R012).
+                    Some Adventures also have bonus VP. See Ending Adventures (
+                    <Link to="/rule/R012">R012</Link>).
                 </li>
                 <li>
                     <strong>If you lose:</strong> Roll 2D6 on the Setback table
-                    (R015), with modifiers based on the Goal type and the Danger
-                    bonus of the Enemy.
+                    (<Link to="/rule/R015">R015</Link>), with modifiers based on
+                    the Goal type and the Danger bonus of the Enemy.
                 </li>
             </ul>
         ),
