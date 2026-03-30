@@ -5,10 +5,11 @@ import type { TabItem } from '@/components/Tabs'
 import Tabs from '@/components/Tabs'
 import { getEnemyByTag } from '../services/EnemyService'
 import EnemyView from '../components/EnemyView'
-import EnemyTables from '../components/EnemyTables'
 import { useHistory } from '@/hooks/useHistory'
 import AddFavorite from '@/features/favorite/components/AddFavorite'
 import EnemyLairView from '../components/EnemyLairView'
+import EnemyGoals from '../components/EnemyGoals'
+import EnemyEvents from '../components/EnemyEvents'
 
 function EnemyDetail() {
     const { tag } = useParams()
@@ -29,8 +30,12 @@ function EnemyDetail() {
             content: <EnemyView enemy={enemy} />,
         },
         {
-            label: 'Goals & Events',
-            content: <EnemyTables enemy={enemy} />,
+            label: 'Goals',
+            content: <EnemyGoals goals={enemy.goals} />,
+        },
+        {
+            label: 'Events',
+            content: <EnemyEvents events={enemy.events} />,
         },
         {
             label: 'Lair',

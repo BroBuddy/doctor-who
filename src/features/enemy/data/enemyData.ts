@@ -1,6 +1,6 @@
 import type { Enemy } from '../types/EnemyType'
 
-export const firstRow: Enemy[] = [
+const firstRow: Enemy[] = [
     {
         id: 1,
         tag: 'E001',
@@ -779,7 +779,7 @@ export const firstRow: Enemy[] = [
     },
 ]
 
-export const secondRow: Enemy[] = [
+const secondRow: Enemy[] = [
     {
         id: 7,
         tag: 'E007',
@@ -1545,4 +1545,388 @@ export const secondRow: Enemy[] = [
     },
 ]
 
-export const enemyData: Enemy[] = [...firstRow, ...secondRow]
+const thirdRow: Enemy[] = [
+    {
+        id: 13,
+        tag: 'E013',
+        title: 'Silurian Soldier',
+        description:
+            'The Silurians are reptiles that were once the rulers of Earth millions of years ago. They now wish to reclaim their planet. You have encountered only a lone Silurian soldier awakened from hibernation. Special: The Silurian soldier will have reached her Goal if Danger total is 16 rather than 20. She may only be encountered in Earth Adventures (roll again if otherwise).',
+        stats: ['+0 Danger', 'Scheme 4', 'Earth', 'Military'],
+        encounter: {
+            description:
+                'The Silurian Soldier is Brains 3, Brawn 4, Bravery 4.',
+            table: [
+                {
+                    name: 'Conflict',
+                    description:
+                        "If Danger 7 or less, the Silurian attempts a (Capture) Conflict; if Danger 8+, the Silurian instead starts an (Attack) Conflict. In an (Attack) Conflict, roll 1D6 and on a result of 1, select a Character to be struck by the Silurian's poison tongue. Regardless of the outcome, the Character will die after X full Turns (where X is Character's Bravery) unless you make a Medicine 10 roll or Defeat the Silurian.",
+                },
+                {
+                    name: 'Surrender',
+                    description:
+                        'Roll 1D6 (+2 if Danger 7 or less): 1–2: Silurian starts an (Attack) Conflict; 3–5: Captured (8); 6+: Taken to the Silurian Cave (Lair – Captured 8). Add +1 Danger.',
+                },
+                {
+                    name: 'Evade',
+                    description:
+                        'Make either a Running 9 roll to escape, or a Stealth 8 roll to hide. If you fail, choose another option with -1 to roll.',
+                },
+                {
+                    name: 'Conflict (Outwit)',
+                    description:
+                        'You try to confuse the Silurian and escape. If you fail, choose to Surrender or start a different Conflict.',
+                },
+                {
+                    name: 'Broker Peace',
+                    description:
+                        '(Defeat Phase only) Make a Diplomacy 10 roll (-2 if you have had an (Attack) Conflict with the Silurian in the Adventure, -1 for each Human Troop with you). If you succeed, you Defeat the Silurian and gain an additional 2 VP. If you fail, choose to Evade, Surrender or start an (Attack) Conflict.',
+                },
+            ],
+        },
+        goals: [
+            {
+                roll: '1-2',
+                name: 'Destroy Settlement',
+                vp: 4,
+                type: 'Apocalypse',
+                description:
+                    'The Silurian intends to detonate explosives to destroy a nearby habitation. You must discard 2 Allies or Move to 3 random Locations to warn locals. You may then either Broker Peace (see Encounter) or choose an option below.',
+                options: [
+                    {
+                        name: 'Defuse Explosives',
+                        description:
+                            'Make an Aware 9 roll when you Move to a Location with Move number 4+ to find explosives. If you fail, you must Move to a new Location. If you succeed, take a Prevent Action (add Bravery) to defuse explosives.',
+                    },
+                    {
+                        name: 'Broker Peace',
+                        description:
+                            'See Broker Peace option in Encounter section.',
+                    },
+                ],
+            },
+            {
+                roll: '3-4',
+                name: 'Release Poison',
+                vp: 4,
+                type: 'Experiments',
+                description:
+                    'The Silurian is planning to release a vat of crimson venom into the local water supply. After 3 full Turns, add +2 Danger. You may either Broker Peace (see Encounter) or choose an option below.',
+                options: [
+                    {
+                        name: 'Create Anti-Toxin',
+                        description:
+                            'Make a Science 10 or Medicine 9 roll to research the venom. Then take a Prevent Action (add Medicine and Science) at Lair or at any Water Location. If you fail, add +1 Danger.',
+                    },
+                    {
+                        name: 'Broker Peace',
+                        description:
+                            'See Broker Peace option in Encounter section.',
+                    },
+                ],
+            },
+            {
+                roll: '5-6',
+                name: 'Repair Hibernation Controls',
+                vp: 4,
+                type: 'Resurrection',
+                description:
+                    'The Silurian is trying to revive more of her race to retake the Earth. Add +1 Danger if a Character with Engineer is Captured. You may either Broker Peace (see Encounter) or choose an option below.',
+                options: [
+                    {
+                        name: 'Seal Hibernation Chamber',
+                        description:
+                            'Roll 11+ on a Find Help Action to gain explosives, then make a Prevent Action (add Engineer) at the Silurian Cave (Lair). Add +1 Danger and encounter Silurian if you fail.',
+                    },
+                    {
+                        name: 'Broker Peace',
+                        description:
+                            'See Broker Peace option in Encounter section.',
+                    },
+                ],
+            },
+        ],
+        events: [
+            {
+                roll: '1-2',
+                name: 'Raptor Pet',
+                description:
+                    'Encounter a savage raptor (Brains 0, Brawn 6, Bravery 4, Creature). You may Evade (Running 10) or must start an (Attack) Conflict. In subsequent Silurian Encounters roll 1D6 and on 1–2, the raptor is with the Silurian.',
+            },
+            {
+                roll: '3',
+                name: 'Silurian Hand Weapon',
+                description: 'Add +1 to Silurian Brawn (once per Adventure).',
+            },
+            {
+                roll: '4',
+                name: 'Pit Trap',
+                description:
+                    'A random Character at an Exterior Location has fallen into a Silurian pit and must make a Brawn 9 roll to escape. Whilst in the pit, add +2 to the Enemy Action roll with an Enemy encounter always applied to the trapped Character (who may not Evade).',
+            },
+            {
+                roll: '5-6',
+                name: 'Hostage',
+                description:
+                    'A local child tried to befriend the Silurian but is now held at the Silurian Cave (Lair) and must be Rescued (9) before the Silurian can be Defeated. If rescued, the child joins you as an Ally (Brains 1, Brawn 0, Bravery 1, Stealth) and adds +2 to any Broker Peace Diplomacy roll.',
+            },
+        ],
+        lair: {
+            name: 'Silurian Cave',
+            tags: ['Dark', 'Location', 'Move 9'],
+            description:
+                'A damp dark cavern that twists deeper underground. Gain +1 Knowledge (if not a captive) and +1 Danger (both once only). Gain +1 to Prevent, Challenge and Rescue Actions here but -1 to Escape Actions. Add +1 to Enemy Action rolls whilst Characters are here. Add +1 to Stealth rolls but -1 to Evade options. Encounter (Aware roll): 2–4: Lost (Incident); 5: No event; 6: Rock-fall – a random Character is killed unless you spend 2 Luck; 7–8: Encounter Silurian; 9–10: Enemy event; 11+: Gain 2 Knowledge or spend 1 Luck to gain +4 to next Prevent Action.',
+        },
+    },
+    {
+        id: 14,
+        tag: 'E014',
+        title: 'Judoon Mercenaries',
+        description:
+            'The Judoon are used as police by the Shadow Proclamation, but some have found employment as brutal mercenaries for darker powers. These Judoon are led by Major Teska, a battle-scarred veteran of several galactic wars and conflicts. Teska commands total loyalty from his Judoon troops who know that failure would mean their instant death. Special: The Judoon mercenaries will have reached their Goal if Danger total is 18.',
+        stats: ['+0 Danger', 'Scheme 4', 'Criminal'],
+        encounter: {
+            description:
+                'Roll 1D3+1 (+1 if Danger 10+) for number of Judoon encountered (each Brains 1, Brawn 5, Bravery 3, Troop). Roll a further 1D6 (+1 if Danger 8+, +1 if there are 3+ Judoon) – if result 4+, the Judoon are led by Major Teska (Brains 3, Brawn 6, Bravery 4, Leader). Judoon Troops are +1 Bravery if led by Teska.',
+            table: [
+                {
+                    name: 'Conflict (Attack)',
+                    description:
+                        'The Judoon march towards you, their blasters raised.',
+                },
+                {
+                    name: 'Surrender',
+                    description:
+                        'Roll 1D6 (+1 if Teska here or Capture Goal): 1–2: Judoon start an (Attack) Conflict; 3–5: Captured (8); 6+: Taken to Judoon Ship (Lair – Captured 9). If captured by Teska, +1 Danger but roll a Goal event as he cannot resist gloating.',
+                },
+                {
+                    name: 'Evade',
+                    description:
+                        'Make either a Running 8 roll to escape, or a Stealth 8 roll to hide. If you fail, choose another option with -1 to roll.',
+                },
+                {
+                    name: 'Conflict (Outwit)',
+                    description:
+                        'You try to confuse the Judoon and escape. If you fail, choose to Surrender or start an (Attack) Conflict.',
+                },
+            ],
+        },
+        goals: [
+            {
+                roll: '1-2',
+                name: 'Slavers',
+                vp: 5,
+                type: 'Capture',
+                description:
+                    'The Judoon wish to capture the local population and sell them into slavery. If Captured by Judoon, at the start of a Turn roll 2D6 (add number of captives) – if result is 10+, add +1 Danger.',
+                options: [
+                    {
+                        name: 'Lead Slave Revolt',
+                        description:
+                            'You must have at least 3 Allies and then take a Prevent Action (add number of Allies) at Judoon Ship (Lair). If you fail, discard an Ally and add +1 Danger.',
+                    },
+                    {
+                        name: 'Trap Judoon',
+                        description:
+                            'You must have an encounter with the Judoon that includes Teska, and win a (Capture) Conflict. If you fail, add +1 Danger and are Captured (9) aboard the Judoon Ship (Lair).',
+                    },
+                ],
+            },
+            {
+                roll: '3-4',
+                name: 'Steal Artefact',
+                vp: 4,
+                type: 'Profit',
+                description:
+                    'The Judoon are attempting to steal a precious artefact to sell to the highest bidder. If Danger 12+, add +1 to Enemy Action rolls.',
+                options: [
+                    {
+                        name: 'Create Duplicate to Trick Judoon',
+                        description:
+                            'Make an Engineer 9 roll to create a duplicate. You must then encounter Judoon with Teska and have a successful (Outwit) Conflict. If you fail, add an extra +1 Danger and are Captured (8).',
+                    },
+                    {
+                        name: 'Steal Artefact First',
+                        description:
+                            'You must Move to the Location with the highest Move number (or a Special Location) and make a Stealth 9 roll to steal the artefact. Add +1 Danger and encounter Judoon if you fail.',
+                    },
+                ],
+            },
+            {
+                roll: '5-6',
+                name: 'Hunt Fugitive',
+                vp: 4,
+                type: 'Capture',
+                description:
+                    'The Judoon are tracking a disguised alien fugitive hiding here. Roll 1D6 for each Character you encounter – on a roll of 1 it is the fugitive. Add +1 Danger and +2 Danger if Captured.',
+                options: [
+                    {
+                        name: 'Trick the Judoon',
+                        description:
+                            'Gain 1 Knowledge then win an (Outwit) Conflict in a Judoon encounter that includes Teska. If you fail, add +1 Danger and you are Captured (8).',
+                    },
+                    {
+                        name: 'Escape with Fugitive',
+                        description:
+                            'Return to TARDIS with the fugitive. If you need to find the fugitive, make an Aware 9 roll when you Move to a Location with Move number 4+. If you fail, add +1 Danger and you must Move to a new Location.',
+                    },
+                ],
+            },
+        ],
+        events: [
+            {
+                roll: '1-2',
+                name: 'Tracking Device',
+                description:
+                    'Add +1 to Enemy Action rolls, +1 Danger and -1 to all Evade options for the rest of the Adventure (once per Adventure).',
+            },
+            {
+                roll: '3',
+                name: 'Judoon Beam In',
+                description:
+                    'Have an immediate Enemy encounter with the Judoon but with a -1 penalty to any Quality or Skill roll in the encounter due to surprise.',
+            },
+            {
+                roll: '4',
+                name: 'Hostages',
+                description:
+                    'If there are any Captured Characters then you must Surrender to the Judoon (see Encounter) by the end of next Turn or the captives will be killed.',
+            },
+            {
+                roll: '5-6',
+                name: 'Heavy Weapons',
+                description: 'Add +1 to Judoon Brawn (once per Adventure).',
+            },
+        ],
+        lair: {
+            name: 'Judoon Ship',
+            tags: ['Location', 'Move 9'],
+            description:
+                'The ship is very advanced technology, full of weaponry and secure capture cells. Add +1 Danger (once only). Add +1 to number of Judoon encountered here. Add +2 to Rescue Actions. Escape Actions have a -2 penalty here. You can sabotage the Ship with a Computers 10 roll as an Action, gaining +2 to Prevent Actions. If you fail, have a Judoon encounter with -2 to Surrender option. To escape the Ship, you must make both a Stealth 8 roll and a Computers 8 roll to find and operate a Transmat. If you fail, encounter Judoon (-2 to Surrender option).',
+        },
+    },
+    {
+        id: 15,
+        tag: 'E015',
+        title: 'Davros',
+        description:
+            'The crippled scientist that created the Daleks, Davros is one of your oldest and mostly deadly foes. A brilliant, twisted genius aiming to see the Daleks as the superior life form in the Universe!',
+        stats: ['+3 Danger', 'Scheme 6', 'Dalek', 'Villain'],
+        encounter: {
+            description:
+                'Davros is Brains 5, Brawn 3, Bravery 4 (Leader). Roll 1D6 (+1 if Danger 11+) and if the result is 4+, Davros is accompanied by his personal guard of 1D3 Daleks (each Brains 1, Brawn 8, Bravery 3, Troop). Roll 1D6 and on 1–3, you may not choose an (Outwit) Conflict.',
+            table: [
+                {
+                    name: 'Conflict (Attack)',
+                    description:
+                        "Electrical charge leaps from Davros' outstretched arm.",
+                },
+                {
+                    name: 'Surrender',
+                    description:
+                        'Roll 1D6 (-1 if Danger 12+): 0–2: Davros attacks – see Conflict; 3–5: Captured (9); 6+: Taken to Dalek Hatching Tanks (Lair – Captured 9). If Captured, add +1 Danger and roll for a Goal as he cannot resist gloating.',
+                },
+                {
+                    name: 'Evade',
+                    description:
+                        'Make either a Running 8 roll to escape, or a Stealth 9 roll to hide. If you fail, choose another option with -1 to roll.',
+                },
+                {
+                    name: 'Conflict (Outwit)',
+                    description:
+                        'You try to outwit Davros and escape. If the Doctor is here alone, he may add Science as part of the debate. If you fail, choose to Surrender or start an (Attack) Conflict.',
+                },
+            ],
+        },
+        goals: [
+            {
+                roll: '1-2',
+                name: 'Enhance Dalek Race',
+                vp: 6,
+                type: 'Experiments',
+                description:
+                    'Davros is attempting to create new Dalek mutations to once more make them the supreme beings in the universe. If Danger 16+, Daleks are +1 to all Qualities.',
+                options: [
+                    {
+                        name: 'Destroy Hatching Tanks',
+                        description:
+                            'Roll 11+ on a Find Help Action to gain explosives, then make a Prevent Action (add Engineer) at the Hatching Tanks (Lair). Add +1 Danger and encounter Davros if you fail.',
+                    },
+                    {
+                        name: 'Introduce Genetic Flaw',
+                        description:
+                            'Move to Hatching Tanks (Lair), then roll 9+ on a Research (Science) Action to analyse Dalek genetic material. Then make a Prevent Action (add Science). Add +1 Danger and encounter Davros if you fail.',
+                    },
+                ],
+            },
+            {
+                roll: '3-4',
+                name: 'Destroy Reality',
+                vp: 9,
+                type: 'Apocalypse',
+                description:
+                    'Davros is about to commit the ultimate genocide – the destruction of reality! People, planets and stars are to become dust. If you do not Defeat Davros, the game is over.',
+                options: [
+                    {
+                        name: 'Reverse Reality Bomb',
+                        description:
+                            'Make a Brains 15 roll (Time Lords only) to research the theory. Then take a Prevent Action (add Science) at Lair or where you can Research (Science). If you fail, discard any Character and add +1 Danger.',
+                    },
+                    {
+                        name: 'Sabotage Emitter Node',
+                        description:
+                            'Sneak aboard a Dalek Saucer (see E002 Lair) with a Stealth 9 roll, encountering Daleks if you fail. Once aboard, take a Prevent Action (add Engineer). If you fail, add +1 Danger and encounter Daleks.',
+                    },
+                ],
+            },
+            {
+                roll: '5-6',
+                name: 'Siphon Artron Energy',
+                vp: 6,
+                type: 'Capture',
+                description:
+                    'Davros wants to siphon regeneration energy from a Time Lord — preferably the Doctor! Each Turn a Time Lord remains Captured, add +1 Danger. Danger cannot exceed 19 unless a Time Lord is Captured. Add +1 to Surrender options. If you are Captured and lose the Adventure, the game is over.',
+                options: [
+                    {
+                        name: 'Contaminate Energy Supply',
+                        description:
+                            'You must have the Doctor Captured and then make a Prevent Action (add Bravery). If you fail, lose 1 Luck and add +1 Danger.',
+                    },
+                    {
+                        name: 'Reverse Energy Flow',
+                        description:
+                            'Take a Prevent Action (add Science) at either the Hatching Tanks (Lair) or where you have previously made a Rescue Action. Add +1 Danger and to Dalek/Davros Qualities if you fail.',
+                    },
+                ],
+            },
+        ],
+        events: [
+            {
+                roll: '1-2',
+                name: 'Colony Sarff',
+                description:
+                    'Mysterious alien servant. Sarff is Brains 3, Brawn 4, Bravery 3 (Minion). Choose to Evade (Running 9 or Stealth 9), Surrender (Captured 8) or start a (Trap) or (Outwit) Conflict. Sarff will be with Davros in future encounters in this Adventure.',
+            },
+            {
+                roll: '3-4',
+                name: 'Tactical Genius',
+                description:
+                    'Davros is a superb strategist and can plan for all eventualities. Choose to add +2 Danger or lose 2 Luck or discard 2 Idea cards.',
+            },
+            {
+                roll: '5-6',
+                name: 'Hostages',
+                description:
+                    'If you have any Captured Characters then roll 1D6 and see the Capture Incident: 1–3: Interrogated; 4–6: Marked for Execution.',
+            },
+        ],
+        lair: {
+            name: 'Dalek Hatching Tanks',
+            tags: ['Location', 'Move 9'],
+            description:
+                'Eerie blue and red lighting illuminates tanks of horrific mutated creatures that pulse with an audible electronic heartbeat. Add +1 Danger or +2 Danger if Experiments Goal (either once per Adventure only). Gain +1 Knowledge (once only). You can sabotage the Hatching Tanks with a Science 10 roll as an Action — if successful add +2 to Prevent Actions (+3 if Goal is Experiments). If you fail, encounter Davros. Encounter (D6): 1–2: Encounter Davros and Daleks; 3: Dalek Mutant Attack (Brawn 2, Creature); 4: No event; 5–6: Make Science 9 roll to gain +1 Knowledge.',
+        },
+    },
+]
+
+export const enemyData: Enemy[] = [...firstRow, ...secondRow, ...thirdRow]
