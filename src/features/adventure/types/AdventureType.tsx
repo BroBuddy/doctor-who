@@ -1,3 +1,21 @@
+export type Adventure = {
+    id: number
+    tag: string
+    title: string
+    year: number
+    tardis: number
+    era: AdventureEra
+    type: AdventureType | null
+    description: string
+    stats: AdventureStats
+    special: string
+    enemy: AdventureEnmy[]
+    locations: AdventureLocation[]
+    plots: AdventurePlot[]
+    characters: AdventureCharacter[]
+    specials: AdventureSpecial[]
+}
+
 export type AdventureEra =
     | 'World War Era'
     | 'Future Era'
@@ -19,45 +37,25 @@ export type AdventureType =
     | 'Wilderness'
     | 'Space'
 
-export type Adventure = {
-    id: number
-    tag: string
-    title: string
-    year: number
-    tardis: number
-    era: AdventureEra
-    type?: AdventureType
-    description: string
-    stats: AdventureStats
-    special?: string
-    enemy?: Rolls[]
-    locations: AdventureLocation[]
-    plots?: AdventurePlot[]
-    characters?: AdventureCharacter[]
-    specials?: AdventureSpecial[]
-}
-
 export type AdventureStats = {
     danger: number
     knowledge: number
     vp: number
 }
 
-export type AdventureEnmy = Rolls[]
+export type AdventureEnmy = {
+    roll: string
+    name: string
+}
 
 export type AdventureLocation = {
     roll: string
     name: string
-    move?: number | string
-    terrain?: string
+    move: number | string | null
+    terrain: string | null
     description: string
     encounter: string
     rolls: Rolls[]
-}
-
-export type Movement = {
-    type: string
-    value: number
 }
 
 export type Rolls = {
@@ -87,12 +85,12 @@ export type AdventureCharacter = {
 
 export type AdventureSpecial = {
     id: number
-    image?: string
+    image: string | null
     name: string
     description: string
     information: string
-    stats?: Stats
-    skills?: string[]
+    stats: Stats | null
+    skills: string[] | []
 }
 
 export type Stats = {

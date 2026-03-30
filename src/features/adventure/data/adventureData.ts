@@ -42,6 +42,7 @@ const A001: Adventure = {
             roll: '2',
             name: 'Village Inn',
             move: 6,
+            terrain: null,
             description:
                 'A lovely local inn where the sounds of talking and laughing are mixed with the clink of glasses and the inviting smells of hot food. Add +1 to (Charm) Seek Information Actions and +1 to Relax Actions but you may not Investigate here.',
             encounter: 'D6',
@@ -58,6 +59,7 @@ const A001: Adventure = {
             roll: '3',
             name: 'Farm',
             move: 7,
+            terrain: null,
             description:
                 "A rustic old farmhouse surrounded by stables and sheds with a battered tractor sitting close to the gate. The bark of a dog can be heard from a barn. Add +1 to Investigate Actions here. If you make a Charm 7 roll, you are invited inside by the farmer's wife – make an immediate Relax Action (Discover Phase) or Seek Information Action (Dilemma Phase).",
             encounter: 'D6',
@@ -71,6 +73,7 @@ const A001: Adventure = {
             roll: '4',
             name: 'Post Office',
             move: 6,
+            terrain: null,
             description:
                 "This quaint little shop in the centre of Stourford is run by a very friendly and efficient postmistress who makes everyone's business her business. Add +2 to Seek Information Actions and +1 to Enemy Action rolls here. You may not Explore here. You may spend 2 Luck to meet Louisa James or Madame Dumaris (Special Characters) or have a Plot event.",
             encounter: 'D6',
@@ -85,6 +88,7 @@ const A001: Adventure = {
             roll: '5',
             name: 'Manor House',
             move: 7,
+            terrain: null,
             description:
                 'A magnificent old house and residence of the local gentry that is set in some lovely tended grounds with a vintage car sat on the drive. Add +1 to Investigate and Plan Actions here.',
             encounter: 'D6, add Diplomacy',
@@ -110,6 +114,7 @@ const A001: Adventure = {
             roll: '6',
             name: 'Old Church',
             move: 6,
+            terrain: null,
             description:
                 'A lovely country stone church with beautiful stained glass windows that is surrounded by a well-kept graveyard. But does it contain hidden secrets? Add +1 to Research (History) Actions here.',
             encounter: 'D6, +1 if Discover Phase',
@@ -438,6 +443,7 @@ const A002: Adventure = {
     year: 3920,
     tardis: 9,
     era: 'Twilight Era',
+    type: null,
     description:
         "You have landed on Peladon, one of your favourite planets. It has been over thirty years since your first visit to this medieval planet of superstition and barbarism, and under the wise rule of its' King it has now joined the Galactic Federation. The familiar electric storms rage on the mountainside around the massive stone Citadel of Peladon. Is all well here? Or is your return in time to avert disaster once more?",
     stats: { danger: 1, knowledge: 6, vp: 1 },
@@ -456,6 +462,7 @@ const A002: Adventure = {
             roll: '1',
             name: 'Throne Room',
             move: 7,
+            terrain: null,
             description:
                 'The large chamber where the King meets with his trusted advisors or receives Federation guests. The emblem of Aggedor adorns the walls and loyal guards flank the entrance. Add +1 to Seek Information and Find Help Actions but you may not Investigate here.',
             encounter: 'D6',
@@ -472,6 +479,7 @@ const A002: Adventure = {
             roll: '2',
             name: 'Temple of Aggedor',
             move: 7,
+            terrain: null,
             description:
                 'A massive stone statue of the Royal Beast dominates the small, smoky temple that has a small altar in its centre. If you have an Incident here whilst captured, it is automatically a Capture Incident. Add +1 to Investigate Actions here. Charm, Diplomacy and Escape rolls have -1 penalty. You may pay 1 Luck point to meet Aggedor (Special Characters).',
             encounter: 'D6',
@@ -524,6 +532,7 @@ const A002: Adventure = {
             roll: '5',
             name: 'Refinery',
             move: 7,
+            terrain: null,
             description:
                 'Control centre where raw material from the mines is separated and refined. To enter requires an Engineer 8 roll to deactivate the security system — if failed, Characters here are stunned and may take no Action next Turn. You may spend 1 Luck (once only) to see Mineral Wealth (Plot). Add +1 to Investigate and Research (Science) Actions here.',
             encounter: 'D6, +1 if Discover Phase',
@@ -540,6 +549,7 @@ const A002: Adventure = {
             roll: '6',
             name: 'Ambassadors Quarters',
             move: 7,
+            terrain: null,
             description:
                 'A small set of rooms and chambers assigned to the various Federation Ambassadors attached to Peladon. Add Diplomacy to Investigate and Planning Actions here.',
             encounter: 'D6',
@@ -556,6 +566,7 @@ const A002: Adventure = {
             roll: '7',
             name: 'Citadel Corridors',
             move: 2,
+            terrain: null,
             description:
                 'The narrow passages are lit by smoky, flickering torches held in iron sconces. Walls are adorned with large tapestries bearing the symbol of Aggedor. You may not Investigate, Seek Information or Research here. Add +2 to any Move Actions from here.',
             encounter: 'D6, +1 if Discover Phase',
@@ -816,6 +827,7 @@ const A003: Adventure = {
             roll: '1',
             name: 'Lounge Bar',
             move: 6,
+            terrain: null,
             description:
                 'The sounds of talking, dancing and laughing are mixed with the clink of glasses and the tempo beat of the jazz band in the corner. Add +1 to (Charm) Seek Information Actions and +1 to Relax Actions but you may not Investigate here.',
             encounter: 'D6',
@@ -832,6 +844,7 @@ const A003: Adventure = {
             roll: '2',
             name: 'Casino',
             move: 6,
+            terrain: null,
             description:
                 'The room is filled with passengers, all attempting to win their fortune in games of chance – either at the poker table or the roulette wheel. You may spend 1 Luck to Gamble as an Action, winning 3 Luck if you roll 7, 11 or doubles with 2D6. If you roll a 2, add +1 Danger.',
             encounter: 'D6',
@@ -848,6 +861,7 @@ const A003: Adventure = {
             roll: '3',
             name: 'Wheelhouse',
             move: 7,
+            terrain: null,
             description:
                 "The control cabin of the steamer where the Captain of 'The River Queen' and his crew efficiently steer the majestic ship along the famous river. If you do not have any native Pilot Allies, you must make a Charm 8 roll or be Captured (7). Add +1 to Prevent and Plan Actions here. If you make a Pilot 8 roll as an Action here, reduce Danger by 1.",
             encounter: 'D6',
@@ -861,6 +875,7 @@ const A003: Adventure = {
             roll: '4',
             name: 'Cabins',
             move: 6,
+            terrain: null,
             description:
                 'A smaller, but still very pleasant cabin, where the passengers aboard the steamer can sleep and relax. Add +1 to Seek Information and Investigate Actions here. You can spend 1 Luck to meet a random Character, spend 3 Luck to meet a Character of your choice (including Mark Twain or Gabrielle Blanchett) or spend 1 Luck to roll for a Plot event.',
             encounter: 'D6, +1 to roll if Discover Phase',
@@ -875,6 +890,7 @@ const A003: Adventure = {
             roll: '5',
             name: 'Private Stateroom',
             move: 7,
+            terrain: null,
             description:
                 'Larger and more luxurious quarters for richer and more important passengers. But could those passengers be all what they seem? Add +1 to Seek Information and Investigate Actions here. You can spend 1 Luck to meet a Banker, Gambler, random Character or roll for a Plot event.',
             encounter: 'D6, +1 to roll if Discover Phase',
@@ -894,6 +910,7 @@ const A003: Adventure = {
             roll: '6',
             name: 'Boiler Room',
             move: 7,
+            terrain: null,
             description:
                 'The heart of the steamer, all oil, smoke and pistons as the magnificent machinery pumps and turns, pushing the boat effortlessly through the water. If the Doctor is here and has Engineer, gain 1 VP (once only in Adventure). Add +1 to Investigate and Research (Engineer) Actions here.',
             encounter: 'D6, +1 to roll if Discover Phase',
@@ -1156,6 +1173,7 @@ const A004: Adventure = {
             roll: '1',
             name: 'Tavern',
             move: 6,
+            terrain: null,
             description:
                 'You have found a local inn where the sounds of talking and laughing are mixed with the clink of glasses and the inviting smells of hot food. Add +1 to (Charm) Seek Information Actions and +1 to Relax Actions. You may not Investigate here.',
             encounter: 'D6',
@@ -1176,6 +1194,7 @@ const A004: Adventure = {
             roll: '2',
             name: 'Globe Theatre',
             move: 8,
+            terrain: null,
             description:
                 'This incredible theatre has only just opened but is the talk of London. Gain 1 VP for each TARDIS Character with History here (once only). If you remain here for a full Turn with no other Action, you get to see a Shakespeare play performed and gain 1 Luck point per TARDIS Character. If the Enemy are Carrionites, add +1 Danger.',
             encounter: 'D6',
@@ -1192,6 +1211,7 @@ const A004: Adventure = {
             roll: '3',
             name: 'Tower of London',
             move: 8,
+            terrain: null,
             description:
                 'The incredible castle in the centre of London and a grim reminder to any traitors to the Crown. Gain 1 VP if you spend a full Turn here (once only). Add +2 to Plan Actions here.',
             encounter: 'Diplomacy roll, -1 per Stealth',
@@ -1214,6 +1234,7 @@ const A004: Adventure = {
             roll: '4',
             name: 'Insane Asylum',
             move: 9,
+            terrain: null,
             description:
                 'You have found a terrifying madhouse where screaming patients are kept in terrible conditions. Add +1 to Investigate or Seek Information Actions here, -1 to Escape Actions.',
             encounter: 'D6, +1 to roll if Discover Phase',
@@ -1237,6 +1258,7 @@ const A004: Adventure = {
             roll: '5',
             name: 'Greenwich Palace',
             move: 9,
+            terrain: null,
             description:
                 'The magnificent residence of Queen Elizabeth I that is filled with courtiers and protected by her loyal soldiers. Add +1 to Find Help Actions here.',
             encounter: 'Diplomacy roll',
@@ -1256,6 +1278,7 @@ const A004: Adventure = {
             roll: '6',
             name: 'Church',
             move: 7,
+            terrain: null,
             description:
                 'An old stone church that looks unused and ill-kept, but you might find something useful inside it or perhaps in the old graveyard. Add +1 to Research (History) Actions here.',
             encounter: 'D6',
@@ -1524,6 +1547,7 @@ const A005: Adventure = {
     year: 2221,
     tardis: 8,
     era: 'Colonial Era',
+    type: null,
     description:
         "The TARDIS has landed in the corridors of a remote mining station on Ganymede, the largest moon of Jupiter, as the human race expands further into the solar system. Conditions are harsh; the surface of the moon unstable, and the ore processing both difficult and dangerous, yet mankind's indomitable spirit still prevails – especially when the mineral deposits are so valuable to the companies that finance it...",
     stats: { danger: 1, knowledge: 5, vp: 0 },
@@ -1540,6 +1564,7 @@ const A005: Adventure = {
             roll: '1',
             name: 'Ore Processing Plant',
             move: 8,
+            terrain: null,
             description:
                 'A huge hangar where raw materials from the surface are separated, graded and refined. Add +1 to Investigate Actions here. You may spend 3 Luck (reduced by 1 for each Science here, min 1) to find Vintarric Crystals (Special Events).',
             encounter: 'D6, +1 to roll if Discover Phase',
@@ -1560,6 +1585,7 @@ const A005: Adventure = {
             roll: '2',
             name: 'Science Laboratory',
             move: 7,
+            terrain: null,
             description:
                 'A small but well-equipped laboratory filled with specialised analysis apparatus for testing biological and mineral samples. If any TARDIS Character with Science remains here for 1 Turn, they gain +1 Brains until end of the Adventure. Add +1 to Research (Medicine or Science) and Plan (Medicine or Science) Actions here.',
             encounter: 'D6',
@@ -1576,6 +1602,7 @@ const A005: Adventure = {
             roll: '3',
             name: 'Maintenance Area',
             move: 7,
+            terrain: null,
             description:
                 'An area full of partly-constructed or repaired equipment. If a TARDIS Character with Engineer remains here for 1 Turn, they gain +1 Brains until end of the Adventure or they draw a random Gadget card and play for 1 less Luck cost. Add +1 to Research (Engineer) and Plan (Engineer) Actions here.',
             encounter: 'D6',
@@ -1593,6 +1620,7 @@ const A005: Adventure = {
             roll: '4',
             name: 'Crew Quarters',
             move: 7,
+            terrain: null,
             description:
                 'The cramped and basic quarters where the personnel aboard the station try to relax. Add +1 to Seek Information Actions here. You can either spend 1 Luck to meet a random Character, spend 3 Luck to meet a Character of your choice (except Ood or Servo-robot) or spend 2 Luck to roll for a Plot event.',
             encounter: 'D6, +1 to roll if Discover Phase',
@@ -1606,6 +1634,7 @@ const A005: Adventure = {
             roll: '5',
             name: 'Control Deck',
             move: 7,
+            terrain: null,
             description:
                 'The heart of the station where operations are co-ordinated so that the extracted minerals reach Earth as efficiently as possible. Add +1 to Prevent and Plan Actions here. If you make a Computers 8 roll, gain +1 Knowledge and cancel Dark at all Locations. If current Danger is 16+ you may spend 2 Luck to reduce Danger by 1.',
             encounter: 'D6, +1 to roll if Discover Phase',
@@ -1620,6 +1649,7 @@ const A005: Adventure = {
             roll: '6',
             name: 'Drilling Rig',
             move: 8,
+            terrain: null,
             description:
                 'This is where massive drilling machinery smashes into the surface of the moon to extract the raw ore and minerals. A Character with Engineer is +2 Brawn here.',
             encounter: 'Engineer roll, +1 to roll if Discover Phase',
@@ -1805,6 +1835,8 @@ const A005: Adventure = {
                 'You discover some strange, glowing crystals that may have some very useful properties. Characters that possess Vintarric Energy Crystals may cancel the Dark keyword at any Location or Encounter and gain +2 in any Conflict with Weeping Angels. If the Character has Aware 2, reveal the Enemy or gain +1 Knowledge.',
             information:
                 'You may discard the crystals to add +3 in any Prevent roll that includes Science.',
+            stats: null,
+            skills: [],
         },
         {
             id: 2,
@@ -1814,6 +1846,8 @@ const A005: Adventure = {
                 'The floor beneath you suddenly shifts as the station is hit by powerful seismic waves from beneath the surface. Roll 1D6 for affected Location (rolling twice if Danger 15+). If you have Characters at affected Locations, roll 1D6 for each Location.',
             information:
                 '1–2: Characters at the Location(s) are trapped until they or any Characters attempting to rescue them make a Brawn 10 roll. 3–4: No further effect. 5: Enemy Lair is revealed. 6: Choose a Character to be killed. Any bonuses to Actions at affected Locations are cancelled until you make an Engineer 8 roll as an Action at that Location or at the Control Deck.',
+            stats: null,
+            skills: [],
         },
     ],
 }
@@ -2093,14 +2127,19 @@ const A006: Adventure = {
                 'May only Move here from the Lost Valley and must make either a Brawn or Engineer 12 roll to enter the Vault (Dark Location). The Vault is filled with weaponry of terrifying power. Add +1 Danger. While inside, add +1 to any Plan, Challenge and Rescue Actions but -1 to Evade options. Add +1 to the Enemy Action roll each Turn.',
             information:
                 'Encounter (D6): 1: Security System – roll 1D6 for each Character (killed on roll of 1); 2: Enemy encounter; 3: Enemy event; 4: No event; 5: Activate computer system – gain +1 to Prevent Actions; 6: Discover weaponry – each of your Characters gains +2 Brawn (not cumulative).',
+            stats: null,
+            skills: [],
         },
         {
             id: 2,
+            image: null,
             name: 'Obtain Advanced Weapon Technology',
             description:
                 'You discover that the Enemy wishes to locate the Vault of the Kadarr, the armoury of alien weapon-smiths from the birth of the universe. With this technology, the Enemy could be unstoppable! You must reach the Vault by finding the Lost Valley, entering the Vault and then choose one of two options.',
             information:
                 'Trap Enemy Inside the Vault: Make a Computers 10 roll to activate the Vault system, then take a Prevent Action (adding Running but subtract Danger of Enemy). If you fail, have an Enemy encounter and add +1 Danger. Use Kadarr Weapons Against Enemy: Make an Aware roll, adding half the result (round down) to the Brawn of each of your Characters. Then have an Enemy encounter (automatically add a Leader) and win an (Attack) Conflict.',
+            stats: null,
+            skills: [],
         },
     ],
 }
@@ -2112,6 +2151,7 @@ const A007: Adventure = {
     year: 2022,
     tardis: 6,
     era: 'Post-Modern Era',
+    type: null,
     description:
         'The TARDIS has landed in the streets of modern London which is bustling with a myriad of tourists and shoppers from across the globe. Red London buses and black taxi cabs drive along the packed roads passing familiar iconic landmarks such as Big Ben and the London Eye. It looks so usual and ordinary, but not everything is as it seems and for someone, normal life might soon be changed forever...',
     stats: {
@@ -2418,6 +2458,8 @@ const A007: Adventure = {
                 'You decide to hop on a red bus, hire a black cab, use the London Underground or simply walk the streets to tour the city and visit some famous sites.',
             information:
                 'You may choose to Relax at any Monument Location. In addition to any Relax Action results, if you spend a complete Turn at a Monument, you may either gain 1 VP or 1 Luck. If you visit at least 3 Monuments, also gain 1 Idea card and an additional 1 VP.',
+            stats: null,
+            skills: [],
         },
         {
             id: 2,
@@ -2760,6 +2802,7 @@ const A009: Adventure = {
     year: 1892,
     tardis: 8,
     era: 'Victorian Era',
+    type: null,
     description:
         "You have landed in Victorian London. It is a dark, cold evening and thick fog covers the cobbled streets which are lit by the soft but eerie glow of gas lamps. A hansom cab rattles past you as your breath curls in the chilly air. In the distance you can hear the unmistakeable sound of a ship's foghorn – you must be close to the docks. Time to experience living history...",
     stats: {
@@ -3111,6 +3154,8 @@ const A009: Adventure = {
                 'Due to the heavy fog that stifles London during the Victorian Era, the Move numbers for this Adventure are high and have an additional -1 penalty if it is Night.',
             information:
                 'You may pay 1 Luck to automatically succeed at a Move Action to any Location for up to 4 Characters. Each time you use a Hansom cab, roll 1D6 and on a 6, roll for a Plot event for any gossip from the driver.',
+            stats: null,
+            skills: [],
         },
         {
             id: 2,
@@ -3153,6 +3198,7 @@ const A010: Adventure = {
         {
             roll: '1',
             name: 'Pleasure Yacht',
+            move: null,
             terrain: 'Engineer 7, Pilot 8',
             description:
                 'A small but elegant ship with beautiful design and opulent, luxurious interiors. Why is the ship completely deserted? Add +1 to Investigate Actions here. You may spend 1 Luck to find a pouch of gems. If you give them to a Character, they automatically join you as an Ally (if possible).',
@@ -3169,6 +3215,7 @@ const A010: Adventure = {
         {
             roll: '2',
             name: 'Cargo Cruiser',
+            move: null,
             terrain: 'Engineer 8, Pilot 7',
             description:
                 'A large bulk ship that is an old, twisted wreck and that creaks alarmingly as you explore. Pilot rolls made with this ship have a -1 penalty and roll 1D6 each time - on a result of 1 see Hull Breach.',
@@ -3189,6 +3236,7 @@ const A010: Adventure = {
         {
             roll: '3',
             name: 'Military Fighter',
+            move: null,
             terrain: 'Engineer 9, Pilot 8',
             description:
                 'A sleek, black ship of advanced design with powerful weapons and engines. Add +1 to Pilot rolls in the Expanse with this ship. Add +1 to Investigate Actions here.',
@@ -3209,6 +3257,7 @@ const A010: Adventure = {
         {
             roll: '4',
             name: 'Escape Pod',
+            move: null,
             terrain: 'Engineer 5, Pilot 10',
             description:
                 'A small pod from one of the other ships in the Expanse that might have already been destroyed by the forces here. You may not complete any Actions here that require an Action table. If you make a Computers 8 roll, gain 1 Knowledge (once only). You may spend 1 Luck to have a Character event or 2 Luck to choose a Character event.',
@@ -3222,6 +3271,7 @@ const A010: Adventure = {
         {
             roll: '5',
             name: 'Alien Ship',
+            move: null,
             terrain: 'Science 10, Pilot 9',
             description:
                 'An incredible ship of totally organic design and warm, vivid colours that gently pulsate as you explore it. Strange, but pleasant fluting music is mixed with an urgent throb that signifies the ship has been damaged. You may Study here as an Action using Science. Add +1 to Investigate and Research (Science) Actions here.',
@@ -3238,6 +3288,7 @@ const A010: Adventure = {
         {
             roll: '6',
             name: 'Abandoned TARDIS',
+            move: null,
             terrain: 'TARDIS 10, Pilot 11',
             description:
                 'You have found an old TARDIS, now just a cold, empty husk with a silent, dead console. With a sudden, sinking feeling, you realize that this TARDIS is the cause of the power drain that has been trapping ships in the Expanse. Add +2 to TARDIS rolls and Prevent Actions in the Defeat Phase.',
@@ -3437,11 +3488,14 @@ const A010: Adventure = {
         },
         {
             id: 2,
+            image: null,
             name: 'Escape the Expanse (Goal)',
             description:
                 '(7VP, Quest) You discover that the Enemy wishes to locate the source of the power drain holding their ship so that they can escape the Hades Expanse. If the Doctor is captured by the Enemy, add +1 Danger. In the Defeat Phase you may lose 1 Knowledge to add +1 to Pilot or TARDIS rolls (max 3 per Turn).',
             information:
                 'Trap Enemy Inside the Expanse: Make a Computers 11 roll to activate ship security systems. Then take a Prevent Action (adding Running but minus the Danger of Enemy). If fail, have an Enemy encounter and add +1 Danger. Boost your TARDIS and Escape: You must return to the TARDIS and make a TARDIS 10 roll. If you fail, the TARDIS is Damaged and add +1 Danger. If your total is 12+, you also free the Ships from the Expanse and gain 3 Luck.',
+            stats: null,
+            skills: [],
         },
     ],
 }
@@ -3453,6 +3507,7 @@ const A011: Adventure = {
     year: -46,
     tardis: 9,
     era: 'Antiquity Era',
+    type: null,
     description:
         'You have landed in Ancient Egypt and the time of the Pharaohs. The sand of the desert stretches for miles in all directions and the dusty heat of the Sun is almost unbearable. But perhaps you can find shelter and water at an oasis, or locate and explore an Egyptian city? Or perhaps you can discover and investigate the mysteries of the incredible Pyramids?',
     stats: {
@@ -4110,6 +4165,8 @@ const A012: Adventure = {
                 '1-3: Steal Tinclavic Ore (4VP; Profit): The Enemy is trying to steal valuable Tinclavic ore from the mines. Add +1 Danger if a Criminal Enemy. You may either:',
             information:
                 'Trap Enemy in Mines: Make Prevent Action (add Engineer) in the Tinclavic Mines. Add +1 Danger and have an Enemy encounter if you fail. Swap Tinclavic with Worthless Ore: Make Prevent Action (add Stealth) in the Ore Processing Plant. Add +1 Danger and have an Enemy encounter if you fail.',
+            stats: null,
+            skills: [],
         },
         {
             id: 2,
@@ -4119,6 +4176,8 @@ const A012: Adventure = {
                 '4-6: Escape Mines (4VP; Quest): The Enemy is trapped on Raaga and trying to escape. Enemy Action rolls have a -1 modifier. You may either:',
             information:
                 'Trap Enemy: Make Prevent Action (add Engineer) in either the Tinclavic Mines or Deep Caves. Add +1 Danger and have an Enemy encounter if you fail. Create Force Barrier to Prevent Escape: Make Prevent Action (add Computers) in the Control Area. Add +1 Danger and have an Enemy encounter if you fail.',
+            stats: null,
+            skills: [],
         },
     ],
 }
@@ -4130,6 +4189,7 @@ const A013: Adventure = {
     year: 1792,
     tardis: 8,
     era: 'Regency Era',
+    type: null,
     description:
         'You have landed on the coast of Cornwall in the late eighteenth century. It is late summer and the sun is dipping in the sky causing the sea to reflect a glorious sunset over the magnificent cliffs and beaches. As the waves crash against the rocky shore, you can just see the lamps of a small town in the distance.',
     stats: {
@@ -4536,6 +4596,8 @@ const A013: Adventure = {
                 'Due to the larger distances between Locations in rural Cornwall, the Move numbers for this Adventure are high and Move Actions have an additional -1 penalty if it is Night.',
             information:
                 'You may pay 1 Luck point to automatically succeed at a Move Action to any Location for up to 4 Characters via coach and driver at any non-Exterior Location. You may also buy a horse for 1 Luck point that can carry up to 2 Characters and adds +3 to a Move Action (+2 to Evade options at Exterior Locations) for the Adventure.',
+            stats: null,
+            skills: [],
         },
     ],
 }

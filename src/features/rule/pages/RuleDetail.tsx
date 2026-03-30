@@ -9,7 +9,7 @@ import { makeUrlsClickable } from '@/lib/helper'
 function RuleDetail() {
     const { tag } = useParams()
     const rule = useMemo(() => getRuleByTag(String(tag)), [tag])
-    const transformedContent = makeUrlsClickable(rule.description)
+    const transformedContent = makeUrlsClickable(rule.description as string)
     const { addToHistory } = useHistory()
 
     useEffect(() => {

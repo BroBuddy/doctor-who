@@ -17,7 +17,7 @@ export const formatYear = (year: number) => {
     return year < 0 ? `${Math.abs(year)} BCE` : `${year} CE`
 }
 
-export const makeUrlsClickable = (content: any) => {
+export const makeUrlsClickable = (content: string) => {
     if (!content) return
 
     const rulesRegex = /[R]\d{3}[A-Z]?/g
