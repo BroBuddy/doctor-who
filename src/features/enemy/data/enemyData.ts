@@ -1,6 +1,6 @@
 import type { Enemy } from '../types/EnemyType'
 
-export const enemyData: Enemy[] = [
+export const firstRow: Enemy[] = [
     {
         id: 1,
         tag: 'E001',
@@ -778,3 +778,771 @@ export const enemyData: Enemy[] = [
         },
     },
 ]
+
+export const secondRow: Enemy[] = [
+    {
+        id: 7,
+        tag: 'E007',
+        title: 'The Fendahl',
+        description:
+            'The Fendahl is a gestalt organism with a core and twelve Fendahleen – huge and terrifying caterpillar creatures with long tentacles around a slavering, sucker mouth. The Fendahl is death...',
+        stats: ['+1 Danger', 'Scheme 4', 'Gothic', 'Temporal'],
+        encounter: {
+            description:
+                'The number of Fendahleen encountered (each Brains 0, Brawn 4, Bravery 4, Creature) depends on Danger: 0–10: 1 Fendahleen; 11–15: 2 Fendahleen; 16+: 3 Fendahleen. Fendahleen are +1 to Qualities at Night.',
+            table: [
+                {
+                    name: 'Conflict (Drain Life-force)',
+                    description:
+                        'The Fendahleen slithers towards you with a terrifying sucking, gobbling sound. Human Allies with Bravery 1 or less must roll 1D6 and on a 1–3 are so terrified that they cannot add their Brawn.',
+                },
+                {
+                    name: 'Evade',
+                    description:
+                        'Fendahleen can exert control over their victims to invoke paralysis. To evade a Fendahleen, each non-Machine Character must make a Bravery 9 roll. Characters failing the roll must start a Conflict (above). If only some Characters succeed, you may leave the Characters behind to have the Conflict alone or remain with them.',
+                },
+            ],
+        },
+        goals: [
+            {
+                roll: '1-2',
+                name: 'Create Fendahleen',
+                vp: 6,
+                type: 'Apocalypse',
+                description:
+                    'The Fendahl is trying to create all twelve Fendahleen to feed on the life-force of the entire planet. If Captured, at the start of each Turn, roll 1D6 for each Captured Character – if result is 1, Character is killed and add +1 Danger. If Danger 16+, add +1 to number of Fendahleen encountered.',
+                options: [
+                    {
+                        name: 'Attack Fendahleen',
+                        description:
+                            'Make a History 10 roll (add Science) to research that salt can be used against Fendahleen. If successful, add +5 to total Brawn. Have an Enemy encounter and win an Attack Conflict. Add +1 Danger if fail.',
+                    },
+                    {
+                        name: 'Create Explosion',
+                        description:
+                            'Make a Brains 15 roll (add Computers in Modern Era or later) at a non Exterior Location. If fail, add +1 Danger. If succeed, roll 1D6 for each TARDIS Character (add Running). If the result is 1–2, Character is killed.',
+                    },
+                ],
+            },
+            {
+                roll: '3-4',
+                name: 'Control Humanity',
+                vp: 5,
+                type: 'Capture',
+                description:
+                    'The Fendahl wants to enslave the local population. Conflicts with Fendahleen become (Dominate). Captured Characters with Bravery 1 or less may not take Escape Actions.',
+                options: [
+                    {
+                        name: 'Break Conditioning',
+                        description:
+                            'Move to Fendahl Lair and then take a Prevent Action (add +1 per Character with Bravery 4+ or Aware 2). Add +1 Danger (+2 Danger if 3 or more Captured Characters) and encounter Fendahleen if you fail.',
+                    },
+                    {
+                        name: 'Create Psychic Shield',
+                        description:
+                            'Construct device with an Engineer 10 roll (add +2 if Character has Aware 2) then take a Prevent Action (add +2 if Character has Aware 2) at a Location where you can Research (Engineer). If you fail, add +1 Danger and encounter Fendahleen.',
+                    },
+                ],
+            },
+            {
+                roll: '5-6',
+                name: 'Awakening',
+                vp: 6,
+                type: 'Resurrection',
+                description:
+                    'The Fendahl is using a skull inscribed with a pentagram to try to resurrect itself back into existence. If Danger 16+, add +1 to all Fendahl Skull and Fendahleen Qualities.',
+                options: [
+                    {
+                        name: 'Study Legends',
+                        description:
+                            'Make History 10 roll (add Aware) to research legends, then take a Prevent Action (add History).',
+                    },
+                    {
+                        name: 'Steal and Destroy Skull',
+                        description:
+                            'Move to Fendahl Lair and make a Stealth 9 roll to steal Skull. If you fail, add +1 Danger and encounter Fendahleen. Return to TARDIS and make a TARDIS 8 roll to find a supernova – TARDIS Damaged if fail.',
+                    },
+                ],
+            },
+        ],
+        events: [
+            {
+                roll: '1-2',
+                name: 'Possession',
+                description:
+                    'The Fendahl skull (counts as Brains 5) attempts to possess a random Character – start a (Mind Control) Conflict involving only the selected Character.',
+            },
+            {
+                roll: '3',
+                name: 'Sacrifice',
+                description:
+                    'The servants of the Fendahl sacrifice a Character to their mistress. If you have any Captured Characters, choose 1 to be killed. Add +1 Danger.',
+            },
+            {
+                roll: '4',
+                name: 'Psychic Attack',
+                description:
+                    'The Fendahl skull (counts as Bravery 5) begins a psychic attack on a random Character – start a (Terrify) Conflict involving only the selected Character.',
+            },
+            {
+                roll: '5',
+                name: 'Coven',
+                description:
+                    'You encounter Minion servants of the Fendahl – choose to Evade (Running 7 roll), Surrender (Captured 8) or you are Attacked (Brawn 5).',
+            },
+            {
+                roll: '6',
+                name: 'Secret Ceremony',
+                description:
+                    'The Fendahl skull and all Fendahleen are +2 Qualities next turn (cumulative with other modifiers).',
+            },
+        ],
+        lair: {
+            name: 'Sanctum of the Fendahl',
+            tags: ['Location', 'Move 9'],
+            description:
+                'The underground temple has a stone altar and a huge pentagram drawn on the floor. Black candles flicker casting dark shadows about the walls and stone pillars. Gain +1 Knowledge (unless captives). Add +1 Danger if an Apocalypse or Resurrection Goal. Roll 1D6 – on a 1–3 (1–4 if Danger 12+) encounter Fendahleen (+1 to number encountered). Inside Sanctum, add +2 to Rescue Actions. Stealth and Escape rolls have a -1 penalty. Add +1 to Enemy Action rolls whilst here. A Fendahl Skull is +1 Qualities here.',
+        },
+    },
+    {
+        id: 8,
+        tag: 'E008',
+        title: 'The Ice Warriors',
+        description:
+            'The Ice Warriors are a militaristic, reptilian race originally from Mars. They are intelligent, powerful and ruthless, and yet maintain a code of honour having joined the Galactic Federation.',
+        stats: ['+1 Danger', 'Scheme 5', 'Military'],
+        encounter: {
+            description:
+                'Roll 1D3 (+1 if Danger 12+) for the number of Warriors encountered (each Brains 1, Brawn 6, Bravery 3, Troop). Roll a further 1D6 (+1 if at their Ship, +1 if Danger 12+) – if the result is 5+, the Warriors are led by an Ice Lord (Brains 3, Brawn 6, Bravery 4, Leader). Martians are +1 Qualities at Cold Locations.',
+            table: [
+                {
+                    name: 'Conflict (Attack)',
+                    description:
+                        'The Ice Warriors stride towards you, their sonic guns raised.',
+                },
+                {
+                    name: 'Surrender',
+                    description:
+                        'Roll 1D6 (+1 if Ice Lord here): 1–3: Warriors start an (Attack) Conflict; 4–5: Captured (8); 6+: Taken to Martian Ship (Lair – Captured 9). If captured by Ice Lord, add +1 Danger but roll for a Goal as he cannot resist gloating.',
+                },
+                {
+                    name: 'Evade',
+                    description:
+                        'Make either a Running 7 roll to escape, or a Stealth 8 roll to hide. If you fail, choose another option with -1 to roll.',
+                },
+                {
+                    name: 'Conflict (Outwit)',
+                    description:
+                        'You try to confuse the Warriors and escape. If you fail, choose to Surrender or start an (Attack) Conflict.',
+                },
+            ],
+        },
+        goals: [
+            {
+                roll: '1-2',
+                name: 'Military Conquest',
+                vp: 6,
+                type: 'Invasion',
+                description:
+                    'The Ice Warriors plan to invade the planet as a new base for their conquest of the galaxy. If Danger 16+, add +1 to number of Warriors encountered.',
+                options: [
+                    {
+                        name: 'Destroy Homing Beacon',
+                        description:
+                            'Roll a random Location of beacon. Move there with a Running 8 roll and then take a Prevent Action (add Engineer). If you fail, add +1 Danger and encounter Ice Warriors.',
+                    },
+                    {
+                        name: 'Create Energy Shield',
+                        description:
+                            'Move to any 3 Locations and take a Prevent Action (add Computers and Engineer) in each.',
+                    },
+                ],
+            },
+            {
+                roll: '3-4',
+                name: 'Eradicate Atmosphere',
+                vp: 7,
+                type: 'Apocalypse',
+                description:
+                    'The Ice Warriors are using seed pods to change the atmosphere of the planet to resemble Mars. If Danger 16+, Human Characters are -1 to Qualities and Enemies are +1 Brawn.',
+                options: [
+                    {
+                        name: 'Destroy Seed Pods',
+                        description:
+                            'Make a Brains 15 roll (add Science) to analyse seeds then take a Prevent Action (add Science) aboard Martian Ship (Lair) or at a Location where you can Research (Science).',
+                    },
+                    {
+                        name: 'Sabotage Emitter Node',
+                        description:
+                            'Sneak aboard the Martian Ship (Lair) with a Stealth 9 roll, encountering Ice Warriors if you fail. Once aboard, take a Prevent Action (add Engineer). If you fail, add +1 Danger and encounter Ice Warriors.',
+                    },
+                ],
+            },
+            {
+                roll: '5-6',
+                name: 'Awaken Hive',
+                vp: 6,
+                type: 'Resurrection',
+                description:
+                    'The Ice Warriors wish to awaken a Hive containing an army of sleeping Warriors protecting a legendary Martian Lord. If Danger 16+, add +1 to number of Ice Warriors encountered.',
+                options: [
+                    {
+                        name: 'Reactivate Hibernation System',
+                        description:
+                            'Make a Move 8 Action to reach Hive then take a Prevent Action (add Computers). If you fail, add +1 Danger and encounter Ice Warriors (with an Ice Lord).',
+                    },
+                    {
+                        name: 'Appeal to Honour',
+                        description:
+                            'Make a Move 8 Action to reach Hive and encounter Ice Warriors (and an Ice Lord with +1 Qualities). Make a successful (Outwit) Conflict (add Diplomacy). If you fail, +1 Danger and Captured (9).',
+                    },
+                ],
+            },
+        ],
+        events: [
+            {
+                roll: '1',
+                name: 'Sonic Cannon',
+                description:
+                    'The Warriors make a sonic attack on a random Location. If you have any Characters there, they are killed unless you spend 2 Luck per Character.',
+            },
+            {
+                roll: '2',
+                name: 'Empress Iraxa',
+                description:
+                    "Leading the Ice Warriors is Empress Iraxa (Brains 4, Brawn 7, Bravery 5, Leader). Although ruthless, Iraxa is honourable. Add the 'Appeal to Honour' option (see Awaken Hive Goal) to any Goal and substitute her for an Ice Lord.",
+            },
+            {
+                roll: '3',
+                name: 'Traitor',
+                description:
+                    'A random Ally is revealed to be working for the Ice Warriors. Discard Ally and choose: Group becomes Captured (8), lose 3 Luck, or add +2 Danger.',
+            },
+            {
+                roll: '4',
+                name: 'Awakening',
+                description:
+                    'Add +1 to the number of Ice Warriors encountered (once only). Add +1 Danger if a Resurrection Goal.',
+            },
+            {
+                roll: '5-6',
+                name: 'Code of Honour',
+                description:
+                    'Ice Warriors have a moral code. Add Diplomacy to any (Outwit) Conflict roll and Surrender option.',
+            },
+        ],
+        lair: {
+            name: 'Martian Ship',
+            tags: ['Location', 'Move 9'],
+            description:
+                'A Martian ship is a hybrid of advanced technology fused with an organic shell, armed with weapons of awesome firepower. Gain +1 Knowledge (if not a captive) and roll 1D6 – on a 1–3 immediately encounter Ice Warriors (add +1 to the number, each is +1 Brawn due to advanced sonic rifles). Gain +1 to Rescue Actions here. If you have Computers 2 or Engineer 2, you can sabotage environment controls so Ice Warriors are -2 to Qualities (Ice Lords are -1). Add +2 to any Prevent or (Outwit) Conflict rolls. At the end of each Turn roll 1D6 – if the result is 4+ then the Warriors discover your sabotage and their Qualities return to normal.',
+        },
+    },
+    {
+        id: 9,
+        tag: 'E009',
+        title: 'Terileptils',
+        description:
+            'The Terileptils are a space-faring reptilian species, covered in brightly-coloured scales, with clawed flippers, wide mouths full of sharp teeth and fish-like tails. They are known for their love of art, beauty... and war.',
+        stats: ['+0 Danger', 'Scheme 5', 'Criminal'],
+        encounter: {
+            description:
+                'Roll 1D3 (+1 if Danger 12+) for the number of Terileptils encountered (each Brains 1, Brawn 4, Bravery 2, Troop). Roll a further 1D6 (+1 if at their Pod, +1 if Danger 12+) – if the result is 4+, one of the Terileptils is a Leader (Brains 3, Brawn 5, Bravery 3, Leader).',
+            table: [
+                {
+                    name: 'Conflict (Attack)',
+                    description:
+                        'The Terileptils advance towards you with their guns raised.',
+                },
+                {
+                    name: 'Surrender',
+                    description:
+                        'Roll 1D6 (+1 if Leader here): 1–3: Terileptils start an (Attack) Conflict; 4–5: Captured (8); 6+: Taken to Terileptil Pod (Lair – Captured 8). If captured by a Leader, add +1 Danger and roll for a Goal as it cannot resist gloating.',
+                },
+                {
+                    name: 'Evade',
+                    description:
+                        'Make either a Running 7 roll to escape, or a Stealth 8 roll to hide. If you fail, choose another option with -1 to roll.',
+                },
+                {
+                    name: 'Conflict (Outwit)',
+                    description:
+                        'You try to confuse the Terileptils and escape. If you fail, choose to Surrender or start an (Attack) Conflict.',
+                },
+            ],
+        },
+        goals: [
+            {
+                roll: '1-2',
+                name: 'Manufacture Plague',
+                vp: 6,
+                type: 'Experiments',
+                description:
+                    'The Terileptils intend to develop and release a deadly virus to wipe out the native population. If Danger 16+, roll 1D6 for each Ally – on a roll of 1 the Ally is killed.',
+                options: [
+                    {
+                        name: 'Destroy Plague Carriers',
+                        description:
+                            'Move to 3 random Locations and in each make a Brawn 12 roll (add Stealth). Add +1 Danger each time you fail a roll.',
+                    },
+                    {
+                        name: 'Develop Cure',
+                        description:
+                            'Make a Brains 15 roll (add Medicine) to analyse virus then take a Prevent Action (add Medicine) at any Location where you can Research (Medicine).',
+                    },
+                ],
+            },
+            {
+                roll: '3-4',
+                name: 'Eradicate Atmosphere',
+                vp: 6,
+                type: 'Apocalypse',
+                description:
+                    'The Terileptils are using Soliton Gas to alter the atmosphere of the planet to resemble their own. If Danger 16+, Human Characters are -1 to Qualities and Terileptils are +1 Brawn.',
+                options: [
+                    {
+                        name: 'Restore Atmosphere',
+                        description:
+                            'Make a Brains 15 roll (add Science) to analyse gas then take a Prevent Action (add Science) at any Location where you can Research (Science).',
+                    },
+                    {
+                        name: 'Sabotage Gas Generators',
+                        description:
+                            'Sneak inside the Terileptil Pod (Lair) with a Stealth 9 roll, encountering Terileptils if you fail. Once aboard, take a Prevent Action (add Science). If you fail, add +1 Danger and encounter Terileptils.',
+                    },
+                ],
+            },
+            {
+                roll: '5-6',
+                name: 'Escape Justice',
+                vp: 4,
+                type: 'Quest',
+                description:
+                    'These Terileptils are desperate criminals trying to avoid being caught by unknown hunters. Each Terileptil is +1 to all Qualities but you only ever encounter 1 Android.',
+                options: [
+                    {
+                        name: 'Destroy Pod',
+                        description:
+                            'Sneak inside the Terileptil Pod (Lair) with a Stealth 9 roll, encountering Terileptils if you fail. Once aboard, take a Prevent Action (add Engineer). If you fail, add +1 Danger and encounter Terileptils (with Leader).',
+                    },
+                    {
+                        name: 'Convince Terileptils',
+                        description:
+                            'Gain 2 Knowledge then win an (Outwit) Conflict (add Diplomacy) in a Terileptil encounter with a Leader. If you fail, also add +1 Danger and become Captured (9).',
+                    },
+                ],
+            },
+        ],
+        events: [
+            {
+                roll: '1-3',
+                name: 'Androids',
+                description:
+                    'You encounter 1D3 Terileptil Androids (each Brains 1, Brawn 4, Bravery 4, Machine, Minion), covered in semi-precious jewels. Often disguised on less advanced worlds – if Regency Era or earlier, roll 1D6: on a 1–3, native Allies must make a Bravery 8 roll or must try to Evade with Running 7 or Stealth 8. You may start an (Attack) Conflict or Surrender – roll 1D6: 1–2: Attacked; 3–6: Captured (8).',
+            },
+            {
+                roll: '4-6',
+                name: 'Control Bracelets',
+                description:
+                    'Terileptils use these on prisoners and to enslave the local population. Captured Characters with Brains 1 or less may not attempt Escape Actions unless with another Character of Brains 3+. If you currently have no Captured Characters, either add +1 Danger or roll for a Character event and start an (Attack) Conflict. The Characters encountered become Allies if you win the Conflict.',
+            },
+        ],
+        lair: {
+            name: 'Terileptil Pod',
+            tags: ['Location', 'Move 9'],
+            description:
+                'Dim green light creates shadows across the pod that is filled with wisps of Soliton gas. Gain +1 Knowledge (if not a captive) and roll 1D6 – on a 1–3 immediately encounter Terileptils (add +1 to the number, each +1 Brawn due to the Soliton gas here). Gain +1 to Rescue Actions here. If you make a Science 10 roll, you can disable the Soliton generator so Terileptils are -1 to Qualities here. Add +2 to any Prevent or (Outwit) Conflict rolls. At the end of each Turn roll 1D6 – if result 4+ then Terileptils repair the generator and return to normal.',
+        },
+    },
+    {
+        id: 10,
+        tag: 'E010',
+        title: 'Sontaran Commander',
+        description:
+            'The Sontarans are a blood-thirsty clone species that exist only to engage in battle – normally against their enemies, the Rutans. You have encountered only a lone Sontaran commander, sent as a scout here. Special: The Sontaran Commander will have reached his Goal if Danger total is 15 rather than 20.',
+        stats: ['+1 Danger', 'Scheme 4', 'Military'],
+        encounter: {
+            description:
+                'The Sontaran Commander is Brains 4, Brawn 5, Bravery 4, Leader.',
+            table: [
+                {
+                    name: 'Conflict',
+                    description:
+                        "If Danger 6 or less, the Sontaran attempts a (Capture) Conflict; if Danger 7+, the Commander instead starts an (Attack) Conflict. In an (Attack) Conflict, you may spend X Luck and roll 1D6 adding X. If the result is 6+, you have struck the Sontaran's probic vent and automatically win the Conflict.",
+                },
+                {
+                    name: 'Surrender',
+                    description:
+                        'Roll 1D6 (+2 if Danger 6 or less): 1–3: Sontaran starts an (Attack) Conflict; 4–5: Captured (8); 6+: Taken to the Sontaran Scout Craft (Lair – Captured 8). Add +1 Danger and roll for a Goal as the Sontaran cannot resist gloating.',
+                },
+                {
+                    name: 'Evade',
+                    description:
+                        'Make either a Running 8 roll to escape, or a Stealth 8 roll to hide. If you fail, choose another option with -1 to roll.',
+                },
+                {
+                    name: 'Conflict (Outwit)',
+                    description:
+                        'You try to confuse the Sontaran and escape. If you fail, choose to Surrender or start a different Conflict.',
+                },
+            ],
+        },
+        goals: [
+            {
+                roll: '1-2',
+                name: 'Evaluate Tactical Position',
+                vp: 3,
+                type: 'Invasion',
+                description:
+                    'The Sontaran is completing a survey to determine strategic location and possibilities of future invasion. If the Adventure is on Earth, add +1 Danger.',
+                options: [
+                    {
+                        name: 'Brinkmanship',
+                        description:
+                            'Gain 1 Knowledge then win an (Outwit) Conflict against the Sontaran. Add +1 Danger and start an (Attack) Conflict if you fail.',
+                    },
+                    {
+                        name: 'Challenge Sontaran to Duel',
+                        description:
+                            'Win an (Attack) Conflict against the Sontaran with only 1 Character.',
+                    },
+                ],
+            },
+            {
+                roll: '3-4',
+                name: 'Evaluate Species',
+                vp: 4,
+                type: 'Experiments',
+                description:
+                    'The Sontaran is experimenting on the local population to determine their strength and resistance. Add +1 Danger each time a Character is Captured or killed. If you roll a Capture Incident, you must kill 1 Character instead of rolling the D6.',
+                options: [
+                    {
+                        name: 'Challenge Sontaran to Duel',
+                        description:
+                            'Win an (Attack) Conflict against the Sontaran with only 1 Character.',
+                    },
+                    {
+                        name: 'Lure Sontaran into Trap',
+                        description:
+                            'Rescue any Captured Characters then win a (Trap) Conflict against the Sontaran. Add +1 Danger if you fail.',
+                    },
+                ],
+            },
+            {
+                roll: '5-6',
+                name: 'Repair Scout Craft',
+                vp: 3,
+                type: 'Quest',
+                description:
+                    'The Sontaran is trying to repair his ship which was damaged when he crashed here. Add +1 Danger if a Character with Engineer is Captured.',
+                options: [
+                    {
+                        name: 'Destroy Scout Craft',
+                        description:
+                            'Move to the Scout Craft (Lair) and once there, take a Prevent Action (add Engineer). If you fail, add +1 Danger and encounter Sontaran.',
+                    },
+                    {
+                        name: 'Convince Sontaran to Leave Peacefully',
+                        description:
+                            'Gain 1 Knowledge then win an (Outwit) Conflict against the Sontaran (add Diplomacy and Engineer). Add +1 Danger and become Captured (8) if you fail.',
+                    },
+                ],
+            },
+        ],
+        events: [
+            {
+                roll: '1-2',
+                name: 'Robot Surveyor',
+                description:
+                    'You encounter a Sontaran Scavenger robot (Brains 1, Brawn 5, Bravery 4, Machine, Minion). You may Surrender (roll 1D6: 1–2: Robot attacks; 3–6: Captured 8), Evade with a Running 8 roll, or start a (Capture) Conflict.',
+            },
+            {
+                roll: '3',
+                name: 'Heavy Weapons',
+                description: 'Add +1 to Sontaran Brawn (cumulative).',
+            },
+            {
+                roll: '4',
+                name: 'Dominate Population',
+                description:
+                    'Find Help Actions or rolls to Ally Characters have a -2 penalty.',
+            },
+            {
+                roll: '5',
+                name: 'Hostages',
+                description:
+                    'If you have any Captured Characters then you must Surrender to the Sontaran (see Encounter) by the end of next Turn or the captives will be killed.',
+            },
+            {
+                roll: '6',
+                name: 'Tracking Device',
+                description:
+                    'Add +1 to Enemy Action rolls and -1 to all Evade options for the rest of the Adventure (once only).',
+            },
+        ],
+        lair: {
+            name: 'Sontaran Scout Craft',
+            tags: ['Location', 'Move 9'],
+            description:
+                'A typical Sontaran spherical pod. Gain +1 Knowledge (if not a captive) and +1 Danger (both once only). Roll 1D6 – 1–4: Encounter Sontaran; 5–6: Enemy event. Gain +1 to Rescue Actions here. Add +1 to Enemy Action rolls here. If you make a Stealth 8 roll and then an Engineer 11 roll, you can reverse the polarity of the Sontaran recharge facility. If Danger is then 12 or less, this will Defeat the Sontaran after 2 full Turns. If you fail either roll, add +1 Danger and start an (Attack) Conflict.',
+        },
+    },
+    {
+        id: 11,
+        tag: 'E011',
+        title: 'The Rani',
+        description:
+            'The Rani is a dangerous renegade, exiled from Gallifrey. She is not interested in universal conquest but prefers to conduct her dangerous experiments and use enslaved native species with little or no remorse.',
+        stats: ['+2 Danger', 'Scheme 5', 'Time Lord'],
+        encounter: {
+            description:
+                'The Rani is Brains 5, Brawn 2, Bravery 4 (Leader) and accompanied by 1D3 hypnotically controlled slaves (each Brains 0, Brawn 2, Bravery 3, Minion).',
+            table: [
+                {
+                    name: 'Conflict',
+                    description:
+                        'If Danger 10 or less, the Rani attempts a (Capture) Conflict; if Danger 11+, the Rani instead starts an (Attack) Conflict.',
+                },
+                {
+                    name: 'Surrender',
+                    description:
+                        'Roll 1D6 (+2 if Danger 10 or less): 1–2: The Rani starts an (Attack) Conflict; 3–5: Captured (8); 6+: Captured (9), add +1 Danger and roll a further 1D6 – on a result of 4+, roll for a Goal as the Rani cannot resist gloating.',
+                },
+                {
+                    name: 'Evade',
+                    description:
+                        'Make either a Running 8 roll to escape, or a Stealth 8 roll to hide. If you fail, choose another option with -1 to roll.',
+                },
+                {
+                    name: 'Conflict (Outwit)',
+                    description:
+                        'You try to bluff your way out of trouble. If you fail, choose to Surrender or start a different Conflict.',
+                },
+            ],
+        },
+        goals: [
+            {
+                roll: '1-2',
+                name: 'Create Time Manipulator',
+                vp: 7,
+                type: 'Apocalypse',
+                description:
+                    'The Rani is creating an organic brain capable of altering time through the universe. Each Turn, if you roll doubles on an Enemy Action roll, add +1 Danger.',
+                options: [
+                    {
+                        name: 'Create Stable Time-Field',
+                        description:
+                            'Return to TARDIS and make a TARDIS 10 roll. Add +1 Danger and TARDIS Damaged if fail.',
+                    },
+                    {
+                        name: 'Link Time Lord Brain',
+                        description:
+                            'Gain 3 Knowledge then win a (Brainwash) Conflict against the Rani using only 1 Time Lord Character. If you fail, add +2 Danger.',
+                    },
+                ],
+            },
+            {
+                roll: '3-4',
+                name: 'Harvest Brain Fluid',
+                vp: 5,
+                type: 'Experiments',
+                description:
+                    'The Rani is seeking to extract certain chemicals from the human brain, the absence of which causes extreme violence and uncontrolled temper. All Charm and Diplomacy rolls in Character events have a -1 penalty. All Minions have +1 Brawn.',
+                options: [
+                    {
+                        name: 'Retrieve Fluid',
+                        description:
+                            "Make a successful Rescue (10) Action, either at a random Location or at the Rani's TARDIS (Lair).",
+                    },
+                    {
+                        name: 'Create Serum Counter-agent',
+                        description:
+                            'Make a Science 10 or Medicine 9 roll to research the fluid. Then take a Prevent Action (add Medicine and Science) where you can Research (Medicine/Science). If you fail, add +1 Danger.',
+                    },
+                ],
+            },
+            {
+                roll: '5-6',
+                name: 'Collect Specimens',
+                vp: 4,
+                type: 'Capture',
+                description:
+                    'The Rani is trying to collect specimens for her latest experiments, possibly even people. Add +1 Danger and +1 VP to Goal if an Icon Character is Captured.',
+                options: [
+                    {
+                        name: 'Rescue and Release Specimens',
+                        description:
+                            "Make a successful Rescue (9) Action, either at a random Location or at the Rani's TARDIS (Lair), then make a successful Prevent Action. If you fail, add +1 Danger and encounter the Rani.",
+                    },
+                    {
+                        name: 'Convince Rani to Abandon Plan',
+                        description:
+                            'Have an encounter with the Rani and make a successful Prevent Action (add Diplomacy). If you fail, add +1 Danger and become Captured (8).',
+                    },
+                ],
+            },
+        ],
+        events: [
+            {
+                roll: '1-2',
+                name: 'Disguise',
+                description:
+                    'The Rani has disguised herself amongst the local population. Add +1 Danger (+2 Danger if the Adventure has a female Icon Character). Add +2 to next Enemy Action roll.',
+            },
+            {
+                roll: '3',
+                name: 'Parasitic Control',
+                description:
+                    "Roll 1D6 for each Ally. On a result of 1, the Ally is controlled by the Rani's mind parasite. Choose: add +1 Danger or Characters with Ally are Captured (8).",
+            },
+            {
+                roll: '4',
+                name: 'Control Population',
+                description:
+                    'Add +1 to the number of Minions encountered with the Rani.',
+            },
+            {
+                roll: '5',
+                name: 'Hidden Mine',
+                description:
+                    'If you have Characters at an Exterior Location, roll 1D6 – on a result of 1, choose a Character to be killed unless you spend 3 Luck.',
+            },
+            {
+                roll: '6',
+                name: 'Surveillance Device',
+                description:
+                    'The Rani has installed monitors. Lose 1 Luck or add +2 to next Enemy Action roll or +1 Danger.',
+            },
+        ],
+        lair: {
+            name: 'TARDIS',
+            tags: ['Location', 'Move 10'],
+            description:
+                "A very advanced model with chameleon circuit. Add +1 Danger (once). Roll 1D6 – 1–4: Encounter the Rani (-1 to any Conflict roll); 5–6: Enemy event. You may attempt access with a Brains 12 roll (only Time Lords can contribute but add TARDIS) to gain +2 Knowledge and +1 to Challenge and Rescue Actions here. Add +2 to Enemy Action rolls whilst here. If you fail the roll, you are caught by the Rani's defence systems – Captured (9). Inside the TARDIS, you may attempt sabotage with an Engineer 10 roll (add TARDIS) to gain +2 to next Prevent Action.",
+        },
+    },
+    {
+        id: 12,
+        tag: 'E012',
+        title: 'Entombed Cybermen',
+        description:
+            'The ruthless Cybermen have replaced their organs and limbs with incredibly strong, mechanical versions. They have also enhanced their brains by totally removing the weakness of emotions such as pain and fear.',
+        stats: ['+2 Danger', 'Scheme 4', 'Military'],
+        encounter: {
+            description:
+                'Cancel Encounter if the result of Enemy Action roll in Discover Phase, otherwise roll 1D3 (+1 if Danger 14+, -1 if Dilemma Phase) for number of Cybermen encountered (each Brains 2, Brawn 7, Bravery 4, Machine, Troop). Roll a further 1D6 (+2 if in Tomb, +1 if Danger 14+) – if result 5+, the Cybermen are led by the Cybercontroller (Brains 4, Brawn 8, Bravery 4, Leader, Machine).',
+            table: [
+                {
+                    name: 'Conflict (Attack)',
+                    description:
+                        'The Cybermen march towards you, their arms outstretched.',
+                },
+                {
+                    name: 'Surrender',
+                    description:
+                        'Roll 1D6 (+1 if Cybercontroller here): 1–3: The Cybermen start an (Attack) Conflict; 4–5: Captured (8); 6+: Taken to the Cyber-Tomb (Lair – Captured 9). If captured by the Cybercontroller, add +1 Danger.',
+                },
+                {
+                    name: 'Evade',
+                    description:
+                        'Make either a Running 8 roll to escape, or a Stealth 8 roll to hide. If you fail, choose another option with -1 to roll.',
+                },
+                {
+                    name: 'Conflict (Outwit)',
+                    description:
+                        'You try to bluff your way out of trouble. If you fail, choose to Surrender or start an (Attack) Conflict.',
+                },
+            ],
+        },
+        goals: [
+            {
+                roll: '1-2',
+                name: 'Reborn',
+                vp: 6,
+                type: 'Resurrection',
+                description:
+                    'The Cybermen are slowly awakening from their icy tomb. Enemy Action rolls have -1 to roll and -1 to number of Cybermen encountered. You need to Move to Tomb (Lair) and then choose an option.',
+                options: [
+                    {
+                        name: 'Seal Tomb Entrance',
+                        description:
+                            'Roll 11+ on a Find Help Action to gain explosives, then make a Prevent Action (add Engineer). Add +1 Danger if you fail.',
+                    },
+                    {
+                        name: 'Flood Tomb with Molten Ice',
+                        description:
+                            'Make a Science 12 roll then a Running 8 roll to escape. Add +1 Danger if you fail the Science roll. Choose a Character to be killed if you fail the Running roll but Cybermen are still Defeated.',
+                    },
+                ],
+            },
+            {
+                roll: '3-4',
+                name: 'Repair Activation Circuit',
+                vp: 6,
+                type: 'Resurrection',
+                description:
+                    'The Cybermen are attempting to repair their hibernation control unit. If the Doctor is Captured, add +1 Danger. You need to Move to Tomb (Lair) and then choose an option.',
+                options: [
+                    {
+                        name: 'Destroy Circuit',
+                        description:
+                            'Make a Prevent Action (add Computers). Add +1 Danger and encounter Cybermen if you fail.',
+                    },
+                    {
+                        name: 'Flood Tomb with Molten Ice',
+                        description:
+                            'Make a Science 12 roll then a Running 8 roll to escape. Add +1 Danger if you fail the Science roll. Choose a Character to be killed if you fail the Running roll but Cybermen are still Defeated.',
+                    },
+                ],
+            },
+            {
+                roll: '5-6',
+                name: 'Excavate Collapsed Tomb',
+                vp: 5,
+                type: 'Quest',
+                description:
+                    'The Cybermen are trying to unearth a lost tomb. A roll of 6+ in a Surrender option is counted as a 4–5 result. Take a -2 penalty to a roll attempting to enter Tomb (Lair).',
+                options: [
+                    {
+                        name: 'Seal Tomb Entrance',
+                        description:
+                            'Roll 11+ on a Find Help Action to gain explosives, then make a Prevent Action (add Engineer) at the Tomb (Lair). Add +1 Danger and encounter Cybermen if you fail.',
+                    },
+                    {
+                        name: 'Trap Cybermen Inside Tomb',
+                        description:
+                            'Have a successful (Outwit) Conflict with the Cybercontroller inside Tomb (Lair).',
+                    },
+                ],
+            },
+        ],
+        events: [
+            {
+                roll: '1-3',
+                name: 'Cybermats',
+                description:
+                    "You encounter 1D3 Cybermats, bizarre 'pets' of the Cybermen (each Brains 0, Brawn 3, Bravery 4, Machine). Unless you make an Engineer 10 roll to disable them or a Running 8 roll to Evade, start an (Attack) Conflict.",
+            },
+            {
+                roll: '4',
+                name: 'Control Population',
+                description:
+                    'An Ally (lowest Bravery – choose if tie) has been controlled by a hypnotic signal from the Cybermen – see Traitor Incident.',
+            },
+            {
+                roll: '5-6',
+                name: 'Cyber-Conversion',
+                description:
+                    'A random Captured Human Character has been converted into a Cyberman and killed. Add +1 Danger and +1 to number of Cybermen encountered.',
+            },
+        ],
+        lair: {
+            name: 'Cyber-Tomb',
+            tags: ['Location', 'Move 9'],
+            description:
+                'The Cybermen often built icy tombs to hold their forces until they are needed for conquest. Gain +1 Knowledge and add +1 Danger (once in Adventure). Unless brought here as captive, you must either make a Brains 12 roll (add Computers) or a Brawn 15 roll to enter. If you fail, roll 1D6 and on a 1, the doors were electrified – choose 1 Character to be killed or lose 3 Luck points. Inside the tomb, gain +1 to Rescue Actions. Add +1 to number of Cybermen encountered, all Cybercontroller Qualities and Enemy Action rolls whilst here. You may also attempt to reactivate hibernation controls – make a Computers 10 roll to reduce Danger by -3. Encounter Cybermen if you fail (with -1 to any Evade or Surrender options).',
+        },
+    },
+]
+
+export const enemyData: Enemy[] = [...firstRow, ...secondRow]

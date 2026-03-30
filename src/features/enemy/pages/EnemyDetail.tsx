@@ -8,6 +8,7 @@ import EnemyView from '../components/EnemyView'
 import EnemyTables from '../components/EnemyTables'
 import { useHistory } from '@/hooks/useHistory'
 import AddFavorite from '@/features/favorite/components/AddFavorite'
+import EnemyLairView from '../components/EnemyLairView'
 
 function EnemyDetail() {
     const { tag } = useParams()
@@ -28,8 +29,12 @@ function EnemyDetail() {
             content: <EnemyView enemy={enemy} />,
         },
         {
-            label: 'Tables',
+            label: 'Goals & Events',
             content: <EnemyTables enemy={enemy} />,
+        },
+        {
+            label: 'Lair',
+            content: <EnemyLairView lair={enemy.lair} />,
         },
     ]
 

@@ -10,7 +10,7 @@ type Props = {
 const EnemyView: React.FC<Props> = ({ enemy }) => {
     return (
         <>
-            <img src={`/images/enemies/${enemy.tag}.jpg`} alt={enemy.title} />
+            <img src={`/images/enemies/${enemy.tag}.png`} alt={enemy.title} />
 
             {enemy.stats && (
                 <p>
