@@ -9,7 +9,7 @@ function RemoveFavorite({ tag }: Props) {
 
     return (
         <span
-            className="pointer bg-purple rounded p-1 mr-1"
+            className="pointer p-1 mr-1"
             title="Remove Favorite"
             onClick={() => removeFavorite(tag)}
         >

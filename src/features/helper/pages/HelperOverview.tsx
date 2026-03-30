@@ -6,7 +6,7 @@ import { getPrefixByTag } from '@/lib/helper'
 import RemoveFavorite from '../components/RemoveFavorite'
 import HelperHistory from '@/features/helper/components/HelperHistory'
 
-function FavoriteOverview() {
+function HelperOverview() {
     const lockedFavorites = useFavoriteStore((state) => state.lockedFavorites)
     const userFavorites = useFavoriteStore((state) => state.userFavorites)
 
@@ -14,7 +14,7 @@ function FavoriteOverview() {
         <>
             {userFavorites.length >= 1 && (
                 <div>
-                    <Headline>Your Favorites</Headline>
+                    <Headline>⭐ Your Favorites</Headline>
 
                     <ul>
                         {userFavorites.map((item: Favorite) => (
@@ -28,8 +28,10 @@ function FavoriteOverview() {
                                 >
                                     {item.tag}
                                 </Link>
-                                <span className="text-md">{item.title}</span>
-                                <RemoveFavorite tag={item.tag} />
+                                <span className="text-md">
+                                    {item.title}{' '}
+                                    <RemoveFavorite tag={item.tag} />
+                                </span>
                             </li>
                         ))}
                     </ul>
@@ -37,7 +39,7 @@ function FavoriteOverview() {
             )}
 
             <div>
-                <Headline>Frequently Used</Headline>
+                <Headline>🔒 Frequently Used</Headline>
 
                 <ul>
                     {lockedFavorites.map((item: Favorite) => (
@@ -49,12 +51,6 @@ function FavoriteOverview() {
                                 {item.tag}
                             </Link>
                             <span className="text-md">{item.title}</span>
-                            <span
-                                className="bg-dark-grey rounded p-1 mr-1"
-                                title="Locked Favorite"
-                            >
-                                🔒
-                            </span>
                         </li>
                     ))}
                 </ul>
@@ -65,4 +61,4 @@ function FavoriteOverview() {
     )
 }
 
-export default FavoriteOverview
+export default HelperOverview

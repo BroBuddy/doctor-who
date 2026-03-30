@@ -7,7 +7,14 @@ function HelperHistory() {
 
     return (
         <div>
-            <Headline>History</Headline>
+            <Headline>⏳ History</Headline>
+
+            <p>
+                <em>
+                    "The TARDIS can remember your last 15 destinations, ready to
+                    take you back at a moment's notice."
+                </em>
+            </p>
 
             {history && (
                 <ul>
@@ -27,15 +34,8 @@ function HelperHistory() {
                                     {item.tag}
                                 </Link>
 
-                                <span className="text-dark-grey flex-1 px-2">
+                                <span className="text-dark-grey text-md flex-1 px-2">
                                     {item.title}
-                                </span>
-
-                                <span
-                                    className="bg-dark-grey rounded p-1 mr-1"
-                                    title="History"
-                                >
-                                    ⏳
                                 </span>
                             </li>
                         )

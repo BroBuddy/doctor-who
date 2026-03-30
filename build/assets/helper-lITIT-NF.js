@@ -1,1 +1,0 @@
-var e=e=>{switch(e.charAt(0)){case`A`:return`adventure`;case`E`:return`enemy`;case`R`:return`rule`;default:return`tardis`}};export{e as t};
