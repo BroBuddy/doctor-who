@@ -1,10 +1,11 @@
 import type { Booklet } from '../types/BookletType'
 import { getBookletData } from '../services/BookletService'
-import TardisOverview from '@/features/tardis/pages/TardisOverview'
-import AdventureOverview from '@/features/adventure/pages/AdventureOverview'
-import EnemyOverview from '@/features/enemy/pages/EnemyOverview'
-import RuleOverview from '@/features/rule/pages/RuleOverview'
 import Card from '@/components/Card'
+import { getAdventureData } from '@/features/adventure/services/AdventureService'
+import { getEnemyData } from '@/features/enemy/services/EnemyService'
+import { getRuleData } from '@/features/rule/services/RuleService'
+import { getTardisData } from '@/features/tardis/services/TardisService'
+import BookletDetail from '../components/BookletDetail'
 
 function BookletOverview() {
     const booklet = getBookletData() as Booklet[]
@@ -16,19 +17,19 @@ function BookletOverview() {
     return (
         <>
             <Card icon="📜" headline="Rule Booklet">
-                <RuleOverview />
+                <BookletDetail type="rule" getData={getRuleData} />
             </Card>
 
             <Card icon="🚀" headline="Adventure Booklet">
-                <AdventureOverview />
+                <BookletDetail type="adventure" getData={getAdventureData} />
             </Card>
 
             <Card icon="⚔️" headline="Enemy Booklet">
-                <EnemyOverview />
+                <BookletDetail type="enemy" getData={getEnemyData} />
             </Card>
 
             <Card icon="🌀" headline="TARDIS Manual">
-                <TardisOverview />
+                <BookletDetail type="tardis" getData={getTardisData} />
             </Card>
         </>
     )

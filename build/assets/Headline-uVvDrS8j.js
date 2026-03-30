@@ -1,1 +1,0 @@
-import{t as e}from"./jsx-runtime-DAs1UGHr.js";var t=e();function n({children:e}){return(0,t.jsx)(`h3`,{className:`text-purple`,children:e})}export{n as t};
