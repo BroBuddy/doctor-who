@@ -11,12 +11,6 @@ function RuleOverview() {
 
     return (
         <>
-            <img
-                src="/images/rules.png"
-                alt="Rules"
-                className="mt-3 w-30 h-14"
-            />
-
             <div className="flex flex-wrap">
                 {rules.map((item: Rule) => (
                     <Link

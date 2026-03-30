@@ -11,12 +11,6 @@ function TardisOverview() {
 
     return (
         <>
-            <img
-                src="/images/tardis.png"
-                alt="Tardis"
-                className="mt-3 w-30 h-14"
-            />
-
             <div className="flex flex-wrap">
                 {tardis.map((item: Tardis) => (
                     <Link

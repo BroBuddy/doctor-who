@@ -1,0 +1,1 @@
+var e=()=>{let e=`doctor-who-game`;return{addToHistory:(t,n)=>{let r=JSON.parse(localStorage.getItem(e)||`[]`).filter(e=>e.tag!==t),i=[{tag:t,title:n},...r].slice(0,15);localStorage.setItem(e,JSON.stringify(i))},getHistory:()=>JSON.parse(localStorage.getItem(e)||`[]`)}};export{e as t};
