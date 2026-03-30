@@ -1,11 +1,11 @@
-import useFavoriteStore from '../store/useFavoriteStore'
+import useGameStore from '@/features/game/store/useGameStore'
 
 type Props = {
     tag: string
 }
 
 function RemoveFavorite({ tag }: Props) {
-    const removeFavorite = useFavoriteStore((state) => state.removeFavorite)
+    const removeFavorite = useGameStore((state) => state.removeFavorite)
 
     return (
         <span

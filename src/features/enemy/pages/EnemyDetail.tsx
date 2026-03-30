@@ -5,21 +5,22 @@ import type { TabItem } from '@/components/Tabs'
 import Tabs from '@/components/Tabs'
 import { getEnemyByTag } from '../services/EnemyService'
 import EnemyView from '../components/EnemyView'
-import { useHistory } from '@/features/helper/hooks/useHistory'
-import AddFavorite from '@/features/helper/components/AddFavorite'
 import EnemyLairView from '../components/EnemyLairView'
 import EnemyGoals from '../components/EnemyGoals'
 import EnemyEvents from '../components/EnemyEvents'
 import Card from '@/components/Card'
+import useGameStore from '@/features/game/store/useGameStore'
 
 function EnemyDetail() {
     const { tag } = useParams()
     const enemy = useMemo(() => getEnemyByTag(String(tag)), [tag])
-    const { addToHistory } = useHistory()
+    const setEnemy = useGameStore((state) => state.setEnemy)
 
     useEffect(() => {
-        addToHistory(enemy.tag, enemy.title)
-    }, [addToHistory, enemy])
+        if (enemy) {
+            setEnemy(enemy.tag, enemy.title)
+        }
+    }, [setEnemy, enemy])
 
     if (!enemy) {
         return null
@@ -47,7 +48,6 @@ function EnemyDetail() {
     return (
         <>
             <Headline>
-                <AddFavorite tag={enemy.tag} title={enemy.title} />
                 {enemy.tag}. {enemy.title}
             </Headline>
 

@@ -1,4 +1,4 @@
-import useFavoriteStore from '../store/useFavoriteStore'
+import useGameStore from '@/features/game/store/useGameStore'
 
 type Props = {
     tag: string
@@ -6,7 +6,7 @@ type Props = {
 }
 
 function AddFavorite({ tag, title }: Props) {
-    const addFavorite = useFavoriteStore((state) => state.addFavorite)
+    const addFavorite = useGameStore((state) => state.addFavorite)
 
     const handleAddFavorite = () => {
         addFavorite(tag, title)

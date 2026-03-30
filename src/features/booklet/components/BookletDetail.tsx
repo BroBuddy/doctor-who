@@ -1,9 +1,5 @@
 import { Link } from 'react-router-dom'
-
-type BookletItem = {
-    tag: string
-    title: string
-}
+import type { BookletItem } from '../types/BookletType'
 
 type BookletDetailProps = {
     type: 'rule' | 'adventure' | 'enemy' | 'tardis'

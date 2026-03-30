@@ -14,32 +14,26 @@ function HelperHistory() {
                 </em>
             </p>
 
-            {history && (
-                <ul>
-                    {history.map(
-                        (
-                            item: { tag: string; title: string },
-                            index: number
-                        ) => (
-                            <li
-                                key={index}
-                                className="flex justify-between items-center"
+            {history &&
+                history.map(
+                    (item: { tag: string; title: string }, index: number) => (
+                        <div
+                            key={index}
+                            className="flex justify-start items-center"
+                        >
+                            <Link
+                                to={`/${getPrefixByTag(item.tag)}/${item.tag}`}
+                                className="px-2 pt-1 pb-2 w-3 bg-light-blue rounded mr-1 mb-1 text-center"
                             >
-                                <Link
-                                    to={`/${getPrefixByTag(item.tag)}/${item.tag}`}
-                                    className="px-2 pt-2 pb-2 w-3 bg-light-blue rounded mr-1 mb-1 text-center"
-                                >
-                                    {item.tag}
-                                </Link>
+                                <span className="text-sm">{item.tag}</span>
+                            </Link>
 
-                                <span className="text-dark-grey text-sm flex-1 px-2">
-                                    {item.title}
-                                </span>
-                            </li>
-                        )
-                    )}
-                </ul>
-            )}
+                            <span className="text-dark-grey text-sm flex-1 px-2">
+                                {item.title}
+                            </span>
+                        </div>
+                    )
+                )}
         </Card>
     )
 }

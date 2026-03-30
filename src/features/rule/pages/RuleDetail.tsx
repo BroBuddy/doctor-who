@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom'
 import { Headline } from '@/components/Headline'
 import { getRuleByTag } from '../services/RuleService'
 import { useHistory } from '@/features/helper/hooks/useHistory'
-import AddFavorite from '@/features/helper/components/AddFavorite'
 import Card from '@/components/Card'
 
 function RuleDetail() {
@@ -22,7 +21,6 @@ function RuleDetail() {
     return (
         <>
             <Headline>
-                <AddFavorite tag={rule.tag} title={rule.title} />
                 {rule.tag}. {rule.title}
             </Headline>
 

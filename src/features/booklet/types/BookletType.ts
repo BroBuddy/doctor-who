@@ -3,3 +3,8 @@ export type Booklet = {
     title: string
     description: string
 }
+
+export type BookletItem = {
+    tag: string
+    title: string
+}

@@ -9,18 +9,19 @@ import AdventureLocations from '../components/AdventureLocations'
 import AdventurePlots from '../components/AdventurePlots'
 import AdventureCharacters from '../components/AdventureCharacters'
 import AdventureSpecials from '../components/AdventureSpecials'
-import { useHistory } from '@/features/helper/hooks/useHistory'
-import AddFavorite from '@/features/helper/components/AddFavorite'
 import Card from '@/components/Card'
+import useGameStore from '@/features/game/store/useGameStore'
 
 function AdventureDetail() {
     const { tag } = useParams()
     const adventure = useMemo(() => getAdventureByTag(String(tag)), [tag])
-    const { addToHistory } = useHistory()
+    const setAdventure = useGameStore((state) => state.setAdventure)
 
     useEffect(() => {
-        addToHistory(adventure.tag, adventure.title)
-    }, [addToHistory, adventure])
+        if (adventure) {
+            setAdventure(adventure.tag, adventure.title)
+        }
+    }, [setAdventure, adventure])
 
     if (!adventure) {
         return null
@@ -60,7 +61,6 @@ function AdventureDetail() {
     return (
         <>
             <Headline>
-                <AddFavorite tag={adventure.tag} title={adventure.title} />
                 {adventure.tag}. {adventure.title}
             </Headline>
 
