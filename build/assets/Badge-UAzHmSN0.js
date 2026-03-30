@@ -1,0 +1,1 @@
+import{n as e,t}from"./jsx-runtime-BnxRlLMJ.js";e();var n=t(),r=({text:e,icon:t,variant:r=`default`})=>(0,n.jsxs)(`span`,{className:`rounded text-sm text-bold text-white py-1 px-2 mr-1 ${r===`default`?`bg-purple`:`bg-grey`}`,children:[t&&(0,n.jsx)(`span`,{className:`mr-1`,children:t}),e]});export{r as t};
