@@ -1,16 +1,21 @@
-import React from 'react'
-import type { EncounterTable, Enemy } from '../types/EnemyType'
+import type { EncounterTable } from '../types/EnemyType'
 import Badge from '@/components/Badge'
 import { Accordion } from '@/components/Accordion'
+import { getEnemyByTag } from '../services/EnemyService'
+import { useParams } from 'react-router-dom'
+import Card from '@/components/Card'
 
-type Props = {
-    enemy: Enemy
-}
+function EnemyView() {
+    const { tag } = useParams()
+    const enemy = getEnemyByTag(String(tag))
 
-const EnemyView: React.FC<Props> = ({ enemy }) => {
     return (
-        <>
-            <img src={`/images/enemies/${enemy.tag}.png`} alt={enemy.title} />
+        <Card>
+            <img
+                src={`/images/enemies/${enemy.tag}.png`}
+                alt={enemy.title}
+                className="mt-4"
+            />
 
             {enemy.stats && (
                 <p>
@@ -34,7 +39,7 @@ const EnemyView: React.FC<Props> = ({ enemy }) => {
                     ) ?? []
                 }
             />
-        </>
+        </Card>
     )
 }
 

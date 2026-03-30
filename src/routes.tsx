@@ -6,6 +6,10 @@ import AdventurePlots from './features/adventure/components/AdventurePlots.tsx'
 import AdventureCharacters from './features/adventure/components/AdventureCharacters.tsx'
 import AdventureSpecials from './features/adventure/components/AdventureSpecials.tsx'
 import AdventureView from './features/adventure/components/AdventureView.tsx'
+import EnemyView from './features/enemy/components/EnemyView.tsx'
+import EnemyLairView from './features/enemy/components/EnemyLairView.tsx'
+import EnemyGoals from './features/enemy/components/EnemyGoals.tsx'
+import EnemyEvents from './features/enemy/components/EnemyEvents.tsx'
 
 const Game = React.lazy(() => import('./features/game/pages/Game.tsx'))
 const BookletOverview = React.lazy(
@@ -51,7 +55,16 @@ const router = createBrowserRouter([
                     { path: 'specials', element: <AdventureSpecials /> },
                 ],
             },
-            { path: '/enemy/:tag', element: <EnemyDetail /> },
+            {
+                path: '/enemy/:tag',
+                element: <EnemyDetail />,
+                children: [
+                    { index: true, element: <EnemyView /> },
+                    { path: 'goals', element: <EnemyGoals /> },
+                    { path: 'events', element: <EnemyEvents /> },
+                    { path: 'lair', element: <EnemyLairView /> },
+                ],
+            },
         ],
     },
 ])

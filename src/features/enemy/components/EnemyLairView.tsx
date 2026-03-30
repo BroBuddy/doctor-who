@@ -1,37 +1,30 @@
-import React from 'react'
-import type { EnemyLair } from '../types/EnemyType'
 import Badge from '@/components/Badge'
 import { useParams } from 'react-router-dom'
+import { getEnemyLairByTag } from '../services/EnemyService'
+import Card from '@/components/Card'
 
-type Props = {
-    lair: EnemyLair
-}
-
-const EnemyLairView: React.FC<Props> = ({ lair }) => {
+function EnemyLairView() {
     const { tag } = useParams()
+    const lair = getEnemyLairByTag(String(tag))
 
     if (!lair) {
         return null
     }
 
     return (
-        <>
-            <p className="mb-2">
-                <strong>{lair.name}:</strong>
-            </p>
-
+        <Card headline={lair.name}>
             <img src={`/images/lairs/${tag}.png`} alt={lair.name} />
 
             {lair.tags && (
-                <p>
+                <div className="mt-2">
                     {lair.tags.map((item: string, index: number) => (
                         <Badge key={index} text={item} variant="light" />
                     ))}
-                </p>
+                </div>
             )}
 
             <p>{lair.description}</p>
-        </>
+        </Card>
     )
 }
 

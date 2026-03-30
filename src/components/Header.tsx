@@ -1,32 +1,27 @@
-import { getAdventureByTag } from '@/features/adventure/services/AdventureService'
-import { Link, useParams, useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import './Header.scss'
 
-type NavItem = {
+export type NavItem = {
     label: string
     path: string
 }
 
-const tabs: NavItem[] = [
-    { label: 'Adventure', path: '' },
-    { label: 'Locations', path: '/locations' },
-    { label: 'Plots', path: '/plots' },
-    { label: 'Characters', path: '/characters' },
-    { label: 'Specials', path: '/specials' },
-]
+export type HeaderProps = {
+    basePath: string
+    tabs: NavItem[]
+    data: { tag: string; title: string } | null
+}
 
-function Header() {
-    const { tag } = useParams<{ tag: string }>()
+function Header({ basePath, tabs, data }: HeaderProps) {
     const location = useLocation()
-    const adventure = getAdventureByTag(tag!)
 
-    if (!adventure) return <p>Adventure not found</p>
+    if (!data) return <p>Data not found.</p>
 
     return (
         <header className="header mb-4">
             <div className="bg-black p-2">
                 <strong className="text-white text-md">
-                    {adventure.tag} {adventure.title}
+                    {data.tag}. {data.title}
                 </strong>
             </div>
 
@@ -34,14 +29,16 @@ function Header() {
                 {tabs.map((item: NavItem) => {
                     const isActive =
                         item.path === ''
-                            ? location.pathname === `/adventure/${tag}`
+                            ? location.pathname === `${basePath}/${data.tag}`
                             : location.pathname.endsWith(item.path)
 
                     return (
                         <Link
                             key={item.path}
-                            to={`/adventure/${tag}${item.path}`}
-                            className={`px-2 py-1 ${isActive ? 'text-light-grey' : 'text-white'}`}
+                            to={`${basePath}/${data.tag}${item.path}`}
+                            className={`px-2 py-1 ${
+                                isActive ? 'text-light-grey' : 'text-white'
+                            }`}
                         >
                             <span className="text-sm">{item.label}</span>
                         </Link>
