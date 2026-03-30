@@ -9,6 +9,7 @@ export type AdventureEra =
     | 'Colonial Era'
     | 'Post-Modern Era'
     | 'Antiquity Era'
+    | 'Regency Era'
 
 export type AdventureType =
     | 'Holiday'

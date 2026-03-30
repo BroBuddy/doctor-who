@@ -3453,7 +3453,6 @@ const A011: Adventure = {
     year: -46,
     tardis: 9,
     era: 'Antiquity Era',
-    type: 'Investigation',
     description:
         'You have landed in Ancient Egypt and the time of the Pharaohs. The sand of the desert stretches for miles in all directions and the dusty heat of the Sun is almost unbearable. But perhaps you can find shelter and water at an oasis, or locate and explore an Egyptian city? Or perhaps you can discover and investigate the mysteries of the incredible Pyramids?',
     stats: {
@@ -3815,6 +3814,732 @@ const A011: Adventure = {
     ],
 }
 
+const A012: Adventure = {
+    id: 12,
+    tag: 'A012',
+    title: 'Raaga',
+    year: 2482,
+    tardis: 11,
+    era: 'Colonial Era',
+    type: 'Wilderness',
+    description:
+        'You have landed on Raaga, a Terileptil prison planet. Raaga is rich in tinclavic, a valuable and versatile metal that leaves a highly corrosive residue. Prisoners sent to the harsh penal world usually end up mining the highly toxic ore under terrible conditions. To be sentenced to Raaga is to be sentenced for life...',
+    stats: {
+        danger: 2,
+        knowledge: 4,
+        vp: 2,
+    },
+    special:
+        'You Move to different Locations using Stealth. If you fail a Stealth roll by 3 or more, see Android Guards as Encounter this Turn. When rolling for a Goal, roll 1D6: 1-4: See Special Goals below; 5-6: Roll for Goal as normal. Twisting Caves: (Dark, Stealth 6) The caves beneath the hot surface of Raaga wind through many levels and seem to continue for miles. Explore Actions have a -2 penalty but add Aware. You may not take Investigate or Research Actions here. If you are Captured here, you are placed in the Prisoner Quarters with -1 to Escape Actions. Encounter (D6, +1 to roll if Discover Phase): 1: Enemy encounter; 2: Character event; 3: Incident; 4: None; 5: Android Guards; 6: Lost (Incident).',
+    enemy: [
+        { roll: '1', name: 'Military' },
+        { roll: '2-4', name: 'Criminal' },
+        { roll: '5', name: 'Chameleon' },
+        { roll: '6', name: 'Villain' },
+    ],
+    locations: [
+        {
+            roll: '1',
+            name: 'Punishment Zone',
+            move: 10,
+            terrain: 'Exterior',
+            description:
+                'Troublesome prisoners that do not immediately comply with instructions are often brought here on the harsh surface of Raaga. It reminds other prisoners of the penalty of rebellion. Rescue Actions have a -2 penalty.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                { roll: '2', description: 'Cruel Overseer' },
+                { roll: '3-4', description: 'Capture Incident' },
+                {
+                    roll: '5+',
+                    description:
+                        'Choose any Character event but you must perform a Rescue (8) roll. If successful, add +4 to any Charm or Diplomacy roll',
+                },
+            ],
+        },
+        {
+            roll: '2',
+            name: 'Ore Processing Plant',
+            move: 9,
+            terrain: 'Interior',
+            description:
+                'The large, industrial centre where raw tinclavic from the mines is separated and refined. To enter also requires an Engineer 8 roll to deactivate the security system - if failed, Characters here take no Action next Turn. Add +1 to Investigate and Research (Science) Actions here.',
+            encounter: 'D6 (+1 if Discover Phase)',
+            rolls: [
+                { roll: '1-2', description: 'Enemy encounter' },
+                { roll: '3', description: 'Enemy event' },
+                { roll: '4', description: 'Incident' },
+                { roll: '5', description: 'None' },
+                { roll: '6+', description: 'Mineralogist' },
+            ],
+        },
+        {
+            roll: '3',
+            name: 'Prisoner Quarters',
+            move: 7,
+            terrain: 'Interior',
+            description:
+                'The slaves and prisoners are kept in cramped and basic quarters with food and warmth in short supply. Add +1 to Seek Information Actions here. You can either: spend 1 Luck to meet a random Character, spend 3 Luck to meet a Character of your choice or spend 2 Luck to roll for a Plot event.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                { roll: '2-3', description: 'No event' },
+                { roll: '4+', description: 'Character event' },
+            ],
+        },
+        {
+            roll: '4',
+            name: 'Tinclavic Mines',
+            move: 8,
+            terrain: 'Dark',
+            description:
+                'The mines of Raaga run deep beneath the surface of the planet and are incredibly rich in tinclavic ore. Add +1 to Investigate Actions here. At the end of each Turn here, roll 1D6 - on a roll of 1 there is a rock-fall and a random Character here is killed unless you spend 2 Luck.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                { roll: '2-3', description: 'Character event' },
+                { roll: '4', description: 'Incident' },
+                { roll: '5', description: 'Enemy event' },
+                {
+                    roll: '6',
+                    description:
+                        'Tinclavic poisoning – kill a Character here unless you spend 3 Luck',
+                },
+            ],
+        },
+        {
+            roll: '5',
+            name: 'Control Area',
+            move: 10,
+            terrain: 'Interior',
+            description:
+                'The heart of the mining prison where operations are co-ordinated so that the extracted tinclavic is shipped off-world as efficiently as possible. To enter also requires a Computers 9 roll to deactivate the security system - if failed, encounter Android Guards (Brawn 16). Add +2 to Prevent and Challenge Actions here.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy event' },
+                { roll: '2', description: 'Enemy encounter' },
+                { roll: '3', description: 'Incident' },
+                { roll: '4', description: 'Android Guards' },
+                { roll: '5+', description: 'No event' },
+            ],
+        },
+        {
+            roll: '6',
+            name: 'Deep Caves',
+            move: 7,
+            terrain: 'Dark',
+            description:
+                'The caves beneath the mines are steep, dangerous and rarely explored. Add +2 to Explore and Investigate Actions here.',
+            encounter: 'Aware roll',
+            rolls: [
+                { roll: '2-4', description: 'Lost (Incident)' },
+                { roll: '5', description: 'Enemy encounter' },
+                {
+                    roll: '6',
+                    description:
+                        'Rock-fall – random Character is killed unless you spend 2 Luck',
+                },
+                { roll: '7-8', description: 'No event' },
+                { roll: '9', description: 'Character event' },
+                {
+                    roll: '10',
+                    description:
+                        'Cave Creature - Attacked (Brawn 8, Creature) unless you make a Running 8 roll',
+                },
+                {
+                    roll: '11+',
+                    description:
+                        'Gain 2 Knowledge or spend 1 Luck to gain +2 to next Prevent Action',
+                },
+            ],
+        },
+    ],
+    plots: [
+        {
+            roll: '2-4',
+            name: 'Captive',
+            description:
+                'Someone or something important has been captured. If you Move to the Punishment Zone then do a Rescue (9) Action, roll 1D6: 1-2: Gain +1 Knowledge; 3-4: Character event; 5-6: Enemy encounter.',
+        },
+        {
+            roll: '5',
+            name: 'Mineral Wealth',
+            description:
+                'You learn that recently excavated Tinclavic ore has contained some remarkable new deposits. If you make a Science 8 roll either gain +1 Knowledge or +1 Research (Science).',
+        },
+        {
+            roll: '6',
+            name: 'Missing Prisoners',
+            description:
+                'Some prisoners have been recently vanishing from the mines in mysterious circumstances. Gain +1 Knowledge. Also gain 1 Luck if you have a native Character with you.',
+        },
+        {
+            roll: '7',
+            name: 'Red Alert',
+            description:
+                'The mine is on maximum alert. Gain +1 Knowledge. Add +1 to Investigate Actions. Escape and Rescue Actions and any Charm rolls have a -1 penalty. A red alert can be cancelled with a Computers 7 roll at the Control Area.',
+        },
+        {
+            roll: '8',
+            name: 'Buried in the Mines',
+            description:
+                'You learn that something sinister has been discovered in the Tinclavic mines. If you Move there, and make a Brains 10 roll, you can either reveal the Enemy or gain +1 Knowledge.',
+        },
+        {
+            roll: '9',
+            name: 'Murdered Prisoner',
+            description:
+                'One of the prisoners has been found dead nearby and their corpse discovered. Roll 1D6 and if result is a 1, discard a random Ally. Gain +1 Knowledge (or +2 Knowledge with a successful Medicine 7 roll).',
+        },
+        {
+            roll: '10',
+            name: 'Energy Barrier',
+            description:
+                'You discover that an energy barrier has been created across a random Location. Gain +1 Knowledge but you may not go to that Location unless you also make an Engineer 9 roll (+1 per attempt).',
+        },
+        {
+            roll: '11-12',
+            name: 'Restricted Area',
+            description:
+                'There is strange activity within a highly restricted zone in the Tinclavic Mines where almost no-one has clearance. If you go there (with -2 to required Stealth roll) then add +1 Danger. Add +2 to Investigate Actions here. Encounter (Aware roll): 2-5: Enemy encounter; 6: Enemy event; 7: Plot event; 8: None; 9: Character event; 10-11: Gain +1 Knowledge; 12+: Gain +2 Knowledge but add +1 Danger.',
+        },
+    ],
+    characters: [
+        {
+            roll: '2-4',
+            name: 'Terileptil Prisoner',
+            description:
+                'A special prisoner who is shunned by both the Raagan slaves and their Terileptil captors. Make a Diplomacy roll (+1 if Enemy revealed).',
+            rolls: [
+                {
+                    roll: '2-6',
+                    description:
+                        'Attacked (Brawn 4) unless you Evade (Running 8)',
+                },
+                { roll: '7-8', description: 'No event' },
+                {
+                    roll: '9-10',
+                    description:
+                        'Grudgingly shares some information - roll for Plot event or gain +1 Knowledge',
+                },
+                {
+                    roll: '11+',
+                    description: 'Becomes Ally - roll for a Plot event',
+                },
+            ],
+            stats: { brains: 2, brawn: 4, bravery: 3 },
+            skills: ['Engineer', 'Stealth'],
+        },
+        {
+            roll: '5-6',
+            name: 'Raagan Slaves',
+            description:
+                'A group of the small reptilian indigenous species now enslaved by the Terileptils to help mine the tinclavic. Make a Charm roll.',
+            rolls: [
+                {
+                    roll: '2-3',
+                    description: 'Guards called – see Android Guards',
+                },
+                {
+                    roll: '4',
+                    description:
+                        'Unless you can Evade (Running 9), you are Attacked (Brawn 5)',
+                },
+                {
+                    roll: '5-7',
+                    description: 'The Raagans are too timid - no event',
+                },
+                {
+                    roll: '8-9',
+                    description: 'They share information – roll for Plot event',
+                },
+                {
+                    roll: '10+',
+                    description:
+                        'One Raagan becomes your Ally – roll for a Plot event or gain +1 Knowledge',
+                },
+            ],
+            stats: { brains: 1, brawn: 0, bravery: 1 },
+            skills: ['Stealth'],
+        },
+        {
+            roll: '7',
+            name: 'Android Guards',
+            description:
+                'A patrol of bejewelled and armed Terileptil Android Guards block your path. Unless you Surrender (Captured 8) or Evade (Running 7), you are Attacked (Brawn 8).',
+        },
+        {
+            roll: '8',
+            name: 'Cruel Overseer',
+            description:
+                'A large and bloated Terileptil who keeps the prisoners and slaves in check with a pair of Android Guards. Unless you Surrender (Captured 8) or Evade (Running 7), you are Attacked (Brawn 13). Add the Overseer to any Enemy encounters if Danger 12+.',
+            stats: { brains: 1, brawn: 5, bravery: 4 },
+            skills: ['Minion'],
+        },
+        {
+            roll: '9',
+            name: 'Mineralogist',
+            description:
+                'A reserved and rather cold individual. If you make a Charm 10 roll, the Mineralogist becomes an Ally (roll Plot event). The Mineralogist is automatically selected in a Traitor Incident.',
+            stats: { brains: 2, brawn: 1, bravery: 1 },
+            skills: ['Science'],
+        },
+        {
+            roll: '10',
+            name: 'Survivor',
+            description:
+                'A badly wounded survivor of a captured expedition. Unless you make a Medicine 7 roll however, the Survivor dies – lose 1 Luck (or 2 Luck but roll for a Plot event). If treated, the Survivor joins you as an Ally – roll for a Plot event.',
+            stats: { brains: 2, brawn: 1, bravery: 2 },
+            skills: ['Engineer or Science'],
+        },
+        {
+            roll: '11-12',
+            name: 'Raagan Slave',
+            description:
+                'A small, native Raagan prisoner with large eyes and green reptilian skin. If you make a Charm 9 roll it becomes an Ally – roll for a Plot event or gain +1 Knowledge.',
+            stats: { brains: 1, brawn: 0, bravery: 1 },
+            skills: ['Stealth'],
+        },
+    ],
+    specials: [
+        {
+            id: 1,
+            image: 'steal-tinclavic-ore',
+            name: 'Steal Tinclavic Ore (Goal)',
+            description:
+                '1-3: Steal Tinclavic Ore (4VP; Profit): The Enemy is trying to steal valuable Tinclavic ore from the mines. Add +1 Danger if a Criminal Enemy. You may either:',
+            information:
+                'Trap Enemy in Mines: Make Prevent Action (add Engineer) in the Tinclavic Mines. Add +1 Danger and have an Enemy encounter if you fail. Swap Tinclavic with Worthless Ore: Make Prevent Action (add Stealth) in the Ore Processing Plant. Add +1 Danger and have an Enemy encounter if you fail.',
+        },
+        {
+            id: 2,
+            image: 'escape-mines',
+            name: 'Escape Mines (Goal)',
+            description:
+                '4-6: Escape Mines (4VP; Quest): The Enemy is trapped on Raaga and trying to escape. Enemy Action rolls have a -1 modifier. You may either:',
+            information:
+                'Trap Enemy: Make Prevent Action (add Engineer) in either the Tinclavic Mines or Deep Caves. Add +1 Danger and have an Enemy encounter if you fail. Create Force Barrier to Prevent Escape: Make Prevent Action (add Computers) in the Control Area. Add +1 Danger and have an Enemy encounter if you fail.',
+        },
+    ],
+}
+
+const A013: Adventure = {
+    id: 13,
+    tag: 'A013',
+    title: 'Cornwall',
+    year: 1792,
+    tardis: 8,
+    era: 'Regency Era',
+    description:
+        'You have landed on the coast of Cornwall in the late eighteenth century. It is late summer and the sun is dipping in the sky causing the sea to reflect a glorious sunset over the magnificent cliffs and beaches. As the waves crash against the rocky shore, you can just see the lamps of a small town in the distance.',
+    stats: {
+        danger: 0,
+        knowledge: 5,
+        vp: 0,
+    },
+    special:
+        'After completing their first Explore Action here, a Companion with History gains 1 Luck point. A TARDIS Character with History may choose to Relax as an Action here. Night will fall at the start of Turn 3 and last 3 full Turns. See also Special Events for Move Action rules. Windswept Coast: (Water, Exterior, Move 3) You walk across the undulating cliffs and paths that seem to go for miles, the sound of crashing waves against the rocks below. You may only complete Explore Actions (with +1 to the roll), Investigate Actions or Move Actions here. Encounter (D6, +1 to roll if Discover Phase, -1 to roll if Night): 0: Enemy encounter; 1: Enemy event; 2: Lost (Incident); 3: Incident; 4-5: None; 6+: Character event.',
+    enemy: [
+        { roll: '1-2', name: 'Gothic' },
+        { roll: '3', name: 'Entity' },
+        { roll: '4', name: 'Temporal' },
+        { roll: '5', name: 'Earth' },
+        { roll: '6', name: 'Chameleon' },
+    ],
+    locations: [
+        {
+            roll: '1',
+            name: 'Tin Mine',
+            move: 9,
+            terrain: 'Dark',
+            description:
+                'The Cornish mines run deep under the cliffs and are incredibly rich in tin and copper. Add +1 to Investigate Actions here. Move rolls from here have a -1 penalty unless with a Miner. At the end of each Turn here, roll 1D6, on a roll of 1 there is a rock-fall - Characters here must then make a Brawn (10) roll to Move from this Location.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                { roll: '2-3', description: 'Miners' },
+                { roll: '4', description: 'Incident' },
+                { roll: '5', description: 'Enemy event' },
+                { roll: '6+', description: 'Plot event' },
+            ],
+        },
+        {
+            roll: '2',
+            name: 'Tavern',
+            move: 8,
+            terrain: 'Interior',
+            description:
+                'You have found a local inn where the sounds of talking and laughing are mixed with the clink of glasses and the inviting smells of hot food. Add +1 to (Charm) Seek Information Actions and +1 to Relax Actions but you may not Investigate here.',
+            encounter: 'D6',
+            rolls: [
+                {
+                    roll: '1',
+                    description:
+                        'You get mixed up in a tavern brawl and are Attacked (Brawn 3)',
+                },
+                { roll: '2', description: 'Incident' },
+                {
+                    roll: '3+',
+                    description:
+                        'You can spend 1 Luck to meet a Wench or a random Character, or make a Charm 8 roll to have a Plot event (each once only)',
+                },
+            ],
+        },
+        {
+            roll: '3',
+            name: 'Farm',
+            move: 9,
+            terrain: 'Exterior',
+            description:
+                "A rustic old farmhouse surrounded by sheds and fields with an old plough sitting close to the gate. The bark of a dog can be heard from a barn. Add +1 to Investigate Actions here. If you make a Charm 7 roll you are invited inside by the farmer's wife – take an immediate Relax Action (Discover Phase) or Seek Information Action (Dilemma Phase).",
+            encounter: 'D6',
+            rolls: [
+                { roll: '1', description: 'Wench' },
+                { roll: '2', description: 'Incident' },
+                { roll: '3-4', description: 'No event' },
+                { roll: '5-6', description: 'Farmer' },
+            ],
+        },
+        {
+            roll: '4',
+            name: 'Harbour',
+            move: 7,
+            terrain: 'Water, Exterior',
+            description:
+                'Tall ships are moored in a bustling port as loud seagulls wheel overhead and the stench of oil and fish is overpowering. The harbour is busy any time of day or night, but it could be rough as it gets darker. Add +1 to Investigate or Seek Information Actions here.',
+            encounter: 'D6 (-1 to roll if Night)',
+            rolls: [
+                {
+                    roll: '0-1',
+                    description:
+                        'Ruffians (Make a Running 7 roll to escape or Attacked by Brawn 5)',
+                },
+                { roll: '2', description: 'Enemy event' },
+                { roll: '3', description: 'Sea Captain' },
+                { roll: '4', description: 'Fugitive' },
+                { roll: '5', description: 'Merchant' },
+                { roll: '6', description: 'Incident' },
+            ],
+        },
+        {
+            roll: '5',
+            name: 'Manor House',
+            move: 9,
+            terrain: 'Interior',
+            description:
+                'A magnificent old house and residence of the local gentry that is set in beautiful tended grounds. Add +1 to Investigate Actions here.',
+            encounter: 'D6 adding Diplomacy',
+            rolls: [
+                {
+                    roll: '1-2',
+                    description: 'Servants call Soldiers (-2 to Charm roll)',
+                },
+                { roll: '3', description: 'Nobody home - no event' },
+                {
+                    roll: '4',
+                    description: 'Tea with the gentry – roll for Plot event',
+                },
+                { roll: '5', description: 'Meet Aristocrat' },
+                {
+                    roll: '6+',
+                    description:
+                        'Society Ball (Night only) - make Diplomacy 10 roll (add Charm) to gain 2 VP or discover locked attic (+2 Knowledge) or secret cellar (Enemy Lair – Defeat Phase only)',
+                },
+            ],
+        },
+        {
+            roll: '6',
+            name: 'Old Church',
+            move: 8,
+            terrain: 'Exterior',
+            description:
+                'An old country stone church, set on the cliffs, with stained glass windows and surrounded by a slightly-overgrown graveyard. Add +1 to Research (History) Actions here.',
+            encounter: 'D6 (+1 if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                {
+                    roll: '2',
+                    description:
+                        'Secret Passage - you may automatically Move to a random Location if you wish',
+                },
+                { roll: '3-4', description: 'No event' },
+                {
+                    roll: '5',
+                    description:
+                        'Dusty records - make a History 8 roll to gain +1 Knowledge',
+                },
+                { roll: '6+', description: 'Priest' },
+            ],
+        },
+    ],
+    plots: [
+        {
+            roll: '2-4',
+            name: 'Ancient Relic',
+            description:
+                'A mysterious artefact has been discovered washed up on the shore – could it be important to the plans of the Enemy? Make a Science 7 roll and a History 7 roll, gaining +1 Knowledge per success. Add +1 Danger.',
+        },
+        {
+            roll: '5',
+            name: 'Brutal Death',
+            description:
+                'Someone has been found murdered on a nearby beach and a corpse discovered. Roll 1D6 and if result is a 1, discard random Ally. Gain +1 Knowledge (or +2 Knowledge with a successful Medicine 7 roll).',
+        },
+        {
+            roll: '6',
+            name: 'Missing Townsfolk',
+            description:
+                'Some people have been recently vanishing from the town in mysterious circumstances. Gain +1 Knowledge. Also gain 1 Luck point if you have a native Character with you.',
+        },
+        {
+            roll: '7',
+            name: 'Cornish Legend',
+            description:
+                'You learn about a strange, mysterious legend of the area. Is it just fishwives tales or might it have a connection to recent events? Gain +1 Knowledge (or +2 Knowledge with a successful History 8 roll).',
+        },
+        {
+            roll: '8',
+            name: 'Smuggling Ring',
+            description:
+                'A local gang of smugglers has been using the nearby port - could they be allied to the Enemy? Gain +1 Knowledge (+2 Knowledge if with native Character with History or Pilot). At the start of the Defeat Phase, add +1 Danger.',
+        },
+        {
+            roll: '9',
+            name: 'Lights in the Sky',
+            description:
+                'Strange lights have been seen by locals in the night sky across the ocean recently. Could it relate to something sinister? Make a successful Brains 10 roll to reveal the Enemy, or gain +1 Knowledge if you fail.',
+        },
+        {
+            roll: '10',
+            name: 'Mistaken Identity',
+            description:
+                'You discover that one of your Companions has been mistaken for someone of importance. Gain +2 to all Charm and Diplomacy rolls in this Adventure where Companion is present.',
+        },
+        {
+            roll: '11-12',
+            name: 'Unusual Activity',
+            description:
+                'You hear about strange events happening nearby. Roll 1D6: 1-3: Roll for random Location - gain +1 Knowledge if you go there, then roll 1D6 and if 1-2 see Enemy Lair (roll for Enemy if Discover Phase); 4-6: Smugglers Cave (Dark, Water, Move 9) - if you go there, you find a cave used by local smugglers to store their goods. Add +1 to Investigate Actions here. Encounter (D6): 1: Enemy Lair; 2: Enemy encounter; 3-4: Smugglers (as Soldiers but -3 to Charm roll and Capture 8); 5: Gain +1 Knowledge; 6: Gain +2 Knowledge but +1 Danger and +1 Enemy Action rolls.',
+        },
+    ],
+    characters: [
+        {
+            roll: '2-3',
+            name: 'Miners',
+            description:
+                'A group of rough Cornish miners. Make a Charm roll (add +2 if the Enemy revealed, -1 if in Tin Mine).',
+            rolls: [
+                {
+                    roll: '2-5',
+                    description:
+                        'Hostile – make a Running 7 roll or become Captured (7) or Attacked (Brawn 5)',
+                },
+                { roll: '6-9', description: 'No further event' },
+                {
+                    roll: '10+',
+                    description:
+                        'One miner becomes an Ally - roll for Plot event',
+                },
+            ],
+            stats: { brains: 2, brawn: 2, bravery: 2 },
+            skills: ['Engineer'],
+        },
+        {
+            roll: '4',
+            name: 'Merchant',
+            description:
+                'A well-dressed harbour trader. Make a Charm roll (-1 per Stealth).',
+            rolls: [
+                {
+                    roll: '2-4',
+                    description:
+                        'He accuses you of thievery and calls constables – see Soldiers with -1 to roll',
+                },
+                { roll: '5-6', description: 'No event' },
+                {
+                    roll: '7-8',
+                    description:
+                        'He knows some local gossip – roll for a Plot event',
+                },
+                {
+                    roll: '9+',
+                    description: 'He becomes an Ally - roll for a Plot event',
+                },
+            ],
+            stats: { brains: 2, brawn: 1, bravery: 1 },
+            skills: ['Diplomacy'],
+        },
+        {
+            roll: '5',
+            name: 'Wench',
+            description:
+                'A shrewd and feisty local girl who always knows some gossip. Make a Charm roll (-1 if in a Tavern).',
+            rolls: [
+                { roll: '2-4', description: 'No event' },
+                { roll: '5-8', description: 'Gossip - roll for Plot event' },
+                {
+                    roll: '9+',
+                    description: 'Becomes an Ally - roll for a Plot event',
+                },
+            ],
+            stats: { brains: 1, brawn: 0, bravery: 1 },
+            skills: ['Charm', 'Running', 'Stealth'],
+        },
+        {
+            roll: '6',
+            name: 'Rogue',
+            description:
+                'A gentleman of the road. Make a Charm roll (adding Stealth, +2 if you spend 1 Luck, but -1 if in a Tavern).',
+            rolls: [
+                { roll: '2-3', description: 'Lose 1 Luck' },
+                { roll: '4-7', description: 'No event' },
+                {
+                    roll: '8-9',
+                    description: 'Shares news - roll for Plot event',
+                },
+                {
+                    roll: '10+',
+                    description: 'Joins as Ally - roll for Plot event',
+                },
+            ],
+            stats: { brains: 1, brawn: 2, bravery: 2 },
+            skills: ['Stealth'],
+        },
+        {
+            roll: '7',
+            name: 'Soldiers',
+            description:
+                'A patrol of local guards block your path. Make a Charm roll (with -1 per Stealth).',
+            rolls: [
+                {
+                    roll: '2-5',
+                    description:
+                        'Hostile – make Running 7 roll or become Captured (7) or Attacked (Brawn 5)',
+                },
+                { roll: '6-9', description: 'No further event' },
+                {
+                    roll: '10+',
+                    description:
+                        'They become Allies (1D3+1 in number, each Brains 0, Brawn 2, Bravery 2) - roll for a Plot event (Discover Phase only)',
+                },
+            ],
+        },
+        {
+            roll: '8',
+            name: 'Aristocrat',
+            description: 'Finely dressed and cultured. Make a Diplomacy roll.',
+            rolls: [
+                {
+                    roll: '2-6',
+                    description:
+                        'Militia are called - see Soldiers (-2 to Charm roll)',
+                },
+                { roll: '7-8', description: 'No event' },
+                { roll: '9-10', description: 'News - roll for Plot event' },
+                {
+                    roll: '11+',
+                    description: 'Joins as Ally - roll for a Plot event',
+                },
+            ],
+            stats: { brains: 1, brawn: 1, bravery: 1 },
+            skills: ['Diplomacy', 'History'],
+        },
+        {
+            roll: '9',
+            name: 'Fugitive',
+            description:
+                'Someone who is avoiding the local militia. Ignore if with Soldiers, otherwise make a Charm roll.',
+            rolls: [
+                {
+                    roll: '2',
+                    description: 'Pickpocket - lose a Gadget or 2 Luck',
+                },
+                { roll: '3-7', description: 'No further event' },
+                { roll: '8-9', description: 'Roll for Plot event' },
+                {
+                    roll: '10+',
+                    description:
+                        'The fugitive becomes your Ally - roll for a Plot event',
+                },
+            ],
+            stats: { brains: 1, brawn: 1, bravery: 1 },
+            skills: ['Running', 'Stealth'],
+        },
+        {
+            roll: '10',
+            name: 'Sea Captain',
+            description: 'A retired military officer. Make a Diplomacy roll.',
+            rolls: [
+                { roll: '2-3', description: 'Challenged to a duel (Brawn 3)' },
+                { roll: '4-6', description: 'No event' },
+                {
+                    roll: '7-8',
+                    description: 'Shares news - roll for Plot event',
+                },
+                {
+                    roll: '9+',
+                    description: 'He becomes your Ally - roll for Plot event',
+                },
+            ],
+            stats: { brains: 1, brawn: 3, bravery: 3 },
+            skills: ['History', 'Pilot'],
+        },
+        {
+            roll: '11',
+            name: 'Priest',
+            description:
+                'The local clergy of the parish. Make a Charm roll (adding History).',
+            rolls: [
+                {
+                    roll: '2-3',
+                    description:
+                        'He is offended and calls the watch – see Soldiers',
+                },
+                { roll: '4-7', description: 'He tips his hat and leaves' },
+                {
+                    roll: '8-9',
+                    description: 'He shares news – roll for Plot event',
+                },
+                {
+                    roll: '10+',
+                    description:
+                        'He joins you as an Ally (+1 to Find Help Actions) - roll for a Plot event',
+                },
+            ],
+            stats: { brains: 2, brawn: 0, bravery: 2 },
+            skills: ['History'],
+        },
+        {
+            roll: '12',
+            name: 'Farmer',
+            description:
+                'Local peasant who has lived here all his life. Make a Charm roll.',
+            rolls: [
+                { roll: '2-4', description: 'Add +1 Danger' },
+                { roll: '5-7', description: 'He hurries off' },
+                { roll: '8-9', description: 'Gossip - roll for Plot event' },
+                {
+                    roll: '10+',
+                    description: 'Becomes an Ally (+1 to Move Actions)',
+                },
+            ],
+            stats: { brains: 0, brawn: 1, bravery: 1 },
+            skills: ['Stealth'],
+        },
+    ],
+    specials: [
+        {
+            id: 1,
+            image: 'travelling-around-cornwall',
+            name: 'Travelling Around Cornwall',
+            description:
+                'Due to the larger distances between Locations in rural Cornwall, the Move numbers for this Adventure are high and Move Actions have an additional -1 penalty if it is Night.',
+            information:
+                'You may pay 1 Luck point to automatically succeed at a Move Action to any Location for up to 4 Characters via coach and driver at any non-Exterior Location. You may also buy a horse for 1 Luck point that can carry up to 2 Characters and adds +3 to a Move Action (+2 to Evade options at Exterior Locations) for the Adventure.',
+        },
+    ],
+}
+
 export const adventureData: Adventure[] = [
     A001,
     A002,
@@ -3827,4 +4552,6 @@ export const adventureData: Adventure[] = [
     A009,
     A010,
     A011,
+    A012,
+    A013,
 ]
