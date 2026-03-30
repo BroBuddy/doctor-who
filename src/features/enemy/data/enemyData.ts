@@ -1927,6 +1927,373 @@ const thirdRow: Enemy[] = [
                 'Eerie blue and red lighting illuminates tanks of horrific mutated creatures that pulse with an audible electronic heartbeat. Add +1 Danger or +2 Danger if Experiments Goal (either once per Adventure only). Gain +1 Knowledge (once only). You can sabotage the Hatching Tanks with a Science 10 roll as an Action — if successful add +2 to Prevent Actions (+3 if Goal is Experiments). If you fail, encounter Davros. Encounter (D6): 1–2: Encounter Davros and Daleks; 3: Dalek Mutant Attack (Brawn 2, Creature); 4: No event; 5–6: Make Science 9 roll to gain +1 Knowledge.',
         },
     },
+    {
+        id: 16,
+        tag: 'E016',
+        title: 'Meralda',
+        description:
+            'Dr Elizabeth Meralda is a beautiful but totally cold and ruthless genetic scientist who will stop at nothing in completing her terrifying experiments to create new and enhanced life-forms. Special: Meralda will have reached her Goal if Danger total is 16 rather than 20.',
+        stats: ['+0 Danger', 'Scheme 4', 'Villain'],
+        encounter: {
+            description:
+                'Meralda is Brains 4, Brawn 2, Bravery 4 (Leader) and with 1D3-1 enhanced Ogrons (each Brains 1, Brawn 4, Bravery 2, Minion, Troop).',
+            table: [
+                {
+                    name: 'Conflict',
+                    description:
+                        'Not possible if Meralda alone. If with Ogrons and Danger is 8 or less, she starts a (Capture) Conflict; if Danger 9+, Meralda starts an (Attack) Conflict.',
+                },
+                {
+                    name: 'Surrender',
+                    description:
+                        'Roll 1D6 (+2 if Meralda alone): 1–2: Meralda starts an (Attack) Conflict; 3–5: Captured (8); 6+: Captured (9) and taken to laboratory (Lair). Add +1 Danger and roll 1D6 – on result of 3+, roll for Goal as she cannot resist gloating.',
+                },
+                {
+                    name: 'Evade',
+                    description:
+                        'Automatically successful if Meralda alone. If she is with Ogrons, make either a Running 9 roll to escape, or a Stealth 8 roll to hide. If you fail, choose another option with -1 to roll.',
+                },
+                {
+                    name: 'Conflict (Outwit)',
+                    description:
+                        'You try to bluff your way out of trouble. If you fail, choose to Surrender or start a different Conflict.',
+                },
+            ],
+        },
+        goals: [
+            {
+                roll: '1-2',
+                name: 'Create Slave Race',
+                vp: 5,
+                type: 'Experiments/Profit',
+                description:
+                    'Meralda is trying to genetically engineer a species that can then be sold as a slave race. After each Enemy Action roll, add extra +1 Danger if a Plotting result.',
+                options: [
+                    {
+                        name: 'Rescue and Release Specimens',
+                        description:
+                            "Make a successful Rescue (9) Action at Meralda's Genetics Laboratory (Lair), then make a successful Prevent Action (add Science). If you fail, add +1 Danger and encounter Meralda.",
+                    },
+                    {
+                        name: 'Convince Meralda of Moral Rights',
+                        description:
+                            'Have an encounter with Meralda and win an (Outwit) Conflict (add Diplomacy). If you fail, add +1 Danger and become Captured (8).',
+                    },
+                ],
+            },
+            {
+                roll: '3-4',
+                name: 'Atavistic Mutations',
+                vp: 5,
+                type: 'Experiments',
+                description:
+                    'Meralda has been conducting experiments on the local wildlife to make them larger and more aggressive. All Creatures are +1 Brawn.',
+                options: [
+                    {
+                        name: 'Capture Specimens',
+                        description:
+                            'Make a successful (Capture) Conflict against a Mutation (see Lair encounter) in 3 random Locations. If you fail a Conflict roll, select a Character to be killed.',
+                    },
+                    {
+                        name: 'Release Serum Counter-agent',
+                        description:
+                            'Make a Science 10 roll to research properties. Then take a Prevent Action (add Science) at any Exterior Location. If you fail, add +1 Danger.',
+                    },
+                ],
+            },
+            {
+                roll: '5-6',
+                name: 'Hunt Failed Prototype',
+                vp: 4,
+                type: 'Capture',
+                description:
+                    'Meralda is attempting to capture an experimental prototype creature that has escaped from her laboratories. Find the fugitive by making an Aware 9 roll at a Location (only one roll per Location). Roll 1D6 for each Quality of fugitive (Running, Stealth). Add +2 to Enemy Action rolls when with fugitive.',
+                options: [
+                    {
+                        name: 'Reverse Engineer Mutation',
+                        description:
+                            'Get a Breakthrough result in a Research (Science) Action. Gain +1 VP if you succeed.',
+                    },
+                    {
+                        name: 'Escape with Prototype',
+                        description:
+                            'Return to the TARDIS. You may not Surrender in Encounters with Meralda.',
+                    },
+                ],
+            },
+        ],
+        events: [
+            {
+                roll: '1-2',
+                name: 'Ogrons',
+                description:
+                    'You encounter 1D3+1 enhanced Ogrons (each Brains 1, Brawn 4, Bravery 2, Minion). See Encounter options above.',
+            },
+            {
+                roll: '3-4',
+                name: 'Parasitic Control',
+                description:
+                    'Roll 1D6 for each Ally. On a result of 1, the Ally is controlled by a mind parasite developed by Meralda. Discard Ally and choose to add +2 Danger or all Characters with Ally are Captured (8).',
+            },
+            {
+                roll: '5-6',
+                name: 'Experimental Subject',
+                description:
+                    'If you have a Captured Character, Meralda uses them as a test subject. Select Character to be killed unless you spend Luck equal to their Bravery.',
+            },
+        ],
+        lair: {
+            name: 'Genetics Laboratory',
+            tags: ['Location', 'Move 9'],
+            description:
+                'Dim, eerie lighting does not quite hide the failed experiments that line the walls and the disgusting things that bubble in jars. Add +1 Danger or +2 Danger if Experiments Goal (either only once per Adventure). Gain +1 Knowledge (once only). You can sabotage the laboratory with a Science 10 roll as an Action — if successful add +2 to Prevent Actions (+3 if Goal is Experiments). If you fail, encounter Meralda. Encounter (D6): 1–2: Encounter Meralda; 3: Mutation Attacks (Brawn 3, Creature); 4: None; 5–6: Make Science 9 roll to gain +1 Knowledge or +1 to a Prevent action.',
+        },
+    },
+    {
+        id: 17,
+        tag: 'E017',
+        title: 'Autons',
+        description:
+            'The Autons are plastic mannequins animated by the Nestene Consciousness. The Consciousness is a shapeless intelligence with an affinity for plastic, conquering planets to devour their chemicals and resources.',
+        stats: ['+1 Danger', 'Scheme 4', 'Chameleon'],
+        encounter: {
+            description:
+                'Roll 1D3 (+1 if Danger 9–15, +2 if Danger 16+) for number of Autons encountered (each Brains 0, Brawn 5, Bravery 4, Troop).',
+            table: [
+                {
+                    name: 'Conflict (Attack)',
+                    description:
+                        'The Auton wrists drop away to reveal deadly energy weapons.',
+                },
+                {
+                    name: 'Surrender',
+                    description:
+                        'Roll 1D6 (+2 if Doctor here): 1–2: The Autons attack – see Conflict; 3–4: Captured (8); 5–6+: Captured (9) and taken to the Nestene (Lair).',
+                },
+                {
+                    name: 'Evade',
+                    description:
+                        'Make either a Running 7 roll to escape, or a Stealth 8 roll to hide. If you fail, choose another option with -1 to roll.',
+                },
+            ],
+        },
+        goals: [
+            {
+                roll: '1-2',
+                name: 'Auton Invasion',
+                vp: 6,
+                type: 'Invasion',
+                description:
+                    'The Nestene plan to invade and turn the planet into a new base. If Danger 16+, add +2 to number of Autons encountered. If on Earth and you do not Defeat Autons, -1 to the Setback roll.',
+                options: [
+                    {
+                        name: 'Destroy Nestene Transmitter',
+                        description:
+                            'Roll a random Location for transmitter. If at transmitter Location, take a Prevent Action (add Engineer). If you fail, add +1 Danger and have an Auton encounter.',
+                    },
+                    {
+                        name: 'Create Warp Shunt',
+                        description:
+                            'You must Move to any 2 Locations and make a Brains 12 roll (add Computers and Engineer) at each Location. Add +1 Danger each time you fail a roll.',
+                    },
+                ],
+            },
+            {
+                roll: '3-4',
+                name: 'Release Chemical Pollution',
+                vp: 6,
+                type: 'Apocalypse',
+                description:
+                    'The Nestene intend to release highly toxic micro-plastic pollution into the atmosphere or water supply. If Danger 16+, add +1 Danger at the end of each Turn.',
+                options: [
+                    {
+                        name: 'Prevent Release of Toxin',
+                        description:
+                            'You must sneak into Nestene Lair with a Stealth 9 roll, encountering Autons if you fail. Once in Lair, take a Prevent Action (add Science). If you fail, add +1 Danger and encounter Nestene.',
+                    },
+                    {
+                        name: 'Create Dispersing Counter-agent',
+                        description:
+                            'Make a Science 10 roll as an Action to research properties. Then take a Prevent Action (add Science) at a Water Location or where you can Research (Science). If you fail, add +1 Danger.',
+                    },
+                ],
+            },
+            {
+                roll: '5-6',
+                name: 'Infiltrate with Replicas',
+                vp: 5,
+                type: 'Invasion',
+                description:
+                    'The Nestene plan replacing key personnel with facsimile Autons prior to invasion. Roll new Goal if Wilderness. If you have Infiltration or Auton Replica events, also add +1 Danger.',
+                options: [
+                    {
+                        name: 'Expose Replicas',
+                        description:
+                            'Roll for a random Location and automatically encounter an Auton Replica there (Enemy event). Then take a Prevent Action (add Diplomacy) at any Location where you can Find Help. If you fail, add +1 Danger.',
+                    },
+                    {
+                        name: 'Build UHF Transmitter',
+                        description:
+                            'Make an Engineer 9 roll to build transmitter then go to Nestene Lair and start an (Attack) Conflict with Nestene and 1D3+1 Autons (Nestene is Brawn 2, each Auton is Brawn 1). Defeat Nestene if you succeed.',
+                    },
+                ],
+            },
+        ],
+        events: [
+            {
+                roll: '1',
+                name: 'Infiltration',
+                description:
+                    'Auton facsimiles have infiltrated the authorities – add +1 Danger and you may not choose Find Help Actions.',
+            },
+            {
+                roll: '2-3',
+                name: 'Auton Replica',
+                description:
+                    'You encounter a perfect Auton facsimile (Brains 2, Brawn 5, Bravery 4, Troop). Roll 1D6 for each Human Character here — on a roll of 1, they are revealed to be the replica (a Companion revealed to be a replica is then Captured 9 at the Nestene Lair). See Encounter options above.',
+            },
+            {
+                roll: '4-5',
+                name: 'Plastic Danger',
+                description:
+                    'An innocent-looking everyday plastic object has been animated by the Nestene — roll 1D6 for a random group: 1–3: Captured (8); 4–6: Attacked (Brawn 3).',
+            },
+            {
+                roll: '6',
+                name: 'Nestene Energy Unit',
+                description:
+                    'You have found a small, glowing receptacle of Nestene Consciousness. Add +1 to Prevent Actions but if Captured, lose unit, add +2 Danger and the Nestene is +1 to all Qualities.',
+            },
+        ],
+        lair: {
+            name: 'The Nestene',
+            tags: ['Location', 'Move 9'],
+            description:
+                'You have found or been brought to the Nestene (Brains 5, Brawn 7, Bravery 4, Leader), a writhing, bubbling mass of living plastic. Gain +1 Knowledge and add +1 Danger (once only). Add +1 to Rescue Actions here. If Captured, an Enemy Encounter means you encounter the Nestene (roll below). If not Captured, you can sabotage the Lair with a Science 10 roll as an Action — if successful, add +2 to Prevent Actions. If you fail, add +1 Danger and encounter the Nestene. Encounter Nestene (Diplomacy roll): 2–6: Attacked by Nestene and 1D3 Autons (each Brawn 5); 7–9: Add +1 Danger and reveal Goal; 10–11: Start (Outwit) Conflict, Defeating Nestene if successful; 12+: Invoke Shadow Proclamation and Defeat Nestene (+1 VP).',
+        },
+    },
+    {
+        id: 18,
+        tag: 'E018',
+        title: 'Rutan Scout',
+        description:
+            'The Rutans are a ruthless amphibian species that resemble giant jellyfish. The Rutans are harsh military conquerors and constantly at war with the Sontarans. You have encountered a lone Rutan scout. Special: The Rutan scout will have reached its Goal if Danger total is 15.',
+        stats: ['+1 Danger', 'Scheme 4', 'Chameleon', 'Military'],
+        encounter: {
+            description:
+                'The Rutan is Brains 4, Brawn 5, Bravery 3, Leader (+1 Qualities at Water Locations).',
+            table: [
+                {
+                    name: 'Conflict (Attack)',
+                    description:
+                        'Electrical discharge crackles about the Rutan.',
+                },
+                {
+                    name: 'Surrender',
+                    description:
+                        'Roll 1D6 (+1 if Danger 8 or less): 1–4: Rutan starts an (Attack) Conflict; 5+: Taken to the Rutan Scout Craft (Lair – Captured 8). Add +1 Danger and roll 1D6 – on a 4+, reveal a Goal as the Rutan cannot resist gloating.',
+                },
+                {
+                    name: 'Evade',
+                    description:
+                        'Make either a Running 7 roll to escape, or a Stealth 8 roll to hide. If you fail, choose another option with -1 to roll.',
+                },
+                {
+                    name: 'Conflict (Outwit)',
+                    description:
+                        'You try to confuse the Rutan and escape. If you fail, choose to Surrender or start an (Attack) Conflict.',
+                },
+            ],
+        },
+        goals: [
+            {
+                roll: '1-2',
+                name: 'Evaluate Tactical Position',
+                vp: 3,
+                type: 'Invasion',
+                description:
+                    'The Rutan is determining the strategic location for possibilities of future invasion. If the Adventure is on Earth, add +1 Danger.',
+                options: [
+                    {
+                        name: 'Brinkmanship',
+                        description:
+                            'Gain 1 Knowledge then win an (Outwit) Conflict against the Rutan. Add +1 Danger and start an (Attack) Conflict if you fail.',
+                    },
+                    {
+                        name: 'Destroy Homing Beacon',
+                        description:
+                            'Find Beacon by making an Aware 9 roll at a Location (only one roll per Location). Take a Prevent Action (add Engineer). Add +1 Danger and encounter Rutan if you fail.',
+                    },
+                ],
+            },
+            {
+                roll: '3-4',
+                name: 'Evaluate Species',
+                vp: 4,
+                type: 'Experiments',
+                description:
+                    'The Rutan is gathering data on the local population to determine their strength and resistance. Add +1 Danger each time a Character is Captured or killed.',
+                options: [
+                    {
+                        name: 'Destroy Scout Craft',
+                        description:
+                            'Find and sneak inside the Rutan Scout Craft (Lair) with a Stealth 9 roll, encountering Rutan if you fail. Once inside, take a Prevent Action (add Engineer). Add +1 Danger and encounter Rutan if you fail.',
+                    },
+                    {
+                        name: 'Lure Rutan into Trap',
+                        description:
+                            'Rescue any Captured Characters then win a (Trap) Conflict against the Rutan. Add +1 Danger if you fail.',
+                    },
+                ],
+            },
+            {
+                roll: '5-6',
+                name: 'Repair Scout Craft',
+                vp: 3,
+                type: 'Quest',
+                description:
+                    'The Rutan is trying to repair its ship which was damaged when it crashed here. Add +1 Danger if a Character with Engineer is Captured.',
+                options: [
+                    {
+                        name: 'Destroy Scout Craft',
+                        description:
+                            'Find and sneak inside the Rutan Scout Craft (Lair) with a Stealth 9 roll, encountering Rutan if you fail. Once inside, take a Prevent Action (add Engineer). Add +1 Danger and encounter Rutan if you fail.',
+                    },
+                    {
+                        name: 'Convince Rutan to Leave Peacefully',
+                        description:
+                            'Have a Rutan encounter and take a Prevent Action (add +2 if Brawn 10+). If you fail, add +1 Danger and become Captured (8).',
+                    },
+                ],
+            },
+        ],
+        events: [
+            {
+                roll: '1-2',
+                name: 'Chameleon Factor',
+                description:
+                    'Rutans have the ability to assume other forms. Roll 1D6 for each native or Human Character here — on a roll of 1, they are revealed to be the Rutan in a shimmering green glow (a Companion revealed to be the Rutan is then Captured (9) at the Rutan Scout Craft). See Encounter options above.',
+            },
+            {
+                roll: '3-4',
+                name: 'Autopsy',
+                description:
+                    'The Rutan has attacked — discard a native Ally. Add +1 to Rutan Brains and +1 Danger if Experiments Goal (both cumulative).',
+            },
+            {
+                roll: '5-6',
+                name: 'Atmospheric Control',
+                description:
+                    'Rutan ships can manipulate weather conditions to produce fog. All Move Actions have a -1 penalty if moving to or from an Exterior Location (-2 if both Locations are Exterior).',
+            },
+        ],
+        lair: {
+            name: 'Rutan Scout Craft',
+            tags: ['Location', 'Move 10'],
+            description:
+                "The small but powerful craft has advanced cloaking technology to hide it from lesser species. Gain +1 Knowledge (if not a captive) and +1 Danger (both once only). Roll 1D6 – 1–3: Encounter Rutan; 4–6: Enemy event. Gain +1 to Rescue Actions here. Add +1 to Enemy Action rolls whilst here. If you make a Stealth 8 roll and then an Engineer 11 roll, you can scramble the craft's systems to reduce Danger by -2 and the Rutan has -1 to all Qualities. If you fail either roll, add +1 Danger and start an (Attack) Conflict with the Rutan.",
+        },
+    },
 ]
 
 export const enemyData: Enemy[] = [...firstRow, ...secondRow, ...thirdRow]
