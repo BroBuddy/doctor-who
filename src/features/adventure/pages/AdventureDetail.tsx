@@ -1,8 +1,9 @@
-import { useEffect, useMemo } from 'react'
+import { Suspense, useEffect, useMemo } from 'react'
 import { Outlet, useParams } from 'react-router-dom'
 import { getAdventureByTag } from '../services/AdventureService'
 import useGameStore from '@/features/game/store/useGameStore'
 import Header, { type NavItem } from '@/components/Header'
+import Preloader from '@/components/Preloader'
 
 const adventureTabs: NavItem[] = [
     { label: 'Adventure', path: '' },
@@ -36,7 +37,9 @@ function AdventureDetail() {
             />
 
             <div className="mt-25">
-                <Outlet />
+                <Suspense fallback={<Preloader />}>
+                    <Outlet />
+                </Suspense>
             </div>
         </>
     )

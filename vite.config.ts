@@ -13,12 +13,10 @@ export default defineConfig({
             output: {
                 manualChunks(id) {
                     if (id.includes('node_modules')) return 'vendor'
-                    if (id.includes('/features/rule/pages/'))
-                        return 'rule-pages'
-                    if (id.includes('/features/enemy/pages/'))
-                        return 'enemy-pages'
-                    if (id.includes('/features/adventure/pages/'))
-                        return 'adventure-pages'
+                    if (id.includes('/features/rule/')) return 'rule'
+                    if (id.includes('/features/enemy/')) return 'enemy'
+                    if (id.includes('/features/booklet/')) return 'booklet'
+                    if (id.includes('/features/adventure/')) return 'adventure'
                 },
             },
         },

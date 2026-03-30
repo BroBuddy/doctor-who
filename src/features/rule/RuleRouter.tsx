@@ -1,4 +1,5 @@
-import { lazy } from 'react'
+import Preloader from '@/components/Preloader'
+import { lazy, Suspense } from 'react'
 import { Outlet, type RouteObject } from 'react-router-dom'
 
 const CharactersAndConcepts = lazy(
@@ -16,7 +17,11 @@ const RuleDetail = lazy(() => import('./pages/RuleDetail'))
 const RuleRouter: RouteObject[] = [
     {
         path: '/rule',
-        element: <Outlet />,
+        element: (
+            <Suspense fallback={<Preloader />}>
+                <Outlet />
+            </Suspense>
+        ),
         children: [
             { path: 'R001', element: <CharactersAndConcepts /> },
             { path: 'R002', element: <TardisCharactersAndFriends /> },

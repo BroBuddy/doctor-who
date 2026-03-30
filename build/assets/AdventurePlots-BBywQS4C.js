@@ -1,1 +1,0 @@
-import{_ as e,c as t,u as n}from"./adventure-pages-Da65qfQF.js";import{s as r,u as i}from"./rule-pages-DTUe2vIx.js";var a=n();function o(){let{tag:n}=e(),o=t(String(n));return o?(0,a.jsx)(i,{headline:`Plots`,children:(0,a.jsx)(r,{items:o.map((e,t)=>({id:String(t),label:`${e.roll} – ${e.name}`,children:(0,a.jsx)(`p`,{children:e.description})}))})}):null}export{o as default};

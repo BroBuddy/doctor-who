@@ -1,9 +1,10 @@
-import { useEffect, useMemo } from 'react'
+import { Suspense, useEffect, useMemo } from 'react'
 import { Outlet, useParams } from 'react-router-dom'
 import { getEnemyByTag } from '../services/EnemyService'
 import useGameStore from '@/features/game/store/useGameStore'
 import type { NavItem } from '@/components/Header'
 import Header from '@/components/Header'
+import Preloader from '@/components/Preloader'
 
 const enemyTabs: NavItem[] = [
     { label: 'Enemy', path: '' },
@@ -32,7 +33,9 @@ function EnemyDetail() {
             <Header basePath="/enemy" tabs={enemyTabs} data={enemy} />
 
             <div className="mt-25">
-                <Outlet />
+                <Suspense fallback={<Preloader />}>
+                    <Outlet />
+                </Suspense>
             </div>
         </>
     )
