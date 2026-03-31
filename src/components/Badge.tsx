@@ -11,7 +11,7 @@ const Badge: React.FC<BadgeProps> = ({ text, icon, variant = 'default' }) => {
 
     return (
         <span
-            className={`badge rounded text-sm text-bold text-white py-1 px-2 mr-1 ${variantStyles}`}
+            className={`badge rounded text-sm text-bold text-white py-1 px-2 mb-1 mr-1 ${variantStyles}`}
         >
             {icon && <span className="mr-1">{icon}</span>}
             {text}

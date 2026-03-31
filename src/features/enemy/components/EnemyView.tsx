@@ -18,7 +18,7 @@ function EnemyView() {
             />
 
             {enemy.stats && (
-                <div className="flex flex-wrap mt-3">
+                <div className="flex flex-wrap mt-3 h-3">
                     {enemy.stats.map((item: string, index: number) => (
                         <Badge key={index} text={item} variant="light" />
                     ))}
