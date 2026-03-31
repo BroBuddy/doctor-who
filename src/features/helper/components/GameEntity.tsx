@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import RuleLink from '@/components/RuleLink'
 
 type GameEntityProps = {
     tag?: string
@@ -18,12 +18,7 @@ function GameEntity({ tag, title, linkBase, emptyText }: GameEntityProps) {
 
     return (
         <div className="flex justify-start items-center">
-            <Link
-                to={`/${linkBase}/${tag}`}
-                className="px-2 pt-1 pb-2 w-4 bg-light-blue rounded mr-2 mb-1 text-center"
-            >
-                <span className="text-sm">{tag}</span>
-            </Link>
+            <RuleLink path={linkBase} tag={tag} />
 
             <span className="text-sm">{title}</span>
         </div>
