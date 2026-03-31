@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom'
 import Card from '@/components/Card'
 import YearEraTardis from './YearEraTardis'
 import AdventureStats from './AdventureStats'
+import Dice from '@/components/Dice'
+import { Headline } from '@/components/Headline'
 
 function AdventureView() {
     const { tag } = useParams()
@@ -38,8 +40,10 @@ function AdventureView() {
 
             {adventure.enemy && (
                 <>
-                    <p className="mb-2">
-                        <strong>Enemy</strong> (Roll 1D6):
+                    <Headline>Enemy</Headline>
+                    <p className="flex">
+                        <strong className="mr-1">Roll:</strong>
+                        1D6 <Dice />
                     </p>
 
                     <ul>

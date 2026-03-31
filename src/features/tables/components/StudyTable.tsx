@@ -1,3 +1,5 @@
+import Dice from '@/components/Dice'
+
 function StudyTable() {
     return (
         <>
@@ -8,6 +10,10 @@ function StudyTable() {
                 Science; if at a Post Modern Era or later, you may instead add
                 +1 per Computers) (max +3). If you roll doubles, you also gain 1
                 VP.
+            </p>
+
+            <p className="flex">
+                <strong className="mr-1">Roll:</strong> 2D6 <Dice dice={2} />
             </p>
 
             <table className="text-sm">

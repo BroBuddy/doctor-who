@@ -1,3 +1,5 @@
+import Dice from '@/components/Dice'
+
 function InvestigateTable() {
     return (
         <>
@@ -7,6 +9,10 @@ function InvestigateTable() {
                 -1 if Wilderness and, if on Earth in World War Era or earlier,
                 +1 per History) (max +3). Ifyou roll doubles, add +2 to Enemy
                 Action roll this turn.
+            </p>
+
+            <p className="flex">
+                <strong className="mr-1">Roll:</strong> 2D6 <Dice dice={2} />
             </p>
 
             <table className="text-sm">

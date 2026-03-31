@@ -1,3 +1,5 @@
+import Dice from '@/components/Dice'
+
 function RelaxTable() {
     return (
         <>
@@ -6,6 +8,10 @@ function RelaxTable() {
                 time off from saving the universe and try to enjoy yourself at
                 this destination. Roll 2D6 (+1 if a native Companion is with
                 you). If you roll doubles, draw an Idea card
+            </p>
+
+            <p className="flex">
+                <strong className="mr-1">Roll:</strong> 2D6 <Dice dice={2} />
             </p>
 
             <table className="text-sm">

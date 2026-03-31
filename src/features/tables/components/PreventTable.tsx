@@ -1,3 +1,5 @@
+import Dice from '@/components/Dice'
+
 function PreventTable() {
     return (
         <>
@@ -6,6 +8,10 @@ function PreventTable() {
                 to defeat the Enemy and prevent them reaching their Goal. Roll
                 2D6 (+1 at a Lair, any Skill bonuses (max +3) from the Goal
                 option chosen on the Enemy sheet) and +1 per subsequent attempt.
+            </p>
+
+            <p className="flex">
+                <strong className="mr-1">Roll:</strong> 2D6 <Dice dice={2} />
             </p>
 
             <table className="text-sm">

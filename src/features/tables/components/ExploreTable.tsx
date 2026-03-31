@@ -1,3 +1,5 @@
+import Dice from '@/components/Dice'
+
 function ExploreTable() {
     return (
         <>
@@ -6,6 +8,10 @@ function ExploreTable() {
                 find. Roll 2D6 (+1 if with a native Character). If you roll
                 doubles, after resolving the result below, the exploring
                 Characters randomly separate into 2 groups.
+            </p>
+
+            <p className="flex">
+                <strong className="mr-1">Roll:</strong> 2D6 <Dice dice={2} />
             </p>
 
             <table className="text-sm">

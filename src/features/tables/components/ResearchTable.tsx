@@ -1,3 +1,5 @@
+import Dice from '@/components/Dice'
+
 function ResearchTable() {
     return (
         <>
@@ -9,6 +11,10 @@ function ResearchTable() {
                 Computers or History at a Wilderness Location or Adventure. Roll
                 2D6 (add +1 per chosen Skill (max +3). If you roll doubles (in
                 Dilemma Phase only), also roll for an Incident after result.
+            </p>
+
+            <p className="flex">
+                <strong className="mr-1">Roll:</strong> 2D6 <Dice dice={2} />
             </p>
 
             <table className="text-sm">
