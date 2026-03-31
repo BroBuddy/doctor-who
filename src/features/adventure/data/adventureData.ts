@@ -813,7 +813,7 @@ const A003: Adventure = {
         "The TARDIS has landed on 'The River Queen', a beautiful paddle steamer that is lit with soft electric lamps as it slowly journeys at night along the famous and majestic Mississippi river. Whilst the well-dressed passengers sip their mint juleps provided by glamorous saloon girls, the jazz band strikes up another number. It's just the pace to relax and take a well earned break, but in the casino, the stakes are perhaps higher than expected...",
     stats: { danger: 0, knowledge: 5, vp: 0 },
     special:
-        'Gain +1 Luck if you bring a Companion with History and Charm to Adventure. Night will fall at the start of Turn 2 and lasts for Adventure. Move Actions are automatic and you may choose another Action for Turn.',
+        'Gain +1 Luck if you bring a Companion with History and Charm to Adventure. Night will fall at the start of Turn 2 and lasts for Adventure. Move Actions are automatic and you may choose another Action for Turn. Riverboat Decks: (Water, Exterior) You stroll along the polished wooden deck of the paddle steamer, enjoying the gentle lapping of the river as you drift past the banks of the Mississippi. You may not Investigate, Research or Seek Information here. If you make an Aware 9 roll here, the Enemy Action roll for this Turn has a -1 modifier. Encounter (D6, +1 to roll if Discover Phase): 1: Enemy encounter; 2: Enemy event; 3: Incident; 4-5: None; 6+: Character event.',
     enemy: [
         { roll: '1', name: 'Entity' },
         { roll: '2', name: 'Gothic' },
@@ -6287,6 +6287,1422 @@ const A018: Adventure = {
     ],
 }
 
+const A019: Adventure = {
+    id: 19,
+    tag: 'A019',
+    title: 'Nottingham',
+    year: 1190,
+    tardis: 9,
+    era: 'Medieval Era',
+    type: null,
+    description:
+        'The TARDIS has landed at the edge of a huge forest that is filled with magnificent oak trees. It is a warm, late summer afternoon and a gentle sun baths the rural landscape in a golden glow. You can hear the gentle sound of a river nearby and the air is heady with the smell of woodland flowers. Away from the forest, rolling fields stretch into the distance where you can just see the turrets of a stone castle.',
+    stats: {
+        danger: 0,
+        knowledge: 5,
+        vp: 0,
+    },
+    special:
+        'Gain 1 Luck if you bring a female Companion with Charm or History here. Night falls at the start of Turn 2D6+1 and lasts 3 Turns. Sherwood Forest: (Exterior, Move 4) You stroll amongst the majestic English oaks that filter the warm sunshine, giving a welcome shade. Bird calls echo through the glades and the mossy rocks are vibrant green, but the forest can have an eerie feeling too. Add +1 to Explore Actions but may not Research here. Encounter: (D6, +1 if Discover Phase, -1 if Night): 0: Enemy encounter; 1: Enemy event; 2: Lost (Incident); 3: Incident; 4: None; 5: Character event; 6+: Outlaws.',
+    enemy: [
+        { roll: '1-2', name: 'Gothic' },
+        { roll: '3', name: 'Military' },
+        { roll: '4', name: 'Entity' },
+        { roll: '5', name: 'Villain' },
+        { roll: '6', name: 'Chameleon' },
+    ],
+    locations: [
+        {
+            roll: '1',
+            name: 'Tavern',
+            move: 8,
+            terrain: null,
+            description:
+                'You have found a local inn where the sounds of talking and laughing are mixed with the clank of mugs and the inviting smells of hot food. Add +1 to (Charm) Seek Information Actions but you may not Investigate here.',
+            encounter: 'D6',
+            rolls: [
+                {
+                    roll: '1-2',
+                    description: 'Tavern brawl - Attacked (Brawn 4)',
+                },
+                { roll: '3', description: 'Incident' },
+                {
+                    roll: '4-6',
+                    description:
+                        'You can spend 1 Luck to meet a Wench or random Character, or attempt a Charm 9 roll to roll for a Plot event (each once only)',
+                },
+            ],
+        },
+        {
+            roll: '2',
+            name: 'Forest River',
+            move: 7,
+            terrain: 'Water, Exterior',
+            description:
+                'You have found a wide and fast-flowing river that cuts through the forest. Getting across might prove difficult. Take a -2 penalty to Move Actions from here unless you make an Aware 9 roll or spend 1 Luck per Character (max 3). You may not Investigate here. Move 7 from Sherwood Forest only.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy Encounter' },
+                { roll: '2', description: 'Incident' },
+                { roll: '3-4', description: 'None' },
+                { roll: '5', description: 'Outlaws' },
+                {
+                    roll: '6+',
+                    description:
+                        'Robin Hood (Special Character with -3 to Charm roll)',
+                },
+            ],
+        },
+        {
+            roll: '3',
+            name: 'Nottingham Castle',
+            move: 8,
+            terrain: null,
+            description:
+                'The stronghold in the centre of Nottingham with dungeons that are a grim reminder to anyone who opposes the Sheriff. Add +1 to Investigate, Plan or Seek Information (Stealth) Actions here. Escape or Rescue Actions have a -1 penalty here.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy Lair' },
+                { roll: '2', description: 'Enemy Encounter' },
+                { roll: '3', description: 'Captured (9)' },
+                { roll: '4', description: 'Guards (Brawn 7 if Attacked)' },
+                { roll: '5', description: 'None' },
+                { roll: '6+', description: 'Sheriff of Nottingham' },
+            ],
+        },
+        {
+            roll: '4',
+            name: 'Village',
+            move: 8,
+            terrain: null,
+            description:
+                "A small collection of stone and thatched buildings clustered together and surrounded by fields and meadows for crops or animals. Smoke curls from a smith's brazier. Add +1 to Investigate or Seek Information Actions here. You may automatically Move to the Tavern without using an Action.",
+            encounter: 'D6 (-1 if Night, +1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '0-1', description: 'Enemy encounter' },
+                { roll: '2', description: 'Enemy event' },
+                { roll: '3', description: 'Incident' },
+                { roll: '4', description: 'None' },
+                { roll: '5+', description: 'Character event' },
+            ],
+        },
+        {
+            roll: '5',
+            name: 'Farm',
+            move: 9,
+            terrain: 'Exterior',
+            description:
+                'An old thatched house with a barn that is surrounded by tilled fields. A horse and plough are tied to a gate and the bark of a dog can be heard from nearby. Add +1 to Investigate Actions here. If you make a Charm 8 roll you are invited inside by the farmer – roll for a Plot event (Discover Phase) or take an immediate Seek Information Action (Dilemma Phase).',
+            encounter: 'D6',
+            rolls: [
+                { roll: '1', description: 'Wench' },
+                { roll: '2', description: 'Incident' },
+                { roll: '3-4', description: 'None' },
+                { roll: '5', description: 'Guards' },
+                { roll: '6', description: 'Plot event' },
+            ],
+        },
+        {
+            roll: '6',
+            name: 'Monastery',
+            move: 8,
+            terrain: null,
+            description:
+                'A beautiful stone building with shaded cloisters, a magnificent chapel and some lovely gardens tended by the monks. Add +1 to Research (History) Actions here. You may Study here but may not take Prevent Actions here unless specified by a Goal.',
+            encounter: 'D6',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                { roll: '2', description: 'Friar' },
+                { roll: '3', description: 'Incident' },
+                { roll: '4', description: 'None' },
+                {
+                    roll: '5',
+                    description:
+                        'Study monastery records – make a History 8 roll to gain +1 Knowledge',
+                },
+                {
+                    roll: '6',
+                    description:
+                        'Talk to head of the order – gain +1 Luck and roll for a Plot event',
+                },
+            ],
+        },
+    ],
+    plots: [
+        {
+            roll: '2-4',
+            name: 'Ancient Relic',
+            description:
+                'A mysterious artefact has been discovered – could it be important to the plans of the Enemy? Make a Science 7 roll and a History 7 roll, gaining +1 Knowledge per success. Add +1 Danger.',
+        },
+        {
+            roll: '5',
+            name: 'Massacre',
+            description:
+                'A nearby village has been burnt to the ground and all the villagers, men, women and children, brutally killed by some unknown force. Gain +1 Knowledge but lose 1 Luck if you have a native Ally.',
+        },
+        {
+            roll: '6',
+            name: 'Strange Behaviour',
+            description:
+                'You learn that the Sheriff of Nottingham is being even more cruel than usual. If you encounter the Sheriff of Nottingham and make an Aware 8 roll, either reveal the Enemy or gain +1 Knowledge.',
+        },
+        {
+            roll: '7',
+            name: 'Old Fable',
+            description:
+                'You learn about a strange, mysterious legend of Sherwood Forest. Is it just superstition or might it have a connection to recent events? Gain +1 Knowledge (or +2 Knowledge with a successful History 8 roll).',
+        },
+        {
+            roll: '8',
+            name: 'Archery Contest',
+            description:
+                'Due to happen soon at Nottingham Castle. If you go there, add +1 Danger but gain +1 Knowledge (or +2 Knowledge and gain 1 Luck if with Robin Hood). Whilst at the castle, add +1 to Enemy Action rolls.',
+        },
+        {
+            roll: '9',
+            name: 'Lights in the Sky',
+            description:
+                'Strange lights have been seen by locals in the night sky recently. Could it relate to something sinister? Make a successful Brains 10 roll to reveal the Enemy, or gain +1 Knowledge if you fail.',
+        },
+        {
+            roll: '10',
+            name: 'Poverty and Taxes',
+            description:
+                'You learn about the current dangerous political climate with local villagers in desperate poverty. Gain +1 Knowledge (or +2 Knowledge with a successful History 9 or Diplomacy 8 roll).',
+        },
+        {
+            roll: '11-12',
+            name: 'Unusual Activity',
+            description:
+                'You hear about strange events happening nearby. Roll 1D6: 1-3: Roll for a random Location – gain +1 Knowledge if you go there, then roll 1D6 and if 1-2 see Enemy Lair (roll for Enemy if Discover Phase); 4-6: A cave deep in Sherwood (Dark, Move 8 from Sherwood Forest only) with an underground lake. Add +1 to Investigate Actions there but any Ally with Bravery 1 or less will not enter. Encounter (D6): 1-2: Enemy Lair (roll for Enemy if Discover Phase); 3: Enemy encounter; 4: None; 5: Old Fable; 6: Gain +2 Knowledge but +1 Danger and +1 Enemy Action rolls.',
+        },
+    ],
+    characters: [
+        {
+            roll: '2-4',
+            name: 'Merchant',
+            description:
+                'A well-dressed trader. Make a Charm roll (-1 per Stealth).',
+            rolls: [
+                {
+                    roll: '2-4',
+                    description:
+                        'He accuses you of thievery and calls constables – see Guards with -1 to Charm roll',
+                },
+                { roll: '5-6', description: 'No event' },
+                {
+                    roll: '7-8',
+                    description:
+                        'He knows some local gossip – roll for a Plot event',
+                },
+                {
+                    roll: '9+',
+                    description: 'He becomes an Ally - roll for a Plot event',
+                },
+            ],
+            stats: { brains: 2, brawn: 1, bravery: 1 },
+            skills: ['Diplomacy'],
+        },
+        {
+            roll: '5',
+            name: 'Wench',
+            description:
+                'A shrewd and feisty local girl who always knows some gossip. Make a Charm roll (-1 if in a Tavern).',
+            rolls: [
+                { roll: '2-4', description: 'No event' },
+                { roll: '5-8', description: 'Gossip – roll for Plot event' },
+                {
+                    roll: '9+',
+                    description: 'Becomes an Ally – roll for Plot event',
+                },
+            ],
+            stats: { brains: 1, brawn: 0, bravery: 1 },
+            skills: ['Charm', 'Stealth'],
+        },
+        {
+            roll: '6',
+            name: 'Sheriff of Nottingham',
+            description:
+                'The infamous local lord who dispenses his own cruel justice, with his guards. Make a Diplomacy roll (-1 per Stealth).',
+            rolls: [
+                {
+                    roll: '2-8',
+                    description:
+                        'You are Attacked (Brawn 4+1D6) unless you Surrender (Captured 8 and taken to Nottingham Castle) or evade with a Running 9 roll',
+                },
+                { roll: '9-10', description: 'No event' },
+                {
+                    roll: '11+',
+                    description: 'Make a Brains 12 roll to gain +1 Knowledge',
+                },
+            ],
+        },
+        {
+            roll: '7',
+            name: 'Guards',
+            description:
+                'A patrol of rough and aggressive soldiers block your path. Unless you make a Charm 9 roll (with -1 per Stealth) to confuse them, or a Running 7 roll to escape them, you become Captured (7) or are Attacked (Brawn 6).',
+        },
+        {
+            roll: '8',
+            name: 'Minstrel',
+            description: 'A master of the lute. Make a Charm roll.',
+            rolls: [
+                {
+                    roll: '2-4',
+                    description:
+                        "He's a thief too – you lose 2 Luck, a Gadget or discard an Idea card",
+                },
+                { roll: '5-6', description: 'No event' },
+                { roll: '7-8', description: 'Roll for Plot event' },
+                { roll: '9+', description: 'Becomes your Ally' },
+            ],
+            stats: { brains: 2, brawn: 1, bravery: 1 },
+            skills: ['Charm', 'History', 'Stealth'],
+        },
+        {
+            roll: '9',
+            name: 'Outlaws',
+            description:
+                'A band of thieves on the run from the Sheriff. You may pay 2 Luck to have them led by Robin Hood (Special Character). If not, make a Charm roll (add Stealth).',
+            rolls: [
+                {
+                    roll: '2-7',
+                    description: 'Robbed - lose a Gadget or 2 Luck',
+                },
+                {
+                    roll: '8-9',
+                    description:
+                        'The merry lads laugh and let you go - roll for Plot event',
+                },
+                {
+                    roll: '10+',
+                    description:
+                        'Outlaw becomes an Ally – roll for a Plot event',
+                },
+            ],
+            stats: { brains: 1, brawn: 1, bravery: 2 },
+            skills: ['Stealth'],
+        },
+        {
+            roll: '10',
+            name: 'Knight',
+            description:
+                'A veteran returned from the Crusades. Make a Diplomacy roll.',
+            rolls: [
+                {
+                    roll: '2-3',
+                    description: 'You are challenged to a duel (Brawn 3)',
+                },
+                { roll: '4-6', description: 'No event' },
+                { roll: '7-8', description: 'Roll for Plot event' },
+                { roll: '9+', description: 'He becomes your Ally' },
+            ],
+            stats: { brains: 1, brawn: 3, bravery: 3 },
+            skills: ['Diplomacy', 'History'],
+        },
+        {
+            roll: '11-12',
+            name: 'Friar',
+            description:
+                'A learned man of herbs and potions. Make a Science roll.',
+            rolls: [
+                {
+                    roll: '2-7',
+                    description: 'He nods and passes by - no further event',
+                },
+                { roll: '8-9', description: 'Roll for a Plot event' },
+                {
+                    roll: '10+',
+                    description: 'He becomes your Ally – roll for a Plot event',
+                },
+            ],
+            stats: { brains: 2, brawn: 0, bravery: 1 },
+            skills: ['Medicine', 'Science'],
+        },
+    ],
+    specials: [
+        {
+            id: 1,
+            image: 'robin-hood',
+            name: 'Robin Hood',
+            description:
+                '(Icon) You have met the Prince of Thieves himself, Robin Hood – Brains 2, Brawn 4, Bravery 4 (Charm 2, Running 2, Stealth 2). Gain 1 VP. Make a Charm roll (only female Characters add Charm, +3 if Enemy revealed): 2-5: The saucy rascal challenges you to a duel – start an (Attack) Conflict. If you lose, lose 1 Luck. If you win, he becomes your Ally; 6-8: He knows strange tales - roll a Plot event before he saunters away; 9+: Robin joins you as an Ally.',
+            information:
+                'If an Ally, roll for a Plot event and you may Move to the Outlaw Camp Location.',
+            stats: { brains: 2, brawn: 4, bravery: 4 },
+            skills: ['Charm', 'Running', 'Stealth'],
+        },
+        {
+            id: 2,
+            image: 'outlaw-camp',
+            name: 'Outlaw Camp',
+            description:
+                '(Exterior, Move 9 from Sherwood Forest only with Robin Hood) You have found a narrow gully where Robin’s merry men hide deep within Sherwood Forest. Gain 1 Luck point (once only). Add +1 to Plan Actions here but you may not take Prevent Actions here. If all your Characters are here, -2 to Enemy Action rolls.',
+            information:
+                'If with Robin Hood, you gain (once only) 1D6+1 Outlaws as Allies, each Brains 0, Brawn 2, Bravery 2, Running, Stealth. You may also pay 1 Luck (each) to replace an OutlawAlly with: Little John (Brawn 4), Alan a’ Dale (add Charm) or Friar Tuck (add Medicine).',
+            stats: null,
+            skills: [],
+        },
+    ],
+}
+
+const A020: Adventure = {
+    id: 20,
+    tag: 'A020',
+    title: 'Ood Sphere',
+    year: 4228,
+    tardis: 9,
+    era: 'Twilight Era',
+    type: 'Wilderness',
+    description:
+        'The TARDIS has landed on the frozen, icy world of the Ood. In the far distance are vast, snow covered mountains whilst two moons hang in the clear blue sky. Your breath steams in the bitter air that makes your skin tingle as you take in the incredible glaciers and beautiful ice-sculpted landscape.',
+    stats: {
+        danger: 0,
+        knowledge: 5,
+        vp: 1,
+    },
+    special:
+        'Night falls at the start of Turn 1D6+2, lasting 4 Turns. If at an Exterior Cold Location at start of a Turn, lose 1 Luck (2 Luck if Night) or kill a Human Character with Brawn 0 or 1. If you have a Character with Aware 2 or an Ood Ally, see Telepathic Field (Special Events). Snowy Tundra: (Cold, Exterior, Move 2) You trudge through the deep snow that covers the incredibly beautiful alien landscape. Gain 1 Luck point if you have a Human Companion (once only). You may only Explore or Move as Actions here. Encounter (D6, +1 to roll if Discover Phase): 1: Enemy encounter; 2: Enemy event; 3: Incident; 4: None; 5: Character event; 6: Lost (Incident); 7: Blizzard – Take a -2 penalty to Explore and Move Actions next turn, treating the Turn as Night.',
+    enemy: [
+        { roll: '1', name: 'Villain' },
+        { roll: '2', name: 'Chameleon' },
+        { roll: '3-4', name: 'Entity' },
+        { roll: '5', name: 'Military' },
+        { roll: '6', name: 'Criminal' },
+    ],
+    locations: [
+        {
+            roll: '1',
+            name: 'Snowy Mountains',
+            move: 8,
+            terrain: 'Cold, Exterior',
+            description:
+                'You have reached the imposing mountain range you saw earlier from afar and the keen wind grows ever bitter. Add +1 Danger if Night. Add +2 to Explore and Move Actions, but you cannot Investigate or Research here.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                { roll: '2', description: 'Enemy Event' },
+                { roll: '3', description: 'Incident' },
+                {
+                    roll: '4',
+                    description:
+                        'Avalanche – roll 1D6 for each Character, on a result of 1 they are killed unless you lose 1 Luck',
+                },
+                { roll: '5-6', description: 'No event' },
+                { roll: '7', description: 'Lost (Incident)' },
+            ],
+        },
+        {
+            roll: '2',
+            name: 'Alien Glacier',
+            move: 8,
+            terrain: 'Cold, Exterior',
+            description:
+                'Huge sheets of rock and ice tower over you as you skirt the immense glacier. Even though it looks solid, your ears strain for any ominous sound. Add +1 to Investigate and Research (Science) Actions here.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                { roll: '2', description: 'Enemy Event' },
+                { roll: '3', description: 'Incident' },
+                {
+                    roll: '4',
+                    description:
+                        'Ice Creature Attacks (Brawn 4) unless you Evade with a Running 8 roll',
+                },
+                { roll: '5', description: 'Buried in the Ice' },
+                { roll: '6', description: 'No event' },
+                { roll: '7', description: 'Character event' },
+            ],
+        },
+        {
+            roll: '3',
+            name: 'Ood City',
+            move: 8,
+            terrain: null,
+            description:
+                'An incredible structure of twisting rock and ice. You may Find Help here. Add +1 to Plan and Research Actions here. If a Character has Science and History, they may spend a Turn exploring Ood culture to gain 1 Luck point. You may spend 1 Luck to be given furs that protect against the Cold. If you have 3 Aware you may gain an Audience with Ood Elders (Special Event).',
+            encounter: 'D6 adding Aware from non-Human Characters',
+            rolls: [
+                { roll: '1-2', description: 'No event' },
+                { roll: '3-4', description: 'Ood' },
+                { roll: '5', description: 'Ood Sigma' },
+                { roll: '6+', description: 'Audience with Ood Elders' },
+            ],
+        },
+        {
+            roll: '4',
+            name: 'Ice Caves',
+            move: 8,
+            terrain: 'Cold, Dark',
+            description:
+                'You discover the entrance to a huge system of caves where you find enormous frozen caverns. Add +2 to Investigate Actions and Enemy Action rolls here. Add +1 to Evade option rolls.',
+            encounter: 'Aware roll',
+            rolls: [
+                { roll: '2-4', description: 'Enemy encounter' },
+                {
+                    roll: '5',
+                    description:
+                        'Ice Creature Attacks (Brawn 4) unless Evade with a Running 8 roll',
+                },
+                { roll: '6', description: 'Enemy event' },
+                { roll: '7', description: 'Frozen Ood' },
+                { roll: '8', description: 'None' },
+                { roll: '9', description: 'Character event' },
+                {
+                    roll: '10-11',
+                    description:
+                        'Ice collapses - kills random Character unless pay 2 Luck',
+                },
+                {
+                    roll: '12+',
+                    description: 'Tunnel – move to random Location',
+                },
+            ],
+        },
+        {
+            roll: '5',
+            name: 'Frozen River',
+            move: 8,
+            terrain: 'Cold, Exterior',
+            description:
+                "A wide icy river cuts across the landscape and you'll need to find somewhere to cross. Take a -2 penalty to Move Actions from here unless you make an Aware 9 roll or spend 1 Luck per Character (max 3). Add +1 to Explore Actions. You may not Investigate here.",
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                {
+                    roll: '2',
+                    description:
+                        'Ice Creature Attacks (Brawn 4) unless Evade with a Running 8 roll',
+                },
+                { roll: '3', description: 'Incident' },
+                { roll: '4-5', description: 'No event' },
+                { roll: '6+', description: 'Character event' },
+            ],
+        },
+        {
+            roll: '6',
+            name: 'Thermal Springs',
+            move: 9,
+            terrain: 'Water, Exterior',
+            description:
+                'You feel the welcome warmth of steam that rises from natural geothermal springs. The hot pools surrounded by the ever-present ice are often thought to have healing properties. You may Relax as an Action here (Discover Phase only). Add +1 to Research (Medicine) Actions here.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                { roll: '2', description: 'Enemy event' },
+                { roll: '3', description: 'Incident' },
+                { roll: '4-5', description: 'No event' },
+                { roll: '6+', description: 'Character event' },
+            ],
+        },
+    ],
+    plots: [
+        {
+            roll: '2-4',
+            name: 'Ancient Relic',
+            description:
+                'A mysterious artefact has been discovered in the ice – could it be important to the plans of the Enemy? Make a Science 7 roll and a History 7 roll, gaining +1 Knowledge per success. Add +1 Danger.',
+        },
+        {
+            roll: '5',
+            name: 'Frozen Ood',
+            description:
+                'You have found the corpse of an Ood, frozen in the tundra. If you have any Ood Allies, discard one. Gain +1 Knowledge (or +2 Knowledge with a successful Medicine 7 roll).',
+        },
+        {
+            roll: '6',
+            name: 'Mysterious Runes',
+            description:
+                'You discover a set of strange symbols carved into the icy rock. If you make a History 8 roll, gain +2 Knowledge. If you make a History 10 roll, instead reveal the Enemy.',
+        },
+        {
+            roll: '7',
+            name: 'Disturbance in Telepathic Field',
+            description:
+                'You discover that the Circle has been broken. Gain +1 Knowledge. Any bonuses gained from the Telepathic Field (Special Events) are cancelled. Lose 1 Luck for each Character you control with Aware 2.',
+        },
+        {
+            roll: '8',
+            name: 'Geological Survey',
+            description:
+                'A geological report of the Ood sphere may provide some clues. If you make a Science 8 roll, gain +1 Knowledge (+2 Knowledge if you make a Science 10 roll).',
+        },
+        {
+            roll: '9',
+            name: 'Buried in the Ice',
+            description:
+                'You learn that something sinister has been discovered in the strata beneath the surface of the Ood Sphere. Make a successful Brains 10 roll to reveal the Enemy, or gain +1 Knowledge if you fail.',
+        },
+        {
+            roll: '10',
+            name: 'Strange Disease',
+            description:
+                'You learn that the Ood are falling ill. At the end of each Turn discard 1 Ood Ally until you make a Medicine 10 roll as an Action at the Ood City.',
+        },
+        {
+            roll: '11-12',
+            name: 'Unusual Activity',
+            description:
+                'There have been strange signals coming from an abandoned industrial facility several miles away (Exterior, Move 10). If you go there, you find a derelict compound filled with large containers and broken machinery. Add +1 to Investigate Actions. Encounter (Aware roll): 2-3: Enemy Lair; 4-5: Enemy encounter; 6: Enemy event; 7: Mercenaries; 8: None; 9: Frozen Ood; 10-11: Gain +1 Knowledge or +1 to Prevent Actions; 12+: Gain +2 Knowledge but add +1 Danger.',
+        },
+    ],
+    characters: [
+        {
+            roll: '2-4',
+            name: 'Ood Sigma',
+            description:
+                "Joins as an Ally, communicating using his orb. If Enemy is, or revealed as, an Entity, Sigma's eyes glow red and it attacks (Brawn 3, Minion). You can Evade with a Running 6 roll.",
+            stats: { brains: 2, brawn: 1, bravery: 2 },
+            skills: ['Aware', 'Diplomacy', 'Science'],
+        },
+        {
+            roll: '5',
+            name: 'Mercenaries',
+            description:
+                'A tough group of soldiers. Make a Charm roll (+1 if Enemy revealed, +1 if Danger 15+).',
+            rolls: [
+                {
+                    roll: '2-8',
+                    description:
+                        'Hostile – make a Running 8 roll or become Captured (8) or Attacked (Brawn 10)',
+                },
+                {
+                    roll: '9-10',
+                    description:
+                        'They question you but let you go – you may pay 1 Luck to gain +1 Knowledge',
+                },
+                {
+                    roll: '11+',
+                    description:
+                        'They become uneasy Allies (1D3+1 in number; leader is Brains 1, Brawn 3, Bravery 3, others are Brains 0, Brawn 3, Bravery 2)',
+                },
+            ],
+        },
+        {
+            roll: '6',
+            name: 'Survivor',
+            description:
+                'Badly wounded survivor of an expedition. Unless you make a Medicine 7 roll, the survivor dies – lose 1 Luck. If treated, the survivor joins as an Ally – roll for a Plot event.',
+            stats: { brains: 2, brawn: 1, bravery: 2 },
+            skills: ['Engineer or Pilot or Science'],
+        },
+        {
+            roll: '7',
+            name: 'Ood',
+            description:
+                'A group of 1D3 Ood join as Allies. If the Enemy is, or revealed as, an Entity, their eyes glow red and they attack (each Brawn 3, Minion). You can Evade with a Running 6 roll.',
+            stats: { brains: 1, brawn: 1, bravery: 1 },
+            skills: ['Aware'],
+        },
+        {
+            roll: '8',
+            name: 'Survey Team',
+            description:
+                'A small scientific expedition. Make a Charm roll (+2 if the Enemy is revealed).',
+            rolls: [
+                { roll: '2-5', description: 'Captured (7)' },
+                {
+                    roll: '6-9',
+                    description:
+                        'They are not convinced by you and leave - event ends but you may pay 1 Luck to roll for a Plot event',
+                },
+                {
+                    roll: '10+',
+                    description:
+                        'They join you as Allies (roll 1D3+1 for number, each Brains 2, Brawn 2, Bravery 2, randomly select a skill from Engineer, Medicine, Pilot or Science). Add +1 to Move Actions. Roll for a Plot event or gain +1 Knowledge.',
+                },
+            ],
+        },
+        {
+            roll: '9',
+            name: 'Alien Scholar',
+            description:
+                'A learned alien visiting the Ood Sphere. Make a Science roll.',
+            rolls: [
+                { roll: '2-7', description: 'No further event' },
+                { roll: '8-9', description: 'Roll for a Plot event' },
+                {
+                    roll: '10+',
+                    description: 'Joins you as an Ally – roll for a Plot event',
+                },
+            ],
+            stats: { brains: 2, brawn: 0, bravery: 1 },
+            skills: ['Medicine', 'Science'],
+        },
+        {
+            roll: '10',
+            name: 'Mineralogist',
+            description:
+                'A reserved and rather cold individual. If you make a Charm 10 roll, the Mineralogist becomes an Ally. Roll for a Plot event. The Mineralogist is automatically selected in a Traitor Incident.',
+            stats: { brains: 2, brawn: 1, bravery: 1 },
+            skills: ['Science'],
+        },
+        {
+            roll: '11-12',
+            name: 'Sensorite Ambassadors',
+            description:
+                'These two, nervous aliens are visiting from the nearby planet of the Sense Sphere. If you make a Charm 9 roll, the ambassadors join you as Allies. Roll for a Plot event.',
+            stats: { brains: 2, brawn: 0, bravery: 0 },
+            skills: ['Aware', 'Science'],
+        },
+    ],
+    specials: [
+        {
+            id: 1,
+            image: 'telepathic-field',
+            name: 'Telepathic Field',
+            description:
+                'The Ood Sphere has a strange telepathic field that can be felt by sensitive beings.',
+            information:
+                'Ood or Characters with Aware 2 gain +1 to Charm rolls with similar Characters, gain +1 to Move Actions and may use Aware to Seek Information in this Adventure.',
+            stats: null,
+            skills: [],
+        },
+        {
+            id: 2,
+            image: 'audience-with-ood-elders',
+            name: 'Audience with Ood Elders',
+            description: 'You are brought before the Ood Council.',
+            information:
+                'Roll 1D6 (add Aware from non-Humans): 1-2: Unfortunately the Ood Elders have red eyes and you are immediately seized and imprisoned (Captured 9). Add +1 Danger. All Ood become Minions of the Enemy. 3-5: The Ood council listens politely and may be able to offer some advice. Roll 1D6 (add Aware from non-Humans) and if the result is 5+, then roll for a Plot event. 6: The Council decides to help. Roll for a Plot event and gain 1D3 Ood as Allies. 7+: The Council are troubled by bad dreams. Roll 1D6: 1-2: All Ood are -1 Bravery; 3-6: They have a very disturbing prophecy of the future - reveal the Enemy and roll 1D6: 1-3: Add +1 Danger; 4-6: Gain +1 Knowledge and Ood Sigma as an Ally.',
+            stats: null,
+            skills: [],
+        },
+    ],
+}
+
+const A021: Adventure = {
+    id: 21,
+    tag: 'A021',
+    title: 'London',
+    year: 1867,
+    tardis: 8,
+    era: 'Victorian Era',
+    type: 'Holiday',
+    description:
+        'You have landed in Victorian London on Christmas Eve. White, powdery snow falls gently from the skies as you explore a busy market square. Everyone is in good spirits as they prepare for the festivities and a choir sings lovely carols on the corner of a nearby street. What could possibly spoil the moment...?',
+    stats: {
+        danger: 0,
+        knowledge: 5,
+        vp: 1,
+    },
+    special:
+        'See Special Events below for more details on Move Actions. After your first Explore or Relax Action, gain either 2 Luck or 1 Idea card. Night will fall after 2D6 Turns and last for 4 full Turns. London Streets: (Cold, Exterior, Move 3) You walk through the cold Victorian squares and streets, leaving footsteps in the fresh, crunchy snow that covers the cobbles. Add +1 to Explore Actions. You may not Research here. Encounter (D6, -1 to roll if Night and +1 if Discover Phase): 0: Enemy encounter; 1: Incident; 2: Heavy snow – Take a -1 penalty to Explore and Move Actions next turn; 3: None; 4: Street Urchin; 5+: Character event.',
+    enemy: [
+        { roll: '1-2', name: 'Gothic' },
+        { roll: '3', name: 'Entity' },
+        { roll: '4-5', name: 'Temporal' },
+        { roll: '6', name: 'Chameleon' },
+    ],
+    locations: [
+        {
+            roll: '1',
+            name: 'Tavern',
+            move: 7,
+            terrain: null,
+            description:
+                'You have found a local inn where the sounds of talking and laughing are mixed with the clink of glasses and the inviting smells of hot food. Add +1 to (Charm) Seek Information Actions but you may not Investigate here.',
+            encounter: 'D6',
+            rolls: [
+                {
+                    roll: '1',
+                    description:
+                        'You get mixed up in a tavern brawl and are Attacked (Brawn 3)',
+                },
+                { roll: '2', description: 'Incident' },
+                {
+                    roll: '3+',
+                    description:
+                        'You can spend 1 Luck point to meet a Wench or a random Character, or make a Charm 8 roll to have a Plot event (each once only)',
+                },
+            ],
+        },
+        {
+            roll: '2',
+            name: 'Music Hall Theatre',
+            move: 8,
+            terrain: null,
+            description:
+                'A grand music hall that welcomes impressive acts and memorable characters, both on and off the stage. Add +1 to Investigate and Seek Information Actions here. If it is Night you may remain here for a full turn with no other Action, you enjoy a performance at the Hall and gain 1 Luck point per TARDIS Character.',
+            encounter: 'D6',
+            rolls: [
+                { roll: '1', description: 'Incident' },
+                {
+                    roll: '2+',
+                    description:
+                        'You may spend 1 Luck point to have a Character event or 2 Luck to meet Charles Dickens (Special Character)',
+                },
+            ],
+        },
+        {
+            roll: '3',
+            name: 'Manor House',
+            move: 10,
+            terrain: null,
+            description:
+                'A magnificent residence on the outskirts of London owned by a rich gentleman. Add +1 to Investigate and Plan Actions here.',
+            encounter: 'D6 adding Diplomacy or Stealth',
+            rolls: [
+                {
+                    roll: '1',
+                    description: 'Butler calls Constables (-2 to Charm roll)',
+                },
+                { roll: '2', description: 'Nobody at home - no event' },
+                {
+                    roll: '3-4',
+                    description: 'Christmas drinks - roll for a Plot event',
+                },
+                { roll: '5', description: 'Gentleman' },
+                {
+                    roll: '6',
+                    description: 'Charles Dickens (Special Character)',
+                },
+                {
+                    roll: '7+',
+                    description:
+                        'Discover locked attic (gain +2 Knowledge) or secret cellar (Enemy Lair - Dilemma or Defeat Phase only)',
+                },
+            ],
+        },
+        {
+            roll: '4',
+            name: 'British Museum',
+            move: 8,
+            terrain: 'Museum',
+            description:
+                'Housing many rare, precious artefacts and artworks in display cases and galleries. A Character with History is +1 Brains here and may Study with +1 to roll. Add +1 VP if Profit Goal. Add +1 to Seek Information (History) Actions here.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy Lair' },
+                { roll: '2', description: 'Enemy event' },
+                { roll: '3', description: 'None' },
+                { roll: '4', description: 'Character event' },
+                {
+                    roll: '5-6',
+                    description:
+                        'Find ancient relic - make a Science 7 roll and a History 7 roll, gaining +1 Knowledge per success',
+                },
+                { roll: '7', description: 'Gain +1 Knowledge' },
+            ],
+        },
+        {
+            roll: '5',
+            name: 'Church',
+            move: 8,
+            terrain: 'Cold',
+            description:
+                'An old stone church that looks unused and ill-kept, but you might find something useful inside, or perhaps in the old graveyard? Add +1 to Research (History) Actions here.',
+            encounter: 'D6',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                {
+                    roll: '2',
+                    description:
+                        'Secret Passage – You may automatically Move to a random Location',
+                },
+                { roll: '3', description: 'Undertaker' },
+                { roll: '4', description: 'None' },
+                {
+                    roll: '5',
+                    description:
+                        'Examine gravestones – make a History 8 roll to gain +1 Knowledge',
+                },
+                {
+                    roll: '6',
+                    description:
+                        'Talk to old vicar – gain +1 Luck and roll for a Plot event',
+                },
+            ],
+        },
+        {
+            roll: '6',
+            name: 'Factory',
+            move: 9,
+            terrain: null,
+            description:
+                'A huge smoke-belching factory behind securely locked gates. You must make a Charm 8 roll to enter (Stealth 8 roll if Night). Add +1 to Investigate or Research (Engineer) Actions here.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                {
+                    roll: '1',
+                    description: 'Enemy encounter (Lair if Danger 12+)',
+                },
+                { roll: '2', description: 'Enemy event' },
+                {
+                    roll: '3',
+                    description: 'Constables (-2 to Charm roll, -3 if Night)',
+                },
+                { roll: '4', description: 'Businessman' },
+                { roll: '5', description: 'None' },
+                {
+                    roll: '6',
+                    description:
+                        'Gain +2 Knowledge or +2 to any Research (Engineer) Action here',
+                },
+                { roll: '7', description: 'Plot event or gain +1 Knowledge' },
+            ],
+        },
+    ],
+    plots: [
+        {
+            roll: '2-4',
+            name: 'Time Fissure',
+            description:
+                'You learn that this area of London lies across a crack in Time. Add +1 Danger if a Temporal Enemy is revealed. Make a successful Brains 12 roll to gain +1 Knowledge (+2 Knowledge if Brains 15 roll).',
+        },
+        {
+            roll: '5',
+            name: 'Foul Murder',
+            description:
+                'A body has been discovered in the snow nearby. Roll 1D6 and if result is a 1, discard a random Ally. Gain +1 Knowledge (or +2 Knowledge with a successful Medicine 7 roll).',
+        },
+        {
+            roll: '6',
+            name: 'Missing Children',
+            description:
+                'Some children have recently vanished from the streets of London in mysterious circumstances. Gain +1 Knowledge. Also gain 1 Luck if you have a native Character with you.',
+        },
+        {
+            roll: '7',
+            name: 'Mysterious Strangers',
+            description:
+                'There have been reports of a pair of strangers in the local area. If you make an Aware 9 roll, reveal Enemy or gain +1 Knowledge. If you have an Ally, roll 1D6 and on a 1, discard Ally and have an Enemy encounter.',
+        },
+        {
+            roll: '8',
+            name: 'Important Package',
+            description:
+                'You discover that the Enemy is searching for an important document. Roll 1D6 for each Ally, on a result of 6, they have it – gain +2 Knowledge. If not, roll for a random Location and if Move there, gain +1 Knowledge.',
+        },
+        {
+            roll: '9',
+            name: 'Strange Theft',
+            description:
+                'You discover that something has been stolen from a nearby Location. Roll 1D6: 1-2: Manor House; 3-4: Factory; 5-6: British Museum. If you Move there and make an Aware 8 or Charm 8 roll, gain +1 Knowledge.',
+        },
+        {
+            roll: '10',
+            name: 'Odd Burial',
+            description:
+                "You discover that a recent service at a local church was very strange. If you go to the Church Location or Undertaker's Parlour and make an Aware 9 roll, either reveal the Enemy or gain +2 Knowledge.",
+        },
+        {
+            roll: '11-12',
+            name: 'Unusual Activity',
+            description:
+                "You hear about strange events happening nearby. Roll 1D6: 1-3: Sewers (Dark, Water, Move 8) Miles of dank sewers run beneath London that could contain any number of hidden secrets. Add +2 to Explore or Investigate Actions here. Encounter (D6): 1-2: Enemy Lair; 3: Enemy encounter; 4: Lost (Incident); 5: Gain +1 Knowledge; 6: Gain +2 Knowledge but add +1 Danger. 4-6: Undertaker's Parlour (Move 9). You find a dark, creepy townhouse. Is anyone here? Allies with Bravery 1 will not enter. Add +1 to Investigate Actions here. Encounter (D6): 1: Enemy Lair; 2-3: Enemy encounter; 4: Odd Burial; 5: Undertaker; Gain +1 Knowledge; 6: Gain +1 Knowledge but add +1 to Enemy Action rolls here.",
+        },
+    ],
+    characters: [
+        {
+            roll: '2-4',
+            name: 'Businessman',
+            description:
+                'A wealthy factory owner. Make a Charm roll (-1 per Stealth).',
+            rolls: [
+                {
+                    roll: '2-4',
+                    description:
+                        'He accuses you of thievery and calls Constables (with -1 to Charm roll)',
+                },
+                { roll: '5-7', description: 'No event' },
+                {
+                    roll: '8-9',
+                    description:
+                        'Knows some local gossip – roll for a Plot event',
+                },
+                {
+                    roll: '10+',
+                    description:
+                        'Joins you as an Ally - roll for Plot event and he will pay once for a Hansom',
+                },
+            ],
+            stats: { brains: 2, brawn: 1, bravery: 1 },
+        },
+        {
+            roll: '5',
+            name: 'Wench',
+            description:
+                'A shrewd and feisty local girl who always knows some gossip. Make a Charm roll (-1 if in Tavern).',
+            rolls: [
+                { roll: '2-4', description: 'No event' },
+                { roll: '5-8', description: 'Gossip – roll for Plot event' },
+                {
+                    roll: '9+',
+                    description: 'Joins as an Ally - roll for Plot event',
+                },
+            ],
+            stats: { brains: 1, brawn: 1, bravery: 2 },
+            skills: ['Aware', 'Charm', 'Running', 'Stealth'],
+        },
+        {
+            roll: '6',
+            name: 'Gentleman',
+            description: 'Finely dressed and cultured. Make a Diplomacy roll.',
+            rolls: [
+                {
+                    roll: '2-4',
+                    description:
+                        'Local police are called – see Constables (-2 to Charm roll)',
+                },
+                { roll: '5-6', description: 'No event' },
+                { roll: '7-8', description: 'Roll for Plot event' },
+                { roll: '9+', description: 'Becomes your Ally' },
+            ],
+            stats: { brains: 1, brawn: 1, bravery: 1 },
+            skills: ['Charm', 'Diplomacy', 'History'],
+        },
+        {
+            roll: '7',
+            name: 'Constables',
+            description:
+                'A pair of local bobbies take an interest in you. Make a Charm roll (-1 per Stealth, +3 if Danger 10+).',
+            rolls: [
+                {
+                    roll: '2-5',
+                    description:
+                        'Wanted for questioning – make Running 7 roll or Captured (6)',
+                },
+                { roll: '6-9', description: 'No further event' },
+                {
+                    roll: '10+',
+                    description:
+                        'They join you as Allies (+1 to Investigate and Find Help Actions)',
+                },
+            ],
+            stats: { brains: 1, brawn: 2, bravery: 2 },
+            skills: ['Running'],
+        },
+        {
+            roll: '8',
+            name: 'Undertaker',
+            description: 'Small and slightly odd gentleman. Make a Charm roll.',
+            rolls: [
+                { roll: '2-4', description: 'Minion – have Enemy encounter' },
+                { roll: '5-7', description: 'No event' },
+                { roll: '8', description: 'Odd Burial' },
+                { roll: '9', description: 'Unusual Activity (Parlour)' },
+                {
+                    roll: '10+',
+                    description: 'Becomes your Ally – roll Plot event',
+                },
+            ],
+            stats: { brains: 1, brawn: 0, bravery: 2 },
+        },
+        {
+            roll: '9',
+            name: 'Street Urchin',
+            description:
+                'Trying to avoid local authorities for unknown reasons. Ignore if with Constables, otherwise make a Stealth roll.',
+            rolls: [
+                {
+                    roll: '2',
+                    description: 'Pickpocket - lose a Gadget or 2 Luck',
+                },
+                { roll: '3-7', description: 'No further event' },
+                { roll: '8-9', description: 'Roll for Plot event' },
+                {
+                    roll: '10+',
+                    description:
+                        'The Urchin becomes your Ally - roll for a Plot event',
+                },
+            ],
+            stats: { brains: 1, brawn: 1, bravery: 1 },
+            skills: ['Running', 'Stealth'],
+        },
+        {
+            roll: '10',
+            name: 'Maid',
+            description:
+                'The strangely perceptive maid who works for a local undertaker. She joins you as an Ally and adds +1 to Investigate Actions at Undertakers Location. Roll for a Plot event.',
+            stats: { brains: 1, brawn: 0, bravery: 4 },
+            skills: ['Aware', 'Charm', 'Running'],
+        },
+        {
+            roll: '11-12',
+            name: 'Old Friends',
+            description:
+                'You may pay 2 Luck to meet any Friend that is native to the Victorian Era.',
+        },
+    ],
+    specials: [
+        {
+            id: 1,
+            image: 'travelling-around-victorian-london',
+            name: 'Travelling Around Victorian London',
+            description:
+                'Due to the heavy snow that falls over London during Christmas, the Move numbers for this Adventure are high and have an additional -1 penalty if it is Night.',
+            information:
+                'You may pay 1 Luck to automatically succeed at a Move Action to any Location for up to 4 Characters via Hansom cab. Each time you use a Hansom cab, roll 1D6 and on a 6, roll for a Plot event for any gossip from the driver.',
+            stats: null,
+            skills: [],
+        },
+        {
+            id: 2,
+            image: 'charles-dickens',
+            name: 'Charles Dickens',
+            description:
+                'You have met the famous author Charles Dickens. Gain 1 VP. Make a Charm roll: 2-5: Dickens is too busy writing a new book and brushes you off; 6-8: He knows about strange tales around London - roll for a Plot event; 9+: He joins you as an Ally and knows about some strange tales - roll for a Plot event.',
+            information: '',
+            stats: { brains: 4, brawn: 1, bravery: 2 },
+            skills: ['Aware', 'Charm', 'History'],
+        },
+    ],
+}
+
+const A022: Adventure = {
+    id: 22,
+    tag: 'A022',
+    title: 'Avallion',
+    year: 0,
+    tardis: 0,
+    era: 'Medieval Era',
+    type: 'Mission',
+    description:
+        'The TARDIS has crossed through a space/time portal and landed on Avallion, one of the supposed thirteen worlds where the legends of King Arthur and his many foes are a reality. Here, the lines between science and magic are blurred. Indeed, as you examine the gorgeous, almost mystical woodlands and view a grand castle in the far distance, you feel almost magical yourself...',
+    stats: {
+        danger: 1,
+        knowledge: 5,
+        vp: 1,
+    },
+    special:
+        'Lose 1 Resources (or 2 points from another TARDIS Quality). Night falls at the start of Turn 1D6+2 and lasts 3 Turns. A Computers or Science roll here is made with a -1 penalty. Woods of Celadon: (Exterior, Move 4) You stroll amongst the tall, twisting trees that filter the bright sunshine to give a welcome shade. Bird calls echo through the woods and the air is sweet like honey, but the shadows are deep. Add +1 to Explore Actions but may not Research here. Encounter: (D6, +1 if Discover Phase, -1 if Night): 0: Wood Spirit – start a (Mind Control) Conflict (Brains 4); 1: Enemy encounter; 2: Enemy event; 3: Incident; 4-5: None; 6+: Character event.',
+    enemy: [
+        { roll: '1-2', name: 'Gothic' },
+        { roll: '3-4', name: 'E028' },
+        { roll: '5', name: 'Entity' },
+        { roll: '6', name: 'Temporal' },
+    ],
+    locations: [
+        {
+            roll: '1',
+            name: 'Tavern',
+            move: 8,
+            terrain: null,
+            description:
+                'You have found a local inn where the sounds of talking and laughing are mixed with the clank of mugs and the inviting smells of hot food. Add +1 to (Charm) Seek Information Actions but you may not Investigate here.',
+            encounter: 'D6',
+            rolls: [
+                {
+                    roll: '1-2',
+                    description:
+                        'Tavern brawl - Attacked (Brawn 4) unless evade with a Running 8 roll',
+                },
+                { roll: '3', description: 'Incident' },
+                {
+                    roll: '4-6',
+                    description:
+                        'You can spend 1 Luck to have a Character event, or make a Charm 9 roll to have a Plot event (each once only)',
+                },
+            ],
+        },
+        {
+            roll: '2',
+            name: 'Lake of Avalon',
+            move: 9,
+            terrain: 'Water, Exterior',
+            description:
+                'You have found a wide and deep lake that stretches for leagues. Mist floats eerily across the water. Add +1 to Investigate and Seek Information Actions here. -1 to Move Actions from here unless you make an Aware 9 roll.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy Lair' },
+                { roll: '2', description: 'Enemy encounter' },
+                { roll: '3', description: 'Incident' },
+                { roll: '4', description: 'None' },
+                { roll: '5', description: 'Cloaked Traveller' },
+                {
+                    roll: '6+',
+                    description:
+                        'Lady of the Lake – Make a Brains 15 roll (add History) to gain +2 Knowledge or reveal the Enemy',
+                },
+            ],
+        },
+        {
+            roll: '3',
+            name: 'Camelot Castle',
+            move: 8,
+            terrain: null,
+            description:
+                'The magnificent castle that is the stronghold of King Arthur and is the heart of the realm with the Round Table as a symbol of chivalry. Gain +1 VP (once only). Add +1 to Investigate, Plan or Seek Information (Stealth) Actions here. Escape or Rescue Actions have a -1 penalty here.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy event' },
+                { roll: '2', description: 'Captured (9)' },
+                { roll: '3', description: 'Knights (Brawn 7 if Attacked)' },
+                { roll: '4', description: 'None' },
+                { roll: '5', description: 'Character event' },
+                { roll: '6+', description: 'King Arthur (Special Character)' },
+            ],
+        },
+        {
+            roll: '4',
+            name: 'Fields of Camlann',
+            move: 7,
+            terrain: 'Exterior',
+            description:
+                'A large, flat plain with only a few twisted, broken trees - the tragic battlefield of armies past and present. Add +1 to Challenge and Prevent Actions here. Add +1 to the number of Troops encountered here. Running rolls in Evade options have a -1 penalty here. Gain 1 VP if you win an (Attack) Conflict here.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1-2', description: 'Enemy encounter' },
+                { roll: '3', description: 'Enemy event' },
+                { roll: '4', description: 'Incident' },
+                { roll: '5', description: 'None' },
+                { roll: '6-7', description: 'Knights' },
+            ],
+        },
+        {
+            roll: '5',
+            name: 'Ice Caves',
+            move: 9,
+            terrain: 'Cold, Dark',
+            description:
+                'You discover the entrance to a huge cave system where you find enormous caverns of ice. Add +2 to Investigate Actions and Enemy Action rolls here. Add +1 to Evade option rolls.',
+            encounter: 'Aware roll',
+            rolls: [
+                { roll: '2-4', description: 'Enemy encounter' },
+                {
+                    roll: '5',
+                    description:
+                        'Dragon Guardian Attacks (Brawn 6) unless Evade with a Running 9 roll',
+                },
+                { roll: '6', description: 'Enemy event' },
+                { roll: '7', description: 'Mystical Relic' },
+                { roll: '8', description: 'None' },
+                {
+                    roll: '9',
+                    description:
+                        'Ice collapses - kills random Character unless pay 2 Luck',
+                },
+                { roll: '10-11', description: 'Witch' },
+                { roll: '12+', description: 'Cloaked Traveller' },
+            ],
+        },
+        {
+            roll: '6',
+            name: 'Temple of Baden',
+            move: 9,
+            terrain: 'Exterior',
+            description:
+                'An ancient stone circle of mystery and power. Add +1 to Investigate and Research (History) Actions here. You may Study here.',
+            encounter: 'D6 (-1 to roll if Night, +1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '0', description: 'Enemy Lair' },
+                { roll: '1', description: 'Enemy encounter' },
+                { roll: '2', description: 'Enemy event' },
+                { roll: '3', description: 'Incident' },
+                { roll: '4', description: 'Ancient Curse' },
+                {
+                    roll: '5',
+                    description:
+                        'Study mystical runes on the stones – make a History 8 roll to gain +1 Knowledge',
+                },
+                { roll: '6', description: 'Warrior Monks' },
+                { roll: '7', description: 'Merlin (Special Character)' },
+            ],
+        },
+    ],
+    plots: [
+        {
+            roll: '2-4',
+            name: 'Mystical Relic',
+            description:
+                'A mysterious artefact has been discovered – could it be important to the plans of the Enemy? Make a Science 7 roll and a History 7 roll, gaining +1 Knowledge per success. Add +1 Danger.',
+        },
+        {
+            roll: '5',
+            name: 'Battlefield',
+            description:
+                'You learn that two armies have recently clashed and one side was almost completely massacred. Gain +1 Knowledge but lose 1 Luck if you have a native Ally.',
+        },
+        {
+            roll: '6',
+            name: 'Strange Technology',
+            description:
+                'You discover that this planet is a strange combination of technology and magic. You may replace your next Engineer roll with a History roll, or your next History roll with an Engineer roll.',
+        },
+        {
+            roll: '7',
+            name: 'Ancient Curse',
+            description:
+                'You learn a dark legend of this magical world. But is it just a tale, or might it have a connection to recent events? Gain +1 Knowledge (or +2 Knowledge with a successful History 9 roll). A random Ally has -1 Bravery next Turn.',
+        },
+        {
+            roll: '8',
+            name: 'Captive',
+            description:
+                'Someone or something important has been captured. If you Move to a random Location and make a Rescue 8 Action, roll 1D6: 1-2: Gain +1 Knowledge; 3-4: Character event; 5-6: Enemy encounter.',
+        },
+        {
+            roll: '9',
+            name: 'Temporal Displacement',
+            description:
+                'A visitor from another time has been seen in Avallion. Roll for a random Location - if you go there either have a Character event from a random Adventure (TM01) or pay 2 Luck to meet Merlin (Special Character).',
+        },
+        {
+            roll: '10',
+            name: 'Excalibur Lost',
+            description:
+                'You learn that the fabled sword has been stolen. Roll for a random Location - if you go there and make an Aware 9 roll gain +1 Knowledge and +2 to Audiences with King Arthur (Special Character).',
+        },
+        {
+            roll: '11-12',
+            name: 'Unusual Activity',
+            description:
+                'You hear about strange events happening nearby. Roll 1D6: 1-3: Roll for a random Location – gain +1 Knowledge if you go there, then roll 1D6 and if 1-2 see Enemy Lair (roll for Enemy if Discover Phase); 4-6: A dimensional portal, far from Camelot (Move 11) that bridges realities. Add +1 to Investigate and Prevent Actions there. You may pay 2 Luck to roll for on TM01 and have a Character event from that Adventure. Encounter (D6): 1: Enemy Lair; 2-3: Enemy encounter; 4: None; 5: Warrior Monks; 6: Gain +2 Knowledge but add +1 Danger and +1 Enemy Action rolls.',
+        },
+    ],
+    characters: [
+        {
+            roll: '2-4',
+            name: 'Witch',
+            description:
+                'A sorceress. If in Discover Phase, see E028. Make a Charm roll (add History).',
+            rolls: [
+                {
+                    roll: '2-8',
+                    description:
+                        'Hideous hag - start a (Terrify) Conflict (Bravery 4)',
+                },
+                {
+                    roll: '9-10',
+                    description:
+                        'She imparts a riddle – roll for a Plot event if you make a Brains 12 roll',
+                },
+                {
+                    roll: '11+',
+                    description: 'She becomes an Ally - roll for a Plot event',
+                },
+            ],
+            stats: { brains: 3, brawn: 0, bravery: 4 },
+            skills: ['Aware', 'History', 'Medicine', 'Stealth'],
+        },
+        {
+            roll: '5',
+            name: 'Knight Commander',
+            description:
+                "A brave knight of Arthur's army. Make a Diplomacy roll (add Charm of female Characters).",
+            rolls: [
+                {
+                    roll: '2-3',
+                    description: 'Challenged to a personal duel (Brawn 3)',
+                },
+                { roll: '4-6', description: 'Bows and leaves' },
+                { roll: '7-8', description: 'Roll for Plot event' },
+                {
+                    roll: '9+',
+                    description:
+                        'Becomes your Ally – roll for Plot event. Will not Surrender.',
+                },
+            ],
+            stats: { brains: 1, brawn: 3, bravery: 3 },
+            skills: ['Charm', 'Diplomacy', 'History', 'Running'],
+        },
+        {
+            roll: '6-7',
+            name: 'Knights',
+            description:
+                "A patrol of S'rax knights block your path. Unless you make a Charm 9 roll (with -1 per Stealth) to confuse them, or a Running 7 roll to evade them, you become Captured (7) or are Attacked (Brawn 6).",
+        },
+        {
+            roll: '8',
+            name: 'Minstrel',
+            description: 'A master of the lute. Make a Charm roll.',
+            rolls: [
+                {
+                    roll: '2-4',
+                    description:
+                        "He's a thief too – you lose 2 Luck, a Gadget or discard an Idea card",
+                },
+                { roll: '5-6', description: 'No event' },
+                { roll: '7-8', description: 'Roll for Plot event' },
+                { roll: '9+', description: 'Becomes your Ally' },
+            ],
+            stats: { brains: 2, brawn: 1, bravery: 1 },
+            skills: ['Charm', 'History', 'Stealth'],
+        },
+        {
+            roll: '9',
+            name: 'Warrior Monks',
+            description:
+                'A band of armed priests. Make a Diplomacy roll (add History).',
+            rolls: [
+                {
+                    roll: '2-5',
+                    description:
+                        'Attacked (Brawn 5) unless you Evade (Running 8 roll) or Surrender (Captured 8)',
+                },
+                { roll: '6-9', description: 'The monks pass silently' },
+                {
+                    roll: '10',
+                    description: 'They share news – roll for a Plot event',
+                },
+                {
+                    roll: '11+',
+                    description:
+                        'A monk becomes an Ally – roll for a Plot event',
+                },
+            ],
+            stats: { brains: 1, brawn: 2, bravery: 2 },
+            skills: ['History'],
+        },
+        {
+            roll: '10',
+            name: 'Princess',
+            description:
+                'A beautiful maiden of the court. If you make a Diplomacy 9 roll (+2 if Danger 10+) she becomes your Ally – roll for Plot event. Adds +1 to Audience roll with King Arthur.',
+            stats: { brains: 1, brawn: 0, bravery: 2 },
+            skills: ['Charm', 'Diplomacy'],
+        },
+        {
+            roll: '11-12',
+            name: 'Cloaked Traveller',
+            description:
+                'A mysterious, hooded figure. You may pay 2 Luck to meet Merlin (Special Character) or make an Aware roll.',
+            rolls: [
+                { roll: '2-8', description: 'He passes by - no event' },
+                {
+                    roll: '9-10',
+                    description:
+                        'The figure shares news - roll for a Plot event',
+                },
+                {
+                    roll: '11+',
+                    description:
+                        'The traveller becomes your Ally – roll for a Plot event',
+                },
+            ],
+            stats: { brains: 3, brawn: 2, bravery: 3 },
+            skills: ['Aware', 'History', 'Medicine'],
+        },
+    ],
+    specials: [
+        {
+            id: 1,
+            image: 'king-arthur',
+            name: 'King Arthur',
+            description:
+                'You have met the famous Lord of Camelot with a retinue of soldiers. Gain 1 VP. Arthur is just and wise, but looks troubled and pensive.',
+            information:
+                'Evade: Roll 1D6: 1-4: The retinue pass by and event ends; 5-6: The soldiers attack (Brawn 7) unless you Surrender (Captured 9) or try to Evade using Running 7 rolls. Audience: Make a Diplomacy roll (+3 if with Merlin): 2-5: You unwittingly give insult and are Captured (9) at Camelot; 6-8: The King nods before departing and event ends; 9-10: You converse with the King – roll for Plot event; 11+: The King is convinced - gain 1 Luck, a Knight Ally (Brains 1, Brawn 3, Bravery 3, Diplomacy, History) - roll for a Plot event.',
+            stats: null,
+            skills: [],
+        },
+        {
+            id: 2,
+            image: 'merlin',
+            name: 'Merlin',
+            description:
+                'You gaze in astonishment as a figure emerges from the shadows – it is Merlin, wizard and wise advisor to King Arthur... and one of your future regenerations! Draw a random Doctor card that shows one of your future regenerations (create a new regeneration if none) who joins you as an Ally (although naturally counts as a TARDIS Character and if killed, you lose the game). Gain 2 Luck and +2 Knowledge.',
+            information:
+                'If you Defeat the Enemy in this Adventure, the future Doctor gives you a cunning wink and leaves in his TARDIS, knowing that his past is in safe hands – gain 1 Luck point.',
+            stats: null,
+            skills: [],
+        },
+    ],
+}
+
 export const adventureData: Adventure[] = [
     A001,
     A002,
@@ -6306,4 +7722,8 @@ export const adventureData: Adventure[] = [
     A016,
     A017,
     A018,
+    A019,
+    A020,
+    A021,
+    A022,
 ]
