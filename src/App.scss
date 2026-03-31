@@ -12,7 +12,8 @@
 }
 
 .ruleTag {
-    color: var(--teal);
+    color: var(--light-blue);
+    text-decoration: underline;
 }
 
 ul,
@@ -32,9 +33,14 @@ ol {
 body {
     margin: 0;
     display: flex;
+    box-sizing: border-box;
     min-height: 100vh;
-    background-color: var(--light-blue);
-    color: var(--dark-grey);
+    background-image: url('/images/tardis_background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--white);
     padding: 0 15px 45px 15px;
 }
 
@@ -52,13 +58,14 @@ span {
 }
 
 a {
-    color: var(--purple);
     font-weight: bold;
     text-decoration: none;
 }
 
+a,
+h2,
 strong {
-    color: var(--purple);
+    color: var(--light-blue);
 }
 
 .rounded {

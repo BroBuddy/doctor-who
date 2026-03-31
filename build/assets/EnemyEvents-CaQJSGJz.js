@@ -1,0 +1,1 @@
+import{a as e}from"./enemy-Lav1Uvj5.js";export{e as default};

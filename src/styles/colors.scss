@@ -4,8 +4,11 @@
     --grey: #888;
     --light-grey: #bbb;
     --white: #fff;
-    --light-blue: #ddedfa;
-    --purple: #241e59;
+    --light-blue: #38bdf8;
+    --blue: #1e3a8a;
+    --dark-blue: #0f172a;
+    --rosa: #8d00e5;
+    --purple: #2b006c;
     --teal: #0f6e56;
 }
 
@@ -16,6 +19,9 @@ $colors: (
     'light-grey': var(--light-grey),
     'white': var(--white),
     'light-blue': var(--light-blue),
+    'blue': var(--blue),
+    'dark-blue': var(--dark-blue),
+    'rosa': var(--rosa),
     'purple': var(--purple),
     'teal': var(--teal),
 );

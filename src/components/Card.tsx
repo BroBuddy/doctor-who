@@ -1,4 +1,5 @@
 import { Headline } from './Headline'
+import './Card.scss'
 
 type CardProps = {
     icon?: string
@@ -8,7 +9,7 @@ type CardProps = {
 
 const Card: React.FC<CardProps> = ({ icon, headline, children }) => {
     return (
-        <div className="flex flex-col bg-white rounded px-4 pb-4 my-4">
+        <div className="card">
             {headline && (
                 <Headline>
                     {icon && <span className="mr-1">{icon}</span>}

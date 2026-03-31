@@ -23,7 +23,7 @@ function Header({ basePath, tabs, data }: HeaderProps) {
                 <strong className="text-white text-md">{data.title}</strong>
             </div>
 
-            <nav className="bg-purple p-2">
+            <nav className="bg-blue p-2">
                 {tabs.map((item: NavItem) => {
                     const isActive =
                         item.path === ''
@@ -35,7 +35,7 @@ function Header({ basePath, tabs, data }: HeaderProps) {
                             key={item.path}
                             to={`${basePath}/${data.tag}${item.path}`}
                             className={`px-2 py-1 ${
-                                isActive ? 'text-light-grey' : 'text-white'
+                                isActive ? 'text-light-blue' : 'text-white'
                             }`}
                         >
                             <span className="text-sm">{item.label}</span>

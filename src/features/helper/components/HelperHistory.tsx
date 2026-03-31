@@ -26,7 +26,7 @@ function HelperHistory() {
                                 tag={item.tag}
                             />
 
-                            <span className="text-dark-grey text-sm flex-1 ml-1">
+                            <span className="text-white text-sm flex-1 ml-1">
                                 {item.title}
                             </span>
                         </div>
