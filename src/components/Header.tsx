@@ -18,7 +18,7 @@ function Header({ basePath, tabs, data }: HeaderProps) {
     if (!data) return <p>Data not found.</p>
 
     return (
-        <header className="header mb-4">
+        <header className="header slide-down mb-4">
             <div className="bg-black p-2">
                 <strong className="text-white text-md">{data.title}</strong>
             </div>

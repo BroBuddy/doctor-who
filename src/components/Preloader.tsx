@@ -1,5 +1,5 @@
 function Preloader() {
-    return <>🔄</>
+    return <></>
 }
 
 export default Preloader
