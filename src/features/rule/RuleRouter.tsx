@@ -11,8 +11,12 @@ const TardisCharactersAndFriends = lazy(
 const Adventures = lazy(() => import('./pages/Adventures'))
 const ActionsInAdventures = lazy(() => import('./pages/ActionsInAdventures'))
 const Incidents = lazy(() => import('./pages/Incidents'))
+const SkillAndKeywordDescriptions = lazy(
+    () => import('./pages/SkillAndKeywordDescriptions')
+)
 const ActionTables = lazy(() => import('../tables/pages/ActionTables'))
 const RuleDetail = lazy(() => import('./pages/RuleDetail'))
+const EnemyTables = lazy(() => import('./pages/EnemyTables'))
 
 const RuleRouter: RouteObject[] = [
     {
@@ -28,7 +32,9 @@ const RuleRouter: RouteObject[] = [
             { path: 'R006', element: <Adventures /> },
             { path: 'R008', element: <ActionsInAdventures /> },
             { path: 'R011', element: <Incidents /> },
+            { path: 'R013', element: <SkillAndKeywordDescriptions /> },
             { path: 'R014', element: <ActionTables /> },
+            { path: 'R018', element: <EnemyTables /> },
             { path: ':tag', element: <RuleDetail /> },
         ],
     },
