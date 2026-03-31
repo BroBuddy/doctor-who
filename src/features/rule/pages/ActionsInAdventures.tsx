@@ -44,11 +44,14 @@ const sections = [
                 bonus, an Enemy Lair a penalty. Each successive Escape Action
                 gains a cumulative +1 modifier. If you roll a natural 2, the
                 attempt fails and you must roll for a Capture Incident (
-                <Link to="/rule/R011">R011</Link>). If you equal or exceed the
-                Capture number, all Characters captured together escape. They
-                may then stay at the current Location or Move to the Location
-                with the lowest Move number. Captured Characters cannot choose
-                other Actions and do not roll for Encounters.
+                <Link to="/rule/R011" className="ruleTag">
+                    R011
+                </Link>
+                ). If you equal or exceed the Capture number, all Characters
+                captured together escape. They may then stay at the current
+                Location or Move to the Location with the lowest Move number.
+                Captured Characters cannot choose other Actions and do not roll
+                for Encounters.
             </p>
         ),
     },
@@ -133,7 +136,11 @@ const sections = [
                 May only be chosen at an Adventure with the Holiday keyword and
                 before having a Plot event. Add +1 with a native Companion (not
                 cumulative with multiple native Companions). If you roll
-                doubles, gain an Idea card (<Link to="/rule/R003">R003</Link>).
+                doubles, gain an Idea card (
+                <Link to="/rule/R003" className="ruleTag">
+                    R003
+                </Link>
+                ).
             </p>
         ),
     },
@@ -210,10 +217,12 @@ function ActionsInAdventures() {
                 <p>
                     Each Turn, select an Action for each group and roll 2D6 on
                     the corresponding Action table (
-                    <Link to="/rule/R014">R014</Link>), adding bonuses or
-                    modifiers. Escape, Move and Rescue have no table but still
-                    require a 2D6 roll. All Actions must be chosen before any
-                    are resolved.
+                    <Link to="/rule/R014" className="ruleTag">
+                        R014
+                    </Link>
+                    ), adding bonuses or modifiers. Escape, Move and Rescue have
+                    no table but still require a 2D6 roll. All Actions must be
+                    chosen before any are resolved.
                 </p>
             </RulePage>
         </>

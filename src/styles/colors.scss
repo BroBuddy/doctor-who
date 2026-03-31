@@ -6,8 +6,7 @@
     --white: #fff;
     --light-blue: #ddedfa;
     --purple: #241e59;
-    --turquoise: #25495d;
-    --dark-blue: #151845;
+    --teal: #0f6e56;
 }
 
 $colors: (
@@ -18,8 +17,7 @@ $colors: (
     'white': var(--white),
     'light-blue': var(--light-blue),
     'purple': var(--purple),
-    'turquoise': var(--turquoise),
-    'dark-blue': var(--dark-blue),
+    'teal': var(--teal),
 );
 
 @each $name, $hex in $colors {

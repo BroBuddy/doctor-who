@@ -47,9 +47,14 @@ const sections = [
                     Then choose any 8 Skills for your Doctor. Particularly
                     useful Skills are Aware, Charm, Running and Stealth. You may
                     choose one Skill (only) twice if you wish (see{' '}
-                    <Link to="/rule/R013">R013</Link> for Skill information).
-                    You then choose one Ability (see{' '}
-                    <Link to="/rule/R017">R017</Link>).
+                    <Link to="/rule/R013" className="ruleTag">
+                        R013
+                    </Link>{' '}
+                    for Skill information). You then choose one Ability (see{' '}
+                    <Link to="/rule/R017" className="ruleTag">
+                        R017
+                    </Link>
+                    ).
                 </p>
                 <p>
                     <em>
@@ -73,7 +78,11 @@ const sections = [
                     the Companion card. Like the Doctor cards, each Companion
                     card details Qualities, Skills and Abilities along with
                     their ‘native’ Era which is the Era where they can be
-                    encountered (see <Link to="/rule/R004">R004</Link>).
+                    encountered (see{' '}
+                    <Link to="/rule/R004" className="ruleTag">
+                        R004
+                    </Link>
+                    ).
                 </p>
                 <p>
                     If you created your own Doctor, we have provided 3 new

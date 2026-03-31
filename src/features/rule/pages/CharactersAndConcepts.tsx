@@ -73,7 +73,10 @@ const sections = [
                 Some Characters have keyword, such as Leader or UNIT, referenced
                 by Adventures, Enemies or on cards. A complete description of
                 Skills and Keywords can be found in{' '}
-                <Link to="/rule/R013">R013</Link>.
+                <Link to="/rule/R013" className="ruleTag">
+                    R013
+                </Link>
+                .
             </p>
         ),
     },
@@ -82,11 +85,13 @@ const sections = [
         content: (
             <p>
                 Some Characters, especially TARDIS Characters (
-                <Link to="/rule/R002">R002</Link>) or Allies, also have certain
-                abilities that might help in your Adventures, such as adding +1
-                to certain Actions or bonuses in certain situations. To use the
-                Ability of a TARDIS Character often requires spending Luck
-                points.
+                <Link to="/rule/R002" className="ruleTag">
+                    R002
+                </Link>
+                ) or Allies, also have certain abilities that might help in your
+                Adventures, such as adding +1 to certain Actions or bonuses in
+                certain situations. To use the Ability of a TARDIS Character
+                often requires spending Luck points.
             </p>
         ),
     },
@@ -130,14 +135,23 @@ const sections = [
         content: (
             <p>
                 You gain Victory Points (VP) for successfully completing
-                Adventures (<Link to="/rule/R006">R006</Link>) where you Defeat
-                the Enemy (<Link to="/rule/R007">R007</Link>). Each Goal on an
-                Enemy Sheet has VP shown next to it. You can also gain bonus VP
-                in other ways, such as meeting Historical Icons such as William
-                Shakespeare. Gaining VP also can make Adventures more difficult
-                and also affect what Enemies you encounter (see{' '}
-                <Link to="/rule/R018">R018</Link>). If you gain 30 VP then you
-                have won the game.
+                Adventures (
+                <Link to="/rule/R006" className="ruleTag">
+                    R006
+                </Link>
+                ) where you Defeat the Enemy (
+                <Link to="/rule/R007" className="ruleTag">
+                    R007
+                </Link>
+                ). Each Goal on an Enemy Sheet has VP shown next to it. You can
+                also gain bonus VP in other ways, such as meeting Historical
+                Icons such as William Shakespeare. Gaining VP also can make
+                Adventures more difficult and also affect what Enemies you
+                encounter (see{' '}
+                <Link to="/rule/R018" className="ruleTag">
+                    R018
+                </Link>
+                ). If you gain 30 VP then you have won the game.
             </p>
         ),
     },
@@ -148,9 +162,12 @@ const sections = [
                 Both Luck and VP need tokens to help a player keep score of
                 current totals on their TARDIS Mat. Other tokens are needed to
                 track TARDIS Qualities, plus Turns, Danger and Knowledge totals
-                during Adventures (<Link to="/rule/R006">R006</Link>). Tokens
-                might also be useful to track Locations where Characters are in
-                an Adventure and where the TARDIS landed.
+                during Adventures (
+                <Link to="/rule/R006" className="ruleTag">
+                    R006
+                </Link>
+                ). Tokens might also be useful to track Locations where
+                Characters are in an Adventure and where the TARDIS landed.
             </p>
         ),
     },
@@ -159,12 +176,24 @@ const sections = [
         content: (
             <p>
                 The Doctor, Companions and Friends (
-                <Link to="/rule/R002">R002</Link>) all have Character cards to
-                show their Qualities, Skills and Abilities. Each Gadget (r00
-                <Link to="/rule/R005">R005</Link>5), including TARDIS Gadgets (
-                <Link to="/tardis/T004">T004</Link>), also has a card. There is
-                also a deck of Idea cards (<Link to="/rule/R003">R003</Link>).
-                More cards of all types will be released in future expansions.
+                <Link to="/rule/R002" className="ruleTag">
+                    R002
+                </Link>
+                ) all have Character cards to show their Qualities, Skills and
+                Abilities. Each Gadget (r00
+                <Link to="/rule/R005" className="ruleTag">
+                    R005
+                </Link>
+                5), including TARDIS Gadgets (
+                <Link to="/tardis/T004" className="ruleTag">
+                    T004
+                </Link>
+                ), also has a card. There is also a deck of Idea cards (
+                <Link to="/rule/R003" className="ruleTag">
+                    R003
+                </Link>
+                ). More cards of all types will be released in future
+                expansions.
             </p>
         ),
     },
