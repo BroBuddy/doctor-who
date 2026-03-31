@@ -1,5 +1,5 @@
 export type Tardis = {
     tag: string
     title: string
-    description: string
+    description?: string
 }

@@ -9,6 +9,7 @@ import { Suspense } from 'react'
 import Preloader from './components/Preloader.tsx'
 import AdventureRouter from './features/adventure/AdventureRouter.tsx'
 import EnemyRouter from './features/enemy/EnemyRouter.tsx'
+import RandomVortexDestinationMatrix from './features/tardis/pages/RandomVortexDestinationMatrix.tsx'
 
 const router = createBrowserRouter([
     {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
             { path: '/', element: <Game /> },
             { path: '/booklet', element: <BookletOverview /> },
             { path: '/helper', element: <HelperOverview /> },
+            {
+                path: '/tardis/TM02',
+                element: <RandomVortexDestinationMatrix />,
+            },
             { path: '/tardis/:tag', element: <TardisDetail /> },
             ...RuleRouter,
             ...AdventureRouter,

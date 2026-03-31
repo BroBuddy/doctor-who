@@ -421,47 +421,6 @@ export const tardisData: Tardis[] = [
     {
         tag: 'TM02',
         title: 'Random Vortex Destination Matrix',
-        description: `
-            <table class="text-md">
-                <thead>
-                    <tr>
-                        <td class="w-4"><strong>D6</strong></td>
-                        <td><strong>1</strong></td>
-                        <td><strong>2</strong></td>
-                        <td><strong>3</strong></td>
-                        <td><strong>4</strong></td>
-                        <td><strong>5</strong></td>
-                        <td><strong>6</strong></td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>1</strong></td>
-                        <td>A001</td><td>A002</td><td>A003</td><td>A004</td><td>A005</td><td>A006</td>
-                    </tr>
-                    <tr>
-                        <td><strong>2</strong></td>
-                        <td>A007</td><td>A008</td><td>A009</td><td>A010</td><td>A011</td><td>A012</td>
-                    </tr>
-                    <tr>
-                        <td><strong>3</strong></td>
-                        <td>A013</td><td>A014</td><td>A015</td><td>A016</td><td>A017</td><td>A019</td>
-                    </tr>
-                    <tr>
-                        <td><strong>4</strong></td>
-                        <td>A020</td><td>A021</td><td>A023</td><td>A024</td><td>A020</td><td>A021</td>
-                    </tr>
-                    <tr>
-                        <td><strong>5</strong></td>
-                        <td>A001</td><td>A002</td><td>A003</td><td>A004</td><td>A005</td><td>A013</td>
-                    </tr>
-                    <tr>
-                        <td><strong>6</strong></td>
-                        <td>A007</td><td>A014</td><td>A009</td><td>A015</td><td>A011</td><td>A017</td>
-                    </tr>
-                </tbody>
-            </table>
-        `,
     },
     {
         tag: 'T00',
