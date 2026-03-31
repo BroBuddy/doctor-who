@@ -189,10 +189,10 @@ function Incidents() {
                     Enemy Action roll. When this happens, roll 2D6 on the table
                     below for the current Phase and apply the result.
                 </p>
-                <table className="text-sm">
+                <table>
                     <thead>
                         <tr>
-                            <td className="w-4">
+                            <td>
                                 <strong>2D6</strong>
                             </td>
                             <td>

@@ -18,13 +18,11 @@ export const formatYear = (year: number) => {
 }
 
 export const makeUrlsClickable = (content: string) => {
-    if (!content) return
+    if (!content) return ''
 
     const rulesRegex = /[R]\d{3}[A-Z]?/g
-    const transformedText = content.replace(rulesRegex, (match: string) => {
+    return content.replace(rulesRegex, (match: string) => {
         const ruleId = match.replace(/\s+/g, '-')
-        return `<a href="/rule/${ruleId}" class="font-mono">${ruleId}</a>`
+        return `<span data-rule-link="${ruleId}" class="pointer text-bold text-purple">${ruleId}</span>`
     })
-
-    return transformedText
 }

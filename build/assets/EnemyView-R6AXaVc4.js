@@ -1,0 +1,1 @@
+import{n as e}from"./enemy-BRS97FAK.js";export{e as default};

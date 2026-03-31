@@ -33,7 +33,7 @@ function RandomVortexDestinationMatrix() {
                             <span key={colIndex}>
                                 <Link
                                     to={`/adventure/${tag}`}
-                                    className="px-2 pt-1 pb-2 w-3 bg-light-blue rounded mr-1 mb-1 text-center"
+                                    className="p-2 w-4 bg-light-blue rounded mr-1 mb-1 text-center"
                                 >
                                     <span className="text-sm">{tag}</span>
                                 </Link>

@@ -284,7 +284,11 @@ export const tardisData: Tardis[] = [
         title: 'Imposter',
         description: `
             <p>To your horror, you discover that one of your Companions is not real — replaced by an illusion, a robot duplicate or some other doppelganger. If you have no Companion, ignore this event.</p>
-            <p>Roll 1D6: 1–3: The imposter begins an Attack Conflict; 4–6: The imposter collapses without further incident.</p>
+            <p>Roll 1D6:</p>
+            <ul>
+                <li><strong>1–3:</strong> The imposter begins an Attack Conflict</li>
+                <li><strong>4–6:</strong> The imposter collapses without further incident.</li>
+            </ul>
             <p>Then roll 1D6 to see how you can recover your Companion, who will be held in the Enemy Lair and must be Rescued with no Escape Actions possible:</p>
             <ul>
                 <li><strong>1–3:</strong> Return to your most recent Adventure, considered to be the Defeat Phase with the same Enemy and Goal as before. Set Danger to 12 and Knowledge to 0.</li>
@@ -302,7 +306,13 @@ export const tardisData: Tardis[] = [
             <ul>
                 <li><strong>1–3:</strong> No encounter.</li>
                 <li><strong>4–5:</strong> Encounter 1D3+1 Daleks (each Brains 1, Brawn 8, Bravery 3, Troop). Roll 1D6 — if the result is equal or less than the number of Daleks, they are led by the Supreme Red Dalek (Brains 5, Brawn 8, Bravery 5, Leader). You must Evade (Running 8) or Surrender (Captured 9). If Captured by the Supreme Dalek, choose to lose 2 Luck or 1 Idea card. On a failed Escape Action, roll 1D6: on a 1 (1–2 if Captured by the Supreme Dalek), you are exterminated and the game is over.</li>
-                <li><strong>6–7:</strong> The Crucible has arrived in orbit somewhere. Roll for a Random Destination (TM02) with a Military Enemy option (roll again if none). Begin the Adventure in the Dilemma Phase, add +1 Danger and roll 1D6 for the Enemy: 1–3: E002; 4–6: E015. Immediately encounter this Enemy. If you escape the Crucible, go to that Adventure immediately. If you roll 4–7 here again, have an Enemy Encounter instead.</li>
+                <li><strong>6–7:</strong> The Crucible has arrived in orbit somewhere. Roll for a Random Destination (TM02) with a Military Enemy option (roll again if none). Begin the Adventure in the Dilemma Phase, add +1 Danger and roll 1D6 for the Enemy:
+                    <ul>
+                        <li><strong>1–3:</strong> E002</li>
+                        <li><strong>4–6:</strong> E015. Immediately encounter this Enemy. If you escape the Crucible, go to that Adventure immediately.</li>
+                        <li>If you roll <strong>4–7</strong> here again, have an Enemy Encounter instead.</li>
+                    </ul>
+                </li>
                 <li><strong>8+:</strong> The TARDIS is consumed by the nuclear furnace inside the heart of the Crucible. The game is over.</li>
             </ul>
         `,
@@ -323,7 +333,12 @@ export const tardisData: Tardis[] = [
                     </ul>
                 </li>
             </ul>
-            <p><strong>Escaping the Shadow Proclamation:</strong> If Captured, after any failed Escape Action roll 1D6: 1: You are executed; 2–3: Visited by the Shadow Architect (as above with -1 to Diplomacy); 4–6: No additional event.</p>
+            <p><strong>Escaping the Shadow Proclamation:</strong> If Captured, after any failed Escape Action roll 1D6:</p>
+            <ul>
+                <li><strong>1:</strong> You are executed</li>
+                <li><strong>2–3:</strong> Visited by the Shadow Architect (as above with -1 to Diplomacy)
+                <li><strong>4–6:</strong> No additional event.</li>
+            </ul>
             <p>If you Evade or Escape, make a Move 8 Action to reach the TARDIS and an Engineer 9 or Computers 9 roll to remove an energy barrier. If you fail either roll, roll 1D6: on 5+, have an encounter as above with -2 to any Diplomacy roll.</p>
         `,
     },
@@ -343,7 +358,7 @@ export const tardisData: Tardis[] = [
         tag: 'TM01',
         title: 'Temporal Destination Matrix',
         description: `
-            <table class="text-sm">
+            <table>
                 <thead>
                     <tr>
                         <td class="w-12"><strong>Era Destination</strong></td>

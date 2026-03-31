@@ -1,0 +1,1 @@
+import{t as e}from"./rule-Dy6Ff6L_.js";export{e as default};

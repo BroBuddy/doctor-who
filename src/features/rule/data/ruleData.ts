@@ -70,7 +70,7 @@ export const ruleData: Rule[] = [
         description: `
             <p>Your Enemies also get to take Actions every Turn. The Enemy Action roll represents the Enemy furthering their plans, patrolling Locations and attempting to capture or exterminate you. It also includes random events — helpful and problematic — such as being separated from Companions or receiving unexpected help.</p>
             <p>An Enemy Action roll takes place every Turn after all Actions and Encounters are resolved. Roll 2D6 and consult the table below depending on the current Phase:</p>
-            <table class="text-sm">
+            <table>
                 <thead>
                     <tr>
                         <td class="w-4"><strong>Roll</strong></td>
@@ -154,7 +154,7 @@ export const ruleData: Rule[] = [
         description: `
             <p>When the Doctor and Companions encounter Enemies or hostile Characters, a Conflict can start. Conflicts are varied — the Cybermen might start an Attack Conflict, the Great Intelligence a Mind Control Conflict, or the Weeping Angels a Terrify Conflict. There are 9 different Conflict types.</p>
             <p>Each Conflict is resolved with a 2D6 roll, matching a Quality total of the Enemy against a Quality total of your Characters. The target number is 7, modified by the difference between your Characters' Quality total and the Enemy Quality total. A natural 2 is always a failure, a natural 12 always a success. A Luck point may always be used to re-roll a Conflict.</p>
-            <table class="text-sm">
+            <table>
                 <thead>
                     <tr>
                         <td><strong>Conflict Type</strong></td>
@@ -319,7 +319,7 @@ export const ruleData: Rule[] = [
         description: `
             <p>Even the Doctor cannot always win and must suffer some consequence — minor or devastating. If you lose an Adventure, roll 2D6 on the table below before checking if a Companion Leaves (R002). You may NOT use Luck to re-roll on the Setback Table.</p>
             <p><strong>Modifiers:</strong> -1 if the Enemy had +1 Danger, -2 if +2 Danger or greater. -1 if the Goal had 6 VP, -2 if 7 VP or greater. If you cannot lose enough Luck, lose VP instead. If you cannot lose VP, you must regenerate (see below).</p>
-            <table class="text-sm">
+            <table>
                 <thead>
                     <tr>
                         <td class="w-5"><strong>Result</strong></td>
@@ -404,7 +404,7 @@ export const ruleData: Rule[] = [
         title: 'Companion Personalities',
         description: `
             <p>The brave souls who travel with the Doctor are much more than just a set of Qualities and Skills. These rules make Companions more varied and interesting. When you gain a new Companion with no listed Personalities, roll on the table below. At the end of an Adventure you may spend 3 Luck to buy any new Personality trait for a Companion. A Companion may never have more than 2 Personality traits.</p>
-            <table class="text-sm">
+            <table>
                 <thead>
                     <tr>
                         <td class="w-4"><strong>D6</strong></td>
@@ -495,7 +495,7 @@ export const ruleData: Rule[] = [
         title: 'Enemy Tables',
         description: `
             <p>When an Enemy is revealed, find the Enemy keyword on the Adventure sheet and roll 1D6 on the entries below to find the actual Enemy. Less dangerous Enemies appear on low rolls and more deadly foes on higher rolls. The D6 roll is modified by your current VP total, which also affects Danger and Scheme values.</p>
-            <table class="text-sm">
+            <table>
                 <thead>
                     <tr>
                         <td><strong>Current VP</strong></td>

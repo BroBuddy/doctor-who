@@ -1,5 +1,5 @@
 import { useEffect, useMemo } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { Headline } from '@/components/Headline'
 import { getRuleByTag } from '../services/RuleService'
 import { useHistory } from '@/features/helper/hooks/useHistory'
@@ -11,6 +11,15 @@ function RuleDetail() {
     const rule = useMemo(() => getRuleByTag(String(tag)), [tag])
     const transformedContent = makeUrlsClickable(rule.description as string)
     const { addToHistory } = useHistory()
+    const navigate = useNavigate()
+
+    const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+        const target = e.target as HTMLElement
+        const ruleId = target.dataset.ruleLink
+        if (ruleId) {
+            navigate(`/rule/${ruleId}`)
+        }
+    }
 
     useEffect(() => {
         addToHistory(rule.tag, rule.title)
@@ -28,6 +37,7 @@ function RuleDetail() {
 
             <Card>
                 <div
+                    onClick={handleClick}
                     dangerouslySetInnerHTML={{
                         __html: String(transformedContent),
                     }}
