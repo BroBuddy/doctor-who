@@ -20,9 +20,7 @@ function Header({ basePath, tabs, data }: HeaderProps) {
     return (
         <header className="header mb-4">
             <div className="bg-black p-2">
-                <strong className="text-white text-md">
-                    {data.tag}. {data.title}
-                </strong>
+                <strong className="text-white text-md">{data.title}</strong>
             </div>
 
             <nav className="bg-purple p-2">

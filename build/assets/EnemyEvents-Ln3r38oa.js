@@ -1,0 +1,1 @@
+import{a as e}from"./enemy-BY6PUgPT.js";export{e as default};

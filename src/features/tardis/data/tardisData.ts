@@ -662,9 +662,9 @@ export const tardisData: Tardis[] = [
             You must now guard the Vault between your Adventures and build a rapport with Missy as she atones for her past crimes and you ensure her pledges are genuine. However it is unwise to keep the Time Vault within your TARDIS, due to possible interstitial anomalies, so you must choose a suitable planet (with 0 Danger) where the vault can be left.</p>
             <p>When you have done this and left the Vault there, you may return to the vault after each Adventure (add +1 to TARDIS roll to get there). Roll 1D6: On a result of 2+ you need not have an Adventure where the Vault is located (unless you wish to). If you don’t have an Adventure (or before it starts if you do), you may spend 1 Luck to visit Missy in the Vault and make a Charm roll (using Charm from only the Doctor and adding +1 per previous visit):</p>
             <ul>
-                <li>2-7: Missy is still in contemplation – no further result</li>
-                <li>8-11: Missy offers help and advice – add +2 to one Brains or Skill (using a Skill which Miss has – see E032) roll in your next Adventure</li>
-                <li>12+: Missy is redeemed – gain +3 VP and see <strong>Q12c</strong></li>
+                <li><strong>2-7:</strong> Missy is still in contemplation – no further result</li>
+                <li><strong>8-11:</strong> Missy offers help and advice – add +2 to one Brains or Skill (using a Skill which Miss has – see E032) roll in your next Adventure</li>
+                <li><strong>12+:</strong> Missy is redeemed – gain +3 VP and see <strong>Q12c</strong></li>
             </ul>
             <p>Note that if you roll E032 as an Enemy in any Adventure, Missy has escaped from the Time Vault, all her empty promises forgotten. Lose 3 VP and you cannot progress further in Q12. Take a -1 penalty in any Encounter option rolls with Missy.</p>
             <p><strong>Q12c. Redemption</strong><br />

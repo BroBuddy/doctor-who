@@ -1,1 +1,0 @@
-import{t as e}from"./rule-Ckh8Wk95.js";export{e as default};

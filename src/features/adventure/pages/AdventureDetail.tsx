@@ -5,18 +5,18 @@ import useGameStore from '@/features/game/store/useGameStore'
 import Header, { type NavItem } from '@/components/Header'
 import Preloader from '@/components/Preloader'
 
-const adventureTabs: NavItem[] = [
-    { label: 'Adventure', path: '' },
-    { label: 'Locations', path: '/locations' },
-    { label: 'Plots', path: '/plots' },
-    { label: 'Characters', path: '/characters' },
-    { label: 'Specials', path: '/specials' },
-]
-
 function AdventureDetail() {
     const { tag } = useParams()
     const adventure = useMemo(() => getAdventureByTag(String(tag)), [tag])
     const setAdventure = useGameStore((state) => state.setAdventure)
+
+    const adventureTabs: NavItem[] = [
+        { label: String(tag), path: '' },
+        { label: 'Locations', path: '/locations' },
+        { label: 'Plots', path: '/plots' },
+        { label: 'Characters', path: '/characters' },
+        { label: 'Specials', path: '/specials' },
+    ]
 
     useEffect(() => {
         if (adventure) {
