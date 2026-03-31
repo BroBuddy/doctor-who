@@ -180,11 +180,11 @@ const sections = [
                     R002
                 </Link>
                 ) all have Character cards to show their Qualities, Skills and
-                Abilities. Each Gadget (r00
+                Abilities. Each Gadget (
                 <Link to="/rule/R005" className="ruleTag">
                     R005
                 </Link>
-                5), including TARDIS Gadgets (
+                ), including TARDIS Gadgets (
                 <Link to="/tardis/T004" className="ruleTag">
                     T004
                 </Link>
