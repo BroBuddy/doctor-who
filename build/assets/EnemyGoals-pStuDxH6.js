@@ -1,0 +1,1 @@
+import{i as e}from"./enemy-ClZK4E_U.js";export{e as default};

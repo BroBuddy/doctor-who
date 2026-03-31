@@ -46,7 +46,7 @@ function AdventureSpecials() {
                 )}
 
                 {character.skills && (
-                    <div className="flex flex-wrap">
+                    <div className="flex flex-wrap mb-3">
                         {character.skills.map((item: string) => (
                             <div key={item}>
                                 <Badge text={item} variant="light" />

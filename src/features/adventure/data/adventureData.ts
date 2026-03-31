@@ -4602,6 +4602,635 @@ const A013: Adventure = {
     ],
 }
 
+const A014: Adventure = {
+    id: 14,
+    tag: 'A014',
+    title: 'Dundra System',
+    year: 5134,
+    tardis: 10,
+    era: 'Twilight Era',
+    type: 'Space',
+    description:
+        "The TARDIS has landed on a large spaceship that looks like a freighter or survey vessel of some kind and is at least two galaxies away from Earth. The ship's corridors are dark and grimy and your footsteps echo loudly in narrow metal walkways. Computer screens scroll automatically as you explore. Is the ship deserted or is the crew just confining themselves to a smaller area?",
+    stats: {
+        danger: 0,
+        knowledge: 5,
+        vp: 0,
+    },
+    special:
+        'If you have any Ally, you may use scanners by spending 1 Luck to cancel your first Enemy Encounter and just reveal the Enemy. Ship Corridors: (Dark, Move 2) The corridors on the ship look almost identical and run on reduced lighting to save energy. You may only choose Explore or Move Actions here (+2 to Move Actions). If Captured here, roll for a new Location. If you have a Sonic Screwdriver you may pay 1 Luck to cancel a Dark keyword this Turn. Encounter (D6, +1 to roll if Discover Phase): 1: Enemy encounter; 2: Enemy event; 3: Incident; 4-5: None; 6: Character event; 7: Lost (Incident).',
+    enemy: [
+        { roll: '1', name: 'Temporal' },
+        { roll: '2-3', name: 'Villain' },
+        { roll: '4', name: 'Military' },
+        { roll: '5-6', name: 'Criminal' },
+    ],
+    locations: [
+        {
+            roll: '1',
+            name: 'Cargo Bay',
+            move: 8,
+            terrain: 'Dark',
+            description:
+                'A small hangar filled with containers and where various equipment and supplies for the ship are stored. Add +1 to Investigate Actions here. You may spend 2 Luck (reduced by 1 for each Science here, min 1) to gain +1 Knowledge (once only).',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                { roll: '2-3', description: 'No event' },
+                { roll: '4', description: 'Character event' },
+                {
+                    roll: '5-6',
+                    description:
+                        'If you make an Aware 8 roll, gain +1 Knowledge',
+                },
+                { roll: '7', description: 'Servo-robots' },
+            ],
+        },
+        {
+            roll: '2',
+            name: 'Science Laboratory',
+            move: 7,
+            terrain: null,
+            description:
+                'A small but well-equipped laboratory that is filled with sensitive and specialised monitoring sensors for collecting astronomical data. If a TARDIS Character with Science remains here for 1 Turn, they gain +1 Brains until end of the Adventure (non-cumulative). Add +1 to Research (Science) and Plan (Science) Actions here.',
+            encounter: 'D6',
+            rolls: [
+                { roll: '1-2', description: 'Scientist' },
+                { roll: '3-4', description: 'No event' },
+                {
+                    roll: '5-6',
+                    description: 'Make a Science 8 roll to gain +1 Knowledge',
+                },
+            ],
+        },
+        {
+            roll: '3',
+            name: 'Maintenance Area',
+            move: 7,
+            terrain: null,
+            description:
+                'An area full of partly-constructed or repaired equipment. If a TARDIS Character with Engineer remains here for 1 Turn, they gain +1 Brains until end of the Adventure (non-cumulative). Add +1 to Research (Engineer) and Plan (Engineer) Actions here.',
+            encounter: 'D6',
+            rolls: [
+                { roll: '1-2', description: 'Engineer' },
+                { roll: '3-4', description: 'No event' },
+                {
+                    roll: '5',
+                    description: 'Talia McDowell (Special Character)',
+                },
+                {
+                    roll: '6',
+                    description:
+                        'If you make an Engineer 8 roll, gain +1 Knowledge or add Engineer to any Prevent Action rolls',
+                },
+            ],
+        },
+        {
+            roll: '4',
+            name: 'Crew Quarters',
+            move: 7,
+            terrain: null,
+            description:
+                'The cramped and basic quarters where the personnel aboard the ship try to relax. Add +1 to Seek Information Actions here. You may spend 1 Luck to have a Character event, spend 3 Luck to meet a Character of your choice (includes Special Characters, not Stowaway or Servo-robots) or spend 2 Luck to roll for a Plot event.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                { roll: '2-4', description: 'No event' },
+                { roll: '5+', description: 'Character event' },
+            ],
+        },
+        {
+            roll: '5',
+            name: 'Control Deck',
+            move: 7,
+            terrain: null,
+            description:
+                'The bridge of the ship and where navigational operations are co-ordinated so that the data received is as accurate as possible. Add +1 to Prevent and Plan Actions here. If you make a Computers 8 roll as an Action, gain +1 Knowledge and cancel Dark at all Locations. If current Danger is 15+ you may spend 2 Luck to reduce Danger by 1.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                { roll: '2', description: 'No event' },
+                { roll: '3-4', description: 'Character event' },
+                { roll: '5+', description: 'Captain' },
+            ],
+        },
+        {
+            roll: '6',
+            name: 'Medical Laboratory',
+            move: 7,
+            terrain: null,
+            description:
+                'A fully-equipped bay for dealing with medical emergencies and analysing biological samples. If a Character is killed here, you may spend Luck equal to their Bravery to revive them (once only per Character). You may spend 1 Luck to gain a MedKit (Gadget) here. Add +1 to Research (Medicine) and Plan (Medicine) Actions here.',
+            encounter: 'D6',
+            rolls: [
+                { roll: '1-2', description: 'Medic' },
+                { roll: '3-4', description: 'No event' },
+                { roll: '5', description: 'AX-L5 (Special Character)' },
+                {
+                    roll: '6',
+                    description: 'Make a Medicine 8 roll to gain +1 Knowledge',
+                },
+            ],
+        },
+    ],
+    plots: [
+        {
+            roll: '2-4',
+            name: 'Mysterious Escape Pod',
+            description:
+                'A small craft has been brought in and stored in the Cargo Bay. Gain +1 Knowledge if you Move there and make a Science 7 roll. Add +1 Danger.',
+        },
+        {
+            roll: '5',
+            name: 'Brutal Death',
+            description:
+                'Someone has been found murdered nearby and their corpse discovered. Roll 1D6 and if result is a 1, discard a random Ally. Gain +1 Knowledge (or +2 Knowledge with a successful Medicine 7 roll).',
+        },
+        {
+            roll: '6',
+            name: 'Strange Illness',
+            description:
+                'An unusual virus is affecting the crew. At the end of each Turn roll 1D6 for each Human Character – on a roll of 1 they Move to Crew Quarters and can take no Action until you make a Medicine 8 roll as an Action there.',
+        },
+        {
+            roll: '7',
+            name: 'Communications Fault',
+            description:
+                'You learn that the ship has suffered a total communications blackout – you are cut off from any outside help. Gain +1 Knowledge. If you make a Computers 9 roll add +1 to Prevent Actions.',
+        },
+        {
+            roll: '8',
+            name: 'Abnormal Energy Readings',
+            description:
+                'The ship is picking up very strange data – could it be from the nearby star or is it from something hidden? If you make a Computers 9 roll, gain +1 Knowledge.',
+        },
+        {
+            roll: '9',
+            name: 'Sabotage',
+            description:
+                "You learn that the ship's systems are being deliberately harmed – who, or what, could be responsible? Take a -2 penalty on your next Charm roll unless you can make an Engineer 9 roll. Also gain +1 Knowledge if successful.",
+        },
+        {
+            roll: '10',
+            name: 'Alien Transmitter',
+            description:
+                'You discover an automatic beacon sending out what appears to be a homing signal. If you make a successful Engineer 7 roll, choose to gain +1 Knowledge or reduce Danger by -2.',
+        },
+        {
+            roll: '11-12',
+            name: 'Unusual Activity',
+            description:
+                'There have been strange readings from a small restricted area at the far end of the ship (Move 8). If you go there, to enter you must have a Captain Ally or make a Computers 10 roll to bypass the security locks. Once inside, you enter a small lab filled with very high-tech equipment. Add +2 to Investigate Actions here. Encounter (Aware roll): 2-4: Enemy Lair; 5-6: Enemy Encounter; 7: Brutal Death; 8: Enemy event; 9: Traitor (Incident); 10-11: Gain +1 Knowledge; 12+: Gain +2 Knowledge but add +1 Danger.',
+        },
+    ],
+    characters: [
+        {
+            roll: '2-3',
+            name: 'Stowaway',
+            description:
+                'A small female alien who has been hiding from the crew joins you as an Ally. Take -1 to any Charm rolls in other Character encounters with the stowaway. Roll for Plot event.',
+            stats: { brains: 1, brawn: 1, bravery: 1 },
+            skills: ['Aware', 'Charm', 'Stealth'],
+        },
+        {
+            roll: '4',
+            name: 'Security Guards',
+            description:
+                "A team of ship's guards. Make a Charm roll (with -1 per Stealth but add +3 if Danger 10+).",
+            rolls: [
+                {
+                    roll: '2-5',
+                    description:
+                        'Hostile – make a Running 7 roll or become Captured (7) or Attacked (Brawn 8)',
+                },
+                { roll: '6-9', description: 'No further event' },
+                {
+                    roll: '10+',
+                    description:
+                        'The guards become your Allies (1D3+1 in number, each Brains 0, Brawn 2, Bravery 2)',
+                },
+            ],
+        },
+        {
+            roll: '5',
+            name: 'Medic',
+            description:
+                "A clever young physician who is worried about the crew's health. If you make a Charm 9 roll (add +2 if Danger 6+), the Medic becomes an Ally – roll for a Plot event.",
+            stats: { brains: 2, brawn: 1, bravery: 2 },
+            skills: ['Medicine'],
+            infomation: '+1 to Move Actions to Medical Lab.',
+        },
+        {
+            roll: '6',
+            name: 'Engineer',
+            description:
+                'A talented technician that works on the ship. If you make a Charm 9 roll (add +2 if Danger 6+), the Engineer becomes an Ally - roll for a Plot event. You may also automatically Ally any Servo-robot you encounter.',
+            stats: { brains: 2, brawn: 1, bravery: 2 },
+            skills: ['Engineer', 'Running'],
+        },
+        {
+            roll: '7-8',
+            name: 'Scientist',
+            description:
+                'A bright laboratory analyst. If you make a Charm 10 roll (adding +2 if Danger 6+), the Scientist becomes an Ally – roll for a Plot event. The Scientist also gains +1 to Research (Science) Actions.',
+            stats: { brains: 2, brawn: 1, bravery: 2 },
+            skills: ['Science'],
+        },
+        {
+            roll: '9',
+            name: 'Captain',
+            description:
+                "Just reaching retirement, he's seen it all before. Make a Charm roll (add +2 if the Enemy is revealed).",
+            rolls: [
+                { roll: '2-5', description: 'Captured (7)' },
+                {
+                    roll: '6-9',
+                    description: 'He is not convinced by you - event ends',
+                },
+                {
+                    roll: '10+',
+                    description:
+                        'Joins as an Ally - roll for a Plot event. Can automatically Ally any Characters encountered.',
+                },
+            ],
+            stats: { brains: 2, brawn: 2, bravery: 3 },
+            skills: ['Computers', 'Pilot'],
+        },
+        {
+            roll: '10',
+            name: 'Old or New Friends',
+            description:
+                'You may pay 2 Luck to meet Talia McDowell, AX-L5 or any Friend from the Twilight Era.',
+        },
+        {
+            roll: '11-12',
+            name: 'Servo-Robots',
+            description:
+                'Basic robots used for maintenance or menial jobs on the ship. Roll 1D3 for the number encountered. Roll 1D6.',
+            rolls: [
+                {
+                    roll: '1-2',
+                    description:
+                        'The robots start an (Attack) Conflict but you may try to Evade with a Running 6 roll',
+                },
+                { roll: '3-4', description: 'They ignore you – event ends' },
+                { roll: '5-6', description: 'One robot joins you as an Ally' },
+            ],
+            stats: { brains: 1, brawn: 2, bravery: 0 },
+            skills: ['Engineer', 'Machine'],
+        },
+    ],
+    specials: [
+        {
+            id: 1,
+            image: 'talia-mcdowell',
+            name: 'Talia McDowell',
+            description:
+                'You have met Talia McDowell – a young and slightly intense spacecraft engineer who is sometimes more at ease with her computers and tools than with people. Talia will join you as an Ally and is knowledgeable about what has been happening on the ship, so roll for a Plot event.',
+            information:
+                'You may also attempt to make a Charm (10) roll and if successful, Talia joins you as a Companion – gain 1 Luck.',
+            stats: { brains: 3, brawn: 1, bravery: 2 },
+            skills: ['Computers', 'Engineer', 'Pilot', 'Running'],
+        },
+        {
+            id: 2,
+            image: 'AX-L5',
+            name: 'AX-L5',
+            description:
+                "You have met medical robot AX-L5, commonly referred to as 'Axle' by the crew of the ship. AX-L5 joins you as an Ally.",
+            information:
+                'AX-L5 gains +1 to Research (Medicine) Actions and +3 to a Move Action to the Medical Laboratory. Roll 1D6 for AX-L5 and if roll 4+, roll for a Plot event. You may also spend 1 Luck to meet Talia McDowell as she often spends a lot of time with Axle.',
+            stats: { brains: 4, brawn: 1, bravery: 4 },
+            skills: ['Computers', 'Machine', 'Medicine 2', 'Science'],
+        },
+    ],
+}
+
+const A015: Adventure = {
+    id: 15,
+    tag: 'A015',
+    title: 'New York',
+    year: 2022,
+    tardis: 6,
+    era: 'Post-Modern Era',
+    type: null,
+    description:
+        'The TARDIS has landed in the streets of modern New York which is bustling with a myriad of tourists and shoppers from across the globe. Yellow taxi cabs drive along the packed roads passing familiar iconic landmarks such as the Empire State Building or Central Park. It looks so usual and ordinary, but not everything is as it seems and for someone, normal life might soon be changed forever...',
+    stats: {
+        danger: 0,
+        knowledge: 6,
+        vp: 1,
+    },
+    special:
+        "Night will fall after 2D6 Turns and last for 4 Turns. If you have no Companion, you may spend 1 Luck on the first Character event to instead encounter Jane Danning (Special Character). Tour: If you visit 3 or more different Locations (excluding New York Streets) in Discover Phase, gain 1 Idea card and +1 VP. New York Streets: (Exterior, Move 2) You stroll along the packed streets of the city, avoiding the heavy traffic whilst enjoying the iconic surroundings of the immense skyscrapers of the 'Big Apple'. The sounds of car horns are mixed with the smell of hot dogs. Add +1 to Explore Actions but you may not Research here. You may spend 1 Luck point to jump on a New York bus, hire a yellow taxi or take the subway to gain +3 to a Move Action from here. Encounter (D6; -1 if Night): 0: Street Gang; 1-2: Incident; 3-4: No further event; 5-6: Character event.",
+    enemy: [
+        { roll: '1-2', name: 'Military' },
+        { roll: '3-4', name: 'Chameleon' },
+        { roll: '5', name: 'Criminal' },
+        { roll: '6', name: 'Temporal' },
+    ],
+    locations: [
+        {
+            roll: '1',
+            name: 'Statue of Liberty',
+            move: 8,
+            terrain: 'Water, Exterior',
+            description:
+                'The amazing statue that stands in New York Harbour and the symbol of the city across the world. Gain 1 Luck (once only) if you have a Human Companion here. Add +1 to Investigate Actions here. If Enemy are Weeping Angels, add +1 Danger and to the number of Angels encountered.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                { roll: '2', description: 'Incident' },
+                { roll: '3', description: 'None' },
+                {
+                    roll: '4-5',
+                    description: 'Gain +1 Knowledge or roll for Plot event',
+                },
+                { roll: '6+', description: 'Character event' },
+            ],
+        },
+        {
+            roll: '2',
+            name: 'Grand Central Station',
+            move: 7,
+            terrain: null,
+            description:
+                'This incredibly lavish building forms the hub of the extensive underground rail network beneath New York and is busy almost any time of day and night. If Danger less than 10, you may spend 1 Luck to Move from here to any Location as an Action. At Night, roll 1D6 and on 1-3, this Location is Dark.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                { roll: '2', description: 'Incident' },
+                { roll: '3', description: 'None' },
+                { roll: '4', description: 'Plot event' },
+                { roll: '5+', description: 'Character event' },
+            ],
+        },
+        {
+            roll: '3',
+            name: 'Empire State Building',
+            move: 7,
+            terrain: 'Exterior',
+            description:
+                'One of the most recognisable buildings in the city and another iconic symbol of New York. Add +1 to Investigate Actions here. You may spend 1 Luck to either have a Character event or add +2 to a Move Action next turn. If the Enemy are Daleks, add +1 Danger and +1 to number of Daleks encountered.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy Lair' },
+                { roll: '2', description: 'Incident' },
+                { roll: '3', description: 'None' },
+                { roll: '4', description: 'Plot event' },
+                { roll: '5', description: 'Character event' },
+                { roll: '6+', description: 'Gain 1 Luck' },
+            ],
+        },
+        {
+            roll: '4',
+            name: 'Central Park',
+            move: 7,
+            terrain: 'Exterior',
+            description:
+                'The huge and beautiful park that dominates most of Manhattan is where both New Yorkers and tourists flock throughout the year to picnic, walk or visit the Zoo. You may Relax as an Action here. You may spend 1 Luck to have a Character event.',
+            encounter: 'D6 (+1 to roll if Discover Phase, -1 if Night)',
+            rolls: [
+                { roll: '0-1', description: 'Enemy encounter' },
+                { roll: '2', description: 'Street Gang' },
+                { roll: '3', description: 'Enemy event' },
+                { roll: '4', description: 'Incident' },
+                { roll: '5', description: 'None' },
+                { roll: '6', description: 'Character event' },
+                { roll: '7+', description: 'Plot event' },
+            ],
+        },
+        {
+            roll: '5',
+            name: 'Broadway & Times Square',
+            move: 7,
+            terrain: 'Exterior',
+            description:
+                'Best shopping and entertainment in the Big Apple with incredible Broadway shows. You may Relax here as an Action. Add +1 to Seek Information Actions. If the Enemy are Autons, add +1 Danger and +1 to number encountered.',
+            encounter: '2D6 (+2 to roll if Discover Phase)',
+            rolls: [
+                { roll: '2', description: 'Enemy Lair' },
+                { roll: '3-4', description: 'Enemy encounter' },
+                { roll: '5', description: 'Enemy event' },
+                { roll: '6-7', description: 'None' },
+                { roll: '8', description: 'Incident' },
+                {
+                    roll: '9',
+                    description:
+                        'Add +1 to Move Actions next Turn or +1 Luck if Night',
+                },
+                { roll: '10+', description: 'Character event' },
+            ],
+        },
+        {
+            roll: '6',
+            name: 'National American Museum',
+            move: 7,
+            terrain: 'Museum',
+            description:
+                'Houses many rare, precious artefacts and artworks in numerous galleries. A Character with History is +1 Brains here and may Study with +1 to roll. Add +1 VP if Profit Goal. You may Seek Information here using History.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy Lair' },
+                { roll: '2', description: 'Plot event' },
+                { roll: '3', description: 'None' },
+                { roll: '4', description: 'Character event' },
+                {
+                    roll: '5-6',
+                    description:
+                        'Ancient relic - make a Science 7 roll and a History 7 roll and gain +1 Knowledge per success',
+                },
+                { roll: '7', description: 'Gain +1 Knowledge' },
+            ],
+        },
+    ],
+    plots: [
+        {
+            roll: '2-4',
+            name: 'Important Package',
+            description:
+                'The Enemy is searching for an important package. Roll 1D6 for each Ally, on a result of 6, they have it – gain +1 Knowledge. Otherwise, Move to a random location and make an Aware 9 roll to gain +2 Knowledge.',
+        },
+        {
+            roll: '5',
+            name: 'Street Homicide',
+            description:
+                'Someone has been found murdered in a nearby alley and a corpse discovered. Roll 1D6 and if result is a 1, discard random Ally. Gain +1 Knowledge (or +2 Knowledge with a successful Medicine 7 roll).',
+        },
+        {
+            roll: '6',
+            name: 'Alien Hoax',
+            description:
+                'You discover newspapers are reporting that alien ships have been seen in the sky but dismissing it as a hoax... If you have 10 Brains then reveal the Enemy.',
+        },
+        {
+            roll: '7',
+            name: 'News Report',
+            description:
+                'You catch the latest report from Trinity Wells on television – either all your TARDIS Characters gain Aware until the end of the Adventure OR gain +1 Knowledge.',
+        },
+        {
+            roll: '8',
+            name: 'Front',
+            description:
+                "You discover that a large and reputable organisation is really a front for the Enemy's secret plans. You may reveal the Enemy or gain +1 Knowledge. Add +1 to Seek Information Actions using Charm or Stealth.",
+        },
+        {
+            roll: '9',
+            name: 'Missing Persons',
+            description:
+                'Some people have been recently vanishing from the streets of New York in mysterious circumstances. Gain +1 Knowledge. Also gain 1 Luck if you have a native Character with you.',
+        },
+        {
+            roll: '10',
+            name: 'High Alert',
+            description:
+                'The city is on maximum alert for some reason. Everyone is suspicious and nervous. Add +1 to Investigate Actions. Add +1 to the number of Cops encountered with -1 to Charm rolls.',
+        },
+        {
+            roll: '11-12',
+            name: 'Unusual Activity',
+            description:
+                'You hear about strange events happening nearby. Roll 1D6: 1-4: Roll for a random Location and gain +1 Knowledge if you go there, then roll 1D6 and if 1-2 see Enemy Lair (rolling for Enemy first if needed); 5-6: The Rockefeller Centre (Move 7), the tallest New York skyscraper and an incredible experience in events, bars and restaurants. Add +2 to Investigate Actions here. Add +1 to Enemy Action rolls here. Encounter (2D6): 2-3: Enemy Encounter (Lair); 4: Enemy encounter; 5: Enemy event; 6-7: None; 8-9: Gain 1 Luck or pay 1 Luck for +2 Knowledge; 10-12: Character event.',
+        },
+    ],
+    characters: [
+        {
+            roll: '2-3',
+            name: 'Street Gang',
+            description:
+                'A group of young shady-looking individuals. Make a Stealth roll (-1 if Night).',
+            rolls: [
+                { roll: '2-4', description: 'Attacked (Brawn 5)' },
+                { roll: '5-6', description: 'Lose 2 Luck or 1 Gadget' },
+                { roll: '7', description: 'Add +1 Danger' },
+                { roll: '8', description: 'No event' },
+                {
+                    roll: '9-10',
+                    description:
+                        'Whispers from the shadows - pay 1 Luck for a Plot event',
+                },
+                {
+                    roll: '11+',
+                    description:
+                        'One of the gang becomes your Ally – roll for a Plot event',
+                },
+            ],
+            stats: { brains: 1, brawn: 2, bravery: 1 },
+            skills: ['Stealth'],
+        },
+        {
+            roll: '4',
+            name: 'Computer Expert',
+            description:
+                'A talented computer geek. If you make a Charm 9 roll (adding current Danger), the expert becomes your Ally – roll for a Plot event.',
+            stats: { brains: 2, brawn: 1, bravery: 1 },
+            skills: ['Computers'],
+            infomation: '+1 to Research (Computers) Actions.',
+        },
+        {
+            roll: '5',
+            name: 'Cops',
+            description:
+                'A pair of New York cops takes an interest. Make a Charm roll (-1 per Stealth, +3 if Danger 12+).',
+            rolls: [
+                {
+                    roll: '2-5',
+                    description:
+                        'Wanted for questioning – make Running 7 roll or Captured (6) or Attacked (Brawn 5)',
+                },
+                { roll: '6-9', description: 'No further event' },
+                {
+                    roll: '10+',
+                    description:
+                        'The Cops become your Allies (+1 to Investigate, Move and Find Help Actions)',
+                },
+            ],
+            stats: { brains: 1, brawn: 2, bravery: 2 },
+        },
+        {
+            roll: '6',
+            name: 'Businessman',
+            description:
+                'A shrewd banker from Wall Street. Pay 1 Luck or make a Charm 10 roll for the businessman to join you as an Ally - roll for a Plot event.',
+            stats: { brains: 2, brawn: 1, bravery: 1 },
+            skills: ['Aware', 'Diplomacy'],
+            infomation: '+1 to Seek Information Actions.',
+        },
+        {
+            roll: '7',
+            name: 'Tourist',
+            description:
+                'A young foreign student on their first visit to New York. If you pay 2 Luck, see Jane Danning (Special Character) instead. If not, make a Charm 7 roll for the tourist to join you as an Ally. The tourist may know something useful - pay 1 Luck to gain a Plot event.',
+            stats: { brains: 1, brawn: 1, bravery: 1 },
+            skills: ['Charm', 'Running'],
+        },
+        {
+            roll: '8',
+            name: 'Tour Guide',
+            description:
+                'A professional guide showing tourists around New York. If you make a Charm 10 roll (add current Danger), the guide becomes an Ally – roll for Plot event.',
+            stats: { brains: 1, brawn: 1, bravery: 1 },
+            skills: ['Aware', 'Charm', 'History'],
+            infomation: '+1 to Move Actions here.',
+        },
+        {
+            roll: '9',
+            name: 'Reporter',
+            description:
+                'An intrepid journalist after a story. If you make Charm 8 roll, she becomes an Ally – roll for a Plot event.',
+            stats: { brains: 2, brawn: 1, bravery: 1 },
+            skills: ['Aware', 'Charm', 'Running'],
+        },
+        {
+            roll: '10',
+            name: 'Medic',
+            description:
+                'A handsome young medic from a New York hospital. If you make a Charm 9 roll (+2 if Enemy revealed), the medic becomes an Ally - roll for a Plot event.',
+            stats: { brains: 2, brawn: 1, bravery: 1 },
+            skills: ['Charm', 'Medicine'],
+        },
+        {
+            roll: '11-12',
+            name: 'Private Detective',
+            description:
+                'A private eye investigating a case. Make a Stealth roll.',
+            rolls: [
+                {
+                    roll: '2-4',
+                    description: 'Questioned at Gunpoint - +1 Danger',
+                },
+                { roll: '5-7', description: 'He evades you - no event' },
+                {
+                    roll: '8-9',
+                    description:
+                        'He may share information – pay 1 Luck to roll for Plot event',
+                },
+                {
+                    roll: '10+',
+                    description: 'Becomes Ally - roll for a Plot event',
+                },
+            ],
+            stats: { brains: 2, brawn: 2, bravery: 2 },
+            skills: ['Stealth', 'Running'],
+            infomation: '+1 to Investigate Actions.',
+        },
+    ],
+    specials: [
+        {
+            id: 1,
+            image: 'jane-danning',
+            name: 'Jane Danning',
+            description:
+                'You have met Jane Danning – a straight-talking London city girl with a spiky sense of humour. Jane will join you as an Ally. Here on vacation, Jane knows something about what has been happening in New York recently, so roll for a Plot event.',
+            information:
+                'You may also attempt to make a Charm (9) roll and if successful, Jane joins you as a Companion – gain 1 Luck.',
+            stats: { brains: 2, brawn: 2, bravery: 2 },
+            skills: ['Aware', 'Charm', 'Running', 'Stealth'],
+        },
+    ],
+}
+
 export const adventureData: Adventure[] = [
     A001,
     A002,
@@ -4616,4 +5245,6 @@ export const adventureData: Adventure[] = [
     A011,
     A012,
     A013,
+    A014,
+    A015,
 ]
