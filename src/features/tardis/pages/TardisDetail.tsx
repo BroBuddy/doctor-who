@@ -25,7 +25,11 @@ function TardisDetail() {
             </Headline>
 
             <Card>
-                <div dangerouslySetInnerHTML={{ __html: tardis.description }} />
+                <div
+                    dangerouslySetInnerHTML={{
+                        __html: String(tardis.description),
+                    }}
+                />
             </Card>
         </>
     )
