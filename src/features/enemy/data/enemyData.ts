@@ -3804,6 +3804,375 @@ const E030: Enemy = {
     },
 }
 
+const E031: Enemy = {
+    id: 31,
+    tag: 'E031',
+    title: 'Osyris the Chronovore',
+    description:
+        'Osyris is a Chronovore, an amoral energy creature that lives in the Vortex and feeds on Time. Osyris is a particularly vicious Chronovore that is bored with her existence and wishes to dominate lesser races.',
+    special: null,
+    stats: ['+1 Danger', 'Scheme 6', 'Entity', 'Temporal'],
+    encounter: {
+        description:
+            'In the Dilemma Phase, roll 1D6: 1-4: Roll for Enemy event instead; 5-6: Encounter Osyris. In Defeat Phase, you automatically encounter Osyris. (Brains 8, Brawn 8, Bravery 8, Leader) and choose from options below. In Defeat Phase, you automatically encounter Osyris.',
+        table: [
+            {
+                name: 'Conflict',
+                description:
+                    'You must choose a single Character present as a Champion and then roll 1D6, starting the Conflict indicated: 1-2: Attack; 3-4: Mind Control; 5-6: Drain Life-force.',
+            },
+            {
+                name: 'Surrender',
+                description:
+                    'Roll 1D6 (+2 if Danger 10 or less): 1-2: Osyris starts a Conflict (above); 3-5: Captured (8); 6+: Captured (9) at the Temple of Osyris (Lair) - add +1 Danger and roll for a Goal as the Chronovore cannot resist gloating.',
+            },
+            {
+                name: 'Evade',
+                description:
+                    'Make a Running 9 roll to escape, but Osyris is so terrifying that any Human Characters with Bravery 1 or less cannot add Running to the roll. If you fail, start a (Drain Life Force) Conflict with -1 to roll.',
+            },
+            {
+                name: 'Conflict (Outwit)',
+                description:
+                    'You try to bluff your way past the Chronovore. If you fail, choose a different option with -1 to the roll.',
+            },
+        ],
+    },
+    goals: [
+        {
+            roll: '1-2',
+            name: 'Escape Prison',
+            vp: 6,
+            type: 'Resurrection',
+            description:
+                'Osyris is trying to escape from her dimensional containment. If Danger 16+, Osyris gains +1 to all Qualities.',
+            options: [
+                {
+                    name: 'Rebuild the Prison',
+                    description:
+                        'Make a Science 10 roll (add Aware) to research the dimensional co-ordinates. Then take a Prevent Action (adding Science) at a random Location. Add +1 Danger if you fail.',
+                },
+                {
+                    name: 'Banishment',
+                    description:
+                        'Gain 4 Knowledge (2 Knowledge if you have 2 History) then win an (Outwit) Conflict with Osyris.',
+                },
+            ],
+        },
+        {
+            roll: '3-4',
+            name: 'Manufacture Plague',
+            vp: 6,
+            type: 'Apocalypse',
+            description:
+                'Osyris intends to release a deadly virus that will wipe out the entire native population. If Danger 16+, roll 1D6 for each Human Ally - on a roll of 1 the Ally is killed.',
+            options: [
+                {
+                    name: 'Capture Plague Carriers',
+                    description:
+                        'Move to 3 random Locations and in each make a Brawn 12 roll (add Stealth). Encounter Serpent Men (Enemy Events) each time you fail a roll.',
+                },
+                {
+                    name: 'Develop Cure',
+                    description:
+                        'Make a Brains 15 roll (add Medicine) to analyse virus then take a Prevent Action (add Medicine) at any Location where you can Research (Medicine).',
+                },
+            ],
+        },
+        {
+            roll: '5-6',
+            name: 'Attain Material Form',
+            vp: 6,
+            type: 'Resurrection',
+            description:
+                'Osyris is attempting to achieve corporeal existence through an astral portal. Roll a random Location for Portal. If Danger 16+, Osyris gains +1 to all Qualities.',
+            options: [
+                {
+                    name: 'Break Psychic Link',
+                    description:
+                        'Gain 5 Knowledge (2 Knowledge if have 2 Aware) then win (Mind Control) Conflict with Osyris.',
+                },
+                {
+                    name: 'Destroy Portal',
+                    description:
+                        'Take a Prevent Action (+2 if Brawn 12+) at Portal. If you fail, have an Enemy encounter.',
+                },
+            ],
+        },
+    ],
+    events: [
+        {
+            roll: '1-2',
+            name: 'Serpent Men',
+            description:
+                'Horrific servants of Osyris with the heads of giant cobras. Roll 1D3 for number of Serpent Men encountered (add +1 if Danger 8+), each Brains 0, Brawn 4, Bravery 4 (Creature, Minion, Troop). Evade (Running 9 roll) or start an (Attack) Conflict.',
+        },
+        {
+            roll: '3-4',
+            name: 'Elemental Forces',
+            description:
+                'Osyris commands the very elements. If any Characters are at an Exterior Location, roll 1D6 per Location, adding +2 if a Wilderness: 1-3: Take -2 penalty to any Move or Explore Action next turn; 4-5: Lost (Incident); 6+: Character Trapped (see Companion Trapped Incident and apply to random Character in group).',
+        },
+        {
+            roll: '5-6',
+            name: 'Temporal Tsunami',
+            description:
+                'Choose one of your Characters – a Machine is destroyed; a Time Lord is -2 to all Qualities; all other Characters are frozen for the rest of the Adventure. If you Defeat Osyris, TARDIS Characters affected by the tsunami are returned to full attributes/unfrozen. If you lose, the effect is permanent.',
+        },
+    ],
+    lair: {
+        name: 'Temple of Osyris',
+        tags: ['Move 9'],
+        description:
+            'An ancient stone temple, now being restored through the power of Osyris. Gain +1 Knowledge (unless here as captives). Roll 1D6 and on a 1-3 (1-4 if Danger 12+) immediately encounter Serpent Men (see Events, add +1 to number encountered). Inside the temple, add +1 to Rescue Actions, -1 to Stealth rolls, +1 to Enemy Action rolls. Osyris is +1 to all Qualities here. Encounter (Stealth): 2-4: Encounter Osyris; 5-6: Enemy event; 7-8: Temple is empty; 9: Discover ancient hieroglyphs – if you make a Brain 15 roll, gain +2 Knowledge or reveal Goal; 10+: Discover crumbling stone tablet – reveal Goal or if Goal already revealed, take an immediate Prevent Action with +2 to roll.',
+    },
+}
+
+const E032: Enemy = {
+    id: 32,
+    tag: 'E032',
+    title: 'Missy',
+    description:
+        "Your oldest friend and most terrible nemesis has regenerated again – this time into The Mistress, or 'Missy' for short. Although the arrogance and cunning remain as ever, there could be the just the merest hint of empathy and regret in her, alongside psychotic madness...",
+    special:
+        "Missy does not have a Lair – have normal Enemy encounter instead. Due to Missy's insanity, you must see Missy's Mind (Special Rule) before each encounter.",
+    stats: ['+3 Danger', 'Scheme 6', 'Time Lord'],
+    encounter: {
+        description:
+            'Missy is Brains 6, Brawn 3, Bravery 4 (Aware, Charm, Computers, Engineer, Running, Science, Stealth, TARDIS, Leader). If a single Character (except the Doctor) encounters Missy, roll 1D6: On a 1-2, before they can choose an option, she attempts to kill them – start an (Attack) Conflict. If you roll 3-6, or other Characters encounter Missy, choose from options below:',
+        table: [
+            {
+                name: 'Conflict',
+                description:
+                    'Roll 1D6 – on a 1-3, Missy has an alien energy weapon which adds +2 Brawn. If Danger is 15 or less, she attempts a (Capture) Conflict. If Danger is 16+, Missy instead starts an (Attack) Conflict.',
+            },
+            {
+                name: 'Surrender',
+                description:
+                    'Roll 1D6 (+2 if Danger 10 or less): 1-2: Missy starts an (Attack) Conflict; 3-5: Captured (8); 6+: Captured (9), add +1 Danger and roll a further 1D6 – on a result of 4+, roll for a Goal as Missy cannot resist gloating.',
+            },
+            {
+                name: 'Evade',
+                description:
+                    'Make either a Running 8 roll to escape, or a Stealth 8 roll to hide. If you fail, choose another option with -1 to roll.',
+            },
+            {
+                name: 'Conflict (Outwit)',
+                description:
+                    'You try to bluff your way out of trouble. If you fail, choose to Surrender or start a different Conflict.',
+            },
+        ],
+    },
+    goals: [
+        {
+            roll: '1-2',
+            name: 'Alien Allies',
+            vp: 2,
+            type: 'Power',
+            description:
+                'Missy has allied herself with another Enemy - roll on Adventure for a new Enemy, add their Danger, then roll for a Goal. Missy becomes a Minion for that Enemy. When you have an Enemy encounter roll 1D6: 1-2: Missy (above); 3-4: Enemy (Enemy sheet); 5-6: Enemy with Missy. At the end of each Turn, roll 1D6, add Enemy Danger to current Danger. If result 15+ they decide Missy is expendable and become Enemy for the Adventure. Missy then becomes your Ally and you must Prevent Enemy Goal.',
+            options: [
+                {
+                    name: 'Convince Missy',
+                    description:
+                        'Gain 2 Knowledge then win an (Outwit) Conflict against Missy using only the Doctor.',
+                },
+            ],
+        },
+        {
+            roll: '3-4',
+            name: 'Hunt the Doctor',
+            vp: 5,
+            type: 'Capture',
+            description:
+                'Missy is seeking revenge against you. Random Character selection will always target the Doctor. If you do not Defeat Missy then you are killed - the game is over.',
+            options: [
+                {
+                    name: 'Escape in the TARDIS',
+                    description:
+                        'Return TARDIS Characters to TARDIS Landing Location and make a TARDIS 9 roll to remove traps that Missy has set around it. You only gain 2 VP. If you fail the roll, add +1 Danger and encounter Missy.',
+                },
+                {
+                    name: 'Trick Missy',
+                    description:
+                        'Win an (Outwit) Conflict against Missy. If you fail, add +1 Danger and start a (Capture) Conflict.',
+                },
+            ],
+        },
+        {
+            roll: '5-6',
+            name: 'Escape Justice',
+            vp: 5,
+            type: 'Quest',
+            description:
+                'Missy is trying to evade the Shadow Proclamation and is on the run. She is +1 to all Qualities. If you are the 12th Doctor and you Defeat Missy, you may see Q12a.',
+            options: [
+                {
+                    name: 'Trap Missy',
+                    description:
+                        'Win a (Trap) Conflict against Missy. If you fail, add +1 Danger and become Captured (9).',
+                },
+                {
+                    name: 'Trick Missy',
+                    description:
+                        'Win an (Outwit) Conflict against Missy. If you fail, add +1 Danger and start an (Attack) Conflict.',
+                },
+            ],
+        },
+    ],
+    events: [
+        {
+            roll: '1-2',
+            name: 'Hostages',
+            description:
+                'If you have any captured Characters then you must Surrender to Missy (see Encounter) by the end of next Turn or the captives will be killed.',
+        },
+        {
+            roll: '3-4',
+            name: 'Taunted',
+            description:
+                'Missy loves to taunt the Doctor. Choose to either add +1 Danger or the Doctor must take a Challenge Action next Turn with +1 to the roll.',
+        },
+        {
+            roll: '5-6',
+            name: 'Ally Killed',
+            description:
+                'You find the burnt remains of one of your Allies – discard an Ally. If you have no Allies, lose 2 Luck.',
+        },
+    ],
+    lair: {
+        name: 'Missy’s Mind',
+        tags: [],
+        description:
+            'Missy is capricious and her mood can change suddenly. Roll 1D6 (+1 if Danger 10+): 1: Wistful: The Doctor is +1 Brains in a Conflict this turn. A lone Character Conflict will be (Capture) rather than (Attack). 2-4: Impulsive: Roll 1D6 again: 1-2: Chatty – gain +1 Knowledge; 3-4: Evasive – the encounter ends; 5-6: Combative - you must Evade or start an (Attack) Conflict. 5: Bored: if you Evade, Missy will not bother to chase you and the encounter ends. 6-7: Angry: You cannot start an (Outwit) Conflict in this encounter. If you choose to Surrender, have a -2 penalty to D6 roll.',
+    },
+}
+
+const E033: Enemy = {
+    id: 33,
+    tag: 'E033',
+    title: 'Demoreans',
+    description:
+        'The Demoreans are reptilian aliens that feed off temporal energy from Time Paradoxes. Demoreans often try to influence important human leaders to create the paradoxes that feed them and either attack with psychic energy blasts or escape using Time Rifts.',
+    special:
+        'Demoreans are +1 to Qualities if you have a Temporal event in Adventure.',
+    stats: ['+1 Danger', 'Scheme 5', 'Earth', 'Temporal'],
+    encounter: {
+        description:
+            'Roll 1D3 for the number of Demoreans you encounter - each Brains 3, Brawn 3, Bravery 3 (Troop). Roll a further 1D6 (+1 if at their Lair, +1 if Danger 11+) - if the result is 4+, then one of the Demoreans is a Priest (Brains 4, Brawn 5, Bravery 4, Leader).',
+        table: [
+            {
+                name: 'Conflict (Mind Control)',
+                description:
+                    'The eyes of the Demoreans glow with an intense light...',
+            },
+            {
+                name: 'Surrender',
+                description:
+                    'Roll 1D6 (+1 if Danger 12+): 1-2: The Demoreans start a (Mind Control) Conflict; 3-4: Captured (8); 5-6+: Captured (9) and taken to Demorean Time Pod. If captured by a Priest, roll for a Goal as it cannot resist gloating.',
+            },
+            {
+                name: 'Evade',
+                description:
+                    'Make a Running 8 roll to escape or a Stealth 9 roll to hide. If you fail, choose another option with -1 to roll.',
+            },
+            {
+                name: 'Conflict (Outwit)',
+                description:
+                    'You try to confuse the Demoreans and escape. If you fail, choose another option with -1 to the roll.',
+            },
+        ],
+    },
+    goals: [
+        {
+            roll: '1-2',
+            name: 'Cause Time Paradox',
+            vp: 5,
+            type: 'Meddling',
+            description:
+                'The Demoreans are attempting to create a Time Paradox changing established events. If on Earth and you do not Defeat the Demoreans, take a -2 penalty to the Setback roll.',
+            options: [
+                {
+                    name: 'Destroy Demorean Time Pod',
+                    description:
+                        'Sneak inside the Pod Ship (Lair) with a Stealth 9 roll, encountering Demoreans if you fail. Once inside, take a Prevent Action (add Computers). If you fail, add +1 Danger and encounter Demoreans.',
+                },
+                {
+                    name: 'Counter Meddling',
+                    description:
+                        'Move to any 2 Locations where you can Research and make a Brains 15 roll (add History) at each Location. Add +1 Danger each time you fail a roll.',
+                },
+            ],
+        },
+        {
+            roll: '3-4',
+            name: 'Create Time Rifts',
+            vp: 6,
+            type: 'Experiments',
+            description:
+                'The Demoreans are creating more Time Rifts, jagged temporal holes, to amplify any Paradoxes they create. If Danger 15+, Demoreans are +1 to all Qualities.',
+            options: [
+                {
+                    name: 'Use the TARDIS to Close Rifts',
+                    description:
+                        'Add +1 Danger. Return to the TARDIS and then take a Prevent Action (add Engineer and TARDIS). Add +1 Danger or lose 1 Defence if you fail.',
+                },
+                {
+                    name: 'Close Individual Rifts',
+                    description:
+                        'You must Move to 3 random Locations and make a Brains 12 roll (add Engineer and Science) at each Location. Add +1 Danger each time you fail a roll.',
+                },
+            ],
+        },
+        {
+            roll: '5-6',
+            name: 'Infiltrate Society',
+            vp: 5,
+            type: 'Meddling',
+            description:
+                'The Demoreans have influenced key personnel so they are pawns prior to creating paradoxes. Roll new Goal if Wilderness. If you have Infiltration as an Enemy event, also add +1 Danger.',
+            options: [
+                {
+                    name: 'Expose Demoreans',
+                    description:
+                        'Win an (Outwit) Conflict against the Demoreans with a Demorean Priest. Then take a Prevent Action (add Diplomacy) at any Location where you can Find Help. If you fail, add +1 Danger.',
+                },
+                {
+                    name: 'Convince Population',
+                    description:
+                        'Gain 2 Knowledge and have at least 3 Allies. Then take a Prevent Action (add Diplomacy) at any Location where you can Find Help. If you fail, add +1 Danger and encounter Demoreans.',
+                },
+            ],
+        },
+    ],
+    events: [
+        {
+            roll: '1-2',
+            name: 'Infiltration',
+            description:
+                'The Demoreans have infiltrated the highest authorities here. Add +1 Danger and you may not choose a Find Help Action.',
+        },
+        {
+            roll: '3-4',
+            name: 'Rift Key',
+            description:
+                'You find a gadget that controls Demorean Time Rifts. Gain +1 Knowledge and add +1 to any Prevent Actions in this Adventure.',
+        },
+        {
+            roll: '5-6',
+            name: 'New Time Rift',
+            description:
+                '(Temporal) Add +1 Danger (+2 if Experiments Goal). Roll 1D6: 1-2: Encounter Demoreans (+1 to number encountered); 3-6: Gain +1 Knowledge if you make a Science 9 roll.',
+        },
+    ],
+    lair: {
+        name: 'Demorean Time-Pod',
+        tags: ['Move 9'],
+        description:
+            "A small pod capable of time-jumps. Gain +1 Knowledge and add +1 Danger (once only). Add +1 to Rescue Actions and +1 to Seek Information (Stealth or Computers) here. Roll 1D6 - on 1-3 (1-4 if Danger 9+) have immediate Demorean encounter. In the pod, you may also attempt to sabotage the controls with a successful Engineer 11 or Computers 10 roll. If you fail, encounter Demoreans immediately. If successful, the Demorean's Rifts have been disabled - add +1 to all Prevent Actions here (+2 if an Experiments Goal). Subtract 1 from the number of Demoreans in all future encounters.",
+    },
+}
+
 export const enemyData: Enemy[] = [
     E001,
     E002,
@@ -3835,4 +4204,7 @@ export const enemyData: Enemy[] = [
     E028,
     E029,
     E030,
+    E031,
+    E032,
+    E033,
 ]
