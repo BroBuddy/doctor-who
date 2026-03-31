@@ -37,6 +37,11 @@ const getEnemyLairByTag = (tag: string) => {
     return enemy?.lair || null
 }
 
+const getEnemySpecialEncounterByTag = (tag: string) => {
+    const enemy = getEnemyByTag(tag)
+    return enemy?.specialEncounter || null
+}
+
 export {
     getEnemyData,
     getEnemyByTag,
@@ -44,4 +49,5 @@ export {
     getEnemyGoalsByTag,
     getEnemyEventsByTag,
     getEnemyLairByTag,
+    getEnemySpecialEncounterByTag,
 }

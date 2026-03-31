@@ -16,7 +16,7 @@ function EnemyDetail() {
         { label: 'Encounter', path: '/encounter' },
         { label: 'Goals', path: '/goals' },
         { label: 'Events', path: '/events' },
-        { label: 'Lair', path: '/lair' },
+        { label: 'Special', path: '/special' },
     ]
 
     useEffect(() => {

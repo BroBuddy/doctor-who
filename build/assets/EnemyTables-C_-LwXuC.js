@@ -1,0 +1,1 @@
+import{a as e}from"./rule-B7c24k4N.js";export{e as default};

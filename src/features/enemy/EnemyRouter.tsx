@@ -6,7 +6,7 @@ const EnemyView = lazy(() => import('./components/EnemyView'))
 const EnemyEncounter = lazy(() => import('./components/EnemyEncounter'))
 const EnemyGoals = lazy(() => import('./components/EnemyGoals'))
 const EnemyEvents = lazy(() => import('./components/EnemyEvents'))
-const EnemyLairView = lazy(() => import('./components/EnemyLairView'))
+const EnemySpecial = lazy(() => import('./components/EnemySpecial'))
 
 const EnemyRouter: RouteObject[] = [
     {
@@ -17,7 +17,7 @@ const EnemyRouter: RouteObject[] = [
             { path: 'encounter', element: <EnemyEncounter /> },
             { path: 'goals', element: <EnemyGoals /> },
             { path: 'events', element: <EnemyEvents /> },
-            { path: 'lair', element: <EnemyLairView /> },
+            { path: 'special', element: <EnemySpecial /> },
         ],
     },
 ]

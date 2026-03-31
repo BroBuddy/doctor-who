@@ -8,7 +8,8 @@ export type Enemy = {
     encounter: Encounter
     goals: EnemyGoal[]
     events: EnemyEvent[]
-    lair: EnemyLair
+    lair: EnemyLair | null
+    specialEncounter: Encounter | null
 }
 
 export type EnemyEvent = {
@@ -18,6 +19,7 @@ export type EnemyEvent = {
 }
 
 export type Encounter = {
+    name?: string
     description: string
     table: EncounterTable[]
 }
@@ -43,5 +45,11 @@ export type GoalOption = {
 export type EnemyLair = {
     name: string
     tags: string[]
+    description: string
+    table?: LairRoll[]
+}
+
+export type LairRoll = {
+    roll: string
     description: string
 }

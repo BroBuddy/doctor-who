@@ -129,6 +129,7 @@ const E001: Enemy = {
         description:
             'You have discovered a huge stone cavern that stretches back into darkness, and a cold, eerie mist covers the rocky floor. You realise with dread that the cavern contains dozens of apparently hibernating Weeping Angels... Gain +1 Knowledge (once in Adventure) but Characters with Bravery 1 or less must flee the cavern in terror. Roll 1D6 - on a 1-3 (1-4 if Danger 11+) immediately encounter the Weeping Angels (with +2 to number of Angels encountered). Add +2 to Rescue Actions here but any Evade options have a -1 penalty. Add +1 to Enemy Action roll (+2 if Resurrection Goal) each turn.',
     },
+    specialEncounter: null,
 }
 
 const E002: Enemy = {
@@ -259,6 +260,7 @@ const E002: Enemy = {
         description:
             'A ship of terrifying firepower and devastation. Add +1 Danger (once per Adventure). Add +1 to number of Daleks encountered and +2 to Rescue Actions. To get aboard requires a Stealth 9 roll, encountering Daleks if you fail. You can sabotage the Saucer with a Computers 10 roll as an Action. If successful add +1 to Prevent Actions (+2 if Goal is Invasion). If you fail, have Dalek encounter. To escape the Saucer, you must make both a Stealth 8 roll and a Computers 8 roll to find and operate a Transmat. If you fail, encounter Daleks (-2 to Surrender option).',
     },
+    specialEncounter: null,
 }
 
 const E003: Enemy = {
@@ -383,6 +385,7 @@ const E003: Enemy = {
         description:
             'You have been transported to the realm of the Toymaker where he intends you to stay forever, playing games for his amusement. At least until he gets bored... Being inside this realm counts as Captured (12), although each Turn as an Action you may Play Games with the various Toys the Toymaker has as his servants. To do this, select a random Quality and make a Quality (10) roll (adding Aware). If you succeed, roll 1D6 and on a 1-3, you must roll for success again as the Toys cheat! If you succeed a second time, add +2 to Escape rolls (cumulative). If you fail, choose to add +1 Danger or freeze a Character. You may not Rescue any Characters from the Toyroom. Whilst you have Characters trapped inside the Playroom, add +1 to Enemy Action rolls. If you Escape the Toyroom, add +1 to Prevent Actions (+2 if the Doctor escaped from there) and reveal the Goal.',
     },
+    specialEncounter: null,
 }
 
 const E004: Enemy = {
@@ -513,6 +516,7 @@ const E004: Enemy = {
         description:
             'You discover a Zygon ship built using organic crystallography. Gain +1 Knowledge (unless captives). Evade encounter options have a -1 penalty. Add +1 to number of Zygons encountered. You may also Explore Ship as an Action (2D6): 2-4: Captured (9); 5-7: Encounter Zygons; 8-9: Discover body-print chamber – rescue any Captured Characters and you may sabotage device with a Science 9 roll to gain +1 to Prevent Actions; 10: Discover life support - sabotage with a successful Medicine 9 roll to make Zygons -1 to all Qualities for next 1D3+1 Turns; 11+: Zygon control room - add +2 to Challenge or Prevent Actions. Have a Zygon encounter (including a Warlord).',
     },
+    specialEncounter: null,
 }
 
 const E005: Enemy = {
@@ -649,6 +653,7 @@ const E005: Enemy = {
         description:
             'Full of huge chemical vats and dark, steam-filled corridors. Add +1 Danger (once only), +1 to number of Mire encountered here and +2 to Rescue Actions. You can sabotage the Ship with a Computers 9 roll as an Action, gaining +1 to Prevent Actions (+2 if Goal is Invasion). If fail, have Mire encounter with -2 to Surrender option. To escape the Ship, you must make both a Stealth 8 roll and a Computers 8 roll to find and operate a Transmat. If you fail, encounter Mire (-2 to Surrender option).',
     },
+    specialEncounter: null,
 }
 
 const E006: Enemy = {
@@ -785,6 +790,7 @@ const E006: Enemy = {
         description:
             'A damp cavern with ancient enchantments scratched with blood upon the cracked stone. Gain +1 Knowledge (unless here as captives). Roll 1D6 and on a 1-3 (1-4 if Danger 11+) immediately encounter Carrionites (+1 to number encountered). Inside the cavern, add +1 to Rescue Actions, -1 to Stealth rolls and +1 to Enemy Action rolls. You may search the cavern as an Action - roll 2D6: 2-5: Trip magical defences, immobilizing Characters. Make an Escape (8) Action or Captured (9); 6-8: Discovered by Carrionites (+1 to number encountered); 9: Discover cauldron and may study contents with a Science 10 roll as an Action to gain +2 Knowledge or reveal Goal; 10: Discover crystal ball - you may smash it with Brawn 10 roll to either have -1 on Enemy Action rolls or reveal Goal; 11+: Enter inner sanctum - gain +2 Knowledge or if Goal revealed you may take an immediate Prevent Action with +2 to roll.',
     },
+    specialEncounter: null,
 }
 
 const E007: Enemy = {
@@ -911,6 +917,7 @@ const E007: Enemy = {
         description:
             'The underground temple has a stone altar and a huge pentagram drawn on the floor. Black candles flicker casting dark shadows about the walls and stone pillars. Gain +1 Knowledge (unless captives). Add +1 Danger if an Apocalypse or Resurrection Goal. Roll 1D6 – on a 1–3 (1–4 if Danger 12+) encounter Fendahleen (+1 to number encountered). Inside Sanctum, add +2 to Rescue Actions. Stealth and Escape rolls have a -1 penalty. Add +1 to Enemy Action rolls whilst here. A Fendahl Skull is +1 Qualities here.',
     },
+    specialEncounter: null,
 }
 
 const E008: Enemy = {
@@ -1047,6 +1054,7 @@ const E008: Enemy = {
         description:
             'A Martian ship is a hybrid of advanced technology fused with an organic shell, armed with weapons of awesome firepower. Gain +1 Knowledge (if not a captive) and roll 1D6 – on a 1–3 immediately encounter Ice Warriors (add +1 to the number, each is +1 Brawn due to advanced sonic rifles). Gain +1 to Rescue Actions here. If you have Computers 2 or Engineer 2, you can sabotage environment controls so Ice Warriors are -2 to Qualities (Ice Lords are -1). Add +2 to any Prevent or (Outwit) Conflict rolls. At the end of each Turn roll 1D6 – if the result is 4+ then the Warriors discover your sabotage and their Qualities return to normal.',
     },
+    specialEncounter: null,
 }
 
 const E009: Enemy = {
@@ -1165,6 +1173,7 @@ const E009: Enemy = {
         description:
             'Dim green light creates shadows across the pod that is filled with wisps of Soliton gas. Gain +1 Knowledge (if not a captive) and roll 1D6 – on a 1–3 immediately encounter Terileptils (add +1 to the number, each +1 Brawn due to the Soliton gas here). Gain +1 to Rescue Actions here. If you make a Science 10 roll, you can disable the Soliton generator so Terileptils are -1 to Qualities here. Add +2 to any Prevent or (Outwit) Conflict rolls. At the end of each Turn roll 1D6 – if result 4+ then Terileptils repair the generator and return to normal.',
     },
+    specialEncounter: null,
 }
 
 const E010: Enemy = {
@@ -1301,6 +1310,7 @@ const E010: Enemy = {
         description:
             'A typical Sontaran spherical pod. Gain +1 Knowledge (if not a captive) and +1 Danger (both once only). Roll 1D6 – 1–4: Encounter Sontaran; 5–6: Enemy event. Gain +1 to Rescue Actions here. Add +1 to Enemy Action rolls here. If you make a Stealth 8 roll and then an Engineer 11 roll, you can reverse the polarity of the Sontaran recharge facility. If Danger is then 12 or less, this will Defeat the Sontaran after 2 full Turns. If you fail either roll, add +1 Danger and start an (Attack) Conflict.',
     },
+    specialEncounter: null,
 }
 
 const E011: Enemy = {
@@ -1437,6 +1447,7 @@ const E011: Enemy = {
         description:
             "A very advanced model with chameleon circuit. Add +1 Danger (once). Roll 1D6 – 1–4: Encounter the Rani (-1 to any Conflict roll); 5–6: Enemy event. You may attempt access with a Brains 12 roll (only Time Lords can contribute but add TARDIS) to gain +2 Knowledge and +1 to Challenge and Rescue Actions here. Add +2 to Enemy Action rolls whilst here. If you fail the roll, you are caught by the Rani's defence systems – Captured (9). Inside the TARDIS, you may attempt sabotage with an Engineer 10 roll (add TARDIS) to gain +2 to next Prevent Action.",
     },
+    specialEncounter: null,
 }
 
 const E012: Enemy = {
@@ -1561,6 +1572,7 @@ const E012: Enemy = {
         description:
             'The Cybermen often built icy tombs to hold their forces until they are needed for conquest. Gain +1 Knowledge and add +1 Danger (once in Adventure). Unless brought here as captive, you must either make a Brains 12 roll (add Computers) or a Brawn 15 roll to enter. If you fail, roll 1D6 and on a 1, the doors were electrified – choose 1 Character to be killed or lose 3 Luck points. Inside the tomb, gain +1 to Rescue Actions. Add +1 to number of Cybermen encountered, all Cybercontroller Qualities and Enemy Action rolls whilst here. You may also attempt to reactivate hibernation controls – make a Computers 10 roll to reduce Danger by -3. Encounter Cybermen if you fail (with -1 to any Evade or Surrender options).',
     },
+    specialEncounter: null,
 }
 
 const E013: Enemy = {
@@ -1695,6 +1707,7 @@ const E013: Enemy = {
         description:
             'A damp dark cavern that twists deeper underground. Gain +1 Knowledge (if not a captive) and +1 Danger (both once only). Gain +1 to Prevent, Challenge and Rescue Actions here but -1 to Escape Actions. Add +1 to Enemy Action rolls whilst Characters are here. Add +1 to Stealth rolls but -1 to Evade options. Encounter (Aware roll): 2–4: Lost (Incident); 5: No event; 6: Rock-fall – a random Character is killed unless you spend 2 Luck; 7–8: Encounter Silurian; 9–10: Enemy event; 11+: Gain 2 Knowledge or spend 1 Luck to gain +4 to next Prevent Action.',
     },
+    specialEncounter: null,
 }
 
 const E014: Enemy = {
@@ -1825,6 +1838,7 @@ const E014: Enemy = {
         description:
             'The ship is very advanced technology, full of weaponry and secure capture cells. Add +1 Danger (once only). Add +1 to number of Judoon encountered here. Add +2 to Rescue Actions. Escape Actions have a -2 penalty here. You can sabotage the Ship with a Computers 10 roll as an Action, gaining +2 to Prevent Actions. If you fail, have a Judoon encounter with -2 to Surrender option. To escape the Ship, you must make both a Stealth 8 roll and a Computers 8 roll to find and operate a Transmat. If you fail, encounter Judoon (-2 to Surrender option).',
     },
+    specialEncounter: null,
 }
 
 const E015: Enemy = {
@@ -1949,6 +1963,7 @@ const E015: Enemy = {
         description:
             'Eerie blue and red lighting illuminates tanks of horrific mutated creatures that pulse with an audible electronic heartbeat. Add +1 Danger or +2 Danger if Experiments Goal (either once per Adventure only). Gain +1 Knowledge (once only). You can sabotage the Hatching Tanks with a Science 10 roll as an Action — if successful add +2 to Prevent Actions (+3 if Goal is Experiments). If you fail, encounter Davros. Encounter (D6): 1–2: Encounter Davros and Daleks; 3: Dalek Mutant Attack (Brawn 2, Creature); 4: No event; 5–6: Make Science 9 roll to gain +1 Knowledge.',
     },
+    specialEncounter: null,
 }
 
 const E016: Enemy = {
@@ -2074,6 +2089,7 @@ const E016: Enemy = {
         description:
             'Dim, eerie lighting does not quite hide the failed experiments that line the walls and the disgusting things that bubble in jars. Add +1 Danger or +2 Danger if Experiments Goal (either only once per Adventure). Gain +1 Knowledge (once only). You can sabotage the laboratory with a Science 10 roll as an Action — if successful add +2 to Prevent Actions (+3 if Goal is Experiments). If you fail, encounter Meralda. Encounter (D6): 1–2: Encounter Meralda; 3: Mutation Attacks (Brawn 3, Creature); 4: None; 5–6: Make Science 9 roll to gain +1 Knowledge or +1 to a Prevent action.',
     },
+    specialEncounter: null,
 }
 
 const E017: Enemy = {
@@ -2199,6 +2215,7 @@ const E017: Enemy = {
         description:
             'You have found or been brought to the Nestene (Brains 5, Brawn 7, Bravery 4, Leader), a writhing, bubbling mass of living plastic. Gain +1 Knowledge and add +1 Danger (once only). Add +1 to Rescue Actions here. If Captured, an Enemy Encounter means you encounter the Nestene (roll below). If not Captured, you can sabotage the Lair with a Science 10 roll as an Action — if successful, add +2 to Prevent Actions. If you fail, add +1 Danger and encounter the Nestene. Encounter Nestene (Diplomacy roll): 2–6: Attacked by Nestene and 1D3 Autons (each Brawn 5); 7–9: Add +1 Danger and reveal Goal; 10–11: Start (Outwit) Conflict, Defeating Nestene if successful; 12+: Invoke Shadow Proclamation and Defeat Nestene (+1 VP).',
     },
+    specialEncounter: null,
 }
 
 const E018: Enemy = {
@@ -2323,6 +2340,7 @@ const E018: Enemy = {
         description:
             "The small but powerful craft has advanced cloaking technology to hide it from lesser species. Gain +1 Knowledge (if not a captive) and +1 Danger (both once only). Roll 1D6 – 1–3: Encounter Rutan; 4–6: Enemy event. Gain +1 to Rescue Actions here. Add +1 to Enemy Action rolls whilst here. If you make a Stealth 8 roll and then an Engineer 11 roll, you can scramble the craft's systems to reduce Danger by -2 and the Rutan has -1 to all Qualities. If you fail either roll, add +1 Danger and start an (Attack) Conflict with the Rutan.",
     },
+    specialEncounter: null,
 }
 
 const E019: Enemy = {
@@ -2442,6 +2460,7 @@ const E019: Enemy = {
         description:
             'The damp underground cavern has a stone altar and a huge pentagram drawn on the floor. Gain +1 Knowledge (unless here as captives). Roll 1D6 and on a 1-3 (1-4 if Danger 12+) immediately encounter the Jassra (+1 to number of Ghouls). Inside the cavern, add +1 to Rescue Actions, -1 to Stealth rolls, +1 to Enemy Action rolls. The Jassra is +1 to all Qualities here. Encounter (Stealth): 2-8: Encounter the Jassra; 9: Discover runes – if you make a Brain 15 roll, gain +2 Knowledge or reveal Goal; 10+: Discover Jassran artefact - if Goal revealed take an immediate Prevent Action with +2 to roll.',
     },
+    specialEncounter: null,
 }
 
 const E020: Enemy = {
@@ -2566,6 +2585,7 @@ const E020: Enemy = {
         description:
             "Only sterile, white lights pierce the darkness. Gain +1 Knowledge and add +1 Danger (once only). Add +1 to Rescue Actions and +2 to Seek Information (Stealth or Computers) here. Roll 1D6 and on 1-3 (1-4 if Danger 10+) have immediate Silence encounter. In the ship, you may also attempt to sabotage the central console with a successful Engineer 10 or Computers 9 roll. If you fail, encounter Silence immediately. If successful, the Silence's communications have been disabled - subtract 1 from the number of Silence encountered in all future encounters and gain +1 to all Conflict rolls.",
     },
+    specialEncounter: null,
 }
 
 const E021: Enemy = {
@@ -2690,10 +2710,39 @@ const E021: Enemy = {
     ],
     lair: {
         name: 'Graske Stasis Chamber',
-        tags: ['Move 9'],
+        tags: ['Location', 'Move 9'],
         description:
-            'The vast chamber is where the Graske keeps all its captives in large stasis pods. Gain +1 Knowledge and add +1 Danger (once only). Add +1 to Rescue Actions here. Characters must make separate Escape Actions and may not be chosen if total Qualities is less than 6. If not Captured, you can open the pods with a Computers 10 roll (add Medicine) as an Action. If successful, have a Character event (with +3 to a Charm or Diplomacy roll). If you fail, add +1 Danger and encounter the Graske. Encounter (Stealth roll): 2-4: Attacked by escaped Slitheen (Brawn 6) unless Evade with Running 9; 5-6: Encounter Graske; 7: Enemy event; 8-9: None; 10: Gain +1 Knowledge; 11+: Gain +2 Knowledge or reveal Goal or gain +1 to Prevent Actions.',
+            'The vast chamber is where the Graske keeps all its captives in large stasis pods. Gain +1 Knowledge and add +1 Danger (once only). Add +1 to Rescue Actions here. Characters must make separate Escape Actions and may not be chosen if total Qualities is less than 6. If not Captured, you can open the pods with a Computers 10 roll (add Medicine) as an Action. If successful, have a Character event (with +3 to a Charm or Diplomacy roll). If you fail, add +1 Danger and encounter the Graske. Encounter (Stealth roll):',
+        table: [
+            {
+                roll: '2-4',
+                description:
+                    'Attacked by escaped Slitheen (Brawn 6) unless Evade with Running 9.',
+            },
+            {
+                roll: '5-6',
+                description: 'Encounter Graske.',
+            },
+            {
+                roll: '7',
+                description: 'Enemy event.',
+            },
+            {
+                roll: '8-9',
+                description: 'None.',
+            },
+            {
+                roll: '10',
+                description: 'Gain +1 Knowledge.',
+            },
+            {
+                roll: '11+',
+                description:
+                    'Gain +2 Knowledge or reveal Goal or gain +1 to Prevent Actions.',
+            },
+        ],
     },
+    specialEncounter: null,
 }
 
 const E022: Enemy = {
@@ -2821,10 +2870,39 @@ const E022: Enemy = {
     ],
     lair: {
         name: 'Faery Ring',
-        tags: ['Exterior', 'Move 9'],
+        tags: ['Exterior Location', 'Move 9'],
         description:
-            'The Fae often use Faery rings to build their powers or to cross the dimensions. Gain +1 Knowledge and add +1 Danger (once only). Add +1 to Rescue and Research (History) Actions here and +1 to Prevent Actions if Night. If you encounter the Fae here, add +2 to number and you may not choose to Surrender. Encounter (Stealth roll): 2-5: Encounter Fae; 6: Enemy event; 7: The Ring is silent – no event; 8: Character event; 9-10: Discover Fae runes – gain +1 Knowledge or reveal Goal; 11+: Observe secret Fae ritual - gain +2 Knowledge or +2 to Prevent Actions.',
+            'The Fae often use Faery rings to build their powers or to cross the dimensions. Gain +1 Knowledge and add +1 Danger (once only). Add +1 to Rescue and Research (History) Actions here and +1 to Prevent Actions if Night. If you encounter the Fae here, add +2 to number and you may not choose to Surrender. Encounter (Stealth roll):',
+        table: [
+            {
+                roll: '2-5',
+                description: 'Encounter Fae',
+            },
+            {
+                roll: '6',
+                description: 'Enemy event.',
+            },
+            {
+                roll: '7',
+                description: 'The Ring is silent – no event.',
+            },
+            {
+                roll: '8',
+                description: 'Character event.',
+            },
+            {
+                roll: '9-10',
+                description:
+                    'Discover Fae runes – gain +1 Knowledge or reveal Goal.',
+            },
+            {
+                roll: '11+',
+                description:
+                    'Observe secret Fae ritual - gain +2 Knowledge or +2 to Prevent Actions.',
+            },
+        ],
     },
+    specialEncounter: null,
 }
 
 const E023: Enemy = {
@@ -2936,10 +3014,11 @@ const E023: Enemy = {
     ],
     lair: {
         name: 'Sea Devil Hibernation Chamber',
-        tags: ['Water', 'Move 9'],
+        tags: ['Water Location', 'Move 9'],
         description:
             'A water-filled cavern on the sea bed where the reptiles are being revived after centuries of hibernation. Gain +1 Knowledge (if not a captive) and +1 Danger (both once only). Gain +1 to Rescue Actions here, but -1 to Escape Actions. Add +1 to Enemy Action rolls whilst Characters are here. Add +1 to Stealth rolls. Add +1 to number of Sea Devils encountered. You can try to sabotage the equipment that is waking the Sea Devils from hibernation. If you make an Engineer 9 roll as an Action, the Sea Devils are woken sluggish and -1 to all Qualities for the next 1D3 Turns, gain +1 to Prevent Actions if a Resurrection Goal. In the Defeat Phase, if you have Computers or a Sonic Screwdriver, you may try to sabotage the reactivation chamber. Make an Engineer 10 roll as an Action. If successful, Characters here must have Running or roll 1D6 - if they roll 1-2 they are killed in the explosion (and any Captured Characters in Lair). Sea Devils are Defeated but gain no VP for Adventure.',
     },
+    specialEncounter: null,
 }
 
 const E024: Enemy = {
@@ -3055,10 +3134,11 @@ const E024: Enemy = {
     ],
     lair: {
         name: 'TARDIS',
-        tags: ['Move 10'],
+        tags: ['Location', 'Move 10'],
         description:
             "A more advanced model with chameleon circuit. Add +1 Danger (once). Roll 1D6: 1-4: Encounter the Master (-1 to any Conflict roll); 5-6: Enemy event. You may attempt access with a Brains 12 roll (only Time Lords can contribute but add TARDIS), to gain +2 Knowledge and +1 to Challenge and Rescue Actions here. Add +2 to Enemy Action rolls whilst here. If you fail the roll however, you are caught by the Master's defence system – Captured (9). Inside the TARDIS, you may attempt sabotage with an Engineer 10 roll (add TARDIS) to gain +2 to next Prevent Action.",
     },
+    specialEncounter: null,
 }
 
 const E025: Enemy = {
@@ -3173,11 +3253,22 @@ const E025: Enemy = {
                 'The Great Intelligence begins a (Mind Control) Conflict against a random Character.',
         },
     ],
-    lair: {
+    lair: null,
+    specialEncounter: {
         name: 'Servants of the Intelligence',
-        tags: [],
-        description:
-            'Yeti: Huge creatures covered in brown and grey fur with enormous claws, but in reality robotic slaves controlled by a silver sphere in their chest. Roll 1D3 (+1 if Defeat Phase) for number of Yeti encountered (each Brains 0, Brawn 7, Bravery 5, Machine, Troop). You may start an (Attack) Conflict (Troops have -1 Brawn as their weapons have little effect) or try to Evade with a Running 8 roll. If you win a Conflict, you may pay 1 Luck point to gain a control sphere (see Control Node in Enemy events above). Spoon-heads: Mobile wi-fi servers that look like human replicas and can upload a victims’ consciousness to the Great Intelligence. Roll 1D3 for number encountered, each Brains 4, Brawn 1, Bravery 5 (Machine). Unless you make a Computers 8 roll (with -1 to roll per Spoon-head) to hack them (gaining +1 Knowledge if successful), or Evade them with a Running 7 roll, they start a (Mind Control) Conflict. Add +1 Danger if a Character with Brains 3+ is uploaded. If you fail to Defeat the Great Intelligence, uploaded Companions are treated as killed (-5 VP).',
+        description: '',
+        table: [
+            {
+                name: 'Yeti',
+                description:
+                    'Huge creatures covered in brown and grey fur with enormous claws, but in reality robotic slaves controlled by a silver sphere in their chest. Roll 1D3 (+1 if Defeat Phase) for number of Yeti encountered (each Brains 0, Brawn 7, Bravery 5, Machine, Troop). You may start an (Attack) Conflict (Troops have -1 Brawn as their weapons have little effect) or try to Evade with a Running 8 roll. If you win a Conflict, you may pay 1 Luck point to gain a control sphere (see Control Node in Enemy events above).',
+            },
+            {
+                name: 'Spoon-heads',
+                description:
+                    'Mobile wi-fi servers that look like human replicas and can upload a victims’ consciousness to the Great Intelligence. Roll 1D3 for number encountered, each Brains 4, Brawn 1, Bravery 5 (Machine). Unless you make a Computers 8 roll (with -1 to roll per Spoon-head) to hack them (gaining +1 Knowledge if successful), or Evade them with a Running 7 roll, they start a (Mind Control) Conflict. Add +1 Danger if a Character with Brains 3+ is uploaded. If you fail to Defeat the Great Intelligence, uploaded Companions are treated as killed (-5 VP).',
+            },
+        ],
     },
 }
 
@@ -3295,10 +3386,26 @@ const E026: Enemy = {
     ],
     lair: {
         name: 'Special Action: Séance',
-        tags: [],
+        tags: ['Dilemma Phase'],
         description:
-            '(Dilemma Phase) You attempt to perform a Séance to communicate with the Gelth. You must have at least 4 Characters. Make an Aware roll: 2-7: The Gelth plead for your help – unless you make a Brains 12 roll (-1 per Human Character here), choose to lose 1 Knowledge or add +1 Danger; 8-10: Nothing is coming through except random phantasmagoria – no result; 11-13: Voices from beyond the grave – gain +1 Knowledge; 14+: The Gelth speak – reveal Goal or gain +2 Knowledge but roll 1D6: 1-2: The Gelth true forms revealed in flames – encounter the Gelth; 3-4: Add +1 Danger; 5-6:No other result.',
+            'You attempt to perform a Séance to communicate with the Gelth. You must have at least 4 Characters. Make an Aware roll: 2-7: The Gelth plead for your help – unless you make a Brains 12 roll (-1 per Human Character here), choose to lose 1 Knowledge or add +1 Danger; 8-10: Nothing is coming through except random phantasmagoria – no result; 11-13: Voices from beyond the grave – gain +1 Knowledge; 14+: The Gelth speak – reveal Goal or gain +2 Knowledge but roll 1D6:',
+        table: [
+            {
+                roll: '1-2',
+                description:
+                    'The Gelth true forms revealed in flames – encounter the Gelth.',
+            },
+            {
+                roll: '3-4',
+                description: 'Add +1 Danger.',
+            },
+            {
+                roll: '5-6',
+                description: 'No other result.',
+            },
+        ],
     },
+    specialEncounter: null,
 }
 
 const E027: Enemy = {
@@ -3420,10 +3527,11 @@ const E027: Enemy = {
     ],
     lair: {
         name: 'Android Factory',
-        tags: ['Move 9'],
+        tags: ['Location', 'Move 9'],
         description:
             'A huge robotics factory where Denham constructs his army of mechanical servants. Add +1 Danger or +2 Danger if Experiments Goal (either once per Adventure). To enter, make a Computers 9 roll and if successful gain +1 Knowledge (once only). If you fail, encounter 1D6 robotic drones (see above). Add +1 to Rescue and Research (Engineer) Actions here. If you are captured here, all Escape Actions have a -1 penalty. Add +1 to number of drones encountered with Denham. You can sabotage the factory with an Engineer 10 roll as an Action. If successful add +1 to Prevent Actions (+2 if Goal is Experiments). If you fail, encounter Denham.',
     },
+    specialEncounter: null,
 }
 
 const E028: Enemy = {
@@ -3544,10 +3652,29 @@ const E028: Enemy = {
     ],
     lair: {
         name: "Castle of the S'rax",
-        tags: ['Move 9'],
+        tags: ['Location', 'Move 9'],
         description:
-            'A fortress steeped in black magic where Morgaine weaves her enchantments. Add +1 Danger (once per Adventure). Make a Stealth 9 roll to enter and gain +1 Knowledge if successful (once only). If you fail, have an Enemy encounter, adding +1 to number of knights encountered. Morgaine is +1 to all Qualities here. Add +1 to Rescue and Seek Information (Stealth) Actions here. Escape Actions have a -1 penalty here. Add +1 to Enemy Action rolls while you have Characters here. Encounter (D6): 1-2: Enemy encounter; 3: Enemy event; 4-5: None; 6: Character event.',
+            'A fortress steeped in black magic where Morgaine weaves her enchantments. Add +1 Danger (once per Adventure). Make a Stealth 9 roll to enter and gain +1 Knowledge if successful (once only). If you fail, have an Enemy encounter, adding +1 to number of knights encountered. Morgaine is +1 to all Qualities here. Add +1 to Rescue and Seek Information (Stealth) Actions here. Escape Actions have a -1 penalty here. Add +1 to Enemy Action rolls while you have Characters here. Encounter (D6):',
+        table: [
+            {
+                roll: '1-2',
+                description: 'Enemy encounter.',
+            },
+            {
+                roll: '3',
+                description: 'Enemy event.',
+            },
+            {
+                roll: '4-5',
+                description: 'None.',
+            },
+            {
+                roll: '6',
+                description: 'Character event.',
+            },
+        ],
     },
+    specialEncounter: null,
 }
 
 const E029: Enemy = {
@@ -3668,10 +3795,36 @@ const E029: Enemy = {
     ],
     lair: {
         name: 'Slitheen Lodge',
-        tags: ['Move 9'],
+        tags: ['Location', 'Move 9'],
         description:
-            'A Lodge is a safe-house and hideout for Slitheen criminals. Gain +1 Knowledge (unless here as captives). Roll 1D6: 1-2: No event; 3-4: Add +1 Danger; 5-6: Encounter Slitheen - add +1 to number of Slitheen encountered and Evade encounter options have a -1 penalty. Add +1 to Challenge and Rescue Actions here. You may search the Lodge as an Action (Stealth roll): 2-4: Captured (9); 5-7: Encounter Slitheen; 8-9: Discover Slitheen skinsuits – you can cancel a Slitheen Unzipped Enemy event; 10: Discover evidence – reveal Goal, adding Profit and +1 VP to Goal; 11+: Slitheen Lodge Database - add +2 to Challenge or Prevent Actions next Turn but have an immediate Slitheen encounter.',
+            'A Lodge is a safe-house and hideout for Slitheen criminals. Gain +1 Knowledge (unless here as captives). Roll 1D6: 1-2: No event; 3-4: Add +1 Danger; 5-6: Encounter Slitheen - add +1 to number of Slitheen encountered and Evade encounter options have a -1 penalty. Add +1 to Challenge and Rescue Actions here. You may search the Lodge as an Action (Stealth roll):',
+        table: [
+            {
+                roll: '2-4',
+                description: 'Captured (9).',
+            },
+            {
+                roll: '5-7',
+                description: 'Encounter Slitheen.',
+            },
+            {
+                roll: '8-9',
+                description:
+                    'Discover Slitheen skinsuits – you can cancel a Slitheen Unzipped Enemy even.',
+            },
+            {
+                roll: '10',
+                description:
+                    'Discover evidence – reveal Goal, adding Profit and +1 VP to Goal.',
+            },
+            {
+                roll: '11+',
+                description:
+                    'Slitheen Lodge Database - add +2 to Challenge or Prevent Actions next Turn but have an immediate Slitheen encounter.',
+            },
+        ],
     },
+    specialEncounter: null,
 }
 
 const E030: Enemy = {
@@ -3798,10 +3951,11 @@ const E030: Enemy = {
     ],
     lair: {
         name: 'Mob Spacecraft',
-        tags: ['Dark', 'Move 9'],
+        tags: ['Dark Location', 'Move 9'],
         description:
             'A stylish submersible spacecraft but in a state of disrepair. It is filled with tanks of murky dark water. Locked boxes and cages line the cargo hold. Gain +1 Knowledge (if not captive). Add +1 to number of henchmen in Enemy Encounters here, where one will always be the Mob Boss. Gain +1 to Rescue Actions here. You may also attempt to sabotage their protective suit control systems by making an Engineer 10 roll as an Action to reduce all Enemy Brawn by -2. At the end of each turn, roll 1D6. If 4+, this sabotage is undone.',
     },
+    specialEncounter: null,
 }
 
 const E031: Enemy = {
@@ -3922,10 +4076,35 @@ const E031: Enemy = {
     ],
     lair: {
         name: 'Temple of Osyris',
-        tags: ['Move 9'],
+        tags: ['Location', 'Move 9'],
         description:
-            'An ancient stone temple, now being restored through the power of Osyris. Gain +1 Knowledge (unless here as captives). Roll 1D6 and on a 1-3 (1-4 if Danger 12+) immediately encounter Serpent Men (see Events, add +1 to number encountered). Inside the temple, add +1 to Rescue Actions, -1 to Stealth rolls, +1 to Enemy Action rolls. Osyris is +1 to all Qualities here. Encounter (Stealth): 2-4: Encounter Osyris; 5-6: Enemy event; 7-8: Temple is empty; 9: Discover ancient hieroglyphs – if you make a Brain 15 roll, gain +2 Knowledge or reveal Goal; 10+: Discover crumbling stone tablet – reveal Goal or if Goal already revealed, take an immediate Prevent Action with +2 to roll.',
+            'An ancient stone temple, now being restored through the power of Osyris. Gain +1 Knowledge (unless here as captives). Roll 1D6 and on a 1-3 (1-4 if Danger 12+) immediately encounter Serpent Men (see Events, add +1 to number encountered). Inside the temple, add +1 to Rescue Actions, -1 to Stealth rolls, +1 to Enemy Action rolls. Osyris is +1 to all Qualities here. Encounter (Stealth):',
+        table: [
+            {
+                roll: '2-4',
+                description: 'Encounter Osyris.',
+            },
+            {
+                roll: '5-6',
+                description: 'Enemy event.',
+            },
+            {
+                roll: '7-8',
+                description: 'Temple is empty.',
+            },
+            {
+                roll: '9',
+                description:
+                    'Discover ancient hieroglyphs – if you make a Brain 15 roll, gain +2 Knowledge or reveal Goal.',
+            },
+            {
+                roll: '10+',
+                description:
+                    'Discover crumbling stone tablet – reveal Goal or if Goal already revealed, take an immediate Prevent Action with +2 to roll.',
+            },
+        ],
     },
+    specialEncounter: null,
 }
 
 const E032: Enemy = {
@@ -4044,8 +4223,31 @@ const E032: Enemy = {
         name: 'Missy’s Mind',
         tags: [],
         description:
-            'Missy is capricious and her mood can change suddenly. Roll 1D6 (+1 if Danger 10+): 1: Wistful: The Doctor is +1 Brains in a Conflict this turn. A lone Character Conflict will be (Capture) rather than (Attack). 2-4: Impulsive: Roll 1D6 again: 1-2: Chatty – gain +1 Knowledge; 3-4: Evasive – the encounter ends; 5-6: Combative - you must Evade or start an (Attack) Conflict. 5: Bored: if you Evade, Missy will not bother to chase you and the encounter ends. 6-7: Angry: You cannot start an (Outwit) Conflict in this encounter. If you choose to Surrender, have a -2 penalty to D6 roll.',
+            'Missy is capricious and her mood can change suddenly. Roll 1D6 (+1 if Danger 10+):',
+        table: [
+            {
+                roll: '1: Wistful:',
+                description:
+                    'The Doctor is +1 Brains in a Conflict this turn. A lone Character Conflict will be (Capture) rather than (Attack).',
+            },
+            {
+                roll: '2-4: Impulsive:',
+                description:
+                    'Roll 1D6 again: 1-2: Chatty – gain +1 Knowledge; 3-4: Evasive – the encounter ends; 5-6: Combative - you must Evade or start an (Attack) Conflict.',
+            },
+            {
+                roll: '5: Bored:',
+                description:
+                    'If you Evade, Missy will not bother to chase you and the encounter ends.',
+            },
+            {
+                roll: '6-7: Angry:',
+                description:
+                    'You cannot start an (Outwit) Conflict in this encounter. If you choose to Surrender, have a -2 penalty to D6 roll.',
+            },
+        ],
     },
+    specialEncounter: null,
 }
 
 const E033: Enemy = {
@@ -4167,9 +4369,401 @@ const E033: Enemy = {
     ],
     lair: {
         name: 'Demorean Time-Pod',
-        tags: ['Move 9'],
+        tags: ['Location', 'Move 9'],
         description:
             "A small pod capable of time-jumps. Gain +1 Knowledge and add +1 Danger (once only). Add +1 to Rescue Actions and +1 to Seek Information (Stealth or Computers) here. Roll 1D6 - on 1-3 (1-4 if Danger 9+) have immediate Demorean encounter. In the pod, you may also attempt to sabotage the controls with a successful Engineer 11 or Computers 10 roll. If you fail, encounter Demoreans immediately. If successful, the Demorean's Rifts have been disabled - add +1 to all Prevent Actions here (+2 if an Experiments Goal). Subtract 1 from the number of Demoreans in all future encounters.",
+    },
+    specialEncounter: null,
+}
+
+const E034: Enemy = {
+    id: 34,
+    tag: 'E034',
+    title: 'The Saturnynes',
+    description:
+        'The Saturnynes are malevolent aliens with a humanoid upper body, a fishlike head with sharp teeth and a lobster-like lower body. However, they use perception filters to hide their true appearance and can look human – perhaps with long, needle-like teeth.',
+    special:
+        'Saturnyn are -1 Qualities at Exterior Locations unless the Location is Dark. They are +1 Qualities at Water Locations.',
+    stats: ['+0 Danger', 'Scheme 5', 'Chameleon', 'Gothic'],
+    encounter: {
+        description:
+            'Roll 1D3 for number of Saturnynes encountered (add +1 if Danger 12+), each Brains 2, Brawn 4, Bravery 3 (Troop). Also roll 2D6 and if the result is lower than current Danger, then one Saturnyn is instead a Saturnyn Noble (Brains 3, Brawn 4, Bravery 4, Leader).',
+        table: [
+            {
+                name: 'Conflict (Attack)',
+                description:
+                    'The Saturnynes hiss in anger, revealing their needle-sharp teeth. So terrifying is their appearance that Characters with Bravery 1 or less cannot add their Brawn to the Conflict.',
+            },
+            {
+                name: 'Surrender',
+                description:
+                    'Roll 1D6 (+1 if Noble here): 1-3: Saturnynes start (Attack) Conflict; 4-5: Captured (8); 6+: Taken to Saturnyn Crypt (Lair – Captured 9). If captured by a Noble, add +1 Danger but reveal Goal as the Noble cannot resist gloating.',
+            },
+            {
+                name: 'Evade',
+                description:
+                    'Make either a Running 8 roll to escape, or a Stealth 8 roll to hide. If you fail, choose another option with -1 to roll.',
+            },
+            {
+                name: 'Conflict (Outwit)',
+                description:
+                    'You try to confuse the Saturnynes and escape. If you fail, choose another option with -1 to the roll.',
+            },
+        ],
+    },
+    goals: [
+        {
+            roll: '1-2',
+            name: 'Replace Population',
+            vp: 5,
+            type: 'Capture',
+            description:
+                'The Saturnynes are trying to infiltrate important positions and converting key personnel. Roll for a new Goal if Wilderness. If you have an Infiltration Enemy event, add +1 Danger.',
+            options: [
+                {
+                    name: 'Expose Saturnyne',
+                    description:
+                        'Win an (Outwit) Conflict against the Saturnynes with a Noble. Then take a Prevent Action (add Diplomacy) at any Location where you can Find Help. If you fail, add +1 Danger.',
+                },
+                {
+                    name: 'Convince Population',
+                    description:
+                        'Move to a Location where you can Find Help and take a Prevent Action (add Diplomacy). If you fail, add +1 Danger and encounter Saturnynes with a Saturnyn Noble.',
+                },
+            ],
+        },
+        {
+            roll: '3-4',
+            name: 'Breeding Ground',
+            vp: 6,
+            type: 'Experiments',
+            description:
+                'The Saturnynes are preparing a breeding ground for their dying species. Replace (Attack) Conflicts with (Drain Life-force) Conflicts. If Danger 12+, add +1 to number of Saturnynes encountered.',
+            options: [
+                {
+                    name: 'Destroy Conversion Process',
+                    description:
+                        'Sneak inside the Saturnyn Crypt (Lair) with a Stealth 9 roll, encountering Saturnynes if you fail. Once inside, take a Prevent Action (add Medicine). If you fail, add +1 Danger and encounter Saturnynes.',
+                },
+                {
+                    name: 'Appeal to Honour',
+                    description:
+                        'A Character must make a Bravery 10 roll as an Action. Then win an (Outwit) Conflict (add Diplomacy) against a Saturnyn Noble. If you fail, add +1 Danger and become Captured (9) at Saturnyn Crypt (Lair).',
+                },
+            ],
+        },
+        {
+            roll: '5-6',
+            name: 'Change Atmosphere',
+            vp: 7,
+            type: 'Apocalypse',
+            description:
+                'The Saturnynes are attempting to change the atmosphere so it resembles their own home planet. If Danger 16+, all Human Characters are -1 to Qualities, Saturnyn are +1 Brawn.',
+            options: [
+                {
+                    name: 'Create Atmospheric Stabiliser',
+                    description:
+                        'You must make a Brains 15 roll (add Science) to analyse the atmospheric changes. Then take a Prevent Action (add Science) where you can Research (Science). Add +1 Danger each time you fail.',
+                },
+                {
+                    name: 'Sabotage Emitter Node',
+                    description:
+                        'Move to a random Exterior Location to find Node. Once there, take a Prevent Action (add Engineer). If you fail, add +1 Danger and encounter the Saturnynes.',
+                },
+            ],
+        },
+    ],
+    events: [
+        {
+            roll: '1-2',
+            name: 'Saturnyn Imposter',
+            description:
+                'Roll 1D6 for each Human Ally in a random group. If the result is a 1, then the Ally is revealed as a Saturnyn – have an Enemy encounter.',
+        },
+        {
+            roll: '3-4',
+            name: 'Infiltration',
+            description:
+                'The Saturnynes have infiltrated society and hold positions of power here. Add +1 Danger and you may not choose Find Help Actions.',
+        },
+        {
+            roll: '5-6',
+            name: 'Blood Transfusion',
+            description:
+                'Select a Captured Human to become a Saturnyn (killed). Add +1 to number of Saturnynes encountered. Add +1 Danger if Experiments Goal.',
+        },
+    ],
+    lair: {
+        name: 'Saturnyn Crypt',
+        tags: ['Location', 'Move 9'],
+        description:
+            'Dim green light creates shadows across the chamber where the Saturnynes convert humans into their own species. Gain +1 Knowledge (if not captive) and roll 1D6: On a 1-3 immediately encounter Saturnynes (add +1 to number). Evade options have a -1 penalty here. Add +1 to Rescue Actions here. If you make a Medicine 9 roll, you can sabotage the equipment the Saturnynes use for blood transfusions. Add +1 to any Prevent or (Outwit) Conflict rolls (+2 if Experiments Goal). At the end of each Turn roll 1D6 and if result 4+ then the damage is repaired.',
+    },
+    specialEncounter: null,
+}
+
+export const E035: Enemy = {
+    id: 35,
+    tag: 'E035',
+    title: 'The Mara',
+    description:
+        'The Mara is a dark entity from another dimension. Often appearing in the form of a twisting serpent, the Mara desires to dominate our reality to bring evil malice into existence by possessing others to do its bidding.',
+    special:
+        'The Mara’s Lair is Dimensional and cannot be reached with a normal Move Action. In Dilemma Phase have an Enemy event instead of Enemy encounter. The first Character that loses a (Mind Control) Conflict is Possessed (Enemy event).',
+    stats: ['+1 Danger', 'Scheme 5', 'Entity'],
+    encounter: {
+        description:
+            'The Mara appears as a huge serpent (Brains 6, Brawn 9, Bravery 3, Leader). Choose from options below:',
+        table: [
+            {
+                name: 'Conflict',
+                description:
+                    'The Mara lunges towards you. If Danger 10 or less, the Mara attempts a (Mind Control) Conflict but if Danger 11+, it instead starts an (Attack) Conflict. Roll 1D6 for each Human Character with Bravery 1 and on a result of 1-3 they are so terrified that they cannot add their Quality to the Conflict total.',
+            },
+            {
+                name: 'Evade',
+                description:
+                    'Make a Running 8 roll to escape but the Mara has mesmeric power - any Human Characters with Bravery 1 or less cannot add Running to the roll. If you fail, start a Conflict with -1 to roll.',
+            },
+            {
+                name: 'Conflict (Outwit)',
+                description:
+                    'You try to confuse the Mara. If you fail, choose another option with -1 to the roll.',
+            },
+        ],
+    },
+    goals: [
+        {
+            roll: '1-2',
+            name: 'Escape Prison',
+            vp: 6,
+            type: 'Resurrection',
+            description:
+                'The Mara is trying to escape from the dark places of the inside. Add +1 Danger if a Character enters the Mara’s Lair. If Danger 16+, the Mara gains +1 to all Qualities. You may either:',
+            options: [
+                {
+                    name: 'Build a Prison of Mirrors',
+                    description:
+                        'Make a Science 10 roll (add Aware) to research correct refractive index. Then take a Prevent Action (adding Science) at a random Location. Add +1 Danger and encounter the Mara if you fail.',
+                },
+                {
+                    name: 'Banishment',
+                    description:
+                        'Gain 4 Knowledge (2 Knowledge if have 2 Aware) then win an (Outwit) Conflict with the Mara.',
+                },
+            ],
+        },
+        {
+            roll: '3-4',
+            name: 'Attain Material Form',
+            vp: 6,
+            type: 'Resurrection',
+            description:
+                'The Mara is attempting to achieve corporeal existence through an ancient ceremony of power. Roll a random Location for Ceremony. You may either:',
+            options: [
+                {
+                    name: 'Break Psychic Link',
+                    description:
+                        'Gain 3 Knowledge then win a (Mind Control) Conflict with the Mara at Ceremony.',
+                },
+                {
+                    name: 'Steal Focus Crystal',
+                    description:
+                        'Move to Ceremony and make a Stealth 9 roll to steal the crystal. If you fail, add +1 Danger and encounter the Mara',
+                },
+            ],
+        },
+        {
+            roll: '5-6',
+            name: 'The Becoming',
+            vp: 6,
+            type: 'Resurrection',
+            description:
+                'The Mara is attempting to resurrect itself using a dimensional portal. Roll a random Location for the portal. If Danger 16+, the Mara gains +1 to all Qualities. You may either:',
+            options: [
+                {
+                    name: 'Study Legends',
+                    description:
+                        'Make History 10 roll (add Aware) to study, then take a Prevent Action (add Aware) at Portal.',
+                },
+                {
+                    name: 'Destroy Portal',
+                    description:
+                        'Take Prevent Action (add Aware) at Portal. If you fail, add +1 Danger and encounter the Mara.',
+                },
+            ],
+        },
+    ],
+    events: [
+        {
+            roll: '1-3',
+            name: 'Possessed',
+            description:
+                'A random Human Character has become possessed by the Mara. Their eyes and lips are red and their voice has become deeper and sibilant. Add +2 to all Qualities and they become a Minion with the Mara when encountered. On a Plotting result of an Enemy Action roll, add an extra +1 Danger. If a Companion is possessed the only Action they may attempt is a (Mind Control) Conflict against the Mara each turn. If they succeed, they break free of the possession and gain +1 Knowledge. If they fail, any subsequent attempts have a -1 (cumulative) penalty. If you do not Defeat the Mara, the Companion is killed (lose 3 VP).',
+        },
+        {
+            roll: '4-5',
+            name: 'The Dreaming',
+            description:
+                'A random Human Character (select a Character exhausted at Night or with Aware 2 if possible) falls asleep and is captured in the Dark Places of the Inside (Lair).',
+        },
+        {
+            roll: '6',
+            name: 'Ceremony of Power',
+            description:
+                'Choose that either the Mara is +1 to all Qualities or add +3 to next Enemy Action roll.',
+        },
+    ],
+    lair: {
+        name: 'Dark Places of the Inside',
+        tags: ['Dark', 'Dimensional Location'],
+        description:
+            'This is the Mara’s world, a nightmarish dimension where fear is used by the Mara to achieve its ultimate ambition – to escape into the physical world... Whilst a Character is in the thrall of the Mara they can take no Action and the Mara tempts them with a Test. If they succeed, gain +1 Knowledge and they are released. If they fail, they become the Host of the Mara (see Possessed – Enemy event). Roll 1D6:',
+        table: [
+            {
+                roll: '1-3',
+                description:
+                    'The Mara creates a duplicate – your Character must win an (Outwit) Conflict.',
+            },
+            {
+                roll: '4-6',
+                description:
+                    'The Mara traps the Character in a place of utter darkness – they must win a (Terrify) Conflict against the Mara (Bravery 3).',
+            },
+        ],
+    },
+    specialEncounter: null,
+}
+
+export const E036: Enemy = {
+    id: 36,
+    tag: 'E036',
+    title: 'The Black Guardian',
+    description:
+        'The Black Guardian is a powerful universal force that delights in misery, chaos and destruction. Often remaining hidden, manipulating and influencing events or using pawns as his agents, the Black Guardian can manifest as an old man in dark velvet robes and with a rich, dark voice.',
+    special:
+        'In the Dilemma Phase, you instead encounter the Shadow (Minions of the Guardian). The Black Guardian has no Lair - have an Enemy encounter instead.',
+    stats: ['+2 Danger', 'Scheme 7', 'Entity'],
+    encounter: {
+        description:
+            'The Black Guardian is Brains 9, Brawn 0, Bravery 7, Leader. Choose from options below:',
+        table: [
+            {
+                name: 'Conflict',
+                description:
+                    'Roll 1D6: 1–2 Brainwash, 3–4 Trap, 5 Mind Control, 6 Terrify.',
+            },
+            {
+                name: 'Surrender',
+                description:
+                    'Roll 1D6 (+2 if Capture Goal): 1-3: The Black Guardian gives an evil laugh and starts a Conflict (above); 4-6: Captured (8); 7+: Captured (9), add +1 Danger as the Black Guardian cannot resist gloating over you.',
+            },
+            {
+                name: 'Evade',
+                description:
+                    'Roll 1D6 (+2 if Resurrection Goal): 1-3: The Black Guardian prevents you evading and starts a Conflict (above); 4-5: The Black Guardian allows you to Surrender (roll above) or will start a Conflict (see above); 6+: The Black Guardian lets you run, his terrible laughter in your ears – add +2 Danger.',
+            },
+            {
+                name: 'Conflict (Outwit)',
+                description:
+                    'You must have 3 Knowledge to choose this option. If you win Conflict, you Defeat the Black Guardian but if you encounter another Entity Enemy in a further Adventure, roll 1D6 and on a 1-3, it will be the Black Guardian (and add +1 to the Goal roll). If you fail, choose to Evade, Surrender or start a different Conflict.',
+            },
+        ],
+    },
+    goals: [
+        {
+            roll: '1-2',
+            name: 'Escape Prison',
+            vp: 7,
+            type: 'Resurrection',
+            description:
+                'The Black Guardian is trying to escape from dimensional confinement. At the end of each Turn, add +1 Danger. You may either Outwit the Black Guardian (above) or:',
+            options: [
+                {
+                    name: 'Banishment',
+                    description:
+                        'Make a Science 10 roll (add Aware) to research the dimensional co-ordinates. Then take a Prevent Action (add Science). Add +1 Danger if you fail and have an Enemy encounter.',
+                },
+            ],
+        },
+        {
+            roll: '3-4',
+            name: 'Incite Galactic War',
+            vp: 8,
+            type: 'Apocalypse',
+            description:
+                'The Black Guardian intends to start a galactic war between opposing systems. Roll a new Goal if on Earth. Diplomacy rolls have a -1 penalty. You may either Outwit the Black Guardian (above) or:',
+            options: [
+                {
+                    name: 'Broker Peace',
+                    description:
+                        'Move to a Location where you can Find Help and take a Prevent Action (add Diplomacy but with -1 for each Troop with you). If you fail, add +1 Danger.',
+                },
+            ],
+        },
+        {
+            roll: '5-6',
+            name: 'Revenge',
+            vp: 6,
+            type: 'Capture',
+            description:
+                'The Black Guardian is after revenge. Random Character selection will always target the Doctor. If you do not Defeat the Black Guardian, the game is over. You may either Outwit the Black Guardian (above) or:',
+            options: [
+                {
+                    name: 'Escape in TARDIS',
+                    description:
+                        'Return TARDIS Characters to TARDIS Landing Location and make a Brains 14 roll to remove traps that the Guardian has set around it. Only gain 3 VP. If you fail the roll, add +1 Danger and encounter Guardian.',
+                },
+            ],
+        },
+    ],
+    events: [
+        {
+            roll: '1-2',
+            name: 'Trap',
+            description:
+                'The Doctor and all accompanying Characters are trapped and can take no Action until they can make any Quality 12 roll as an Action. Any Characters not trapped can make a Rescue 9 roll to free them.',
+        },
+        {
+            roll: '3-4',
+            name: 'Controlling Events',
+            description:
+                'For the next 1D3 Turns you must choose to take a -1 penalty to all Actions or add +1 to Enemy Action rolls or +1 Danger at the end of each Turn.',
+        },
+        {
+            roll: '5-6',
+            name: 'Corruption',
+            description:
+                'The Black Guardian starts a (Mind Control) Conflict against a random Companion. If he succeeds, add +2 Danger or lose 2 Luck. The Companion becomes a Minion of the Black Guardian until the end of the Adventure.',
+        },
+    ],
+    lair: null,
+    specialEncounter: {
+        name: 'Minions of the Guardian',
+        description:
+            'The Shadow: Wraith-like servant of the Black Guardian (Brains 4, Brawn 1, Bravery 3, Leader, Minion) accompanied by 1D3+1 hooded, mute servants (each Brains 0, Brawn 2, Bravery 2, Minion, Troop). The Shadow and his servants are +1 to Qualities at Dark Locations. Choose from the options below:',
+        table: [
+            {
+                name: 'Conflict',
+                description:
+                    'If Danger 8 or less, the Shadow attempts a (Capture) Conflict; if Danger 9+, the Shadow instead starts an (Attack) Conflict.',
+            },
+            {
+                name: 'Surrender',
+                description:
+                    'Roll 1D6 (+2 if Danger 10 or less): 1-3: The Shadow starts (Attack) Conflict; 4-5: Captured (8); 6+: Captured (9), add +1 Danger and roll for a Goal.',
+            },
+            {
+                name: 'Evade',
+                description:
+                    'Make either a Running 8 roll to escape, or a Stealth 8 roll to hide. If you fail, choose another option with -1 to roll.',
+            },
+            {
+                name: 'Conflict (Outwit)',
+                description:
+                    'You try to confuse the Shadow and escape. If you fail, choose to Surrender or start a different Conflict.',
+            },
+        ],
     },
 }
 
@@ -4207,4 +4801,7 @@ export const enemyData: Enemy[] = [
     E031,
     E032,
     E033,
+    E034,
+    E035,
+    E036,
 ]
