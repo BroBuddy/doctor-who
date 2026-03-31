@@ -10,6 +10,7 @@ const initFavorites: BookletItem[] = [
     { tag: 'R011', title: 'Incidents' },
     { tag: 'R014', title: 'Action Tables' },
     { tag: 'R018', title: 'Enemy Tables' },
+    { tag: 'TM02', title: 'Random Vortex Destination Matrix' },
 ]
 
 const useGameStore = create<GameState>((set, get) => ({

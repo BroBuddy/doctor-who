@@ -5231,6 +5231,1062 @@ const A015: Adventure = {
     ],
 }
 
+const A016: Adventure = {
+    id: 16,
+    tag: 'A016',
+    title: 'Rings of Akhaten',
+    year: 456013,
+    tardis: 10,
+    era: 'Far Future Era',
+    type: 'Holiday',
+    description:
+        "You have landed on Tiaanamat, a large asteroid that orbits the giant red Akhaten sun as part of the 'rings of Akhaten'. The asteroid has an exotic, bustling marketplace to a myriad of alien races and cultures that offers visitors anything from repulsor-vehicles to refreshments from across the galaxy. It is also the location of a very strange religious cult that chants an ancient and mysterious song...",
+    stats: {
+        danger: 0,
+        knowledge: 5,
+        vp: 0,
+    },
+    special:
+        'Gain 1 Luck point at start of Adventure if you have a Human Companion. Add +2 Danger if an Entity Enemy. Busy Streets: (Exterior, Move 3) You push your way through the crowded streets that are bathed in the warm red light of the giant sun above. Alien visitors from all parts of the galaxy scurry around you. Add +1 to Explore Actions. You may not take Investigate or Research Actions here. If Captured here, roll for new Location. Encounter (D6, +1 to roll if Discover Phase): 1: Enemy encounter; 2: Enemy event; 3: Incident; 4: Lost (Incident); 5+: Character event.',
+    enemy: [
+        { roll: '1', name: 'Gothic' },
+        { roll: '2-3', name: 'Entity' },
+        { roll: '4', name: 'Chameleon' },
+        { roll: '5', name: 'Temporal' },
+        { roll: '6', name: 'Villain' },
+    ],
+    locations: [
+        {
+            roll: '1',
+            name: 'Amphitheatre',
+            move: 8,
+            terrain: null,
+            description:
+                'The incredible structure that faces towards the red sun to celebrate all the festivals and ceremonies and which holds hundreds of visitors. Add +1 to Investigate and Seek information Actions here. You may not Explore here. If Festival of Offerings, you may pay 1 Luck to meet Merry Gejelh (Special Character).',
+            encounter: 'D6 (add +2 if Festival of Offerings)',
+            rolls: [
+                { roll: '1-2', description: 'Vigil' },
+                { roll: '3', description: 'Incident' },
+                { roll: '4-5', description: 'Character event' },
+                {
+                    roll: '6',
+                    description:
+                        'Watch ancient ceremony – choose to gain 1 Luck or +1 Knowledge',
+                },
+            ],
+        },
+        {
+            roll: '2',
+            name: 'Temple of Akhaten',
+            move: null,
+            terrain: 'Pilot 9',
+            description:
+                'The massive pyramid structure contains a large, smoky temple that is dominated by a central throne. Slumped on the throne is a terrifying mummy. Add +1 to Investigate Actions here. You may Study (History) here. Charm, Diplomacy and Escape rolls have -1 penalty. Add +1 Danger if Entity Enemy or Resurrection Goal (+2 if both). You may spend 1 Luck to meet a High Priest.',
+            encounter: 'D6',
+            rolls: [
+                { roll: '1', description: 'Incident' },
+                { roll: '2', description: 'None' },
+                { roll: '3-4', description: 'Vigil' },
+                { roll: '5', description: 'Chorister' },
+                { roll: '6', description: 'Enemy encounter' },
+            ],
+        },
+        {
+            roll: '3',
+            name: 'Tunnels',
+            move: 9,
+            terrain: 'Dark',
+            description:
+                'The tunnels beneath the streets are dark and rarely explored. Add +2 to Explore and Investigate Actions here.',
+            encounter: 'Aware roll',
+            rolls: [
+                { roll: '2-4', description: 'Lost (Incident)' },
+                {
+                    roll: '5',
+                    description:
+                        'Vigil (Discover phase only) or Enemy encounter',
+                },
+                {
+                    roll: '6',
+                    description:
+                        'Rock-fall – random Character killed unless you spend 2 Luck',
+                },
+                { roll: '7-8', description: 'No event' },
+                { roll: '9', description: 'Fugitive' },
+                {
+                    roll: '10',
+                    description:
+                        'Tunnel creature - Attacked (Brawn 8, Creature) unless you make a Running 8 roll',
+                },
+                {
+                    roll: '11+',
+                    description:
+                        'Gain 2 Knowledge or spend 1 Luck to gain +2 to next Prevent Action',
+                },
+            ],
+        },
+        {
+            roll: '4',
+            name: 'Marketplace',
+            move: 6,
+            terrain: 'Exterior',
+            description:
+                'The market bustles with myriad of different alien races – from the Ultramancers to Pan-Babylonians. Add +1 to Investigate and Seek Information Actions here. You can spend 2 Luck to have a Character event of your choice, spend 1 Luck to roll for a Plot event, or discard a Gadget to gain Luck equal to its Cost.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                { roll: '2', description: 'Enemy event' },
+                { roll: '3', description: 'No event' },
+                { roll: '4', description: 'Incident' },
+                { roll: '5', description: 'Alien Merchant' },
+                { roll: '6+', description: 'Character event' },
+            ],
+        },
+        {
+            roll: '5',
+            name: 'Cantina',
+            move: 7,
+            terrain: null,
+            description:
+                'You have found a small cantina where the sounds of alien chattering is mixed with the strange smells of exotic vapours. Add +1 to (Charm) Seek Information Actions and Relax Actions. You may not Investigate here.',
+            encounter: 'D6',
+            rolls: [
+                {
+                    roll: '1',
+                    description:
+                        'Approached by a burly alien and Attacked (Brawn 3)',
+                },
+                { roll: '2', description: 'Incident' },
+                { roll: '3', description: 'Enemy event' },
+                {
+                    roll: '4+',
+                    description:
+                        'You can spend 1 Luck to meet an Alien Ambassador, Alien Visitor, Fugitive or Alien Merchant or attempt a Charm 8 roll to have a Plot event (each once only)',
+                },
+            ],
+        },
+        {
+            roll: '6',
+            name: 'Docking Bay',
+            move: 8,
+            terrain: null,
+            description:
+                'The hangars where visiting ships are docked until departure. Add +1 to Investigate Actions here. You may spend 2 Luck to buy a repulsor-bike that can carry 2 Characters and adds +2 to Move Actions, Pilot rolls and Evade options (using Pilot rather than Running) for the rest of Adventure.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                { roll: '2', description: 'Vigil' },
+                { roll: '3', description: 'Incident' },
+                { roll: '4', description: 'No event' },
+                { roll: '5', description: 'Plot event' },
+                { roll: '6', description: 'Alien Visitor' },
+                { roll: '7', description: 'Character event' },
+            ],
+        },
+    ],
+    plots: [
+        {
+            roll: '2-4',
+            name: 'Legend of Akhaten',
+            description:
+                'You learn about a strange legend of the Old God. Is it just superstition or might it have a connection to recent events? Gain +1 Knowledge (or +2 Knowledge with a successful History 9 roll).',
+        },
+        {
+            roll: '5',
+            name: 'Mysterious Runes',
+            description:
+                'You discover that strange symbols have been found carved on the rocks of the temple. If you make a History 8 roll, gain +2 Knowledge. If you make a History 10 roll, instead reveal the Enemy.',
+        },
+        {
+            roll: '6',
+            name: 'It Wakes',
+            description:
+                'At the temple of Akhaten, the ancient mummified corpse has stirred after centuries. Add +1 Danger. If you go there, gain +1 Knowledge (+2 Knowledge if you make a History 9 roll). When rolling for an Enemy, roll an Entity Enemy.',
+        },
+        {
+            roll: '7',
+            name: 'Festival of Offerings',
+            description:
+                'Tonight marks the start of a millennial ceremony - could it be linked to the Enemy plans? Gain +1 Knowledge (or +2 Knowledge if with a native Character). At the start of the Defeat Phase, add +1 Danger.',
+        },
+        {
+            roll: '8',
+            name: 'Prophecy',
+            description:
+                'You learn that a strange prophecy has been made by the priests of Akhaten. Gain +1 Knowledge if you make a Brains 12 roll (add Aware and History).',
+        },
+        {
+            roll: '9',
+            name: 'Under Suspicion',
+            description:
+                'Recent events place you under suspicion of nefarious activities or crimes. If you make either a Charm 10 roll or Diplomacy 9 roll, gain +1 Knowledge. If you fail you are Captured (8).',
+        },
+        {
+            roll: '10',
+            name: 'Mistaken Identity',
+            description:
+                'You discover that one of your Companions has been mistaken for someone of importance. Gain +2 to all Charm and Diplomacy rolls in this Adventure where Companion is present.',
+        },
+        {
+            roll: '11-12',
+            name: 'Disturbed Vault',
+            description:
+                'Strange activity surrounding the tomb of a long-dead Akhaten priest. If you go there (Dark, Move 9) then you find an ornately decorated stone chamber in the catacombs beneath the temple. Add +1 Danger. Add +2 to Investigate Actions here. -1 to Charm/Diplomacy rolls here. Encounter (Aware roll): 2-5: Enemy encounter; 6: Enemy event; 7: Mysterious Runes; 8: None; 9: Under Suspicion; 10-11: Gain +1 Knowledge; 12+: Gain +2 Knowledge but add +1 Danger.',
+        },
+    ],
+    characters: [
+        {
+            roll: '2-4',
+            name: 'Alien Ambassador',
+            description:
+                'Assigned here as a peace envoy. Make a Diplomacy roll (-1 per Stealth).',
+            rolls: [
+                {
+                    roll: '2-4',
+                    description: 'Accused of being a traitor – Capture (7)',
+                },
+                { roll: '5-6', description: 'No event' },
+                {
+                    roll: '7-8',
+                    description:
+                        'Knows of local events – roll for a Plot event',
+                },
+                {
+                    roll: '9+',
+                    description:
+                        'Ambassador becomes an Ally - roll for a Plot event',
+                },
+            ],
+            stats: { brains: 2, brawn: 1, bravery: 1 },
+            skills: ['Aware', 'Diplomacy'],
+        },
+        {
+            roll: '5',
+            name: 'High Priest',
+            description:
+                'Devout to the Old God of Akhaten, but also a suspicious zealot. Make a Diplomacy roll (-3 if in a Temple, +3 if Enemy revealed).',
+            rolls: [
+                { roll: '2-7', description: 'You are Captured (8)' },
+                { roll: '8-9', description: 'No further event' },
+                {
+                    roll: '10',
+                    description: 'Informed of news - roll for a Plot event',
+                },
+                {
+                    roll: '11+',
+                    description: 'He becomes your Ally – roll for Plot event',
+                },
+            ],
+            stats: { brains: 2, brawn: 1, bravery: 3 },
+            skills: ['Diplomacy', 'History'],
+        },
+        {
+            roll: '6',
+            name: 'Chorister',
+            description:
+                'A singer to the Old God dressed in long red robes. Make a Charm roll.',
+            rolls: [
+                { roll: '2-3', description: 'Guards called – see Vigil' },
+                { roll: '4-6', description: 'No event' },
+                {
+                    roll: '7-8',
+                    description:
+                        'He pauses briefly to exchange news – roll for a Plot event',
+                },
+                {
+                    roll: '9+',
+                    description: 'He becomes your Ally – roll for Plot event',
+                },
+            ],
+            stats: { brains: 1, brawn: 1, bravery: 1 },
+            skills: ['History'],
+            infomation: '+1 to Research (History) Actions.',
+        },
+        {
+            roll: '7',
+            name: 'Alien Visitor',
+            description:
+                'A short, green-skinned Lucanian, visiting this system for the first time. If you make a Charm 9 roll it becomes your Ally. The Lucanian may know something useful – if you pay 1 Luck, roll for a Plot event.',
+            stats: { brains: 2, brawn: 1, bravery: 1 },
+            skills: ['Pilot'],
+        },
+        {
+            roll: '8',
+            name: 'The Vigil',
+            description:
+                'A patrol of robotic Vigil guards (Special Characters) block your path.',
+        },
+        {
+            roll: '9',
+            name: 'Alien Merchant',
+            description:
+                'A species known for trade. Make a Charm roll (-1 per Stealth, discard a Gadget to gain bonus equal to Cost).',
+            rolls: [
+                {
+                    roll: '2-4',
+                    description:
+                        'It accuses you of thievery and calls the Vigil (with -1 to roll)',
+                },
+                { roll: '5-6', description: 'No event' },
+                {
+                    roll: '7-8',
+                    description: 'It knows some news – roll for Plot event',
+                },
+                {
+                    roll: '9+',
+                    description: 'It becomes an Ally - roll for Plot event',
+                },
+            ],
+            stats: { brains: 2, brawn: 2, bravery: 1 },
+            skills: ['Diplomacy'],
+            infomation: '+1 to Seek Information.',
+        },
+        {
+            roll: '10',
+            name: 'Fugitive',
+            description:
+                'Someone is avoiding the Vigil for unknown reasons. If it is the Festival of Offerings or you pay 1 Luck, it is Merry Gejelh (Special Character). Otherwise make a Charm roll.',
+            rolls: [
+                {
+                    roll: '2-3',
+                    description: 'Pickpocket - lose a Gadget or 2 Luck',
+                },
+                { roll: '4-7', description: 'No further event' },
+                { roll: '8-9', description: 'Roll for Plot event' },
+                {
+                    roll: '10+',
+                    description:
+                        'Fugitive becomes your Ally – roll for Plot event',
+                },
+            ],
+            stats: { brains: 1, brawn: 1, bravery: 1 },
+            skills: ['Stealth'],
+        },
+        {
+            roll: '11-12',
+            name: 'Alien Scholar',
+            description:
+                'A learned alien visiting Akhaten. Make a Science roll.',
+            rolls: [
+                { roll: '2-7', description: 'No further event' },
+                { roll: '8-9', description: 'Roll for a Plot event' },
+                {
+                    roll: '10+',
+                    description:
+                        'The scholar becomes your Ally – roll for a Plot event',
+                },
+            ],
+            stats: { brains: 2, brawn: 0, bravery: 1 },
+            skills: ['Medicine', 'Science'],
+        },
+    ],
+    specials: [
+        {
+            id: 1,
+            image: 'merry-gejelh',
+            name: 'Merry Gejelh',
+            description:
+                'You have met Merry Gejelh, the young Queen of Years who sings as part of the religious festivals of Akhaten. Merry joins you as an Ally and will know about recent events on the Rings of Akhaten so roll for a Plot event. If it is the Festival of Offerings, Merry must go to the Amphitheatre on Turns 5-6 or lose 2 Luck and add +1 Danger.',
+            information:
+                'You may also attempt to make a Charm (10) roll and if successful, Merry joins you as a Companion – gain 1 Luck. Away from Akhaten however, Merry loses History 2.',
+            stats: { brains: 2, brawn: 0, bravery: 2 },
+            skills: ['Aware', 'Charm', 'History 2', 'Running', 'Stealth'],
+        },
+        {
+            id: 2,
+            image: 'the-vigil',
+            name: 'The Vigil',
+            description:
+                'Robotic, masked aliens that ensure the traditions of the Old God are followed. If an Entity Enemy is revealed, the Vigil (Brawn 8) are Minions – either Evade (Running 8 or Stealth 8), Surrender (only if Danger 10 or less, Captured 8), start a (Capture) Conflict if Danger 8 or less, or an (Attack) Conflict if Danger 9+.',
+            information:
+                'If no Entity Enemy, make a Diplomacy roll (-1 per Stealth, -1 if Festival of Offerings): 0-7: Hostile – either Evade (Running 8 roll) or become Captured (7) or Attacked (Brawn 8); 8+: The Vigil stride past you with no further encounter.',
+            stats: { brains: 0, brawn: 8, bravery: 0 },
+            skills: ['Minion'],
+        },
+    ],
+}
+
+const A017: Adventure = {
+    id: 17,
+    tag: 'A017',
+    title: 'Isle of Arran',
+    year: 1972,
+    tardis: 7,
+    era: 'Modern Era',
+    type: 'Holiday',
+    description:
+        'The TARDIS has landed close to the village of Lamlash on the Scottish island of Arran. It is an early spring morning and although the sun is shining weakly in the sky, there is still a fresh chill in the air and a beautiful dusting of snow on the mountains behind the village.',
+    stats: {
+        danger: 0,
+        knowledge: 5,
+        vp: 0,
+    },
+    special:
+        'Some Locations on the island can only be reached with a Pilot roll rather than a Move Action (roll again if a random Location result). You must also have hired or found a boat (see the Harbour Location). Night will fall at the start of Turn 10 and last 3 full Turns. Windswept Coast: (Water, Exterior, Move 3) You walk across the undulating hills and paths that seem to go for miles across the island, the sound of waves against the shore never far away. You may only complete Explore Actions (with +1 to the roll) or Move Actions here. Encounter (D6, +1 to roll if Discover Phase, -1 to roll if Night): 0: Enemy encounter; 1: Enemy event; 2: Lost (Incident); 3: Incident; 4-5: None; 6+: Character event.',
+    enemy: [
+        { roll: '1', name: 'Gothic' },
+        { roll: '2', name: 'Earth' },
+        { roll: '3', name: 'Entity' },
+        { roll: '4', name: 'Temporal' },
+        { roll: '5-6', name: 'Chameleon' },
+    ],
+    locations: [
+        {
+            roll: '1',
+            name: 'Stone Circle',
+            move: 9,
+            terrain: 'Exterior',
+            description:
+                'An ancient monument that rests on a hill a few miles away from Lamlash and is tended by the villagers. Add +2 to Investigate Actions here. You may Study here. Take a -1 penalty to any Charm rolls with local Characters after visiting here.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy Lair' },
+                { roll: '2', description: 'Enemy encounter' },
+                { roll: '3', description: 'Incident' },
+                { roll: '4', description: 'Archaeologist' },
+                { roll: '5', description: 'Local Gentry' },
+                {
+                    roll: '6',
+                    description:
+                        'Runes – gain +1 Knowledge if you make a History 8 roll',
+                },
+                { roll: '7', description: 'None' },
+            ],
+        },
+        {
+            roll: '2',
+            name: 'Inn',
+            move: 8,
+            terrain: null,
+            description:
+                'A lovely local inn where the sounds of talking and laughing are mixed with the clink of glasses and the inviting smells of hot food. Add +1 to (Charm) Seek Information Actions and +1 to Relax Actions but you may not Investigate here.',
+            encounter: 'D6',
+            rolls: [
+                { roll: '1', description: 'Incident' },
+                {
+                    roll: '2+',
+                    description:
+                        'You can spend 1 Luck point to have a Character event, spend 2 Luck to meet Annie Harris (Special Character), or make a Charm 8 roll to have a Plot event (each once only)',
+                },
+            ],
+        },
+        {
+            roll: '3',
+            name: 'Farm',
+            move: 9,
+            terrain: 'Exterior',
+            description:
+                "A rustic old farmhouse surrounded by stables and sheds with a battered tractor sitting close to the gate. The bark of a dog can be heard from a barn. Add +1 to Investigate Actions here. If you make a Charm 7 roll, you are invited inside by the farmer's wife – make an immediate Relax Action (Discover Phase) or Seek Information (Charm) Action (Dilemma Phase).",
+            encounter: 'D6',
+            rolls: [
+                { roll: '1-2', description: 'Incident' },
+                { roll: '3-4', description: 'No event' },
+                { roll: '5-6', description: 'Farmer' },
+            ],
+        },
+        {
+            roll: '4',
+            name: 'Harbour',
+            move: 7,
+            terrain: 'Water, Exterior',
+            description:
+                "Fishing boats and other vessels are moored in a small but busy port. Loud seagulls wheel overhead as the local catch of the day is brought in. You may pay 2 Luck to hire a boat here or make a Stealth 9 roll to 'borrow' one (see Constable with -3 to Charm roll if you fail). Add +1 to Investigate or Seek Information Actions here.",
+            encounter: 'D6 (-1 to roll if Night)',
+            rolls: [
+                { roll: '0-1', description: 'Enemy encounter' },
+                { roll: '2', description: 'Enemy event' },
+                { roll: '3-4', description: 'Boat Captain' },
+                { roll: '5', description: 'Character event or Annie Harris' },
+                { roll: '6', description: 'Incident' },
+            ],
+        },
+        {
+            roll: '5',
+            name: 'Hidden Cove',
+            move: null,
+            terrain: 'Pilot 9, Water, Exterior',
+            description:
+                'A secluded beach and narrow cave a few miles along the coast from Lamlash. Add +1 to Investigate Actions here. You may Explore the cave as an Action (Dark) with +2 to the roll but add +1 to Enemy Action roll.',
+            encounter: 'D6 adding Pilot',
+            rolls: [
+                {
+                    roll: '1-2',
+                    description:
+                        'Choppy waters leave you stranded – Characters here may take no Action next Turn',
+                },
+                { roll: '3', description: 'Quiet cove - no event' },
+                { roll: '4', description: 'Enemy encounter' },
+                { roll: '5', description: 'Gain +1 Knowledge' },
+                { roll: '6+', description: 'Enemy Lair (Defeat Phase only)' },
+            ],
+        },
+        {
+            roll: '6',
+            name: 'Old Church',
+            move: 8,
+            terrain: null,
+            description:
+                'An old country stone church, set close to the shore, with stained glass windows and surrounded by a slightly-overgrown graveyard. Add +1 to Research (History) Actions here.',
+            encounter: 'D6 (+1 if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                {
+                    roll: '2',
+                    description:
+                        'Secret Passage – You may roll 1D6 and automatically Move to that Location next Turn if you wish',
+                },
+                { roll: '3-4', description: 'No event' },
+                {
+                    roll: '5',
+                    description:
+                        'Dusty records – make a History 8 roll to gain +1 Knowledge',
+                },
+                { roll: '6+', description: 'Vicar' },
+            ],
+        },
+    ],
+    plots: [
+        {
+            roll: '2-4',
+            name: 'Ancient Relic',
+            description:
+                'A mysterious artefact has been discovered washed up on the shore – could it be important to the plans of the Enemy? Make a Science 7 roll and a History 7 roll, gaining +1 Knowledge per success. Add +1 Danger.',
+        },
+        {
+            roll: '5',
+            name: 'Brutal Death',
+            description:
+                'Someone has been found murdered on a nearby beach and a corpse discovered. Roll 1D6 and if result is a 1, discard random Ally. Gain +1 Knowledge (or +2 Knowledge with a successful Medicine 7 roll).',
+        },
+        {
+            roll: '6',
+            name: 'Missing Villagers',
+            description:
+                'Some people have been recently vanishing from Lamlash in mysterious circumstances. Gain +1 Knowledge. Also gain 1 Luck point if you have a native Character with you.',
+        },
+        {
+            roll: '7',
+            name: 'Island Legend',
+            description:
+                'You learn about a strange, mysterious legend of the island. Is it just old fishwives tales or might it have a connection to recent events? Gain +1 Knowledge (or +2 Knowledge with a successful History 8 roll).',
+        },
+        {
+            roll: '8',
+            name: 'Smashed Boat',
+            description:
+                'A missing fishing boat has been discovered in the Harbour, but with no sign of the crew. If you go to the Harbour and make a Brains 10 roll (add Aware), gain +1 Knowledge (+2 Knowledge if with a native Character with Pilot).',
+        },
+        {
+            roll: '9',
+            name: 'Lights in the Sky',
+            description:
+                'Strange lights have been seen by locals in the night sky across the ocean recently. Could it relate to something sinister? Make a successful Brains 10 roll to reveal the Enemy, or gain +1 Knowledge if you fail.',
+        },
+        {
+            roll: '10',
+            name: 'Important Event',
+            description:
+                'An important celebration is due to happen soon on the island - could it be linked to the Enemy plans? Gain +1 Knowledge (or +2 Knowledge if with a native Character). At the start of the Defeat Phase, add +1 Danger.',
+        },
+        {
+            roll: '11-12',
+            name: 'Unusual Activity',
+            description:
+                'You hear about strange events happening nearby. Roll 1D6: 1-2: Roll for random Location - gain +1 Knowledge if you go there, then roll 1D6 and if 1-2 see Enemy Lair (roll for Enemy if Discover Phase); 3-6: Offshore Island (Water, Pilot 9) - if you go there, you find it has a strange, spiritual aura. Add +2 to Investigate or Research (History) Actions here. Encounter (D6): 1: Enemy Lair; 2: Enemy encounter; 3: No event; 4: Character event (-3 to Charm or Diplomacy rolls); 5: Gain +1 Knowledge; 6: Gain +2 Knowledge but +2 Danger and +1 to Enemy Action rolls.',
+        },
+    ],
+    characters: [
+        {
+            roll: '2-3',
+            name: 'Archaeologist',
+            description:
+                'A scientist who is investigating the Lamlash stone circle. If you make a Charm 9 roll (adding Science), the archaeologist becomes your Ally – see the Ancient Relic Plot event.',
+            stats: { brains: 2, brawn: 1, bravery: 1 },
+            skills: ['History', 'Science'],
+        },
+        {
+            roll: '4',
+            name: 'Local Gentry',
+            description:
+                'Slightly odd Scottish gentleman. Make a Diplomacy roll.',
+            rolls: [
+                {
+                    roll: '2-4',
+                    description:
+                        'Hidden secrets – add +1 Danger, -2 to Find Help Actions and he becomes a Minion',
+                },
+                { roll: '5-6', description: 'No event' },
+                {
+                    roll: '7-8',
+                    description: 'Shares local gossip - roll for Plot event',
+                },
+                {
+                    roll: '9+',
+                    description:
+                        'He joins you as an Ally – roll for Plot event',
+                },
+            ],
+            stats: { brains: 1, brawn: 0, bravery: 1 },
+            skills: ['Diplomacy', 'History'],
+        },
+        {
+            roll: '5',
+            name: 'Barmaid',
+            description:
+                'A shrewd local girl who always knows some gossip. Make a Charm roll (-1 to roll at the Inn).',
+            rolls: [
+                { roll: '2-4', description: 'No event' },
+                { roll: '5-8', description: 'Gossip – roll for a Plot event' },
+                {
+                    roll: '9+',
+                    description: 'Becomes an Ally – roll for a Plot event',
+                },
+            ],
+            stats: { brains: 1, brawn: 0, bravery: 1 },
+            skills: ['Charm', 'Running', 'Stealth'],
+        },
+        {
+            roll: '6',
+            name: 'Constable',
+            description:
+                'A local bobby takes an interest in you. Make a Charm roll (-1 per Stealth, +3 if Danger 10+).',
+            rolls: [
+                {
+                    roll: '2-5',
+                    description:
+                        'Wanted for questioning – make Running 7 roll or Captured (6)',
+                },
+                { roll: '6-9', description: 'He leaves with a nod to you' },
+                {
+                    roll: '10+',
+                    description:
+                        'He becomes an Ally (+1 to Investigate and Find Help Actions)',
+                },
+            ],
+            stats: { brains: 1, brawn: 2, bravery: 2 },
+        },
+        {
+            roll: '7',
+            name: 'Tourist',
+            description:
+                'A young backpacker on their first visit to the island. If you make a Charm 7 roll, the tourist joins you as an Ally. You may pay 1 Luck to roll for a Plot event.',
+            stats: { brains: 1, brawn: 1, bravery: 1 },
+            skills: ['Running'],
+        },
+        {
+            roll: '8',
+            name: 'Teacher',
+            description:
+                'A young teacher from the local village primary school. If you make a Charm 7 roll, she joins you as an Ally – roll for a Plot event.',
+            stats: { brains: 2, brawn: 1, bravery: 2 },
+            skills: ['Charm', 'History', 'Running'],
+        },
+        {
+            roll: '9',
+            name: 'Medic',
+            description:
+                'A handsome young medic from a small local practice. If you make a Charm 9 roll (+2 if Enemy revealed), the medic becomes an Ally - roll for Plot event.',
+            stats: { brains: 2, brawn: 1, bravery: 1 },
+            skills: ['Charm', 'Medicine'],
+        },
+        {
+            roll: '10',
+            name: 'Boat Captain',
+            description:
+                'A local fisherman who knows Arran well and has a boat in the Harbour (see Location). If you make a Charm 8 roll, he joins you as an Ally - roll for a Plot event.',
+            stats: { brains: 1, brawn: 2, bravery: 2 },
+            skills: ['Pilot'],
+        },
+        {
+            roll: '11',
+            name: 'Vicar',
+            description:
+                'The local clergy of the parish. Make a Charm roll (adding History).',
+            rolls: [
+                {
+                    roll: '2-3',
+                    description: 'He is offended and calls a Constable',
+                },
+                { roll: '4-7', description: 'He tips his hat and leaves' },
+                {
+                    roll: '8-9',
+                    description: 'He shares news – roll for Plot event',
+                },
+                {
+                    roll: '10+',
+                    description:
+                        'He joins you as an Ally (+1 to Find Help Actions) – roll for Plot event',
+                },
+            ],
+            stats: { brains: 2, brawn: 0, bravery: 2 },
+            skills: ['History'],
+        },
+        {
+            roll: '12',
+            name: 'Child',
+            description:
+                'An eleven-year old who attends the local primary school. Make a Charm roll.',
+            rolls: [
+                {
+                    roll: '2-4',
+                    description: "He's scared and runs off – lose 1 Luck",
+                },
+                { roll: '5-6', description: 'No further event' },
+                {
+                    roll: '7-8',
+                    description:
+                        'You share some secrets – gain 1 Knowledge or roll for a Plot event',
+                },
+                {
+                    roll: '9+',
+                    description: 'Becomes your Ally - roll for a Plot event',
+                },
+            ],
+            stats: { brains: 1, brawn: 0, bravery: 1 },
+            skills: ['Stealth'],
+        },
+    ],
+    specials: [
+        {
+            id: 1,
+            image: 'annie-harris',
+            name: 'Annie Harris',
+            description:
+                'You have met Annie Harris – an artist and designer who has given up hectic city life and opted for a more spiritual retreat. Annie is smart and observant but can be a little absent-minded at times. Annie will join you as an Ally. Recently relocated to Arran, Annie knows something about what has been happening on the island recently, so roll for a Plot event.',
+            information:
+                'You may also attempt to make a Charm (10) roll and if successful, Annie joins you as a Companion – gain 1 Luck.',
+            stats: { brains: 2, brawn: 1, bravery: 2 },
+            skills: ['Aware', 'Charm', 'Running'],
+        },
+    ],
+}
+
+const A018: Adventure = {
+    id: 18,
+    tag: 'A018',
+    title: 'Dark Asteroid',
+    year: null,
+    tardis: null,
+    era: null,
+    type: 'Wilderness',
+    description:
+        'After using an energy boost from the TARDIS, you have left the known universe to land on a desolate, rocky asteroid, just large enough to support a thin atmosphere and light gravity. But as you land, the lights in the TARDIS suddenly go out, plunging the console room into darkness. Checking the controls, you discover that the TARDIS Energy matrix is completely drained...',
+    stats: {
+        danger: 1,
+        knowledge: 5,
+        vp: 0,
+    },
+    special:
+        'Lose 1 Resources (if 0, lose 2 points from another TARDIS Quality). You may not take Actions in the TARDIS in this Adventure. Bleak Wasteland: (Dark, Exterior, Move 4) A cruel wind whips your hair and clothes as you trudge through the unforgiving landscape. The absence of stars in the night sky makes your journey difficult and treacherous. Explore Actions have a -1 penalty. You may not take Investigate or Research Actions here. If Captured here, roll for new Location. Encounter (D6, +1 to roll if Discover Phase): 1: Enemy encounter; 2: Enemy event; 3: Incident; 4: Lost (Incident); 5+: No event.',
+    enemy: [
+        { roll: '1-3', name: 'Entity' },
+        { roll: '4-5', name: 'Temporal' },
+        { roll: '6', name: 'Villain' },
+    ],
+    locations: [
+        {
+            roll: '1',
+            name: 'Junkyard',
+            move: 7,
+            terrain: 'Dark, Exterior',
+            description:
+                'The area is covered with the remains of crashed spacecraft and other junk. Add +2 to Move Actions to non-Exterior Locations. Add +1 to Investigate and Research (Engineer) Actions here (and if have Breakthrough result you may draw and play a Gadget card at no Cost).',
+            encounter: 'D6 (+1 to roll if Discover phase, add Engineer)',
+            rolls: [
+                { roll: '1-2', description: 'Enemy encounter' },
+                { roll: '3', description: 'Enemy event' },
+                { roll: '4', description: 'Incident' },
+                { roll: '5', description: 'None' },
+                { roll: '6', description: 'Character event' },
+                {
+                    roll: '7+',
+                    description: 'Draw (and play at no Cost) a Gadget card',
+                },
+            ],
+        },
+        {
+            roll: '2',
+            name: 'Crashed Spacecraft',
+            move: 8,
+            terrain: 'Dark',
+            description:
+                'The massive infrastructure of a spaceship embedded in the surface of the asteroid like a huge, twisted metal skeleton. Add +1 to Explore and Investigate Actions here (adding Pilot to either). Add +1 to Enemy Action rolls if you have Characters here.',
+            encounter: 'D6 (+1 to roll if Discover phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy Lair' },
+                { roll: '2', description: 'Enemy encounter' },
+                { roll: '3', description: 'Enemy event' },
+                { roll: '4', description: 'Incident' },
+                { roll: '5', description: 'No event' },
+                { roll: '6+', description: 'Character event' },
+            ],
+        },
+        {
+            roll: '3',
+            name: 'Tunnels',
+            move: 9,
+            terrain: 'Dark',
+            description:
+                'The tunnels beneath the surface are dark, cramped and filled with the twisted remains of salvage. Add +1 to Explore and Investigate Actions here.',
+            encounter: 'Aware roll',
+            rolls: [
+                { roll: '2-3', description: 'Lost (Incident)' },
+                { roll: '4', description: 'Enemy Lair' },
+                { roll: '5', description: 'Enemy encounter' },
+                {
+                    roll: '6',
+                    description:
+                        'Tunnel support crumbles – random Character killed unless you spend 2 Luck',
+                },
+                { roll: '7-8', description: 'No event' },
+                { roll: '9', description: 'Character event' },
+                { roll: '10', description: 'Rat Creatures' },
+                {
+                    roll: '11+',
+                    description:
+                        'Gain 2 Knowledge or spend 1 Luck to gain +2 to next Prevent Action',
+                },
+            ],
+        },
+        {
+            roll: '4',
+            name: 'Mountains',
+            move: 6,
+            terrain: 'Dark, Exterior',
+            description:
+                'The ferocious wind howls in your ears as you climb across the narrow, rocky ledges. Add +1 to Move and Investigate Actions here but if you roll doubles, you slip on the ledge – roll 1D6 for each Character and on a result of 1 they are killed.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                { roll: '2-3', description: 'No event' },
+                { roll: '4', description: 'Incident' },
+                { roll: '5', description: 'Character event' },
+                {
+                    roll: '6+',
+                    description:
+                        'Secret Tunnel – you may automatically Move to a random Location',
+                },
+            ],
+        },
+        {
+            roll: '5',
+            name: 'Ruins',
+            move: 8,
+            terrain: 'Dark',
+            description:
+                'A partly collapsed, ancient stone temple buried in the side of a ravine, with crumbling passages that twist downwards into the darkness. Add +1 to Investigate Actions here.',
+            encounter: 'D6 adding Aware',
+            rolls: [
+                { roll: '1-2', description: 'Lost (Incident)' },
+                { roll: '3', description: 'Abandoned – no event' },
+                { roll: '4', description: 'Enemy Lair' },
+                { roll: '5', description: 'Enemy encounter' },
+                {
+                    roll: '6',
+                    description: 'Gain +1 Knowledge or roll for Plot event',
+                },
+                {
+                    roll: '7+',
+                    description:
+                        'Gain +2 Knowledge but +1 Danger and +1 Enemy Action rolls whilst here',
+                },
+            ],
+        },
+        {
+            roll: '6',
+            name: 'Crashed Alien Vessel',
+            move: 9,
+            terrain: null,
+            description:
+                'An incredible ship of totally organic design with warm, vivid colours that gently pulsate as you explore it. Strange, but pleasant fluting music is mixed with an urgent throb that signifies the ship has been damaged. You may Study here as an Action using Science. Add +1 to Investigate and Research (Science) Actions here.',
+            encounter: 'D6',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                { roll: '2', description: 'Enemy Event' },
+                { roll: '3', description: 'Incident' },
+                { roll: '4', description: 'No event' },
+                { roll: '5', description: 'Plot event' },
+                { roll: '6', description: 'Alien Survivor' },
+            ],
+        },
+    ],
+    plots: [
+        {
+            roll: '2-4',
+            name: 'Time Rift',
+            description:
+                'You learn that the asteroid inhabits a crack in Time. Add +1 Danger if a Temporal Enemy is revealed. Make a successful Brains 12 roll to gain +1 Knowledge (+2 Knowledge if Brains 15 roll).',
+        },
+        {
+            roll: '5',
+            name: 'Mysterious Runes',
+            description:
+                'You discover that strange symbols have been found carved on the rocks of the ruins. If you go there and make a History 8 roll, gain +2 Knowledge. If you make a History 10 roll, instead reveal the Enemy.',
+        },
+        {
+            roll: '6',
+            name: 'Drained Corpse',
+            description:
+                'You discover a mummified corpse that has been completely drained of all life-energy. Add +1 Danger. If you make a Medicine 9 roll, gain +1 Knowledge (+2 Knowledge if you also make a Science 9 roll).',
+        },
+        {
+            roll: '7',
+            name: 'Temporal Drain',
+            description:
+                'You discover that the asteroid has a strange effect on time machines such as a TARDIS. Lose 1 point from any TARDIS Quality but gain +1 Knowledge. Add +1 Danger if Entity Enemy later revealed in Adventure.',
+        },
+        {
+            roll: '8',
+            name: 'Energy Barrier',
+            description:
+                'You discover that an energy barrier has been created across a random Location. Gain +1 Knowledge but you may not go to that Location unless you also make an Engineer 9 roll (+1 per attempt).',
+        },
+        {
+            roll: '9',
+            name: 'Captive',
+            description:
+                'Someone or something important has been captured. If you Move to a random Location and make a Rescue 8 Action, roll 1D6: 1-2: Gain +1 Knowledge; 3-4: Character event; 5-6: Enemy encounter.',
+        },
+        {
+            roll: '10',
+            name: 'Time Lord Hypercube',
+            description:
+                'The glowing cube acts as a distress call. If you make an Aware 9 roll (where only Time Lords can add to roll), choose to gain +1 Knowledge, or encounter a Time Lord, or find a Dead TARDIS.',
+        },
+        {
+            roll: '11-12',
+            name: 'Dead TARDIS',
+            description:
+                'You discover the weak energy signature of a TARDIS. If you go there (Move 9) then you find it is almost dead. Add +1 Knowledge and +1 Danger. Add +2 to Investigate Actions here. Encounter (TARDIS roll): 2-4: Enemy encounter; 5: Enemy event; 6-8: No event; 9: Time Lord; 10: Draw a random TARDIS Gadget card; 11: Gain +1 Knowledge; 12+: Gain +2 Knowledge or +2 to a Prevent Action.',
+        },
+    ],
+    characters: [
+        {
+            roll: '2-4',
+            name: 'Survivor',
+            description:
+                'A badly wounded survivor from one of the crashed ships. Unless you make a Medicine 7 roll, the survivor dies – lose 1 Luck (or 2 Luck and roll for a Plot event). If treated, the survivor joins you as an Ally – roll for a Plot event. You may also pay 1 Luck for the survivor to be Idris (Special Character).',
+            stats: { brains: 2, brawn: 1, bravery: 2 },
+            skills: ['Engineer', 'Pilot'],
+        },
+        {
+            roll: '5',
+            name: 'Psionic Cult',
+            description:
+                'Strange, robed figures approach you. Make an Aware roll (-2 if in Ruins, +2 if Enemy revealed).',
+            rolls: [
+                { roll: '2-7', description: 'You are Captured (9)' },
+                { roll: '8-9', description: 'No further event' },
+                {
+                    roll: '10',
+                    description: 'Informed of news - roll for a Plot event',
+                },
+                {
+                    roll: '11+',
+                    description:
+                        'One of the cult becomes your Ally (may use Brains instead of Brawn in a Conflict) – roll for Plot event',
+                },
+            ],
+            stats: { brains: 4, brawn: 1, bravery: 3 },
+            skills: ['Aware'],
+        },
+        {
+            roll: '6',
+            name: 'Ood',
+            description:
+                "A well-meaning, alien telepathic servitor joins you as an Ally, communicating through his glowing orb. However, if the Enemy is, or revealed as, an Entity, the Ood's eyes glow green and it attacks (Brawn 3). You can Evade with a Running 7 roll.",
+            stats: { brains: 1, brawn: 1, bravery: 1 },
+            skills: ['Aware', 'Engineer'],
+        },
+        {
+            roll: '7',
+            name: 'Rat Scavengers',
+            description:
+                'You are attacked by a pack of large rats. Roll 1D6 +1 (or +3 if Dark) for the number of rats, each Brains 0, Brawn 1, Bravery 1 (Creature). You may try to Evade with a Running 9 roll (-2 to roll if Dark), or you must start a Conflict (Attack).',
+        },
+        {
+            roll: '8',
+            name: 'Idris',
+            description:
+                'A strange young woman (see Special Characters) runs into you.',
+        },
+        {
+            roll: '9',
+            name: 'Alien Survivor',
+            description:
+                'A gaseous alien being that glows with an inner light. Make a Charm roll (adding Aware).',
+            rolls: [
+                {
+                    roll: '2-6',
+                    description:
+                        'You fail to make contact and the alien vanishes',
+                },
+                {
+                    roll: '7-9',
+                    description:
+                        'The alien communicates with you – gain +1 Knowledge, it then vanishes',
+                },
+                {
+                    roll: '10+',
+                    description:
+                        'The alien joins you as an Ally – gain +1 Knowledge',
+                },
+            ],
+            stats: { brains: 3, brawn: 0, bravery: 1 },
+            skills: ['Aware', 'History', 'Pilot'],
+        },
+        {
+            roll: '10',
+            name: 'Time Lord',
+            description:
+                'Badly wounded, the Time Lord will die unless you make a Medicine 7 roll. If treated, the Time Lord joins you as an Ally – gain +1 Knowledge.',
+            stats: { brains: 4, brawn: 1, bravery: 2 },
+            skills: ['Engineer', 'Science', 'TARDIS'],
+        },
+        {
+            roll: '11-12',
+            name: 'Alien Scholar',
+            description:
+                'A learned alien marooned on the asteroid. Make a Science roll.',
+            rolls: [
+                { roll: '2-7', description: 'No further event' },
+                { roll: '8-9', description: 'Roll for a Plot event' },
+                {
+                    roll: '10+',
+                    description:
+                        'The scholar becomes your Ally – roll for a Plot event',
+                },
+            ],
+            stats: { brains: 2, brawn: 0, bravery: 1 },
+            skills: ['Medicine', 'Science'],
+        },
+    ],
+    specials: [
+        {
+            id: 1,
+            image: 'idris',
+            name: 'Idris',
+            description:
+                'You have met Idris, a strange yet captivating young woman who babbles constantly. Roll 1D6: 1: She runs away; 2-6: She joins you as a rather unusual Ally (but counts as a TARDIS Character) – roll for a Plot event.',
+            information:
+                "You may also add your TARDIS Quality total to Idris' Qualities (with max +3 to any one Quality). If Idris is an Ally, you realise that she contains the lost Energy Matrix of the TARDIS but can only contain the energy for 8 Turns. Unless you Defeat the Enemy in this time, Idris dies and the TARDIS is lost forever. If you Defeat the Enemy, gain +3 VP as the Energy matrix returns to the TARDIS and you have the chance to speak to your oldest friend.",
+            stats: { brains: 4, brawn: 1, bravery: 4 },
+            skills: ['Aware 2', 'Charm', 'Running', 'TARDIS 2'],
+        },
+        {
+            id: 2,
+            image: 'tardis-invaded',
+            name: 'TARDIS Invaded',
+            description:
+                'Due to the strange, extra-dimensional properties of this asteroid and since the TARDIS Energy Matrix is lost, it means your ship is compromised and can now be invaded by unknown forces in this Adventure.',
+            information:
+                'Characters inside the TARDIS can now have Enemy encounters and be affected by Enemy events. If the Enemy is not Defeated in the Adventure however, the TARDIS Energy Matrix is lost forever and the game is over.',
+            stats: null,
+            skills: [],
+        },
+    ],
+}
+
 export const adventureData: Adventure[] = [
     A001,
     A002,
@@ -5247,4 +6303,7 @@ export const adventureData: Adventure[] = [
     A013,
     A014,
     A015,
+    A016,
+    A017,
+    A018,
 ]

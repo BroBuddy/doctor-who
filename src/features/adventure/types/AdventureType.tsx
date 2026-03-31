@@ -2,9 +2,9 @@ export type Adventure = {
     id: number
     tag: string
     title: string
-    year: number
-    tardis: number
-    era: AdventureEra
+    year: number | null
+    tardis: number | null
+    era: AdventureEra | null
     type: AdventureType | null
     description: string
     stats: AdventureStats
@@ -17,15 +17,17 @@ export type Adventure = {
 }
 
 export type AdventureEra =
-    | 'World War Era'
-    | 'Future Era'
-    | 'Near Future Era'
     | 'Medieval Era'
-    | 'Victorian Era'
-    | 'Twilight Era'
     | 'Renaissance Era'
-    | 'Colonial Era'
+    | 'Victorian Era'
+    | 'World War Era'
+    | 'Modern Era'
     | 'Post-Modern Era'
+    | 'Near Future Era'
+    | 'Future Era'
+    | 'Far Future Era'
+    | 'Twilight Era'
+    | 'Colonial Era'
     | 'Antiquity Era'
     | 'Regency Era'
 

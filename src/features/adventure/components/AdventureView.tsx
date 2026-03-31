@@ -1,9 +1,9 @@
 import type { Rolls } from '../types/AdventureType'
-import Badge from '@/components/Badge'
 import { getAdventureByTag } from '../services/AdventureService'
 import { useParams } from 'react-router-dom'
 import Card from '@/components/Card'
-import { formatYear } from '@/lib/helper'
+import YearEraTardis from './YearEraTardis'
+import AdventureStats from './AdventureStats'
 
 function AdventureView() {
     const { tag } = useParams()
@@ -17,31 +17,13 @@ function AdventureView() {
                 className="mt-4"
             />
 
-            <p>
-                <Badge icon="🕒" text={formatYear(adventure.year)} />
-                <Badge icon="🌍" text={adventure.era} />
-                <Badge icon="🌀" text={`Tardis ${adventure.tardis}`} />
-            </p>
+            <YearEraTardis
+                year={adventure.year}
+                era={adventure.era}
+                tardis={adventure.tardis}
+            />
 
-            {adventure.stats && (
-                <p>
-                    <Badge
-                        icon="⚠️"
-                        text={`Danger ${adventure.stats.danger}`}
-                        variant="light"
-                    />
-                    <Badge
-                        icon="📚"
-                        text={`Knowledge ${adventure.stats.knowledge}`}
-                        variant="light"
-                    />
-                    <Badge
-                        icon="⭐"
-                        text={`VP ${adventure.stats.vp}`}
-                        variant="light"
-                    />
-                </p>
-            )}
+            <AdventureStats stats={adventure.stats} />
 
             <p>
                 {adventure.type && <em className="mr-1">({adventure.type})</em>}

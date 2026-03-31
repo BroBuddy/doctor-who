@@ -829,47 +829,7 @@ import{g as e,h as t,v as n,y as r}from"./adventure-FoInAIZ8.js";var i=[{tag:`R0
                     </tr>
                 </tbody>
             </table>
-        `},{tag:`TM02`,title:`Random Vortex Destination Matrix`,description:`
-            <table class="text-md">
-                <thead>
-                    <tr>
-                        <td class="w-4"><strong>D6</strong></td>
-                        <td><strong>1</strong></td>
-                        <td><strong>2</strong></td>
-                        <td><strong>3</strong></td>
-                        <td><strong>4</strong></td>
-                        <td><strong>5</strong></td>
-                        <td><strong>6</strong></td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>1</strong></td>
-                        <td>A001</td><td>A002</td><td>A003</td><td>A004</td><td>A005</td><td>A006</td>
-                    </tr>
-                    <tr>
-                        <td><strong>2</strong></td>
-                        <td>A007</td><td>A008</td><td>A009</td><td>A010</td><td>A011</td><td>A012</td>
-                    </tr>
-                    <tr>
-                        <td><strong>3</strong></td>
-                        <td>A013</td><td>A014</td><td>A015</td><td>A016</td><td>A017</td><td>A019</td>
-                    </tr>
-                    <tr>
-                        <td><strong>4</strong></td>
-                        <td>A020</td><td>A021</td><td>A023</td><td>A024</td><td>A020</td><td>A021</td>
-                    </tr>
-                    <tr>
-                        <td><strong>5</strong></td>
-                        <td>A001</td><td>A002</td><td>A003</td><td>A004</td><td>A005</td><td>A013</td>
-                    </tr>
-                    <tr>
-                        <td><strong>6</strong></td>
-                        <td>A007</td><td>A014</td><td>A009</td><td>A015</td><td>A011</td><td>A017</td>
-                    </tr>
-                </tbody>
-            </table>
-        `},{tag:`T00`,title:`The TARDIS`,description:`
+        `},{tag:`TM02`,title:`Random Vortex Destination Matrix`},{tag:`T00`,title:`The TARDIS`,description:`
             <p>You stand at the console of the TARDIS, your trusty Time and Space machine, as it flies through the twisting miasma of the Time Vortex. A gentle hum fills the air as the glass pillar of lights and instruments rises and falls in front of you.</p>
             <p>You may try to set the controls for a particular destination or just let the TARDIS materialise wherever she wants (t002). Before you get to any destination however, roll 2D6. If the result is 10+, then you have an event in the Vortex (see below). If you have no event, you may try to repair the TARDIS if it has taken Damage (see t005).</p>
             <p>In an Adventure you can return to the TARDIS at any time (t006). At the end of an Adventure, automatically return to this section. After you have completed 3 Adventures, see Q00 below.</p>
