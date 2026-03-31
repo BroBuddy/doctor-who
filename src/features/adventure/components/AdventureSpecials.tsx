@@ -1,9 +1,9 @@
 import { useParams } from 'react-router-dom'
 import { getAdventureSpecialsByTag } from '../services/AdventureService'
-import type { AdventureSpecial } from '../types/AdventureType'
-import Badge from '@/components/Badge'
+import type { AdventureSpecial, Stats } from '../types/AdventureType'
 import { Accordion } from '@/components/Accordion'
 import Card from '@/components/Card'
+import CharacterStats from './CharacterStats'
 
 function AdventureSpecials() {
     const { tag } = useParams()
@@ -28,32 +28,10 @@ function AdventureSpecials() {
                     />
                 )}
 
-                {character.stats && (
-                    <p>
-                        <Badge
-                            icon="🧠"
-                            text={`${character.stats.brains} Brains`}
-                        />
-                        <Badge
-                            icon="💪"
-                            text={`${character.stats.brawn} Brawn`}
-                        />
-                        <Badge
-                            icon="🫀"
-                            text={`${character.stats.bravery} Bravery`}
-                        />
-                    </p>
-                )}
-
-                {character.skills && (
-                    <div className="flex flex-wrap mb-3">
-                        {character.skills.map((item: string) => (
-                            <div key={item}>
-                                <Badge text={item} variant="light" />
-                            </div>
-                        ))}
-                    </div>
-                )}
+                <CharacterStats
+                    stats={character.stats as Stats}
+                    skills={character.skills as string[]}
+                />
             </>
         ),
     }))

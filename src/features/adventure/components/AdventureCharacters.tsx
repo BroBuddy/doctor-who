@@ -1,10 +1,10 @@
-import type { AdventureCharacter, Rolls } from '../types/AdventureType'
+import type { AdventureCharacter, Rolls, Stats } from '../types/AdventureType'
 import { Accordion } from '@/components/Accordion'
-import Badge from '@/components/Badge'
 import { getAdventureCharactersByTag } from '../services/AdventureService'
 import { useParams } from 'react-router-dom'
 import Card from '@/components/Card'
 import Dice from '@/components/Dice'
+import CharacterStats from './CharacterStats'
 
 function AdventureCharacters() {
     const { tag } = useParams()
@@ -34,30 +34,10 @@ function AdventureCharacters() {
                         </ul>
                     )}
 
-                    {character.stats && (
-                        <p>
-                            <Badge
-                                icon="🧠"
-                                text={`${character.stats.brains} Brains`}
-                            />
-                            <Badge
-                                icon="💪"
-                                text={`${character.stats.brawn} Brawn`}
-                            />
-                            <Badge
-                                icon="🫀"
-                                text={`${character.stats.bravery} Bravery`}
-                            />
-                        </p>
-                    )}
-
-                    {character.skills && (
-                        <p>
-                            {character.skills.map((item: string) => (
-                                <Badge key={item} text={item} variant="light" />
-                            ))}
-                        </p>
-                    )}
+                    <CharacterStats
+                        stats={character.stats as Stats}
+                        skills={character.skills as string[]}
+                    />
                 </>
             ),
         })

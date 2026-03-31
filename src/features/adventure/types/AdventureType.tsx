@@ -17,19 +17,18 @@ export type Adventure = {
 }
 
 export type AdventureEra =
+    | 'Antiquity Era'
     | 'Medieval Era'
     | 'Renaissance Era'
+    | 'Regency Era'
     | 'Victorian Era'
     | 'World War Era'
     | 'Modern Era'
     | 'Post-Modern Era'
     | 'Near Future Era'
-    | 'Future Era'
-    | 'Far Future Era'
-    | 'Twilight Era'
     | 'Colonial Era'
-    | 'Antiquity Era'
-    | 'Regency Era'
+    | 'Twilight Era'
+    | 'Far Future Era'
 
 export type AdventureType =
     | 'Holiday'
