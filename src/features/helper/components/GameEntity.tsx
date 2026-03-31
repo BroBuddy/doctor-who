@@ -20,7 +20,7 @@ function GameEntity({ tag, title, linkBase, emptyText }: GameEntityProps) {
         <div className="flex justify-start items-center">
             <RuleLink path={linkBase} tag={tag} />
 
-            <span className="text-sm">{title}</span>
+            <span className="text-sm ml-1">{title}</span>
         </div>
     )
 }

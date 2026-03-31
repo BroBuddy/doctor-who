@@ -16,7 +16,7 @@ const FrequentlyUsed = ({ items }: FrequentlyUsedProps) => {
                 <div key={item.tag} className="flex justify-start items-center">
                     <RuleLink path={getPrefixByTag(item.tag)} tag={item.tag} />
 
-                    <span className="text-sm">{item.title}</span>
+                    <span className="text-sm ml-1">{item.title}</span>
                 </div>
             ))}
         </Card>
