@@ -57,7 +57,7 @@ const Dice = ({ dice = 1, onRoll }: DiceProps) => {
     return (
         <span
             style={{ zIndex: 9 }}
-            className={`dice cursor-pointer ${isRolling ? 'active-dice' : ''}`}
+            className={`dice pointer ${isRolling ? 'active-dice' : ''}`}
             onClick={!isRolling ? handleDiceClick : undefined}
             role="button"
             aria-label="Roll the dice"

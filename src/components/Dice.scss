@@ -1,9 +1,10 @@
 .dice {
     cursor: pointer;
+    color: var(--light-blue);
     font-size: 14px;
     font-weight: bold;
     text-align: center;
-    width: 1.25rem;
+    width: 25px;
     z-index: 20;
 
     &.active-dice {
