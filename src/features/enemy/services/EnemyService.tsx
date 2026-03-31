@@ -17,14 +17,19 @@ const getEnemyByTag = (tag: string): Enemy => {
     return enemyData.find((item: Enemy) => item.tag === tag) as Enemy
 }
 
-const getEnemyEventsByTag = (tag: string) => {
+const getEnemyEncounterByTag = (tag: string) => {
     const enemy = getEnemyByTag(tag)
-    return enemy?.events || []
+    return enemy?.encounter || []
 }
 
 const getEnemyGoalsByTag = (tag: string) => {
     const enemy = getEnemyByTag(tag)
     return enemy?.goals || []
+}
+
+const getEnemyEventsByTag = (tag: string) => {
+    const enemy = getEnemyByTag(tag)
+    return enemy?.events || []
 }
 
 const getEnemyLairByTag = (tag: string) => {
@@ -35,7 +40,8 @@ const getEnemyLairByTag = (tag: string) => {
 export {
     getEnemyData,
     getEnemyByTag,
-    getEnemyEventsByTag,
+    getEnemyEncounterByTag,
     getEnemyGoalsByTag,
+    getEnemyEventsByTag,
     getEnemyLairByTag,
 }

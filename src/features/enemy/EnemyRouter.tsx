@@ -3,6 +3,7 @@ import type { RouteObject } from 'react-router-dom'
 
 const EnemyDetail = lazy(() => import('./pages/EnemyDetail'))
 const EnemyView = lazy(() => import('./components/EnemyView'))
+const EnemyEncounter = lazy(() => import('./components/EnemyEncounter'))
 const EnemyGoals = lazy(() => import('./components/EnemyGoals'))
 const EnemyEvents = lazy(() => import('./components/EnemyEvents'))
 const EnemyLairView = lazy(() => import('./components/EnemyLairView'))
@@ -13,6 +14,7 @@ const EnemyRouter: RouteObject[] = [
         element: <EnemyDetail />,
         children: [
             { index: true, element: <EnemyView /> },
+            { path: 'encounter', element: <EnemyEncounter /> },
             { path: 'goals', element: <EnemyGoals /> },
             { path: 'events', element: <EnemyEvents /> },
             { path: 'lair', element: <EnemyLairView /> },

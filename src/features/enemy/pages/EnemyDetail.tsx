@@ -6,17 +6,18 @@ import type { NavItem } from '@/components/Header'
 import Header from '@/components/Header'
 import Preloader from '@/components/Preloader'
 
-const enemyTabs: NavItem[] = [
-    { label: 'Enemy', path: '' },
-    { label: 'Goals', path: '/goals' },
-    { label: 'Events', path: '/events' },
-    { label: 'Lair', path: '/lair' },
-]
-
 function EnemyDetail() {
     const { tag } = useParams()
     const enemy = useMemo(() => getEnemyByTag(String(tag)), [tag])
     const setEnemy = useGameStore((state) => state.setEnemy)
+
+    const enemyTabs: NavItem[] = [
+        { label: String(tag), path: '' },
+        { label: 'Encounter', path: '/encounter' },
+        { label: 'Goals', path: '/goals' },
+        { label: 'Events', path: '/events' },
+        { label: 'Lair', path: '/lair' },
+    ]
 
     useEffect(() => {
         if (enemy) {
