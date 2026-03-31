@@ -8,7 +8,8 @@
     font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     margin: 0 auto;
-    width: 360px;
+    width: 100%;
+    max-width: 768px;
 }
 
 .ruleTag {
@@ -35,9 +36,9 @@ body {
     display: flex;
     box-sizing: border-box;
     min-height: 100vh;
+    background-color: var(--black);
     background-image: url('/images/tardis_background.png');
     background-repeat: no-repeat;
-    background-size: cover;
     background-position: center;
     background-attachment: fixed;
     color: var(--white);
