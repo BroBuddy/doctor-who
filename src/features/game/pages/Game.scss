@@ -1,0 +1,33 @@
+.tardis-fly-container {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.tardis-fly {
+    width: 250px;
+    position: absolute;
+    border: none;
+    bottom: -120px;
+    animation: fly-up 1.5s ease-in forwards;
+}
+
+@keyframes fly-up {
+    0% {
+        bottom: -120px;
+        opacity: 1;
+    }
+    40% {
+        bottom: 20vh;
+    }
+    70% {
+        bottom: 60vh;
+    }
+    100% {
+        bottom: 130vh;
+        opacity: 0;
+    }
+}

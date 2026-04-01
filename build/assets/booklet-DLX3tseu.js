@@ -1,4 +1,4 @@
-import{g as e,h as t,v as n,y as r}from"./adventure-CM1LBZt4.js";var i=[{tag:`R001`,title:`Characters and Concepts`,description:`
+import{g as e,h as t,v as n,y as r}from"./adventure-rS0ch_96.js";var i=[{tag:`R001`,title:`Characters and Concepts`,description:`
             <p>All Characters in DWSSG3e including the Doctor, Companions, Allies and Enemies are described using 3 Qualities and up to 12 different Skills. Special Keywords are used for some Characters or Enemies, and TARDIS Characters (the Doctor and his Companions) also have various Abilities that can help you succeed in Adventures.</p>
             <p><strong>Qualities:</strong> Each Character in the game has a Brains, Brawn and Bravery value. These are rated numerically, with higher numbers being better and a (human) average of 1, a Quality of 2 is above average and Quality of 3 is gifted. The Doctor (of course) typically has Brains 5. The dreaded Daleks might have a Brawn of 8.</p>
             <p><strong>Skills:</strong> Characters also have Skills (in italics) which are useful throughout the game. If Characters are especially skilled in areas, they may have 2 or 3 (max allowed) in a Skill, such as Diplomacy 2 or Charm 3. There are 12 different Skills: Aware; Charm; Computers; Diplomacy; Engineer; History; Medicine; Pilot; Running; Science; Stealth; TARDIS.</p>
@@ -664,7 +664,7 @@ import{g as e,h as t,v as n,y as r}from"./adventure-CM1LBZt4.js";var i=[{tag:`R0
                     </tr>
                 </tbody>
             </table>
-        `},{tag:`TM02`,title:`Random Vortex Destination Matrix`},{tag:`T00`,title:`The TARDIS`,description:`
+        `},{tag:`TM02`,title:`Random Vortex Destination`},{tag:`T00`,title:`The TARDIS`,description:`
             <p>You stand at the console of the TARDIS, your trusty Time and Space machine, as it flies through the twisting miasma of the Time Vortex. A gentle hum fills the air as the glass pillar of lights and instruments rises and falls in front of you.</p>
             <p>You may try to set the controls for a particular destination or just let the TARDIS materialise wherever she wants (T002). Before you get to any destination however, roll 2D6. If the result is 10+, then you have an event in the Vortex (see below). If you have no event, you may try to repair the TARDIS if it has taken Damage (see T005).</p>
             <p>In an Adventure you can return to the TARDIS at any time (T006). At the end of an Adventure, automatically return to this section. After you have completed 3 Adventures, see Q00 below.</p>

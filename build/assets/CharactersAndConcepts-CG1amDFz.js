@@ -1,1 +1,0 @@
-import{o as e}from"./rule-C0tafjzP.js";export{e as default};
