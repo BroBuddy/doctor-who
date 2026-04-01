@@ -1,5 +1,3 @@
-import Dice from '@/components/Dice'
-
 function PlanTable() {
     return (
         <>
@@ -8,10 +6,6 @@ function PlanTable() {
                 from completing their goal. Choose a Skill or Quality. Roll 2D6
                 with +1 per chosen Skill or per Character that has chosen
                 Quality at 3 or higher (max +3).
-            </p>
-
-            <p className="flex">
-                <strong className="mr-1">Roll:</strong> 2D6 <Dice dice={2} />
             </p>
 
             <table className="text-sm">

@@ -1,5 +1,3 @@
-import Dice from '@/components/Dice'
-
 function ChallengeTable() {
     return (
         <>
@@ -9,10 +7,6 @@ function ChallengeTable() {
                 directly. Roll 2D6 (+1 if you have a Character with Bravery 4+,
                 +2 at a Lair, but -2 if you do not know the Goal). If you roll
                 doubles (in Dilemma Phase only), add +1 Danger.
-            </p>
-
-            <p className="flex">
-                <strong className="mr-1">Roll:</strong> 2D6 <Dice dice={2} />
             </p>
 
             <table className="text-sm">

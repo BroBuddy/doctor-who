@@ -3,7 +3,6 @@ import { Accordion } from '@/components/Accordion'
 import { getAdventureCharactersByTag } from '../services/AdventureService'
 import { useParams } from 'react-router-dom'
 import Card from '@/components/Card'
-import Dice from '@/components/Dice'
 import CharacterStats from './CharacterStats'
 
 function AdventureCharacters() {
@@ -45,10 +44,6 @@ function AdventureCharacters() {
 
     return (
         <Card headline="Characters">
-            <p className="flex">
-                <strong className="mr-1">Roll:</strong> 2D6 <Dice dice={2} />
-            </p>
-
             <Accordion items={items} />
         </Card>
     )

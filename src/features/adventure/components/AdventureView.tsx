@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom'
 import Card from '@/components/Card'
 import YearEraTardis from './YearEraTardis'
 import AdventureStats from './AdventureStats'
-import Dice from '@/components/Dice'
 import { Headline } from '@/components/Headline'
 
 function AdventureView() {
@@ -41,10 +40,6 @@ function AdventureView() {
             {adventure.enemy && (
                 <>
                     <Headline>Enemy</Headline>
-                    <p className="flex">
-                        <strong className="mr-1">Roll:</strong>
-                        1D6 <Dice />
-                    </p>
 
                     <ul>
                         {adventure.enemy.map((item: Rolls) => (

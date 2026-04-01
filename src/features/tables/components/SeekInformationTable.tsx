@@ -1,5 +1,3 @@
-import Dice from '@/components/Dice'
-
 function SeekInformationTable() {
     return (
         <>
@@ -10,10 +8,6 @@ function SeekInformationTable() {
                 Stealth if at a Wilderness Location or Adventure. Roll 2D6 with
                 +1 for each chosen Skill (max +3). If you roll doubles, the
                 Enemy Action result this Turn is an automatic Enemy encounter.
-            </p>
-
-            <p className="flex">
-                <strong className="mr-1">Roll:</strong> 2D6 <Dice dice={2} />
             </p>
 
             <table className="text-sm">

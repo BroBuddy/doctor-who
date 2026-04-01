@@ -3,7 +3,6 @@ import { Accordion } from '@/components/Accordion'
 import { getAdventureLocationsByTag } from '../services/AdventureService'
 import { useParams } from 'react-router-dom'
 import Card from '@/components/Card'
-import Dice from '@/components/Dice'
 
 function AdventureLocations() {
     const { tag } = useParams()
@@ -43,10 +42,6 @@ function AdventureLocations() {
 
     return (
         <Card headline="Locations">
-            <p className="flex">
-                <strong className="mr-1">Roll:</strong> 2D6 <Dice dice={2} /> +
-                Running
-            </p>
             <Accordion items={items} />
         </Card>
     )

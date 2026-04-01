@@ -3,7 +3,6 @@ import { getEnemyGoalsByTag } from '../services/EnemyService'
 import type { EnemyGoal, GoalOption } from '../types/EnemyType'
 import { Accordion } from '@/components/Accordion'
 import Card from '@/components/Card'
-import Dice from '@/components/Dice'
 import Badge from '@/components/Badge'
 
 function EnemyGoals() {
@@ -42,10 +41,6 @@ function EnemyGoals() {
 
     return (
         <Card headline="Goals">
-            <p className="flex">
-                <strong className="mr-1">Roll:</strong> 1D6 <Dice />
-            </p>
-
             <Accordion items={items} />
         </Card>
     )

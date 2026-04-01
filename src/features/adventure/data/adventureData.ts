@@ -813,7 +813,7 @@ const A003: Adventure = {
         "The TARDIS has landed on 'The River Queen', a beautiful paddle steamer that is lit with soft electric lamps as it slowly journeys at night along the famous and majestic Mississippi river. Whilst the well-dressed passengers sip their mint juleps provided by glamorous saloon girls, the jazz band strikes up another number. It's just the pace to relax and take a well earned break, but in the casino, the stakes are perhaps higher than expected...",
     stats: { danger: 0, knowledge: 5, vp: 0 },
     special:
-        'Gain +1 Luck if you bring a Companion with History and Charm to Adventure. Night will fall at the start of Turn 2 and lasts for Adventure. Move Actions are automatic and you may choose another Action for Turn. Riverboat Decks: (Water, Exterior) You stroll along the polished wooden deck of the paddle steamer, enjoying the gentle lapping of the river as you drift past the banks of the Mississippi. You may not Investigate, Research or Seek Information here. If you make an Aware 9 roll here, the Enemy Action roll for this Turn has a -1 modifier. Encounter (D6, +1 to roll if Discover Phase): 1: Enemy encounter; 2: Enemy event; 3: Incident; 4-5: None; 6+: Character event.',
+        'Gain +1 Luck if you bring a Companion with History and Charm to Adventure. Night will fall at the start of Turn 2 and lasts for Adventure. Move Actions are automatic and you may choose another Action for Turn.',
     enemy: [
         { roll: '1', name: 'Entity' },
         { roll: '2', name: 'Gothic' },
@@ -1125,6 +1125,16 @@ const A003: Adventure = {
     specials: [
         {
             id: 1,
+            image: null,
+            name: 'Riverboat Decks',
+            description:
+                '(Water, Exterior) You stroll along the polished wooden deck of the paddle steamer, enjoying the gentle lapping of the river as you drift past the banks of the Mississippi. You may not Investigate, Research or Seek Information here. If you make an Aware 9 roll here, the Enemy Action roll for this Turn has a -1 modifier. Encounter (D6, +1 to roll if Discover Phase): 1: Enemy encounter; 2: Enemy event; 3: Incident; 4-5: None; 6+: Character event.',
+            information: null,
+            stats: null,
+            skills: [],
+        },
+        {
+            id: 2,
             image: 'mark-twain',
             name: 'Mark Twain',
             description:
@@ -1135,7 +1145,7 @@ const A003: Adventure = {
             skills: ['Aware', 'Charm', 'History 2'],
         },
         {
-            id: 2,
+            id: 3,
             image: 'gabrielle-blanchett',
             name: 'Gabrielle Blanchett',
             description:
@@ -1517,6 +1527,16 @@ const A004: Adventure = {
     specials: [
         {
             id: 1,
+            image: null,
+            name: 'London Streets',
+            description:
+                '(Exterior, Move 2) You stroll along the narrow Elizabethan streets, trying to avoid the slop being thrown from upstairs windows. Add +1 to Explore Actions here but you may not Research here. Encounter (D6, -1 to roll if Night): 0-1: Footpads (Make a Running 7 roll to escape or Attacked by Brawn 5); 2: Pickpocket (lose a Gadget or 2 Luck); 3: Incident; 4: None; 5-6: Character event.',
+            information: null,
+            stats: null,
+            skills: [],
+        },
+        {
+            id: 2,
             image: 'william-shakespeare',
             name: 'William Shakespeare',
             description:
@@ -1527,7 +1547,7 @@ const A004: Adventure = {
             skills: ['Aware', 'Charm 2', 'History'],
         },
         {
-            id: 2,
+            id: 3,
             image: 'queen-elizabeth',
             name: 'Queen Elizabeth I',
             description:
@@ -1829,6 +1849,16 @@ const A005: Adventure = {
     specials: [
         {
             id: 1,
+            image: null,
+            name: 'Base Corridors',
+            description:
+                '(Dark, Move 2) In this modular mining station, the corridors look almost identical and run on reduced lighting to save energy. You may only complete Explore or Move Actions here. If Captured here, roll for a new Location. If you have a Sonic Screwdriver, you may use 1 Luck to cancel the Dark keyword this turn. Encounter (D6, +1 to roll if Discover Phase): 1: Enemy encounter; 2: Enemy event; 3: Incident; 4-5: None; 6: Character event; 7: Lost (Incident).',
+            information: null,
+            stats: null,
+            skills: [],
+        },
+        {
+            id: 2,
             image: 'vintarric-crystals',
             name: 'Vintarric Crystals',
             description:
@@ -1839,7 +1869,7 @@ const A005: Adventure = {
             skills: [],
         },
         {
-            id: 2,
+            id: 3,
             image: 'tremors',
             name: 'Tremors',
             description:
@@ -2121,6 +2151,16 @@ const A006: Adventure = {
     specials: [
         {
             id: 1,
+            image: null,
+            name: 'Rolling Hills',
+            description:
+                '(Cold, Exterior, Move 2) You trudge across the steep, undulating hills that seem to go for miles. You may only complete Explore or Move Actions here. At the end of a Turn, if you did not start the Turn here, you may attempt an Aware 10 roll to gain 1 Clue (once only) to finding the Lost Valley Location. Encounter (D6, +1 to roll if Discover Phase): 1: Enemy encounter; 2: Enemy event; 3: Incident; 4: None; 5: Character event; 6+: Lost (Incident).',
+            information: null,
+            stats: null,
+            skills: [],
+        },
+        {
+            id: 2,
             image: 'vault-of-the-kadarr',
             name: 'Vault of the Kadarr',
             description:
@@ -2131,7 +2171,7 @@ const A006: Adventure = {
             skills: [],
         },
         {
-            id: 2,
+            id: 3,
             image: null,
             name: 'Obtain Advanced Weapon Technology',
             description:
@@ -2160,7 +2200,7 @@ const A007: Adventure = {
         vp: 1,
     },
     special:
-        'You may Tour London as an Action (Special Events). If you have no Companion, you may spend 1 Luck on the first Character event to instead encounter any Companion from this Era. London Streets: (Exterior, Move 2) You stroll along the packed streets of the capital city, avoiding the heavy traffic whilst enjoying the iconic surroundings. The familiar and reassuring chimes of Big Ben fill the air. Add +1 to Explore Actions but you may not Research here. You may spend 1 Luck to jump on a bus and gain +2 to a Move Action from here. Encounter (D6): 1-2: Incident; 3-4: No further event; 5-6: Character event.',
+        'You may Tour London as an Action (Special Events). If you have no Companion, you may spend 1 Luck on the first Character event to instead encounter any Companion from this Era.',
     enemy: [
         { roll: '1-2', name: 'Military' },
         { roll: '3-4', name: 'Chameleon' },
@@ -2452,6 +2492,16 @@ const A007: Adventure = {
     specials: [
         {
             id: 1,
+            image: null,
+            name: 'London Streets',
+            description:
+                '(Exterior, Move 2) You stroll along the packed streets of the capital city, avoiding the heavy traffic whilst enjoying the iconic surroundings. The familiar and reassuring chimes of Big Ben fill the air. Add +1 to Explore Actions but you may not Research here. You may spend 1 Luck to jump on a bus and gain +2 to a Move Action from here. Encounter (D6): 1-2: Incident; 3-4: No further event; 5-6: Character event.',
+            information: null,
+            stats: null,
+            skills: [],
+        },
+        {
+            id: 2,
             image: 'touring-london',
             name: 'Touring London',
             description:
@@ -2462,7 +2512,7 @@ const A007: Adventure = {
             skills: [],
         },
         {
-            id: 2,
+            id: 3,
             image: 'calling-unit',
             name: 'Calling UNIT',
             description:
@@ -2491,7 +2541,7 @@ const A008: Adventure = {
         vp: 2,
     },
     special:
-        'The Move values shown on Locations indicate the number needed to leave that Location. Roll for a random Location when you do. Night will fall at the start of Turn 1D3+3 and last 4 full Turns. Lush Jungle: (Exterior, Move 7) You push your way through a tropical jungle of twisted trees, slithering creepers and huge vines. The dense foliage competes for space and almost completely blocks the light, leaving only a dim twilight of orange. You may not Investigate here. Encounter (D6, -1 to roll if Night): 0-1: Mandrels (see Special Events); 2: Enemy encounter (Mandrels if Discover Phase); 3: Incident; 4-5: None; 6: Character event.',
+        'The Move values shown on Locations indicate the number needed to leave that Location. Roll for a random Location when you do. Night will fall at the start of Turn 1D3+3 and last 4 full Turns.',
     enemy: [
         { roll: '1-2', name: 'Criminal' },
         { roll: '3', name: 'Villain' },
@@ -2783,6 +2833,16 @@ const A008: Adventure = {
     specials: [
         {
             id: 1,
+            image: null,
+            name: 'Lush Jungle',
+            description:
+                '(Exterior, Move 7) You push your way through a tropical jungle of twisted trees, slithering creepers and huge vines. The dense foliage competes for space and almost completely blocks the light, leaving only a dim twilight of orange. You may not Investigate here. Encounter (D6, -1 to roll if Night): 0-1: Mandrels (see Special Events); 2: Enemy encounter (Mandrels if Discover Phase); 3: Incident; 4-5: None; 6: Character event.',
+            information: null,
+            stats: null,
+            skills: [],
+        },
+        {
+            id: 2,
             image: 'mandrels',
             name: 'Mandrels',
             description:
@@ -2811,7 +2871,7 @@ const A009: Adventure = {
         vp: 1,
     },
     special:
-        'See Special Events below for more details on Move Actions. Night has fallen immediately and will last 4 Turns. London Streets: (Exterior, Move 3) You walk through the dark and foggy Victorian streets, your footsteps echoing on the cobbles. Add +1 to Explore Actions. You may not Research here. Encounter (D6, -1 to roll if Night and +2 if Discover Phase): 0-1: Enemy encounter; 2: Ruffians (Make a Running 7 roll to escape or be Attacked - Brawn 5); 3: Incident; 4-5: None; 6+: Character event.',
+        'See Special Events below for more details on Move Actions. Night has fallen immediately and will last 4 Turns.',
     enemy: [
         { roll: '1-2', name: 'Gothic' },
         { roll: '3', name: 'Earth' },
@@ -3148,6 +3208,16 @@ const A009: Adventure = {
     specials: [
         {
             id: 1,
+            image: null,
+            name: 'London Streets',
+            description:
+                '(Exterior, Move 3) You walk through the dark and foggy Victorian streets, your footsteps echoing on the cobbles. Add +1 to Explore Actions. You may not Research here. Encounter (D6, -1 to roll if Night and +2 if Discover Phase): 0-1: Enemy encounter; 2: Ruffians (Make a Running 7 roll to escape or be Attacked - Brawn 5); 3: Incident; 4-5: None; 6+: Character event.',
+            information: null,
+            stats: null,
+            skills: [],
+        },
+        {
+            id: 2,
             image: 'travelling-around-victorian-london',
             name: 'Travelling Around Victorian London',
             description:
@@ -3158,7 +3228,7 @@ const A009: Adventure = {
             skills: [],
         },
         {
-            id: 2,
+            id: 3,
             image: 'caroline-fairfax',
             name: 'Caroline Fairfax',
             description:
@@ -3187,7 +3257,7 @@ const A010: Adventure = {
         vp: 2,
     },
     special:
-        'You may not Find Help in this Adventure. When Enemy Goal revealed, see instead Escape the Expanse (Special Events). You may continue to have Plot events throughout Adventure and must track Knowledge in the Defeat Phase. Roll 1D3 for your Landing Location. Travel the Expanse: Do not make Move Actions to switch Locations. Instead make an Engineer roll as an Action to get a ship operational. If successful, continue by making a Pilot roll to reach new Location. If you fail Pilot roll, add +1 Danger.',
+        'You may not Find Help in this Adventure. When Enemy Goal revealed, see instead Escape the Expanse (Special Events). You may continue to have Plot events throughout Adventure and must track Knowledge in the Defeat Phase. Roll 1D3 for your Landing Location.',
     enemy: [
         { roll: '1-3', name: 'Military' },
         { roll: '4', name: 'Villain' },
@@ -3477,6 +3547,16 @@ const A010: Adventure = {
     specials: [
         {
             id: 1,
+            image: null,
+            name: 'Travel the Expanse',
+            description:
+                'Do not make Move Actions to switch Locations. Instead make an Engineer roll as an Action to get a ship operational. If successful, continue by making a Pilot roll to reach new Location. If you fail Pilot roll, add +1 Danger.',
+            information: null,
+            stats: null,
+            skills: [],
+        },
+        {
+            id: 2,
             image: 'major-tom-draper',
             name: 'Major Tom Draper',
             description:
@@ -3487,7 +3567,7 @@ const A010: Adventure = {
             skills: ['Computers', 'Pilot 2', 'Running'],
         },
         {
-            id: 2,
+            id: 3,
             image: null,
             name: 'Escape the Expanse (Goal)',
             description:

@@ -3,7 +3,6 @@ import { getEnemyEventsByTag } from '../services/EnemyService'
 import type { EnemyEvent } from '../types/EnemyType'
 import { Accordion } from '@/components/Accordion'
 import Card from '@/components/Card'
-import Dice from '@/components/Dice'
 
 function EnemyEvents() {
     const { tag } = useParams()
@@ -21,10 +20,6 @@ function EnemyEvents() {
 
     return (
         <Card headline="Events">
-            <p className="flex">
-                <strong className="mr-1">Roll:</strong> 1D6 <Dice />
-            </p>
-
             <Accordion items={items} />
         </Card>
     )

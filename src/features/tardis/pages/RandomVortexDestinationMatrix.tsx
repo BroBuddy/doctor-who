@@ -1,5 +1,4 @@
 import Card from '@/components/Card'
-import Dice from '@/components/Dice'
 import { Headline } from '@/components/Headline'
 import { Link } from 'react-router-dom'
 
@@ -17,10 +16,6 @@ function RandomVortexDestinationMatrix() {
         <>
             <Card>
                 <Headline>TM02. Random Vortex Destination Matrix</Headline>
-
-                <p className="flex">
-                    <strong className="mr-1">Roll:</strong> 1D6 <Dice />
-                </p>
 
                 <p className="mb-0">First die = Row, second die = Column.</p>
 

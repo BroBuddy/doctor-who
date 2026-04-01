@@ -89,7 +89,7 @@ export type AdventureSpecial = {
     image: string | null
     name: string
     description: string
-    information: string
+    information: string | null
     stats: Stats | null
     skills: string[] | []
 }

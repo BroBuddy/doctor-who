@@ -1,5 +1,3 @@
-import Dice from '@/components/Dice'
-
 function FindHelpTable() {
     return (
         <>
@@ -11,10 +9,6 @@ function FindHelpTable() {
                 +1 for each unique UNIT Character (total max +3). If you roll
                 doubles (in Dilemma Phase only), also roll for an Incident after
                 result.
-            </p>
-
-            <p className="flex">
-                <strong className="mr-1">Roll:</strong> 2D6 <Dice dice={2} />
             </p>
 
             <table className="text-sm">
