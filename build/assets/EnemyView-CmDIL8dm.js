@@ -1,0 +1,1 @@
+import{n as e}from"./enemy-_YM4bR_4.js";export{e as default};

@@ -19,11 +19,11 @@ function Header({ basePath, tabs, data }: HeaderProps) {
 
     return (
         <header className="header slide-down mb-4">
-            <div className="bg-black p-2">
-                <strong className="text-white text-md">{data.title}</strong>
+            <div className="bg-blue pt-3 flex justify-center">
+                <strong className="text-white text-lg">{data.title}</strong>
             </div>
 
-            <nav className="bg-blue p-2">
+            <nav className="bg-blue p-2 flex justify-center">
                 {tabs.map((item: NavItem) => {
                     const isActive =
                         item.path === ''

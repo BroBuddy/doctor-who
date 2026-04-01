@@ -33,7 +33,7 @@ function EnemyDetail() {
         <>
             <Header basePath="/enemy" tabs={enemyTabs} data={enemy} />
 
-            <div className="zoom-in mt-5">
+            <div className="zoom-in">
                 <Suspense fallback={<Preloader />}>
                     <Outlet />
                 </Suspense>
