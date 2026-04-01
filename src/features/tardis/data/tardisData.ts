@@ -435,7 +435,7 @@ export const tardisData: Tardis[] = [
     },
     {
         tag: 'TM02',
-        title: 'Random Vortex Destination Matrix',
+        title: 'Random Vortex Destination',
     },
     {
         tag: 'T00',

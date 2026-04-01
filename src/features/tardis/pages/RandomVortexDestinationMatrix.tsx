@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Card from '@/components/Card'
 import { Headline } from '@/components/Headline'
 import { Link } from 'react-router-dom'
@@ -12,36 +13,49 @@ function RandomVortexDestinationMatrix() {
         ['A007', 'A014', 'A009', 'A015', 'A011', 'A017'],
     ]
 
+    const [result, setResult] = useState<{
+        row: number
+        col: number
+        tag: string
+    } | null>(null)
+
+    const roll = () => {
+        const row = Math.floor(Math.random() * 6)
+        const col = Math.floor(Math.random() * 6)
+        setResult({ row, col, tag: matrix[row][col] })
+    }
+
     return (
-        <>
-            <Card>
-                <Headline>TM02. Random Vortex Destination Matrix</Headline>
+        <Card>
+            <Headline>TM02. Random Vortex Destination</Headline>
 
-                <p className="mb-0">First die = Row, second die = Column.</p>
+            <div className="mb-3">
+                {!result && (
+                    <span
+                        onClick={roll}
+                        className="pointer p-2 bg-dark-blue rounded text-white text-bold"
+                    >
+                        Roll 2D6
+                    </span>
+                )}
 
-                {matrix.map((row: string[], rowIndex: number) => (
-                    <div key={rowIndex}>
-                        <p className="mt-5">
-                            <strong className="mr-1">
-                                Roll {rowIndex + 1}:
-                            </strong>
+                {result && (
+                    <>
+                        <p className="text-sm">
+                            Row <strong>{result.row + 1}</strong>, Column{' '}
+                            <strong>{result.col + 1}</strong>
                         </p>
-                        {row.map((tag: string, colIndex: number) => (
-                            <span key={colIndex}>
-                                <Link
-                                    to={`/adventure/${tag}`}
-                                    className="p-2 w-4 bg-dark-blue rounded mr-1 mb-1 text-center"
-                                >
-                                    <span className="text-sm text-white">
-                                        {tag}
-                                    </span>
-                                </Link>
-                            </span>
-                        ))}
-                    </div>
-                ))}
-            </Card>
-        </>
+
+                        <Link
+                            to={`/adventure/${result.tag}`}
+                            className="p-2 bg-dark-blue rounded text-white text-sm"
+                        >
+                            {result.tag}
+                        </Link>
+                    </>
+                )}
+            </div>
+        </Card>
     )
 }
 
