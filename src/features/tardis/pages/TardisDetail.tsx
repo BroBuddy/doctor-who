@@ -1,14 +1,25 @@
 import { useEffect, useMemo } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { Headline } from '@/components/Headline'
 import { getTardisByTag } from '../services/TardisService'
 import { useHistory } from '@/features/helper/hooks/useHistory'
 import Card from '@/components/Card'
+import { makeUrlsClickable } from '@/lib/helper'
 
 function TardisDetail() {
     const { tag } = useParams()
     const tardis = useMemo(() => getTardisByTag(String(tag)), [tag])
     const { addToHistory } = useHistory()
+    const transformedContent = makeUrlsClickable(tardis.description as string)
+    const navigate = useNavigate()
+
+    const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+        const target = e.target as HTMLElement
+        const tagId = target.dataset.ruleLink
+        if (tagId) {
+            navigate(`/tardis/${tagId}`)
+        }
+    }
 
     useEffect(() => {
         addToHistory(tardis.tag, tardis.title)
@@ -26,8 +37,9 @@ function TardisDetail() {
                 </Headline>
 
                 <div
+                    onClick={handleClick}
                     dangerouslySetInnerHTML={{
-                        __html: String(tardis.description),
+                        __html: String(transformedContent),
                     }}
                 />
             </Card>

@@ -15,9 +15,9 @@ function RuleDetail() {
 
     const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
         const target = e.target as HTMLElement
-        const ruleId = target.dataset.ruleLink
-        if (ruleId) {
-            navigate(`/rule/${ruleId}`)
+        const tagId = target.dataset.ruleLink
+        if (tagId) {
+            navigate(`/rule/${tagId}`)
         }
     }
 

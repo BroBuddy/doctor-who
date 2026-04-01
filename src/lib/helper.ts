@@ -20,7 +20,7 @@ export const formatYear = (year: number) => {
 export const makeUrlsClickable = (content: string) => {
     if (!content) return ''
 
-    const rulesRegex = /[R]\d{3}[A-Z]?/g
+    const rulesRegex = /[RT]\d{3}[A-Z]?/g
     return content.replace(rulesRegex, (match: string) => {
         const ruleId = match.replace(/\s+/g, '-')
         return `<span data-rule-link="${ruleId}" class="ruleTag pointer text-bold text-purple">${ruleId}</span>`

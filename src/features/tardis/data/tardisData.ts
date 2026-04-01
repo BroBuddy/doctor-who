@@ -40,7 +40,7 @@ export const tardisData: Tardis[] = [
             <ul>
                 <li><strong>Defence:</strong> Each time the TARDIS receives Damage (perhaps through Vortex events or in an Adventure), reduce the Defence value by 1. If the TARDIS has a Defence of 0 and then receives more Damage, it is destroyed.</li>
                 <li><strong>Navigation:</strong> Instead of making a TARDIS roll to reach an Adventure destination, or in an Adventure to Move to a Location, you may reduce Navigation by 1 to automatically succeed in the roll.</li>
-                <li><strong>Resources:</strong> You may spend Resources any time the Doctor is inside the TARDIS to gain TARDIS Gadgets (t004).</li>
+                <li><strong>Resources:</strong> You may spend Resources any time the Doctor is inside the TARDIS to gain TARDIS Gadgets (T004).</li>
             </ul>
             <p>TARDIS starting Qualities are given on each Doctor’s TARDIS section and vary between regenerations - earlier Doctors have much less Navigation but far better Defence for example. If you have created your own Doctor, you may select values for your TARDIS Qualities (see T00).</p>
             <p>At the end of an Adventure (r012), you may spend 2 <strong>Luck</strong> points to gain +1 to any TARDIS Quality.</p>
@@ -52,7 +52,7 @@ export const tardisData: Tardis[] = [
         description: `
             <p>The TARDIS can go anywhere in time and space so it’s important the Doctor knows how to pilot his craft.</p>
             <p>Between Adventures (and at the start of the game), you may try to set the controls of the TARDIS to reach a particular destination and Adventure, try to just reach a particular Era or type of destination such as a Holiday, or just let the TARDIS materialise wherever she wants and go to a random Adventure.</p>
-            <p>Before you get to any destination however, roll 2D6 and if the result is 10+, then you first have a Vortex event (t003).</p>
+            <p>Before you get to any destination however, roll 2D6 and if the result is 10+, then you first have a Vortex event (T003).</p>
             <ul>
                 <li><strong>Eras:</strong> The 12 Eras are used to define a rough chronology to Adventures. As technology changes through time, the different Actions (r008) you can perform changes with the Era in which your Adventure takes place. Similarly, being captured in some Eras might be a lot rougher than others. The ‘default’ Era of present-day Earth is the Post Modern Era that spans years 2000 – 2030. A full list of Eras and their dates is given as part of the Temporal Destination Matrix (TM01).</li>
                 <li><strong>Set the Controls:</strong> If you attempt to go to a particular destination, then consult the <strong>Adventure Book</strong> to find the TARDIS roll required. To go to a more general Era destination, see the Temporal Destination Matrix (TM01) for the required TARDIS roll and if successful, roll a D6 to find your specific Adventure destination that can then be found in the <strong>Adventure Book</strong>. All TARDIS rolls are made with a -1 penalty for each point of Damage on the TARDIS. If you fail the TARDIS roll to reach an exact destination by only 1, you still reach the Era but roll for an Adventure within the same Era (see TM01). If you fail the TARDIS roll to reach an exact destination by more than 1, or fail a TARDIS roll to reach an Era or Adventure on the Temporal Destination Matrix (TM01), the TARDIS brings you to somewhere unexpected - see Random Destinations. If at any time you roll a natural 2 on a TARDIS roll to reach any destination, see also V02.</li>
@@ -442,13 +442,13 @@ export const tardisData: Tardis[] = [
         title: 'The TARDIS',
         description: `
             <p>You stand at the console of the TARDIS, your trusty Time and Space machine, as it flies through the twisting miasma of the Time Vortex. A gentle hum fills the air as the glass pillar of lights and instruments rises and falls in front of you.</p>
-            <p>You may try to set the controls for a particular destination or just let the TARDIS materialise wherever she wants (t002). Before you get to any destination however, roll 2D6. If the result is 10+, then you have an event in the Vortex (see below). If you have no event, you may try to repair the TARDIS if it has taken Damage (see t005).</p>
-            <p>In an Adventure you can return to the TARDIS at any time (t006). At the end of an Adventure, automatically return to this section. After you have completed 3 Adventures, see Q00 below.</p>
+            <p>You may try to set the controls for a particular destination or just let the TARDIS materialise wherever she wants (T002). Before you get to any destination however, roll 2D6. If the result is 10+, then you have an event in the Vortex (see below). If you have no event, you may try to repair the TARDIS if it has taken Damage (see T005).</p>
+            <p>In an Adventure you can return to the TARDIS at any time (T006). At the end of an Adventure, automatically return to this section. After you have completed 3 Adventures, see Q00 below.</p>
             <p><strong>Defences:</strong> X &nbsp;&nbsp; <strong>Navigation:</strong> X &nbsp;&nbsp; <strong>Resources:</strong> X</p>
             <p><strong>Special Rules for a Created Doctor’s TARDIS:</strong><br />
             You must decide on starting values for your TARDIS Qualities. Each Quality starts at 1 and you have another 4 points to distribute as you wish, although you cannot add more than 3 to any single Quality.</p>
             <p>You begin the game by choosing a starting Companion — Caroline Fairfax, Jane Danning or Talia McDowell. Each has their own TARDIS Character card. You start the game with 5 Luck, 3 Idea cards and can choose Gadgets up to 3 Cost.</p>
-            <p>Gain +1 to your TARDIS roll when you Set the Controls (t002) for the Renaissance Era (TM01).</p>
+            <p>Gain +1 to your TARDIS roll when you Set the Controls (T002) for the Renaissance Era (TM01).</p>
             <p><strong>Vortex Events:</strong><br />
             Something has interrupted your flight through the Vortex. Roll 2D6:</p>
             <ul>
@@ -488,13 +488,13 @@ export const tardisData: Tardis[] = [
         title: 'The TARDIS (Ninth Doctor)',
         description: `
             <p>You stand at the console of the TARDIS, your trusty Time and Space machine, as it flies through the twisting miasma of the Time Vortex. A gentle hum fills the air as the glass pillar of lights and instruments rises and falls in front of you.</p>
-            <p>You may try to set the controls for a particular destination or just let the TARDIS materialise wherever she wants (t002). Before you get to any destination however, roll 2D6. If the result is 10+, then you have an event in the Vortex (see below). If you have no event, you may try to repair the TARDIS if it has taken Damage (see t005).</p>
-            <p>In an Adventure you can return to the TARDIS at any time (t006). At the end of an Adventure, automatically return to this section. After you have completed 3 Adventures, see <strong>Q09</strong> below.</p>
+            <p>You may try to set the controls for a particular destination or just let the TARDIS materialise wherever she wants (T002). Before you get to any destination however, roll 2D6. If the result is 10+, then you have an event in the Vortex (see below). If you have no event, you may try to repair the TARDIS if it has taken Damage (see T005).</p>
+            <p>In an Adventure you can return to the TARDIS at any time (T006). At the end of an Adventure, automatically return to this section. After you have completed 3 Adventures, see <strong>Q09</strong> below.</p>
             <p><strong>Defences:</strong> 4 &nbsp;&nbsp; <strong>Navigation:</strong> 2 &nbsp;&nbsp; <strong>Resources:</strong> 1</p>
             <p><strong>Special Rules for the Ninth Doctor’s TARDIS:</strong><br />
             You begin the game with Rose Tyler as a Companion. You may also choose to spend 3 Luck and have Jack Harkness as a Companion. Each has their own TARDIS Character card. If you do not start with Jack Harkness as a Companion, you may encounter him instead of a Character event in a World War Era or Twilight Era Adventure by spending 2 Luck (once only).</p>
             <p>You start the game with 5 Luck, 3 Idea cards and can choose Gadgets up to 3 Cost.</p>
-            <p>Gain +1 to your TARDIS roll when you Set the Controls (t002) for a Space Destination (TM01).</p>
+            <p>Gain +1 to your TARDIS roll when you Set the Controls (T002) for a Space Destination (TM01).</p>
             <p><strong>Vortex Events:</strong><br />
             Something has interrupted your flight through the Vortex. Roll 2D6:</p>
             <ul>
@@ -523,7 +523,7 @@ export const tardisData: Tardis[] = [
             <p>If you visit this Location in Adventure, make a Brains 12 roll (add +1 for each previous attempt) to gain +1 VP and see <strong>Q09b</strong> at the end of the Adventure.</p>
             <p><strong>Q09b. Heart of the TARDIS</strong><br />
             As you travel through the Time Vortex, you reflect on ‘Bad Wolf’, and what it could mean, but suddenly notice that the TARDIS familiar hum is not quite right. What could be affecting her?</p>
-            <p>Vortex events (t003) in the TARDIS now occur on a roll of 9+. However, instead of then rolling 2D6 for the Vortex event, automatically see V09, adding +2 to the roll. If you then roll 7+, lose 1 Luck point and see <strong>Q09c</strong> immediately.</p>
+            <p>Vortex events (T003) in the TARDIS now occur on a roll of 9+. However, instead of then rolling 2D6 for the Vortex event, automatically see V09, adding +2 to the roll. If you then roll 7+, lose 1 Luck point and see <strong>Q09c</strong> immediately.</p>
             <p><strong>Q09c. Transformation</strong><br />
             A panel on the TARDIS console suddenly shatters and an incandescent beam of Vortex energy leaps from it and into the body of your Companion (randomly selected, but if you have no Companion, roll again on V09) who is now shrouded in an unearthly glow.</p>
             <p>Slowly the glow fades except the eyes... Your Companion has now been transformed into the ‘Bad Wolf’. You know that a body cannot possibly contain so much energy but before you can do anything further, the TARDIS suddenly materialises and the doors open (see TM02 for Destination).</p>
@@ -535,13 +535,13 @@ export const tardisData: Tardis[] = [
         title: 'The TARDIS (Tenth Doctor)',
         description: `
             <p>You stand at the console of the TARDIS, your trusty Time and Space machine, as it flies through the twisting miasma of the Time Vortex. A gentle hum fills the air as the glass pillar of lights and instruments rises and falls in front of you.</p>
-            <p>You may try to set the controls for a particular destination or just let the TARDIS materialise wherever she wants (t002). Before you get to any destination however, roll 2D6. If the result is 10+, then you have an event in the Vortex (see below). If you have no event, you may try to repair the TARDIS if it has taken Damage (see t005).</p>
-            <p>In an Adventure you can return to the TARDIS at any time (t006). At the end of an Adventure, automatically return to this section. After you have completed 4 Adventures, see <strong>Q10</strong> below.</p>
+            <p>You may try to set the controls for a particular destination or just let the TARDIS materialise wherever she wants (T002). Before you get to any destination however, roll 2D6. If the result is 10+, then you have an event in the Vortex (see below). If you have no event, you may try to repair the TARDIS if it has taken Damage (see T005).</p>
+            <p>In an Adventure you can return to the TARDIS at any time (T006). At the end of an Adventure, automatically return to this section. After you have completed 4 Adventures, see <strong>Q10</strong> below.</p>
             <p><strong>Defences:</strong> 3 &nbsp;&nbsp; <strong>Navigation:</strong> 3 &nbsp;&nbsp; <strong>Resources:</strong> 1</p>
             <p><strong>Special Rules for the Tenth Doctor’s TARDIS:</strong><br />
             You begin the game with either Martha Jones or Donna Noble as a Companion. Each has a TARDIS Character card. If not a starting Companion, you may encounter Martha Jones or Donna Noble instead of a Character event in a Post Modern Era Adventure by spending 2 Luck (once only).</p>
             <p>You start the game with 5 Luck, 3 Idea cards and Gadgets up to 3 Cost.</p>
-            <p>Gain +1 to your TARDIS roll when you Set the Controls (t002) for a Holiday Destination (TM01).</p>
+            <p>Gain +1 to your TARDIS roll when you Set the Controls (T002) for a Holiday Destination (TM01).</p>
             <p><strong>Vortex Events:</strong><br />
             Something has interrupted your flight through the Vortex. Roll 2D6:</p>
             <ul>
@@ -564,7 +564,7 @@ export const tardisData: Tardis[] = [
         title: 'Cryptic Prophecy',
         description: `
             <p>As you were about to leave in the TARDIS from your last Adventure, one of your Allies looks at you strangely and tells you that ‘he will knock four times...’ What could this possibly mean?</p>
-            <p>Lose 1 Luck point. If you ever meet a Character with Aware 2, lose 1 Luck point as the prophecy is repeated. Vortex events (t003) now occur on a roll of 9+. However, instead of rolling 2D6 for the Vortex event, automatically see <strong>Q10a</strong>.</p>
+            <p>Lose 1 Luck point. If you ever meet a Character with Aware 2, lose 1 Luck point as the prophecy is repeated. Vortex events (T003) now occur on a roll of 9+. However, instead of rolling 2D6 for the Vortex event, automatically see <strong>Q10a</strong>.</p>
             <p><strong>Q10a. Mysterious Summons</strong><br />
             Your mind is touched by the Ood, reaching out across time as they are troubled by bad dreams. Something is returning from the darkness...</p>
             <p>You must visit the Ood Sphere (A020) and reach the Ood City Location where you must gain an Audience with Ood Elders (Special Event) and achieve a result of 7+. If you visit any other Adventure before going to the Ood Sphere, you must lose 1 Luck point each time. If you gain a 7+ with your Audience, gain 1 VP and see <strong>Q10b</strong> instead of rolling on the table there.</p>
@@ -590,13 +590,13 @@ export const tardisData: Tardis[] = [
         title: 'The TARDIS (Eleventh Doctor)',
         description: `
             <p>You stand at the console of the TARDIS, your trusty Time and Space machine, as it flies through the twisting miasma of the Time Vortex. A gentle hum fills the air as the glass pillar of lights and instruments rises and falls in front of you.</p>
-            <p>You may try to set the controls for a particular destination or just let the TARDIS materialise wherever she wants (t002). Before you get to any destination however, roll 2D6. If the result is 10+, then you have an event in the Vortex (see below). If you have no event, you may try to repair the TARDIS if it has taken Damage (see t005).</p>
-            <p>In an Adventure you can return to the TARDIS at any time (t006). At the end of an Adventure, automatically return to this section. After you have completed 2 Adventures, see <strong>Q11</strong> below.</p>
+            <p>You may try to set the controls for a particular destination or just let the TARDIS materialise wherever she wants (T002). Before you get to any destination however, roll 2D6. If the result is 10+, then you have an event in the Vortex (see below). If you have no event, you may try to repair the TARDIS if it has taken Damage (see T005).</p>
+            <p>In an Adventure you can return to the TARDIS at any time (T006). At the end of an Adventure, automatically return to this section. After you have completed 2 Adventures, see <strong>Q11</strong> below.</p>
             <p><strong>Defences:</strong> 2 &nbsp;&nbsp; <strong>Navigation:</strong> 4 &nbsp;&nbsp; <strong>Resources:</strong> 1</p>
             <p><strong>Special Rules for the Eleventh Doctor’s TARDIS:</strong><br />
             You begin the game with Amy Pond as a Companion. You may also spend 2 Luck to have Rory Williams as a Companion. If you do not start with Rory Williams as a Companion, you may encounter him instead of a Character event in a Post Modern Era Adventure by spending 2 Luck.</p>
             <p>You start the game with 5 Luck, 3 Idea cards and Gadgets up to 3 Cost.</p>
-            <p>Gain +1 to your TARDIS roll when you Set the Controls (t002) for a non-Earth Destination (TM01).</p>
+            <p>Gain +1 to your TARDIS roll when you Set the Controls (T002) for a non-Earth Destination (TM01).</p>
             <p><strong>Vortex Events:</strong><br />
             Something has interrupted your flight through the Vortex. Roll 2D6:</p>
             <ul>
@@ -641,13 +641,13 @@ export const tardisData: Tardis[] = [
         title: 'The TARDIS (Twelfth Doctor)',
         description: `
             <p>You stand at the console of the TARDIS, your trusty Time and Space machine, as it flies through the twisting miasma of the Time Vortex. A gentle hum fills the air as the glass pillar of lights and instruments rises and falls in front of you.</p>
-            <p>You may try to set the controls for a particular destination or just let the TARDIS materialise wherever she wants (t002). Before you get to any destination however, roll 2D6. If the result is 10+, then you have an event in the Vortex (see below). If you have no event, you may try to repair the TARDIS if it has taken Damage (see t005).</p>
-            <p>In an Adventure you can return to the TARDIS at any time (t006). At the end of an Adventure, automatically return to this section. After you have completed 4 Adventures, see <strong>Q12</strong> below.</p>
+            <p>You may try to set the controls for a particular destination or just let the TARDIS materialise wherever she wants (T002). Before you get to any destination however, roll 2D6. If the result is 10+, then you have an event in the Vortex (see below). If you have no event, you may try to repair the TARDIS if it has taken Damage (see T005).</p>
+            <p>In an Adventure you can return to the TARDIS at any time (T006). At the end of an Adventure, automatically return to this section. After you have completed 4 Adventures, see <strong>Q12</strong> below.</p>
             <p><strong>Defences:</strong> 2 &nbsp;&nbsp; <strong>Navigation:</strong> 3 &nbsp;&nbsp; <strong>Resources:</strong> 2</p>
             <p><strong>Special Rules for the Twelfth Doctor’s TARDIS:</strong><br />
             You begin the game with either Clara Oswald or Bill Potts as a Companion. Each has a TARDIS Character card. If not a starting Companion, you may encounter Clara Oswald or Bill Potts instead of a Character event in a Post Modern Era Adventure by spending 2 Luck (once only).</p>
             <p>You start the game with 5 Luck, 3 Idea cards and can choose Gadgets up to 3 Cost.</p>
-            <p>Gain +1 to your TARDIS roll when you Set the Controls (t002) for the Post Modern Era (TM01).</p>
+            <p>Gain +1 to your TARDIS roll when you Set the Controls (T002) for the Post Modern Era (TM01).</p>
             <p><strong>Vortex Events:</strong><br />
             Something has interrupted your flight through the Vortex. Roll 2D6:</p>
             <ul>
