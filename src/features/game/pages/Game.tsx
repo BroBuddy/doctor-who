@@ -1,4 +1,3 @@
-import { Headline } from '@/components/Headline'
 import Welcome from '../components/Welcome'
 import HowToPlay from '../components/HowToPlay'
 import ThirdEdition from '../components/ThirdEdition'
@@ -7,8 +6,6 @@ import Card from '@/components/Card'
 function Game() {
     return (
         <>
-            <Headline>Doctor Who: Solitaire Story Game</Headline>
-
             <Card icon="👋" headline="Welcome">
                 <Welcome />
             </Card>

@@ -20,11 +20,11 @@ function TardisDetail() {
 
     return (
         <>
-            <Headline>
-                {tardis.tag}. {tardis.title}
-            </Headline>
-
             <Card>
+                <Headline>
+                    {tardis.tag}. {tardis.title}
+                </Headline>
+
                 <div
                     dangerouslySetInnerHTML={{
                         __html: String(tardis.description),

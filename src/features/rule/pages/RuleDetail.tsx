@@ -31,11 +31,11 @@ function RuleDetail() {
 
     return (
         <>
-            <Headline>
-                {rule.tag}. {rule.title}
-            </Headline>
-
             <Card>
+                <Headline>
+                    {rule.tag}. {rule.title}
+                </Headline>
+
                 <div
                     onClick={handleClick}
                     dangerouslySetInnerHTML={{

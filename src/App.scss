@@ -36,13 +36,13 @@ body {
     display: flex;
     box-sizing: border-box;
     min-height: 100vh;
-    background-color: var(--black);
-    background-image: url('/images/tardis_background.png');
+    background: #020024;
+    background: linear-gradient(0deg, #000 50%, #1e3a8a 90%);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     color: var(--white);
-    padding: 0 15px 45px 15px;
+    padding: 0 0 45px 0;
 }
 
 img {

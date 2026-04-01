@@ -23,12 +23,13 @@ function RulePage({ tag, title, sections, children }: RulePageProps) {
 
     return (
         <>
-            <Headline>
-                {tag}. {title}
-            </Headline>
-
             <Card>
+                <Headline>
+                    {tag}. {title}
+                </Headline>
+
                 {children}
+
                 <Accordion items={items} />
             </Card>
         </>
