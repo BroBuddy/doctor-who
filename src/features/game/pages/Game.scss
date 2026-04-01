@@ -19,15 +19,19 @@
     0% {
         bottom: -120px;
         opacity: 1;
+        transform: scale(1);
     }
     40% {
         bottom: 20vh;
+        transform: scale(1);
     }
     70% {
         bottom: 60vh;
+        transform: scale(0.8);
     }
     100% {
         bottom: 130vh;
         opacity: 0;
+        transform: scale(0.5);
     }
 }
