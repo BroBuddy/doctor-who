@@ -15,9 +15,9 @@ function RandomVortexDestinationMatrix() {
 
     return (
         <>
-            <Headline>TM02. Random Vortex Destination Matrix</Headline>
-
             <Card>
+                <Headline>TM02. Random Vortex Destination Matrix</Headline>
+
                 <p className="flex">
                     <strong className="mr-1">Roll:</strong> 1D6 <Dice />
                 </p>

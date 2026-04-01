@@ -7703,6 +7703,698 @@ const A022: Adventure = {
     ],
 }
 
+const A023: Adventure = {
+    id: 23,
+    tag: 'A023',
+    title: 'Hollywood',
+    year: 1955,
+    tardis: 8,
+    era: 'World War Era',
+    type: 'Holiday',
+    description:
+        "The TARDIS has landed in Hollywood as the powerful movie studios are weakening and there's a new kid on the block with television. Sexier and younger movie stars are the iconic figures on the silver screen. Audiences listen to jazz or rock and roll music while rebellious teenagers take their Cadillacs to the new drive-in movies...",
+    stats: {
+        danger: 0,
+        knowledge: 5,
+        vp: 0,
+    },
+    special:
+        'Gain 1 Luck if you bring a Companion or Friend with Charm 2 here. Night falls at the start of Turn 2D6 and lasts 3 Turns. Find Help Actions have a -1 penalty here. Tour: If you visit 3 or more different Locations (except Los Angeles Streets) in Discover Phase, gain 1 Idea card and +1 VP. Los Angeles Streets: (Exterior, Move 2) You stroll along the streets of the city, avoiding the traffic whilst enjoying the iconic surroundings that are overlooked by that famous sign on the hill. Everything here seems to be part of the movie industry in some way... Add +1 to Explore Actions here. You may spend 1 Luck point to hire a taxi to gain +3 to a Move Action from here. Encounter (D6): 1: Enemy event; 2: Incident; 3-4: No further event; 5-6: Character event.',
+    enemy: [
+        { roll: '1-2', name: 'Villain' },
+        { roll: '3-4', name: 'Chameleon' },
+        { roll: '5', name: 'Criminal' },
+        { roll: '6', name: 'Temporal' },
+    ],
+    locations: [
+        {
+            roll: '1',
+            name: 'Film Studio',
+            move: 8,
+            terrain: null,
+            description:
+                'This is where the magic happens – but the secrets of the movies happens behind large gates. Unless with an Icon Ally, you must make a Charm 9 roll or Stealth 9 roll to enter. Add +1 to Investigate Actions here. You may spend 2 Luck to meet either Marilyn Monroe or Alfred Hitchcock (Special Characters).',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                { roll: '2', description: 'Incident' },
+                { roll: '3', description: 'None' },
+                { roll: '4-5', description: 'Plot event' },
+                { roll: '6+', description: 'Character event' },
+            ],
+        },
+        {
+            roll: '2',
+            name: 'Beverly Hills',
+            move: 8,
+            terrain: 'Exterior',
+            description:
+                'This beautiful area of Los Angeles is home to the rich and famous and filled with incredibly lavish mansions that overlook the city. Add +1 to Investigate Actions here.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy Lair' },
+                { roll: '2', description: 'Enemy encounter' },
+                { roll: '3', description: 'Enemy event' },
+                { roll: '4', description: 'Incident' },
+                { roll: '5', description: 'None' },
+                {
+                    roll: '6-7',
+                    description:
+                        'Character event (If Night, roll 1D6 and on 1-3, you instead encounter Cops with -2 to Charm roll)',
+                },
+            ],
+        },
+        {
+            roll: '3',
+            name: 'Chinese Theatre',
+            move: 8,
+            terrain: null,
+            description:
+                "One of the most recognisable buildings in the city and an iconic symbol of Hollywood. From the Hollywood Walk of Fame to the movie premieres where the stars pull up in limousines, it's definitely a place to visit. Add +1 to Seek Information (Charm) Actions here. You may spend 1 Luck to have a Character event.",
+            encounter: 'D6 (+1 to roll if Night)',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                { roll: '2', description: 'Incident' },
+                { roll: '3', description: 'None' },
+                { roll: '4', description: 'Plot event' },
+                {
+                    roll: '5-7',
+                    description:
+                        'Character event (you may pay 2 Luck to meet Alfred Hitchcock)',
+                },
+            ],
+        },
+        {
+            roll: '4',
+            name: 'Lavish Nightclub',
+            move: 7,
+            terrain: 'Night only',
+            description:
+                'One of the biggest and most exclusive clubs in town – just about everyone who is anyone wants to be seen here. Unless with an Icon Ally, you must make a Charm 9 roll or spend 1 Luck to enter. Add +1 to Relax and Seek Information (Charm) Actions here. You may spend 2 Luck to meet Marilyn Monroe.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                { roll: '2', description: 'Enemy event' },
+                { roll: '3', description: 'Incident' },
+                { roll: '4', description: 'None' },
+                { roll: '5', description: 'Plot event' },
+                { roll: '6+', description: 'Character event' },
+            ],
+        },
+        {
+            roll: '5',
+            name: 'Sunset Boulevard',
+            move: 7,
+            terrain: 'Exterior',
+            description:
+                'The best shopping in LA with fashion from all over the world. But style does not come cheap. You may spend 1 Luck to add +2 to any Action in Discover Phase. Add +1 to Seek Information Actions here. If the Enemy are Autons, add +1 Danger and +1 to number encountered.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                { roll: '2', description: 'Enemy event' },
+                { roll: '3', description: 'Incident' },
+                { roll: '4', description: 'None' },
+                { roll: '5', description: 'Plot event' },
+                { roll: '6-7', description: 'Character event' },
+            ],
+        },
+        {
+            roll: '6',
+            name: 'Vasquez Rocks',
+            move: 9,
+            terrain: 'Exterior, Wilderness',
+            description:
+                'Popular location for many movies from epic Westerns to cheap Science Fiction and is only a short drive north of Los Angeles. Do not add Running to Move rolls here. Gain 1 VP if you have an Enemy encounter here (once only). Add +1 to Challenge Actions here.',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1-2', description: 'Enemy encounter' },
+                { roll: '3', description: 'Enemy event' },
+                { roll: '4', description: 'None' },
+                { roll: '5', description: 'Incident' },
+                { roll: '6', description: 'Character event' },
+                { roll: '7', description: 'Plot event' },
+            ],
+        },
+    ],
+    plots: [
+        {
+            roll: '2-4',
+            name: 'Oscar Ceremony',
+            description:
+                'Tonight Hollywood rolls out the red carpet - could it be important to the Enemy plans? Gain +1 Knowledge (or +2 Knowledge if with a native Character). At the start of the Defeat Phase, add +1 Danger.',
+        },
+        {
+            roll: '5',
+            name: 'Studio Accident',
+            description:
+                'A studio executive was killed by a falling arc lamp on the set of the latest Western movie. If you go to the Vasquez Rocks Location and make an Aware 9 roll, gain +2 Knowledge, but add +1 Danger.',
+        },
+        {
+            roll: '6',
+            name: 'Alien Hoax',
+            description:
+                'You discover newspapers are reporting that alien ships have been seen in the sky but dismissing it as a hoax... If you have 10 Brains then reveal the Enemy.',
+        },
+        {
+            roll: '7',
+            name: 'News Report',
+            description:
+                'You catch the latest report from the radio – either all your TARDIS Characters gain Aware until the end of the Adventure OR gain +1 Knowledge.',
+        },
+        {
+            roll: '8',
+            name: 'Front',
+            description:
+                "You discover that a large and reputable organisation is really a front for the Enemy's secret plans. You may reveal the Enemy or gain +1 Knowledge. Add +1 to Seek Information Actions using Charm or Stealth.",
+        },
+        {
+            roll: '9',
+            name: 'Missing Starlets',
+            description:
+                'Some aspiring actors have vanished from the streets of Los Angeles in mysterious circumstances. Gain +1 Knowledge. Also gain 1 Luck if you have a native Character with you.',
+        },
+        {
+            roll: '10',
+            name: 'Haunted Studio',
+            description:
+                'You learn that film crew believe Soundstage 6 to have a ghost. If you go to the Film Studio Location and make an Aware 9 roll, gain +1 Knowledge. Add +1 to Investigate Actions there.',
+        },
+        {
+            roll: '11-12',
+            name: 'Unusual Activity',
+            description:
+                'You hear about strange events happening nearby. Roll 1D6: 1-4: Roll for a random Location and gain +1 Knowledge if you go there, then roll 1D6 and if 1-2 see Enemy Lair (rolling for Enemy first if needed); 5-6: A Studio Backlot (Move 9) where old and standing sets from the movies are situated. Add +2 to Investigate Actions here. Add +1 to Enemy Action rolls here. Encounter (2D6, add Stealth): 2-3: Enemy Lair; 4: Enemy encounter; 5: Enemy event; 6-7: None; 8: Plot event; 9-10: Gain 1 Luck or pay 1 Luck for +2 Knowledge; 11+: Character event.',
+        },
+    ],
+    characters: [
+        {
+            roll: '2-3',
+            name: 'Hollywood Star',
+            description:
+                'A leading actor, or perhaps a famous director? If you pay 2 Luck you may instead meet Marilyn Monroe or Alfred Hitchcock (Special Characters). If not, make a Charm roll.',
+            rolls: [
+                { roll: '2-6', description: 'Brushed off by lackeys' },
+                {
+                    roll: '7-8',
+                    description:
+                        'They sign a quick autograph and depart – gain 1 Luck',
+                },
+                {
+                    roll: '9-10',
+                    description: 'Hollywood gossip – roll for a Plot event',
+                },
+                {
+                    roll: '11+',
+                    description:
+                        'The star joins you as an Ally (+1 to Actions at Beverly Hills or Film Studio Locations). Roll for a Plot event.',
+                },
+            ],
+            stats: { brains: 1, brawn: 1, bravery: 1 },
+            skills: ['Charm'],
+        },
+        {
+            roll: '4',
+            name: 'Struggling Actor',
+            description:
+                'A young actor trying to break into the movie industry. If you make a Charm 9 roll (adding current Danger), the actor becomes your Ally – roll for a Plot event.',
+            stats: { brains: 2, brawn: 1, bravery: 1 },
+            skills: ['Charm', 'Running'],
+        },
+        {
+            roll: '5',
+            name: 'Cops',
+            description:
+                'A pair of stubborn LA cops takes an interest. Make a Charm roll (-1 per Stealth, +3 if Danger 12+).',
+            rolls: [
+                {
+                    roll: '2-5',
+                    description:
+                        'Wanted for questioning – make Running 7 roll or Captured (6) or Attacked (Brawn 5)',
+                },
+                { roll: '6-9', description: 'No further event' },
+                {
+                    roll: '10+',
+                    description:
+                        'The Cops become your Allies (+1 to Investigate, Move and Find Help Actions)',
+                },
+            ],
+            stats: { brains: 1, brawn: 2, bravery: 2 },
+        },
+        {
+            roll: '6',
+            name: 'Businessman',
+            description:
+                'A shrewd film producer. Pay 1 Luck or make a Charm 10 roll for the producer to join you as an Ally - roll for a Plot event.',
+            stats: { brains: 2, brawn: 1, bravery: 1 },
+            skills: ['Aware', 'Diplomacy'],
+            infomation: '+1 to Seek Information Actions.',
+        },
+        {
+            roll: '7',
+            name: 'Tourist',
+            description:
+                'A young autograph hunter wanting to witness the magic of the movies. Make a Charm 7 roll for the tourist to become your Ally. You may pay 1 Luck to roll for a Plot event.',
+            stats: { brains: 1, brawn: 1, bravery: 1 },
+            skills: ['Charm', 'Running'],
+        },
+        {
+            roll: '8',
+            name: 'Tour Guide',
+            description:
+                'A professional guide showing tourists around Los Angeles. If you make a Charm 10 roll (add current Danger), the guide becomes an Ally – roll for Plot event.',
+            stats: { brains: 1, brawn: 1, bravery: 1 },
+            skills: ['Aware', 'Charm', 'History'],
+            infomation: '+1 to Move Actions here.',
+        },
+        {
+            roll: '9',
+            name: 'Reporter',
+            description:
+                'An intrepid journalist after a story. If you make Charm 8 roll, she becomes an Ally – roll for a Plot event.',
+            stats: { brains: 2, brawn: 1, bravery: 1 },
+            skills: ['Aware', 'Charm', 'Running'],
+        },
+        {
+            roll: '10',
+            name: 'Musician',
+            description:
+                'A handsome young musician from Chicago. If you make a Charm 8 roll he becomes an Ally - roll for a Plot event.',
+            stats: { brains: 2, brawn: 1, bravery: 1 },
+            skills: ['Charm'],
+        },
+        {
+            roll: '11-12',
+            name: 'Private Detective',
+            description:
+                'A private eye investigating a case. Make a Stealth roll.',
+            rolls: [
+                {
+                    roll: '2-4',
+                    description: 'Questioned at Gunpoint - +1 Danger',
+                },
+                { roll: '5-7', description: 'He evades you - no event' },
+                {
+                    roll: '8-9',
+                    description:
+                        'He may share information – pay 1 Luck to roll for Plot event',
+                },
+                {
+                    roll: '10+',
+                    description: 'Becomes your Ally - roll for a Plot event',
+                },
+            ],
+            stats: { brains: 2, brawn: 2, bravery: 2 },
+            skills: ['Stealth', 'Running'],
+            infomation: '+1 to Investigate Actions.',
+        },
+    ],
+    specials: [
+        {
+            id: 1,
+            image: 'marilyn-monroe',
+            name: 'Marilyn Monroe',
+            description:
+                'You have met the very glamorous actress and model, Marilyn Monroe. Gain 1 VP. Make a Charm roll: 2-5: She is too busy making her new movie and jumps into a limo; 6-8: She gives you a dazzling smile and signs an autograph – gain 1 Luck; 9+: She takes a liking to you and joins you as an Ally. You may pay 1 Luck to roll for a Plot event.',
+            information:
+                'Marilyn Monroe is Brains 1, Brawn 0, Bravery 1 (Charm 2). Add +1 to Actions in Lavish Nightclub or Sunset Boulevard Locations.',
+            stats: { brains: 1, brawn: 0, bravery: 1 },
+            skills: ['Charm'],
+        },
+        {
+            id: 2,
+            image: 'alfred-hitchcock',
+            name: 'Alfred Hitchcock',
+            description:
+                'You have met the famous film director Alfred Hitchcock. Gain 1 VP. Make a Charm roll: 2-7: He is too busy filming his new movie and brushes you off; 8-9: He shares some information – roll for a Plot event; 10+: He takes a liking to you and joins you as an Ally. Roll for a Plot event.',
+            information:
+                'Alfred Hitchcock is Brains 3, Brawn 0, Bravery 1 (History). Add +1 to Actions at the Film Studios or Chinese Theatre Locations.',
+            stats: { brains: 3, brawn: 0, bravery: 1 },
+            skills: ['History'],
+        },
+    ],
+}
+
+const A024: Adventure = {
+    id: 24,
+    tag: 'A024',
+    title: 'The Puzzle Sphere',
+    year: 5589,
+    tardis: 10,
+    era: 'Twilight Era',
+    type: null,
+    description:
+        "Leaving the TARDIS, you see a giant ornate dome, its layers constantly shifting and revolving. There's an excited bustle of other people and beings around you – some human, others quite alien, all queuing up to the dome. This is the Puzzle Sphere of the Triolian Cyphers, a mystical feat of engineering turned galactic tourist attraction, filled with tricky challenges and devious traps. Do you have what it takes to escape or will you be locked inside forever...?",
+    stats: {
+        danger: 1,
+        knowledge: 5,
+        vp: 2,
+    },
+    special:
+        'Some Locations require an Escape Location roll to leave, using Brains (use Escape bonuses, +1 to subsequent attempts) and also gain +1 Knowledge if successful. When leaving these Locations, roll randomly for new Location. Evade options remain in Location. When rolling for Goal, roll 1D6: 1-2: Trap for the Doctor (Special Goal); 3-6: Roll as normal. Sphere Entrance: (May not return here once you leave) You enter a large welcome room that is filled with an assortment of strange characters. A welcome robot is explaining the rules to the new players that are gathered there. Add +1 to Explore Actions. Encounter (D6): 1: Animatronic; 2: No event; 3: Incident; 4-5: Other Players; 6: Porcinoid Engineer.',
+    enemy: [
+        { roll: '1-2', name: 'Entity' },
+        { roll: '3', name: 'Gothic' },
+        { roll: '4', name: 'Chameleon' },
+        { roll: '5-6', name: 'Villain' },
+    ],
+    locations: [
+        {
+            roll: '1',
+            name: 'Amusements',
+            move: 7,
+            terrain: null,
+            description:
+                "A space to keep the players entertained and rested during their experience. There's a bar, a couple of games consoles, and holographic performers. You may Relax here. You may visit the little shop here – you may spend 1 Luck (once only) as an Action to draw a random Idea card.",
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy Encounter' },
+                { roll: '2', description: 'Incident' },
+                { roll: '3', description: 'None' },
+                { roll: '4+', description: 'Character Event (add +2 to roll)' },
+            ],
+        },
+        {
+            roll: '2',
+            name: 'Inverted City',
+            move: 8,
+            terrain: 'Dark, Escape Location - Brains 14',
+            description:
+                'This place seems strange but oddly familiar. The dimensions are all wrong here, like an M.C. Escher drawing. Any Aware rolls have a -1 penalty here. Add +1 to Investigate Actions here. Once per Adventure you may pay 1 Luck to choose a Skill roll before rolling the dice. If you fail the roll, you instead succeed and vice versa.',
+            encounter: 'D6',
+            rolls: [
+                { roll: '1', description: 'Enemy Encounter' },
+                { roll: '2', description: 'Dark Hunter' },
+                { roll: '3-4', description: 'Incident' },
+                { roll: '5', description: 'Seasoned Adventurer' },
+                { roll: '6', description: 'Plot event' },
+            ],
+        },
+        {
+            roll: '3',
+            name: 'Junk Room',
+            move: 9,
+            terrain: 'Escape Location - Brains 12',
+            description:
+                'The game here is to escape by finding the correct object. As you search, you may roll 1D6 (before an Escape Location Action): 1-2: Nothing found; 3-4: A useful item adds +1 to your next Escape Location roll; 5-6: You may spend Luck to gain a Gadget card (once only).',
+            encounter: 'D6 (+1 to roll if Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                { roll: '2', description: 'Enemy event' },
+                { roll: '3-4', description: 'Plot event' },
+                { roll: '5-6', description: 'Character event' },
+                { roll: '7', description: 'Journal' },
+            ],
+        },
+        {
+            roll: '4',
+            name: 'Locked Room',
+            move: 9,
+            terrain: 'Escape Location - Brains 15',
+            description:
+                "It's a trap. The doors slam quickly shut behind you and lock with resounding finality. You're in one of the Puzzle Sphere's famous and ingenious escape levels. Any Escape Actions (from being Captured) have a -1 penalty here. You may not Explore, Find Help or Seek Information here.",
+            encounter: 'D6',
+            rolls: [
+                { roll: '1', description: 'Enemy encounter' },
+                { roll: '2', description: 'Enemy event' },
+                { roll: '3', description: 'Plot event' },
+                { roll: '4-5', description: 'None' },
+                { roll: '6', description: 'Character event' },
+            ],
+        },
+        {
+            roll: '5',
+            name: 'Service Ducts',
+            move: 9,
+            terrain:
+                'Dark, Escape Location – Brains 10, may roll 1D6 twice for possible Locations',
+            description:
+                'A series of shadowy and confusing criss-crossing maintenance tunnels, with secret access to all the puzzle rooms. Add +1 to Investigate Actions here. You may not Seek Information here.',
+            encounter: 'D6 (+1 to roll in Discover Phase)',
+            rolls: [
+                { roll: '1', description: 'Enemy Lair' },
+                { roll: '2', description: 'Enemy encounter' },
+                { roll: '3', description: 'Incident' },
+                { roll: '4-5', description: 'None' },
+                { roll: '6+', description: 'Maintenance Staff' },
+            ],
+        },
+        {
+            roll: '6',
+            name: 'Control Centre',
+            move: 10,
+            terrain: 'may not move here until the Dilemma Phase',
+            description:
+                'A huge power cell stands at the end of a corridor of computer banks and pods. If you make a Computers 8 roll, add +2 to any Move Action from here.',
+            encounter: 'Aware roll',
+            rolls: [
+                { roll: '2-3', description: 'Enemy Lair' },
+                { roll: '4', description: 'Enemy encounter' },
+                { roll: '5', description: 'Enemy event' },
+                { roll: '6', description: 'Incident' },
+                { roll: '7', description: 'Maintenance Staff' },
+                {
+                    roll: '8-9',
+                    description:
+                        'Computer banks – choose a Character to gain +2 Brains until the end of Adventure (once only)',
+                },
+                { roll: '10', description: 'Gain +1 Knowledge' },
+                { roll: '11+', description: 'Prison Vault' },
+            ],
+        },
+    ],
+    plots: [
+        {
+            roll: '2-3',
+            name: 'Alien Blueprints',
+            description:
+                'Some diagrams may reveal the original purpose of the Puzzle Sphere: a prison – but for what? Make a History 7 roll to gain +1 Knowledge. On a roll of 11+ reveal the Enemy.',
+        },
+        {
+            roll: '4',
+            name: 'Disappearances',
+            description:
+                'There are rumours that players have been going missing from the Puzzle Sphere – gain +1 Knowledge and +1 to Charm rolls with Other Players.',
+        },
+        {
+            roll: '5',
+            name: 'Unusual Energy Readings',
+            description:
+                'You detect strange power fluctuations. Make a Science 8 roll to gain +1 Knowledge. If you make a Science 11 roll, see also Prison Vault.',
+        },
+        {
+            roll: '6',
+            name: 'New Story Launch',
+            description:
+                'A new series of puzzles and characters have drawn many more tourists than usual. But is there a sinister reason behind it? Gain +1 Knowledge (+2 Knowledge if with an Ally). Add +1 Danger in the Defeat Phase.',
+        },
+        {
+            roll: '7-8',
+            name: 'Malfunctioning Animatronic',
+            description:
+                "The robot characters are acting strangely – forgetting their lines and who they're meant to be. Has someone been tampering with the Sphere's systems? Make an Engineer 7 roll to gain +1 Knowledge.",
+        },
+        {
+            roll: '9',
+            name: 'Damaged Wall Panel',
+            description:
+                'Something has broken through the immaculately dressed sets of the Sphere – is it sabotage? Make an Engineer 9 roll to gain +1 Knowledge and find an entrance to Service Ducts - you may Move there automatically.',
+        },
+        {
+            roll: '10',
+            name: 'Journal',
+            description:
+                'You find a collection of maps and notes in an almost illegible scrawl - a record of an attempt to escape the Puzzle Sphere. If you make an Aware 8 roll, gain +1 Knowledge. You may add +1 to future rolls to determine Location.',
+        },
+        {
+            roll: '11-12',
+            name: 'Prison Vault',
+            description:
+                'Legends say there is something hidden at the very centre of the Puzzle Sphere. If you choose to go there (Move 9 with an Escape Location roll), you discover a time locked vault door, surrounded by monitoring equipment. Add +1 Danger. Add +3 to Investigate Actions here. Encounter (Aware roll, +2 if Discover Phase): 2-3: Enemy Encounter; 4-5: Enemy Event; 6-8: Alien Blueprints (Plot); 9: None; 10-11: Gain +1 Knowledge; 12+: +2 Knowledge, add +1 Danger. If Enemy is revealed here, also reveal Goal to be Trap for the Doctor (Special Goal).',
+        },
+    ],
+    characters: [
+        {
+            roll: '2-3',
+            name: 'Dark Hunter',
+            description:
+                "A rather unfriendly character with a deadly looking weapon stalks you. You may try to Evade with either a Running 7 roll or Stealth 9 roll, or instead roll 1D6: 1-3: It Attacks (Brawn 7); 4-6: It's an animatronic designed to scare you. Make a Bravery 12 roll and gain 1 Luck if you succeed. If you fail, start a (Capture) Conflict (Brawn 7).",
+        },
+        {
+            roll: '4',
+            name: 'Animatronic',
+            description:
+                'Robot with a holographic shell. Make a Computers roll.',
+            rolls: [
+                { roll: '2-6', description: 'No information' },
+                {
+                    roll: '7-11',
+                    description:
+                        'Gain +2 to next Escape Location roll or +1 Knowledge',
+                },
+                {
+                    roll: '12+',
+                    description:
+                        'Joins you as an Ally – gain +1 Knowledge or +2 to next Escape Location roll',
+                },
+            ],
+            stats: { brains: 2, brawn: 2, bravery: 2 },
+            skills: ['Computers', 'Machine'],
+        },
+        {
+            roll: '5',
+            name: 'Maintenance Staff',
+            description:
+                'A Crespallion in a Puzzle Sphere uniform. Make a Charm roll (add +2 if Danger 12+).',
+            rolls: [
+                { roll: '2-6', description: 'They ignore you' },
+                {
+                    roll: '7-8',
+                    description:
+                        'They tell you of something which is worrying them - roll for Plot Event',
+                },
+                {
+                    roll: '9-10',
+                    description:
+                        'They show you how to access the Service Ducts - you may choose to Move there automatically',
+                },
+                {
+                    roll: '11+',
+                    description:
+                        'They join you as an Ally. You may choose to Move to Service Ducts automatically.',
+                },
+            ],
+            stats: { brains: 1, brawn: 0, bravery: 1 },
+        },
+        {
+            roll: '6-8',
+            name: 'Other Players',
+            description:
+                'Another group of people hoping to beat the Puzzle Sphere. Make a Charm roll (-2 if you are already Allied with Other Players).',
+            rolls: [
+                {
+                    roll: '2-3',
+                    description:
+                        'They do not trust you and disrupt your escape attempt – take a -1 penalty from next Escape Location roll',
+                },
+                { roll: '4-5', description: 'They ignore you' },
+                {
+                    roll: '6-8',
+                    description:
+                        'If not in Starting Room, they help you to escape – gain +1 to next Escape Location roll',
+                },
+                {
+                    roll: '9+',
+                    description:
+                        'They join you as Allies (1D3 in number, each Brains 1, Brawn 1, Bravery 1)',
+                },
+            ],
+        },
+        {
+            roll: '9',
+            name: 'The Rogue',
+            description:
+                'A dark-clad man watches you, a blaster at his fingertips. Make an Aware roll.',
+            rolls: [
+                {
+                    roll: '2-5',
+                    description:
+                        "There's a bounty on your head. Make a Stealth 9 roll or start a (Capture) Conflict (Brawn 4)",
+                },
+                {
+                    roll: '6-8',
+                    description: 'He has a warning - roll for a Plot event',
+                },
+                {
+                    roll: '9+',
+                    description:
+                        'He joins you as an Ally (+1 to Escape Location rolls)',
+                },
+            ],
+            stats: { brains: 1, brawn: 4, bravery: 2 },
+            skills: ['Stealth'],
+        },
+        {
+            roll: '10',
+            name: 'Porcinoid Engineer',
+            description: "An actor who's part of the game. Make a Charm roll.",
+            rolls: [
+                { roll: '2-3', description: 'He ignores you' },
+                {
+                    roll: '4-7',
+                    description:
+                        'He gives advice – gain +1 to next Escape Location roll',
+                },
+                {
+                    roll: '8-10',
+                    description:
+                        'He tells you about unusual activity – gain +1 Knowledge or roll for a Plot event',
+                },
+                {
+                    roll: '11+',
+                    description: 'He becomes an Ally – roll for a Plot event',
+                },
+            ],
+            stats: { brains: 1, brawn: 2, bravery: 1 },
+            skills: ['Engineer'],
+        },
+        {
+            roll: '11',
+            name: 'Ood',
+            description:
+                'An independent and very dapper Ood. Make a Charm roll.',
+            rolls: [
+                {
+                    roll: '2-4',
+                    description:
+                        'If the Enemy is an Entity, it Attacks (Brawn 3, Evade with Running 7 roll)',
+                },
+                {
+                    roll: '5-7',
+                    description:
+                        'The Ood guides you through Location – gain +1 to next Escape Location roll',
+                },
+                {
+                    roll: '8-10',
+                    description: 'The Ood gives a clue – roll for Plot event',
+                },
+                { roll: '11+', description: 'Joins as an Ally' },
+            ],
+            stats: { brains: 2, brawn: 1, bravery: 1 },
+            skills: ['Aware', 'Computers'],
+        },
+        {
+            roll: '12',
+            name: 'Seasoned Adventurer',
+            description:
+                "He's been here a long time and probably knows this place better than anyone, but may have lost his mind... Make a Charm roll.",
+            rolls: [
+                { roll: '2-4', description: 'Attacked (Brawn 2)' },
+                { roll: '5-10', description: 'He wanders off' },
+                {
+                    roll: '11+',
+                    description:
+                        'He joins you as an Ally (+1 to Escape Location rolls). Roll for a Plot event.',
+                },
+            ],
+            stats: { brains: 2, brawn: 1, bravery: 0 },
+            skills: ['Stealth'],
+        },
+    ],
+    specials: [
+        {
+            id: 1,
+            image: 'trap-for-the-doctor',
+            name: 'Trap for the Doctor',
+            description:
+                'The Enemy intends to use the Puzzle Sphere as a prison to trap you here. Add +1 Danger.',
+            information:
+                'Escape the Puzzle Sphere: You must gain 4 Knowledge and make an Escape Location roll to return to the TARDIS (Brains 19 roll). Have an Enemy Encounter any time you fail an Escape Location roll. Trap Enemy Inside: Make a Prevent Action in the Control Centre (add Computers or Engineer). Add +1 Danger and have an Enemy encounter if you fail.',
+            stats: null,
+            skills: [],
+        },
+    ],
+}
+
 export const adventureData: Adventure[] = [
     A001,
     A002,
@@ -7726,4 +8418,6 @@ export const adventureData: Adventure[] = [
     A020,
     A021,
     A022,
+    A023,
+    A024,
 ]
