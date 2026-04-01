@@ -9,11 +9,7 @@ function EnemyView() {
 
     return (
         <Card>
-            <img
-                src={`/images/enemies/${enemy.tag}.png`}
-                alt={enemy.title}
-                className="mt-4 w-20"
-            />
+            <img src={`/images/enemies/${enemy.tag}.png`} alt={enemy.title} />
 
             {enemy.stats && (
                 <div className="flex flex-wrap mt-3">

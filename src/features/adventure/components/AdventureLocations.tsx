@@ -41,7 +41,7 @@ function AdventureLocations() {
     }))
 
     return (
-        <Card headline="Locations">
+        <Card>
             <Accordion items={items} />
         </Card>
     )

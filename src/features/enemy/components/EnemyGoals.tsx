@@ -40,7 +40,7 @@ function EnemyGoals() {
     }))
 
     return (
-        <Card headline="Goals">
+        <Card>
             <Accordion items={items} />
         </Card>
     )

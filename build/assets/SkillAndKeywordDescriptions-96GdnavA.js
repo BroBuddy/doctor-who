@@ -1,1 +1,0 @@
-import{n as e}from"./rule-CkEnN27m.js";export{e as default};

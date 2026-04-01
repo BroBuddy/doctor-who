@@ -27,11 +27,10 @@ function EnemySpecial() {
     return (
         <>
             {lair && (
-                <Card headline={lair.name}>
+                <Card>
                     <img
                         src={`/images/enemies/special/${tag}.png`}
                         alt="Special"
-                        className="w-20"
                     />
 
                     {lair.tags && (
@@ -46,7 +45,10 @@ function EnemySpecial() {
                         </div>
                     )}
 
-                    <p>{lair.description}</p>
+                    <p className="mt-5">
+                        <strong>{lair.name}:</strong> <br />
+                        {lair.description}
+                    </p>
 
                     {lair.table && (
                         <ul>
@@ -64,14 +66,16 @@ function EnemySpecial() {
             )}
 
             {specialEncounter && (
-                <Card headline={specialEncounter.name}>
+                <Card>
                     <img
                         src={`/images/enemies/special/${tag}.png`}
                         alt="Special"
-                        className="w-20"
                     />
 
-                    <p>{specialEncounter.description}</p>
+                    <p className="mt-5">
+                        <strong>{specialEncounter.name}:</strong> <br />
+                        {specialEncounter.description}
+                    </p>
 
                     {items.length > 0 && <Accordion items={items} />}
                 </Card>

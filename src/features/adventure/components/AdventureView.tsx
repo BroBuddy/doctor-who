@@ -15,7 +15,6 @@ function AdventureView() {
             <img
                 src={`/images/adventures/${adventure.tag}.png`}
                 alt={adventure.title}
-                className="mt-4"
             />
 
             <YearEraTardis

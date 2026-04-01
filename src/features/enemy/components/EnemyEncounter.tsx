@@ -21,7 +21,7 @@ function EnemyEncounter() {
     )
 
     return (
-        <Card headline="Encounter">
+        <Card>
             <p>{encounter.description}</p>
             <Accordion items={items} />
         </Card>

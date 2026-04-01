@@ -19,7 +19,7 @@ function EnemyEvents() {
     }))
 
     return (
-        <Card headline="Events">
+        <Card>
             <Accordion items={items} />
         </Card>
     )
