@@ -4,6 +4,7 @@ import type { EnemyGoal, GoalOption } from '../types/EnemyType'
 import { Accordion } from '@/components/Accordion'
 import Card from '@/components/Card'
 import Dice from '@/components/Dice'
+import Badge from '@/components/Badge'
 
 function EnemyGoals() {
     const { tag } = useParams()
@@ -18,12 +19,13 @@ function EnemyGoals() {
         label: `${item.roll} – ${item.name}`,
         children: (
             <>
-                <p>
-                    <em className="mr-1">
-                        ({item.vp}VP, {item.type})
-                    </em>
-                    {item.description}
-                </p>
+                <div className="mt-3">
+                    <Badge text={`${item.vp}VP`} />
+                    <Badge text={item.type} variant="light" />
+                </div>
+
+                <p>{item.description}</p>
+
                 {item.options && (
                     <ul className="mb-3">
                         {item.options.map((option: GoalOption, i: number) => (

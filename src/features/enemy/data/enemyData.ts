@@ -2348,7 +2348,7 @@ const E019: Enemy = {
     tag: 'E019',
     title: 'The Jassra',
     description:
-        'The Jassra) is an elemental force created by an ancient civilisation that wanted to distil all their negative emotions and banish them from their world. Unfortunately, their hatred and fear were so strong that the emotions developed into a bestial, evil creature with a face that is contorted in abject fear. The Jassra exists only to hurt and destroy.',
+        'The Jassra is an elemental force created by an ancient civilisation that wanted to distil all their negative emotions and banish them from their world. Unfortunately, their hatred and fear were so strong that the emotions developed into a bestial, evil creature with a face that is contorted in abject fear. The Jassra exists only to hurt and destroy.',
     special: null,
     stats: ['+1 Danger', 'Scheme 4', 'Entity', 'Gothic'],
     encounter: {
