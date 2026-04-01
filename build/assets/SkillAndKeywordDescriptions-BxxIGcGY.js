@@ -1,0 +1,1 @@
+import{n as e}from"./rule-IpZkkS48.js";export{e as default};
