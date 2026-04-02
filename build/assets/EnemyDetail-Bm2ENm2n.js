@@ -1,0 +1,1 @@
+import{t as e}from"./enemy-BfyoiAtX.js";export{e as default};

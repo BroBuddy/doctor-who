@@ -17,26 +17,22 @@ function AdventureLocations() {
         label: `${item.roll}: ${item.move ? `(M${item.move}) ` : ''}${item.name}`,
         children: (
             <>
-                <div className="flex flex-row items-top">
-                    <div className="mt-3 mr-5">
-                        <img
-                            src={`/images/locations/${tag}-${index + 1}.png`}
-                            className="w-16"
-                            alt={item.name}
-                            onError={(e) => {
-                                const img = e.currentTarget
-                                img.onerror = null
-                                img.src = `/images/adventures/${tag}.png`
-                            }}
-                        />
-                    </div>
-                    <p>
-                        {item.terrain && (
-                            <em className="mr-1">({item.terrain})</em>
-                        )}
-                        {item.description}
-                    </p>
+                <div className="flex justify-center mt-2">
+                    <img
+                        src={`/images/locations/${tag}-${index + 1}.png`}
+                        alt={item.name}
+                        onError={(e) => {
+                            const img = e.currentTarget
+                            img.onerror = null
+                            img.src = `/images/adventures/${tag}.png`
+                        }}
+                    />
                 </div>
+
+                <p>
+                    {item.terrain && <em className="mr-1">({item.terrain})</em>}
+                    {item.description}
+                </p>
 
                 <p>
                     <strong>Encounter:</strong> <em>({item.encounter})</em>
