@@ -3,6 +3,7 @@ import { Accordion } from '@/components/Accordion'
 import { getAdventureLocationsByTag } from '../services/AdventureService'
 import { useParams } from 'react-router-dom'
 import Card from '@/components/Card'
+import CroppedImage from '@/components/CroppedImage'
 
 function AdventureLocations() {
     const { tag } = useParams()
@@ -17,18 +18,11 @@ function AdventureLocations() {
         label: `${item.roll}: ${item.move ? `(M${item.move}) ` : ''}${item.name}`,
         children: (
             <>
-                <div className="flex justify-center mt-2">
-                    <img
-                        src={`/images/locations/${tag}-${index + 1}.png`}
-                        className="w-20"
-                        alt={item.name}
-                        onError={(e) => {
-                            const img = e.currentTarget
-                            img.onerror = null
-                            img.src = `/images/adventures/${tag}.png`
-                        }}
-                    />
-                </div>
+                <CroppedImage
+                    height={200}
+                    width={250}
+                    src={`/images/locations/${tag}-${index + 1}.jpg`}
+                />
 
                 <p>
                     {item.terrain && <em className="mr-1">({item.terrain})</em>}

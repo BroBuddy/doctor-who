@@ -5,6 +5,7 @@ import Card from '@/components/Card'
 import YearEraTardis from './YearEraTardis'
 import AdventureStats from './AdventureStats'
 import { Headline } from '@/components/Headline'
+import CroppedImage from '@/components/CroppedImage'
 
 function AdventureView() {
     const { tag } = useParams()
@@ -12,9 +13,9 @@ function AdventureView() {
 
     return (
         <Card>
-            <img
-                src={`/images/adventures/${adventure.tag}.png`}
-                alt={adventure.title}
+            <CroppedImage
+                src={`/images/adventures/${adventure.tag}.jpg`}
+                fallback={`/images/adventures/${adventure.tag}.png`}
             />
 
             <YearEraTardis

@@ -4,6 +4,7 @@ import type { AdventureSpecial, Stats } from '../types/AdventureType'
 import { Accordion } from '@/components/Accordion'
 import Card from '@/components/Card'
 import CharacterStats from './CharacterStats'
+import CroppedImage from '@/components/CroppedImage'
 
 function AdventureSpecials() {
     const { tag } = useParams()
@@ -13,28 +14,29 @@ function AdventureSpecials() {
         return null
     }
 
-    const items = specials.map((character: AdventureSpecial) => ({
-        id: String(character.id),
-        label: character.name,
-        children: (
-            <>
-                <p>{character.description}</p>
-                <p>{character.information}</p>
-
-                {character.image && (
-                    <img
-                        src={`/images/specials/${character.image}.png`}
-                        alt={character.name}
+    const items = specials.map(
+        (character: AdventureSpecial, index: number) => ({
+            id: String(character.id),
+            label: character.name,
+            children: (
+                <>
+                    <CroppedImage
+                        height={200}
+                        width={250}
+                        src={`/images/specials/${tag}-${index + 1}.jpg`}
                     />
-                )}
 
-                <CharacterStats
-                    stats={character.stats as Stats}
-                    skills={character.skills as string[]}
-                />
-            </>
-        ),
-    }))
+                    <p>{character.description}</p>
+                    <p>{character.information}</p>
+
+                    <CharacterStats
+                        stats={character.stats as Stats}
+                        skills={character.skills as string[]}
+                    />
+                </>
+            ),
+        })
+    )
 
     return (
         <Card>

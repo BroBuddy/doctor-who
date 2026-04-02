@@ -4,6 +4,7 @@ import { getAdventureCharactersByTag } from '../services/AdventureService'
 import { useParams } from 'react-router-dom'
 import Card from '@/components/Card'
 import CharacterStats from './CharacterStats'
+import CroppedImage from '@/components/CroppedImage'
 
 function AdventureCharacters() {
     const { tag } = useParams()
@@ -13,34 +14,38 @@ function AdventureCharacters() {
         return null
     }
 
-    const items = characters.map(
-        (character: AdventureCharacter, index: number) => ({
-            id: String(index),
-            label: `${character.roll} – ${character.name}`,
-            children: (
-                <>
-                    <p>{character.description}</p>
-                    {character.rolls && (
-                        <ul className="mb-3">
-                            {character.rolls.map((roll: Rolls, i: number) => (
-                                <li key={i}>
-                                    <strong className="mr-1">
-                                        {roll.roll}:
-                                    </strong>
-                                    <span>{roll.description}</span>
-                                </li>
-                            ))}
-                        </ul>
-                    )}
+    const items = characters.map((item: AdventureCharacter, index: number) => ({
+        id: String(index),
+        label: `${item.roll} – ${item.name}`,
+        children: (
+            <>
+                <CroppedImage
+                    height={200}
+                    width={250}
+                    src={`/images/characters/${tag}-${index + 1}.jpg`}
+                    fallback={`/images/adventures/${tag}.jpg`}
+                />
 
-                    <CharacterStats
-                        stats={character.stats as Stats}
-                        skills={character.skills as string[]}
-                    />
-                </>
-            ),
-        })
-    )
+                <p>{item.description}</p>
+
+                {item.rolls && (
+                    <ul className="mb-3">
+                        {item.rolls.map((roll: Rolls, i: number) => (
+                            <li key={i}>
+                                <strong className="mr-1">{roll.roll}:</strong>
+                                <span>{roll.description}</span>
+                            </li>
+                        ))}
+                    </ul>
+                )}
+
+                <CharacterStats
+                    stats={item.stats as Stats}
+                    skills={item.skills as string[]}
+                />
+            </>
+        ),
+    }))
 
     return (
         <Card>
