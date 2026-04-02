@@ -20,6 +20,7 @@ function AdventureLocations() {
                 <div className="flex justify-center mt-2">
                     <img
                         src={`/images/locations/${tag}-${index + 1}.png`}
+                        className="w-20"
                         alt={item.name}
                         onError={(e) => {
                             const img = e.currentTarget
