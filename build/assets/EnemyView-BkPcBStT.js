@@ -1,0 +1,1 @@
+import{n as e}from"./enemy-Befhmmx_.js";export{e as default};
