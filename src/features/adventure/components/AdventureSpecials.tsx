@@ -14,29 +14,29 @@ function AdventureSpecials() {
         return null
     }
 
-    const items = specials.map(
-        (character: AdventureSpecial, index: number) => ({
-            id: String(character.id),
-            label: character.name,
-            children: (
-                <>
+    const items = specials.map((item: AdventureSpecial) => ({
+        id: String(item.id),
+        label: item.name,
+        children: (
+            <>
+                {item.image && (
                     <CroppedImage
-                        height={200}
-                        width={250}
-                        src={`/images/specials/${tag}-${index + 1}.jpg`}
+                        height={150}
+                        width={200}
+                        src={`/images/specials/${item.image}.png`}
                     />
+                )}
 
-                    <p>{character.description}</p>
-                    <p>{character.information}</p>
+                <p>{item.description}</p>
+                <p>{item.information}</p>
 
-                    <CharacterStats
-                        stats={character.stats as Stats}
-                        skills={character.skills as string[]}
-                    />
-                </>
-            ),
-        })
-    )
+                <CharacterStats
+                    stats={item.stats as Stats}
+                    skills={item.skills as string[]}
+                />
+            </>
+        ),
+    }))
 
     return (
         <Card>

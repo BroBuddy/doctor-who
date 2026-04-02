@@ -4,7 +4,6 @@ import { getAdventureCharactersByTag } from '../services/AdventureService'
 import { useParams } from 'react-router-dom'
 import Card from '@/components/Card'
 import CharacterStats from './CharacterStats'
-import CroppedImage from '@/components/CroppedImage'
 
 function AdventureCharacters() {
     const { tag } = useParams()
@@ -19,13 +18,6 @@ function AdventureCharacters() {
         label: `${item.roll} – ${item.name}`,
         children: (
             <>
-                <CroppedImage
-                    height={200}
-                    width={250}
-                    src={`/images/characters/${tag}-${index + 1}.jpg`}
-                    fallback={`/images/adventures/${tag}.jpg`}
-                />
-
                 <p>{item.description}</p>
 
                 {item.rolls && (

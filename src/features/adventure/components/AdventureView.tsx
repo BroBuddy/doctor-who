@@ -13,10 +13,7 @@ function AdventureView() {
 
     return (
         <Card>
-            <CroppedImage
-                src={`/images/adventures/${adventure.tag}.jpg`}
-                fallback={`/images/adventures/${adventure.tag}.png`}
-            />
+            <CroppedImage src={`/images/adventures/${adventure.tag}.png`} />
 
             <YearEraTardis
                 year={adventure.year}

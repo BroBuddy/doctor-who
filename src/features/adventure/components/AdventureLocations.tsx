@@ -19,9 +19,9 @@ function AdventureLocations() {
         children: (
             <>
                 <CroppedImage
-                    height={200}
-                    width={250}
-                    src={`/images/locations/${tag}-${index + 1}.jpg`}
+                    height={150}
+                    width={200}
+                    src={`/images/locations/${tag}-${index + 1}.png`}
                 />
 
                 <p>
